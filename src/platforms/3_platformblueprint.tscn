@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://mtmitx3k0avp"]
+
+[ext_resource type="PackedScene" uid="uid://c0g2bfslm40qt" path="res://src/platforms/pt_blueprint.tscn" id="1_gwqux"]
+
+[node name="3platformblueprint" type="Node2D" unique_id=853668133]
+
+[node name="pt_blueprint" parent="." unique_id=920875960 instance=ExtResource("1_gwqux")]
+
+[node name="pt_blueprint2" parent="." unique_id=1351095077 instance=ExtResource("1_gwqux")]
+position = Vector2(83, 0)
+
+[node name="pt_blueprint3" parent="." unique_id=786984284 instance=ExtResource("1_gwqux")]
+position = Vector2(166, 0)
+
+[node name="pt_blueprint4" parent="." unique_id=1468427656 instance=ExtResource("1_gwqux")]
+position = Vector2(248, 0)
+
+[node name="pt_blueprint5" parent="." unique_id=473263711 instance=ExtResource("1_gwqux")]
+position = Vector2(331, 0)
+
+[node name="pt_blueprint6" parent="." unique_id=1775409830 instance=ExtResource("1_gwqux")]
+position = Vector2(414, 0)
+
+[node name="pt_blueprint7" parent="." unique_id=615590275 instance=ExtResource("1_gwqux")]
+position = Vector2(496, 0)

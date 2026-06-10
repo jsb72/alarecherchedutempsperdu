@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://w3jbybhs4p2b"]
+
+[ext_resource type="PackedScene" uid="uid://bdiyfyv8m8gog" path="res://src/world/rooms/surface1.tscn" id="1_7vq26"]
+[ext_resource type="Script" uid="uid://dswada7rubaw5" path="res://src/world/map.gd" id="1_kakw0"]
+[ext_resource type="PackedScene" uid="uid://ddn12nrkfsoqf" path="res://src/world/rooms/room1.tscn" id="2_nibwk"]
+
+[node name="Map" type="Node2D" unique_id=2056300524]
+script = ExtResource("1_kakw0")
+
+[node name="room1" parent="." unique_id=974199421 instance=ExtResource("2_nibwk")]
+position = Vector2(512, -131)
+
+[node name="Surface1" parent="." unique_id=1483268784 instance=ExtResource("1_7vq26")]
+position = Vector2(0, 189)

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://d2he3anet5q3s"]
+
+[ext_resource type="PackedScene" uid="uid://do35bbyy0qllr" path="res://src/platforms/platform.tscn" id="1_31h3l"]
+
+[node name="triangle_platform" type="Node2D" unique_id=497610603]
+
+[node name="platform" parent="." unique_id=1968047125 instance=ExtResource("1_31h3l")]
+
+[node name="platform2" parent="." unique_id=2073009663 instance=ExtResource("1_31h3l")]
+position = Vector2(-112, -120)
+
+[node name="platform4" parent="." unique_id=168601453 instance=ExtResource("1_31h3l")]
+position = Vector2(-224, -240)
+
+[node name="platform6" parent="." unique_id=1572052794 instance=ExtResource("1_31h3l")]
+position = Vector2(-336, -360)
+
+[node name="platform7" parent="." unique_id=905512537 instance=ExtResource("1_31h3l")]
+position = Vector2(336, -360)
+
+[node name="platform9" parent="." unique_id=849597130 instance=ExtResource("1_31h3l")]
+position = Vector2(166, -360)
+
+[node name="platform10" parent="." unique_id=95964723 instance=ExtResource("1_31h3l")]
+position = Vector2(0, -360)
+
+[node name="platform11" parent="." unique_id=2066427867 instance=ExtResource("1_31h3l")]
+position = Vector2(-166, -360)
+
+[node name="platform5" parent="." unique_id=1899272572 instance=ExtResource("1_31h3l")]
+position = Vector2(224, -240)
+
+[node name="platform3" parent="." unique_id=1963763228 instance=ExtResource("1_31h3l")]
+position = Vector2(112, -120)

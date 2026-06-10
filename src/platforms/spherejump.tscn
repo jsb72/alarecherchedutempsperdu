@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://jl6aa6rrsfq3"]
+
+[ext_resource type="Script" uid="uid://bujirn2q4f4ln" path="res://src/platforms/spherejump.gd" id="1_pepha"]
+[ext_resource type="Shader" uid="uid://b03n2eyhx777l" path="res://shaders/blackhole.gdshader" id="2_xpitx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pepha"]
+radius = 32.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xpitx"]
+shader = ExtResource("2_xpitx")
+shader_parameter/_ShowDebugColors = false
+shader_parameter/_DistortionStrenght = 0.9
+shader_parameter/_Attenuation = 10.0
+
+[sub_resource type="Gradient" id="Gradient_xpitx"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6c50e"]
+gradient = SubResource("Gradient_xpitx")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0.2)
+metadata/_snap_enabled = true
+
+[node name="spherejump" type="Area2D" unique_id=1840644324]
+script = ExtResource("1_pepha")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=609552912]
+position = Vector2(32, 32)
+shape = SubResource("CircleShape2D_pepha")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=117271491]
+material = SubResource("ShaderMaterial_xpitx")
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 96.0
+offset_bottom = 96.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=129014435]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("GradientTexture2D_6c50e")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

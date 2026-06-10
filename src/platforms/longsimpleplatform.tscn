@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://burxw4p2exuft"]
+
+[ext_resource type="PackedScene" uid="uid://do35bbyy0qllr" path="res://src/platforms/platform.tscn" id="1_5ntau"]
+
+[node name="longsimpleplatform" type="Node2D" unique_id=1636065129]
+
+[node name="platform" parent="." unique_id=1968047125 instance=ExtResource("1_5ntau")]
+
+[node name="platform2" parent="." unique_id=274457313 instance=ExtResource("1_5ntau")]
+position = Vector2(73, 0)
+
+[node name="platform3" parent="." unique_id=1341431675 instance=ExtResource("1_5ntau")]
+position = Vector2(148, 0)
+
+[node name="platform4" parent="." unique_id=1395617274 instance=ExtResource("1_5ntau")]
+position = Vector2(225, 0)
+
+[node name="platform5" parent="." unique_id=1191269518 instance=ExtResource("1_5ntau")]
+position = Vector2(301.99423, 0)

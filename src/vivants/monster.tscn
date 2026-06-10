@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bt0bmj5dihnpp"]
+
+[ext_resource type="PackedScene" uid="uid://3t2f2pn81x60" path="res://src/elements/univers.tscn" id="1_u67yy"]
+[ext_resource type="PackedScene" uid="uid://j3gcywxflkf1" path="res://src/tentacle/scenes/arm.tscn" id="2_1tbc2"]
+[ext_resource type="Texture2D" uid="uid://obl1sqt2pc5d" path="res://sprites/eye_big.png" id="2_qo322"]
+
+[node name="monster" type="Node2D" unique_id=1259109965]
+
+[node name="univers" parent="." unique_id=711004219 instance=ExtResource("1_u67yy")]
+scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1749137447]
+position = Vector2(-10, -11)
+texture = ExtResource("2_qo322")
+
+[node name="Arm" parent="." unique_id=1104907447 instance=ExtResource("2_1tbc2")]
+position = Vector2(-256, -256)

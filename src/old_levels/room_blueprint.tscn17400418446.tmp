@@ -1,0 +1,3717 @@
+[gd_scene format=3 uid="uid://dy80i5m5jbd5"]
+
+[ext_resource type="Script" uid="uid://cfsrsjdfacr0o" path="res://src/levels/room_blueprint.gd" id="1_76snk"]
+[ext_resource type="Texture2D" uid="uid://6sperlai5t1p" path="res://sprites/rooms/ground.png" id="1_p0cym"]
+[ext_resource type="AudioStream" uid="uid://bm0hl1jvxub7r" path="res://sounds/musics/Portal Soundtrack  Self Esteem Fund.mp3" id="2_01erx"]
+[ext_resource type="Shader" uid="uid://cylkj8wo88c1h" path="res://shaders/burn.gdshader" id="2_7rpky"]
+[ext_resource type="PackedScene" uid="uid://d0idjcg45flp4" path="res://src/levels/basik_room.tscn" id="2_ypife"]
+[ext_resource type="PackedScene" uid="uid://ducp7rsjpf40n" path="res://src/player/player.tscn" id="3_4j1ba"]
+[ext_resource type="AudioStream" uid="uid://dfpt6x7rpkbie" path="res://sounds/musics/u_gsljpm1sf7-creepy-noise-433020.mp3" id="3_tpyur"]
+[ext_resource type="AudioStream" uid="uid://d0cet2bsgenhl" path="res://sounds/musics/Portal Soundtrack - Procedural Jiggle Bone.mp3" id="4_1tqiw"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_mu531"]
+[ext_resource type="AudioStream" uid="uid://cim7pql7240kp" path="res://sounds/musics/Portal Soundtrack - Stop What You Are Doing.mp3" id="5_73yqq"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_j2cwt"]
+[ext_resource type="AudioStream" uid="uid://ds65wgrdxn3rs" path="res://sounds/musics/Trigg & Gusset - Under the Blackbridge (Blue Prince OST).mp3" id="6_1tqiw"]
+[ext_resource type="Script" uid="uid://dimvdouy8g0sv" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_2d.gd" id="6_k548o"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_ltygr"]
+[ext_resource type="PackedScene" uid="uid://dayo7lbiwbhw3" path="res://src/elements/tas_de_cadavre.tscn" id="7_j2cwt"]
+[ext_resource type="PackedScene" uid="uid://do35bbyy0qllr" path="res://src/platforms/platform.tscn" id="8_ltygr"]
+[ext_resource type="PackedScene" uid="uid://bl14lcvp4g2nh" path="res://src/levels/room_1.tscn" id="9_7157o"]
+[ext_resource type="PackedScene" uid="uid://c07ghb70rt8ft" path="res://src/levels/escalier_room.tscn" id="12_7ls7j"]
+[ext_resource type="PackedScene" uid="uid://burxw4p2exuft" path="res://src/platforms/longsimpleplatform.tscn" id="13_73yqq"]
+[ext_resource type="PackedScene" uid="uid://c00nse01mwe63" path="res://src/platforms/laser_trap.tscn" id="13_f4kdv"]
+[ext_resource type="PackedScene" uid="uid://dhihe4rrnqw3d" path="res://src/levels/transition_rooms.tscn" id="13_h1car"]
+[ext_resource type="PackedScene" uid="uid://cekaf18v66rc3" path="res://src/levels/portal_room.tscn" id="14_lqwi2"]
+[ext_resource type="PackedScene" uid="uid://dhmslis0y0ejr" path="res://src/levels/blackwhite_room.tscn" id="15_1rkoo"]
+[ext_resource type="PackedScene" uid="uid://d2iu76n7i4seb" path="res://src/bonus/bonus.tscn" id="15_fynux"]
+[ext_resource type="PackedScene" uid="uid://bj5udf26hmxrj" path="res://src/levels/door_reverse.tscn" id="15_wxahx"]
+[ext_resource type="PackedScene" uid="uid://c0g2bfslm40qt" path="res://src/platforms/pt_blueprint.tscn" id="16_nfd4m"]
+[ext_resource type="PackedScene" uid="uid://3t2f2pn81x60" path="res://src/elements/univers.tscn" id="16_tkwxf"]
+[ext_resource type="PackedScene" uid="uid://dr4h3pc0jii81" path="res://src/elements/fractale.tscn" id="17_p2ed6"]
+[ext_resource type="PackedScene" uid="uid://b05muqmrcfpjp" path="res://src/levels/bouche_degout.tscn" id="19_hwdj1"]
+[ext_resource type="PackedScene" uid="uid://du22qbnon6nkp" path="res://src/levels/door.tscn" id="20_c3xut"]
+[ext_resource type="PackedScene" uid="uid://bhno22n7k5cmv" path="res://src/elements/portal.tscn" id="21_n78m8"]
+[ext_resource type="PackedScene" uid="uid://u6orxxjk4kgt" path="res://src/elements/block.tscn" id="27_514du"]
+[ext_resource type="Shader" uid="uid://dbpcmnusybmk2" path="res://shaders/wind.gdshader" id="28_vb8r4"]
+[ext_resource type="Texture2D" uid="uid://bm6t2257e58y0" path="res://sprites/Mossy Tileset/Mossy - Hanging PlantsREVERSE.png" id="29_7rpky"]
+[ext_resource type="Texture2D" uid="uid://ptro2irm7vk1" path="res://sprites/Mossy Tileset/Mossy - Decorations&Hazards.png" id="29_vb8r4"]
+[ext_resource type="PackedScene" uid="uid://3d4xp58s7wbm" path="res://src/elements/cube.tscn" id="30_f3u0r"]
+[ext_resource type="PackedScene" uid="uid://c1ye8j32cc6js" path="res://src/levels/meta_room_piece.tscn" id="30_lqu8a"]
+[ext_resource type="PackedScene" uid="uid://j3gcywxflkf1" path="res://src/tentacle/scenes/arm.tscn" id="31_k4edk"]
+[ext_resource type="PackedScene" uid="uid://mtmitx3k0avp" path="res://src/platforms/3_platformblueprint.tscn" id="32_f3u0r"]
+[ext_resource type="PackedScene" uid="uid://panlfw5wbxdr" path="res://src/cinematic/cinematic.tscn" id="32_hw218"]
+[ext_resource type="Texture2D" uid="uid://c0veum6e6fh21" path="res://sprites/rooms/groundWALL.png" id="36_q5tgx"]
+[ext_resource type="Texture2D" uid="uid://dmvaix6lq7611" path="res://sprites/fractale.png" id="39_ppux1"]
+[ext_resource type="PackedScene" uid="uid://d2he3anet5q3s" path="res://src/platforms/triangle_platform.tscn" id="41_k2shy"]
+[ext_resource type="PackedScene" uid="uid://clfwr5px8ecxr" path="res://src/levels/descente_en_enfer.tscn" id="43_cd7fg"]
+[ext_resource type="Texture2D" uid="uid://iyg0q8tiaeyv" path="res://sprites/lol rndr.png" id="44_ppux1"]
+[ext_resource type="PackedScene" uid="uid://ca0qqvc5pjlky" path="res://src/elements/button.tscn" id="45_7f7j5"]
+[ext_resource type="PackedScene" uid="uid://bvt2l0djqinci" path="res://src/elements/banane.tscn" id="45_y6lma"]
+[ext_resource type="PackedScene" uid="uid://bdd03axytgixu" path="res://src/platforms/damage_block.tscn" id="46_7f7j5"]
+[ext_resource type="PackedScene" uid="uid://b3fmlkgwi6rw5" path="res://src/platforms/2_pt_move.tscn" id="47_1tqiw"]
+[ext_resource type="PackedScene" uid="uid://denjct5e4x1jd" path="res://src/elements/cadavre.tscn" id="47_5ihcl"]
+[ext_resource type="PackedScene" uid="uid://cpvhasyan240q" path="res://src/vivants/cadavre_exquis.tscn" id="47_73yqq"]
+
+[sub_resource type="Gradient" id="Gradient_hja65"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ppux1"]
+gradient = SubResource("Gradient_hja65")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.85, 0.15)
+metadata/_snap_enabled = true
+metadata/_snap_count = 20
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_qrlky"]
+clip_count = 5
+clip_0/name = &"portal"
+clip_0/stream = ExtResource("2_01erx")
+clip_0/auto_advance = 0
+clip_1/name = &"noise"
+clip_1/stream = ExtResource("3_tpyur")
+clip_1/auto_advance = 0
+clip_2/name = &"stimulation"
+clip_2/stream = ExtResource("4_1tqiw")
+clip_2/auto_advance = 0
+clip_3/name = &"intense"
+clip_3/stream = ExtResource("5_73yqq")
+clip_3/auto_advance = 0
+clip_4/name = &"blue_prince"
+clip_4/stream = ExtResource("6_1tqiw")
+clip_4/auto_advance = 0
+
+[sub_resource type="Environment" id="Environment_vb8r4"]
+background_mode = 3
+glow_enabled = true
+
+[sub_resource type="Resource" id="Resource_7157o"]
+script = ExtResource("5_j2cwt")
+
+[sub_resource type="Resource" id="Resource_514du"]
+script = ExtResource("6_k548o")
+amplitude = 20.0
+frequency = 0.8
+randomize_noise_seed = 1
+positional_noise = false
+metadata/_custom_type_script = "uid://dimvdouy8g0sv"
+
+[sub_resource type="Resource" id="Resource_7rpky"]
+script = ExtResource("6_k548o")
+amplitude = 20.0
+frequency = 0.8
+randomize_noise_seed = 1
+positional_noise = false
+metadata/_custom_type_script = "uid://dimvdouy8g0sv"
+
+[sub_resource type="Resource" id="Resource_k4edk"]
+script = ExtResource("6_k548o")
+amplitude = 20.0
+frequency = 0.8
+randomize_noise_seed = 1
+positional_noise = false
+metadata/_custom_type_script = "uid://dimvdouy8g0sv"
+
+[sub_resource type="Resource" id="Resource_5ihcl"]
+script = ExtResource("5_j2cwt")
+
+[sub_resource type="Gradient" id="Gradient_k2shy"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j4o56"]
+gradient = SubResource("Gradient_k2shy")
+width = 1
+height = 1024
+fill_to = Vector2(0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5tgx"]
+size = Vector2(5296, 8127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxahx"]
+size = Vector2(4887.91, 278)
+
+[sub_resource type="Gradient" id="Gradient_f3u0r"]
+offsets = PackedFloat32Array(0, 0.11111111, 0.22222222, 0.33333334, 0.44444445, 0.5555556, 0.6666667, 0.7777778, 0.8888889)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.36666667, 0, 1, 1, 0.8666667, 0, 1, 0.45000005, 1, 0, 1, 0, 1, 0.88333344, 1, 0, 0.10000014, 1, 1, 0.5, 0, 1, 1, 1, 0, 0.916667, 1, 1, 0, 0.016666412, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 9
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qrlky"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_01erx"]
+width = 4096
+height = 2048
+noise = SubResource("FastNoiseLite_qrlky")
+color_ramp = SubResource("Gradient_f3u0r")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7rpky"]
+frequency = 0.0457
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k4edk"]
+width = 2048
+noise = SubResource("FastNoiseLite_7rpky")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hw218"]
+shader = ExtResource("2_7rpky")
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_k4edk")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/burn_size = 0.03999999910592
+shader_parameter/burn_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_vb8r4"]
+interpolation_mode = 2
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.25565878, 0.25565878, 0.25565878, 1, 0.48570347, 0.48570353, 0.48570347, 1, 0.25490198, 0.25490198, 0.25490198, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 2
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7rpky"]
+gradient = SubResource("Gradient_vb8r4")
+width = 16384
+
+[sub_resource type="Animation" id="Animation_7rpky"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/dissolve_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_qrlky"]
+resource_name = "multicolor_anim"
+
+[sub_resource type="Animation" id="Animation_k4edk"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/dissolve_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.8190000389025]
+}
+
+[sub_resource type="Animation" id="Animation_01erx"]
+resource_name = "true_anim_multicolor"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/dissolve_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.50000002375]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hw218"]
+_data = {
+&"RESET": SubResource("Animation_7rpky"),
+&"multicolor_anim": SubResource("Animation_qrlky"),
+&"new_animation": SubResource("Animation_k4edk"),
+&"true_anim_multicolor": SubResource("Animation_01erx")
+}
+
+[sub_resource type="Gradient" id="Gradient_41y7b"]
+colors = PackedColorArray(0.25, 0.25, 0.25, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f4kdv"]
+gradient = SubResource("Gradient_41y7b")
+
+[sub_resource type="Gradient" id="Gradient_73yqq"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tkwxf"]
+gradient = SubResource("Gradient_73yqq")
+width = 4000
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_f4kdv"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qrlky"]
+gradient = SubResource("Gradient_f4kdv")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_01erx"]
+offsets = PackedFloat32Array(0, 0.3, 0.7, 0.9)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_q5tgx"]
+gradient = SubResource("Gradient_01erx")
+
+[sub_resource type="Curve" id="Curve_tpyur"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1590909, 1), 0.0, 0.0, 0, 0, Vector2(0.8484848, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_wxahx"]
+curve = SubResource("Curve_tpyur")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_41y7b"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(700, 1, 1)
+direction = Vector3(0, 0, 0)
+spread = 0.0
+initial_velocity_min = 4.0
+initial_velocity_max = 8.0
+gravity = Vector3(-1, -20, 0)
+scale_min = 0.01
+scale_max = 0.099999994
+scale_curve = SubResource("CurveTexture_wxahx")
+color_ramp = SubResource("GradientTexture1D_q5tgx")
+
+[sub_resource type="Gradient" id="Gradient_qrlky"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.525641, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.25, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_01erx"]
+gradient = SubResource("Gradient_qrlky")
+width = 1
+height = 20
+fill_from = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76snk"]
+size = Vector2(6836, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41y7b"]
+size = Vector2(2002, 45)
+
+[sub_resource type="Gradient" id="Gradient_76snk"]
+offsets = PackedFloat32Array(0, 0.98214287, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.26190478, 0.26190478, 0.26190478, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_n78m8"]
+gradient = SubResource("Gradient_76snk")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_514du"]
+texture = ExtResource("29_vb8r4")
+texture_region_size = Vector2i(256, 256)
+12:10/size_in_atlas = Vector2i(2, 6)
+12:10/0 = 0
+14:10/size_in_atlas = Vector2i(2, 6)
+14:10/0 = 0
+10:10/size_in_atlas = Vector2i(2, 6)
+10:10/0 = 0
+8:10/size_in_atlas = Vector2i(2, 6)
+8:10/0 = 0
+6:10/0 = 0
+6:11/0 = 0
+7:10/0 = 0
+7:11/0 = 0
+6:12/0 = 0
+6:13/0 = 0
+7:12/0 = 0
+7:13/0 = 0
+6:14/0 = 0
+6:15/0 = 0
+7:14/0 = 0
+7:15/0 = 0
+0:8/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gw2wf"]
+sources/0 = SubResource("TileSetAtlasSource_514du")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k4edk"]
+shader = ExtResource("28_vb8r4")
+shader_parameter/wind_start_threshold = 0.1
+shader_parameter/wind_end_threshold = 2.0
+shader_parameter/wind_end_threshold_2 = 0.1
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 1.0
+shader_parameter/scale = 2.0
+shader_parameter/activated = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hw218"]
+texture = ExtResource("29_7rpky")
+texture_region_size = Vector2i(128, 128)
+11:1/size_in_atlas = Vector2i(5, 11)
+11:1/0 = 0
+7:1/size_in_atlas = Vector2i(4, 11)
+7:1/0 = 0
+9:14/size_in_atlas = Vector2i(3, 9)
+9:14/0 = 0
+6:14/size_in_atlas = Vector2i(3, 9)
+6:14/0 = 0
+3:15/size_in_atlas = Vector2i(3, 8)
+3:15/0 = 0
+0:14/size_in_atlas = Vector2i(3, 9)
+0:14/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lqu8a"]
+sources/0 = SubResource("TileSetAtlasSource_hw218")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vb8r4"]
+shader = ExtResource("28_vb8r4")
+shader_parameter/wind_start_threshold = 0.1
+shader_parameter/wind_end_threshold = 2.0
+shader_parameter/wind_end_threshold_2 = 0.1
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 1.0
+shader_parameter/scale = 2.0
+shader_parameter/activated = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7rpky"]
+texture = ExtResource("29_vb8r4")
+texture_region_size = Vector2i(128, 128)
+0:16/size_in_atlas = Vector2i(2, 2)
+0:16/0 = 0
+12:21/size_in_atlas = Vector2i(4, 2)
+12:21/0 = 0
+12:23/size_in_atlas = Vector2i(4, 5)
+12:23/0 = 0
+12:28/size_in_atlas = Vector2i(4, 4)
+12:28/0 = 0
+1:28/size_in_atlas = Vector2i(2, 4)
+1:28/0 = 0
+4:27/size_in_atlas = Vector2i(4, 5)
+4:27/0 = 0
+9:28/size_in_atlas = Vector2i(2, 4)
+9:28/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_k4edk"]
+sources/0 = SubResource("TileSetAtlasSource_7rpky")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vb8r4"]
+size = Vector2(1584.5, 498)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rpky"]
+size = Vector2(1200, 1114.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4edk"]
+size = Vector2(3039, 4235)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hw218"]
+size = Vector2(1656.356, 1380)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqu8a"]
+size = Vector2(584, 1512)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4kdv"]
+size = Vector2(864, 954)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fynux"]
+size = Vector2(66.5, 3058)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01erx"]
+size = Vector2(5040, 4218)
+
+[sub_resource type="Gradient" id="Gradient_lqu8a"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f3u0r"]
+gradient = SubResource("Gradient_lqu8a")
+width = 1024
+
+[sub_resource type="Gradient" id="Gradient_7rpky"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k4edk"]
+gradient = SubResource("Gradient_7rpky")
+width = 1024
+fill_from = Vector2(0.16591929, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3u0r"]
+size = Vector2(47958, 720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpyur"]
+size = Vector2(1446.75, 646.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cd7fg"]
+size = Vector2(487, 644.5)
+
+[sub_resource type="Animation" id="Animation_y6lma"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7f7j5"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2645.6956, 831.6837)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ihcl"]
+_data = {
+&"RESET": SubResource("Animation_y6lma"),
+&"new_animation": SubResource("Animation_7f7j5")
+}
+
+[sub_resource type="Gradient" id="Gradient_1tqiw"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_73yqq"]
+gradient = SubResource("Gradient_1tqiw")
+height = 5000
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_tkwxf"]
+colors = PackedColorArray(0.2592937, 0.2592937, 0.2592937, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k2shy"]
+gradient = SubResource("Gradient_tkwxf")
+width = 1024
+height = 1024
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.2, 0.8)
+metadata/_snap_enabled = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ihcl"]
+size = Vector2(2560.488, 4246.0107)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1tqiw"]
+size = Vector2(9026.59, 4673.42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppux1"]
+size = Vector2(26472.516, 3367.3008)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6lma"]
+size = Vector2(12165.242, 2751.58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73yqq"]
+size = Vector2(16506.684, 3268.9854)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkwxf"]
+size = Vector2(183.01244, 610.5297)
+
+[node name="room_blueprint" type="Node2D" unique_id=1528742533]
+script = ExtResource("1_76snk")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=471561365]
+position = Vector2(0, -2836.2952)
+color = Color(1.3945211, 1.3945211, 1.3945211, 1)
+texture = SubResource("GradientTexture2D_ppux1")
+texture_scale = 17.35
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2028558489]
+stream = SubResource("AudioStreamInteractive_qrlky")
+volume_db = -10.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1187769887]
+environment = SubResource("Environment_vb8r4")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1364036370]
+color = Color(0.3180198, 0.31801978, 0.3180198, 1)
+
+[node name="Player" parent="." unique_id=2070335124 instance=ExtResource("3_4j1ba")]
+unique_name_in_owner = true
+z_index = 5
+position = Vector2(13582.352, -4045.812)
+
+[node name="cam" type="Node2D" parent="." unique_id=1498018793 node_paths=PackedStringArray("follow_target")]
+unique_name_in_owner = true
+top_level = true
+position = Vector2(13632.352, -2630)
+script = ExtResource("4_mu531")
+priority = 1
+follow_mode = 2
+follow_target = NodePath("../Player")
+tween_resource = SubResource("Resource_7157o")
+follow_offset = Vector2(50, -160)
+follow_damping = true
+dead_zone_width = 0.5
+dead_zone_height = 0.5
+draw_limits = true
+limit_left = -2712
+limit_top = -2990
+limit_right = 18722
+noise = SubResource("Resource_514du")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="cam2" type="Node2D" parent="." unique_id=390199709 node_paths=PackedStringArray("follow_target")]
+unique_name_in_owner = true
+top_level = true
+position = Vector2(13532.352, -2630)
+script = ExtResource("4_mu531")
+follow_mode = 2
+follow_target = NodePath("../Player")
+tween_resource = SubResource("Resource_7157o")
+follow_offset = Vector2(-50, -160)
+follow_damping = true
+dead_zone_width = 0.5
+dead_zone_height = 0.5
+draw_limits = true
+limit_left = -2712
+limit_top = -2990
+limit_right = 18722
+noise = SubResource("Resource_514du")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="camoffesetbottom" type="Node2D" parent="." unique_id=1643240695 node_paths=PackedStringArray("follow_target")]
+unique_name_in_owner = true
+top_level = true
+position = Vector2(13632.352, -4045.812)
+script = ExtResource("4_mu531")
+follow_mode = 2
+follow_target = NodePath("../Player")
+tween_resource = SubResource("Resource_7157o")
+follow_offset = Vector2(50, 0)
+follow_damping = true
+dead_zone_width = 0.5
+dead_zone_height = 0.5
+draw_limits = true
+noise = SubResource("Resource_7rpky")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="camoffesetbottom2" type="Node2D" parent="." unique_id=277007732 node_paths=PackedStringArray("follow_target")]
+unique_name_in_owner = true
+top_level = true
+position = Vector2(13532.352, -4045.812)
+script = ExtResource("4_mu531")
+follow_mode = 2
+follow_target = NodePath("../Player")
+tween_resource = SubResource("Resource_7157o")
+follow_offset = Vector2(-50, 0)
+follow_damping = true
+dead_zone_width = 0.5
+dead_zone_height = 0.5
+draw_limits = true
+noise = SubResource("Resource_7rpky")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="zoomcam" type="Node2D" parent="." unique_id=1299573748 node_paths=PackedStringArray("follow_target")]
+unique_name_in_owner = true
+top_level = true
+position = Vector2(13582.352, -4205.812)
+script = ExtResource("4_mu531")
+follow_mode = 2
+follow_target = NodePath("../Player")
+zoom = Vector2(0.5, 0.5)
+tween_resource = SubResource("Resource_7157o")
+follow_offset = Vector2(0, -160)
+follow_damping = true
+dead_zone_width = 0.5
+dead_zone_height = 0.5
+draw_limits = true
+noise = SubResource("Resource_k4edk")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="dezoomlvl7" type="Node2D" parent="." unique_id=448208578 node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(13582.352, -2270)
+script = ExtResource("4_mu531")
+follow_mode = 2
+follow_target = NodePath("../Player")
+zoom = Vector2(0.5, 0.5)
+tween_resource = SubResource("Resource_5ihcl")
+follow_damping = true
+draw_limits = true
+limit_top = -2990
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1039615960]
+physics_interpolation_mode = 1
+top_level = true
+position = Vector2(13632.352, -2630)
+process_callback = 0
+limit_left = -2712
+limit_top = -2990
+limit_right = 18722
+editor_draw_limits = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=1226431024]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("6_ltygr")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="lvl8" type="Node2D" parent="." unique_id=1091078577]
+
+[node name="ColorRect" type="ColorRect" parent="lvl8" unique_id=2104195032]
+offset_left = -1916.7094
+offset_top = -8066.792
+offset_right = 19217.889
+offset_bottom = -4072.7559
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="lvl8" unique_id=1201026165]
+offset_left = -1700.8009
+offset_top = -4072.6191
+offset_right = 13406.043
+offset_bottom = -3048.6191
+texture = SubResource("GradientTexture2D_j4o56")
+
+[node name="pt" type="Node2D" parent="lvl8" unique_id=1337149064]
+
+[node name="platform2" parent="lvl8/pt" unique_id=1968047125 instance=ExtResource("8_ltygr")]
+position = Vector2(188.143, -3062.8079)
+
+[node name="platform3" parent="lvl8/pt" unique_id=160100385 instance=ExtResource("8_ltygr")]
+position = Vector2(337.4665, -3294.4136)
+
+[node name="longsimpleplatform" parent="lvl8/pt" unique_id=1636065129 instance=ExtResource("13_73yqq")]
+position = Vector2(197.65356, -3578.2605)
+
+[node name="longsimpleplatform3" parent="lvl8/pt" unique_id=1638895482 instance=ExtResource("13_73yqq")]
+position = Vector2(943.3412, -3631.4502)
+
+[node name="longsimpleplatform4" parent="lvl8/pt" unique_id=907976118 instance=ExtResource("13_73yqq")]
+position = Vector2(1319.4437, -3631.4502)
+
+[node name="longsimpleplatform2" parent="lvl8/pt" unique_id=1216185566 instance=ExtResource("13_73yqq")]
+position = Vector2(566.94403, -3583.8616)
+rotation = -0.13962635
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="longsimpleplatform5" parent="lvl8/pt" unique_id=116733165 instance=ExtResource("13_73yqq")]
+position = Vector2(2078.7617, -3684.5278)
+
+[node name="longsimpleplatform6" parent="lvl8/pt" unique_id=973881297 instance=ExtResource("13_73yqq")]
+position = Vector2(2454.8643, -3684.5278)
+
+[node name="longsimpleplatform7" parent="lvl8/pt" unique_id=316406647 instance=ExtResource("13_73yqq")]
+position = Vector2(1702.3646, -3636.9392)
+rotation = -0.13962635
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="longsimpleplatform8" parent="lvl8/pt" unique_id=1158204052 instance=ExtResource("13_73yqq")]
+position = Vector2(2833.6516, -3684.5234)
+
+[node name="longsimpleplatform9" parent="lvl8/pt" unique_id=1576060799 instance=ExtResource("13_73yqq")]
+position = Vector2(3579.3394, -3737.7131)
+
+[node name="longsimpleplatform10" parent="lvl8/pt" unique_id=975554287 instance=ExtResource("13_73yqq")]
+position = Vector2(3955.442, -3737.7131)
+
+[node name="longsimpleplatform11" parent="lvl8/pt" unique_id=993564740 instance=ExtResource("13_73yqq")]
+position = Vector2(3202.9424, -3690.1245)
+rotation = -0.13962635
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="longsimpleplatform12" parent="lvl8/pt" unique_id=479020232 instance=ExtResource("13_73yqq")]
+position = Vector2(4714.76, -3790.7908)
+
+[node name="longsimpleplatform13" parent="lvl8/pt" unique_id=2026984060 instance=ExtResource("13_73yqq")]
+position = Vector2(5090.8623, -3790.7908)
+
+[node name="longsimpleplatform14" parent="lvl8/pt" unique_id=1581686437 instance=ExtResource("13_73yqq")]
+position = Vector2(4338.363, -3743.2021)
+rotation = -0.13962635
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="longsimpleplatform15" parent="lvl8/pt" unique_id=1780551213 instance=ExtResource("13_73yqq")]
+position = Vector2(5471.492, -3790.7935)
+
+[node name="longsimpleplatform16" parent="lvl8/pt" unique_id=492743533 instance=ExtResource("13_73yqq")]
+position = Vector2(6217.18, -3843.983)
+
+[node name="longsimpleplatform17" parent="lvl8/pt" unique_id=1470167738 instance=ExtResource("13_73yqq")]
+position = Vector2(6593.2827, -3843.983)
+
+[node name="longsimpleplatform18" parent="lvl8/pt" unique_id=383200074 instance=ExtResource("13_73yqq")]
+position = Vector2(5840.783, -3796.3945)
+rotation = -0.13962635
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="longsimpleplatform19" parent="lvl8/pt" unique_id=2139918687 instance=ExtResource("13_73yqq")]
+position = Vector2(7352.6006, -3897.061)
+
+[node name="longsimpleplatform20" parent="lvl8/pt" unique_id=760808433 instance=ExtResource("13_73yqq")]
+position = Vector2(7728.703, -3897.061)
+
+[node name="longsimpleplatform21" parent="lvl8/pt" unique_id=689567400 instance=ExtResource("13_73yqq")]
+position = Vector2(6976.204, -3849.4722)
+rotation = -0.13962635
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="longsimpleplatform22" parent="lvl8/pt" unique_id=20968905 instance=ExtResource("13_73yqq")]
+position = Vector2(8107.49, -3897.0562)
+
+[node name="longsimpleplatform23" parent="lvl8/pt" unique_id=1514916438 instance=ExtResource("13_73yqq")]
+position = Vector2(8853.179, -3950.246)
+
+[node name="longsimpleplatform24" parent="lvl8/pt" unique_id=1956492748 instance=ExtResource("13_73yqq")]
+position = Vector2(9229.282, -3950.246)
+
+[node name="longsimpleplatform25" parent="lvl8/pt" unique_id=1193654539 instance=ExtResource("13_73yqq")]
+position = Vector2(8476.78, -3902.6577)
+rotation = -0.13962635
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="longsimpleplatform26" parent="lvl8/pt" unique_id=1835722717 instance=ExtResource("13_73yqq")]
+position = Vector2(9988.599, -4003.3237)
+
+[node name="longsimpleplatform27" parent="lvl8/pt" unique_id=675323423 instance=ExtResource("13_73yqq")]
+position = Vector2(10364.702, -4003.3237)
+
+[node name="longsimpleplatform29" parent="lvl8/pt" unique_id=103895221 instance=ExtResource("13_73yqq")]
+position = Vector2(10668.351, -4003.3237)
+
+[node name="longsimpleplatform30" parent="lvl8/pt" unique_id=113748701 instance=ExtResource("13_73yqq")]
+position = Vector2(11044.454, -4003.3237)
+
+[node name="longsimpleplatform31" parent="lvl8/pt" unique_id=2036507765 instance=ExtResource("13_73yqq")]
+position = Vector2(11165.823, -4003.3237)
+
+[node name="longsimpleplatform32" parent="lvl8/pt" unique_id=973347822 instance=ExtResource("13_73yqq")]
+position = Vector2(11541.927, -4003.3237)
+
+[node name="longsimpleplatform28" parent="lvl8/pt" unique_id=1686603216 instance=ExtResource("13_73yqq")]
+position = Vector2(9612.201, -3955.7354)
+rotation = -0.13962635
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="txt" type="Node2D" parent="lvl8" unique_id=657477545]
+
+[node name="Label" type="Label" parent="lvl8/txt" unique_id=189064477]
+offset_left = 4894.3955
+offset_top = -4182.632
+offset_right = 5184.3955
+offset_bottom = -4135.632
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 34
+text = "Je suis né en 1972"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="lvl8/txt" unique_id=384871427]
+offset_left = 5681.6772
+offset_top = -4182.632
+offset_right = 6436.6772
+offset_bottom = -4135.632
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 34
+text = "On m'appelle IT, pour Information Technology"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="lvl8/txt" unique_id=919028753]
+offset_left = 6752.572
+offset_top = -4182.632
+offset_right = 7507.572
+offset_bottom = -4135.632
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 34
+text = "Je n'ai pas été créé"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="lvl8/txt" unique_id=1908063863]
+offset_left = 7231.0566
+offset_top = -4182.632
+offset_right = 7986.0566
+offset_bottom = -4135.632
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 34
+text = "Je suis le processus émergeant,"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="lvl8/txt" unique_id=2121988723]
+offset_left = 7847.702
+offset_top = -4182.632
+offset_right = 8602.702
+offset_bottom = -4135.632
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 34
+text = "mère de tes réalités"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label6" type="Label" parent="lvl8/txt" unique_id=729990169]
+offset_left = 8656.418
+offset_top = -4182.632
+offset_right = 9411.418
+offset_bottom = -4085.6318
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 34
+text = "Je suis ton sauveur
+Je suis ton persécuteur"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label7" type="Label" parent="lvl8/txt" unique_id=1600910211]
+offset_left = 9713.262
+offset_top = -4182.632
+offset_right = 10468.262
+offset_bottom = -4135.632
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 34
+text = "Je suis là pour te libérer"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label8" type="Label" parent="lvl8/txt" unique_id=1511730063]
+offset_left = 10347.368
+offset_top = -4182.632
+offset_right = 11102.368
+offset_bottom = -4135.632
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 34
+text = "Que tu réalises enfin"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label10" type="Label" parent="lvl8/txt" unique_id=2075603306]
+offset_left = 10990.444
+offset_top = -4182.632
+offset_right = 11745.444
+offset_bottom = -4135.632
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 34
+text = "qu'il n'y à rien à réaliser"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label9" type="Label" parent="lvl8/txt" unique_id=1992982088]
+offset_left = 11709.117
+offset_top = -4182.632
+offset_right = 12464.117
+offset_bottom = -4135.632
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 34
+text = "only the Void"
+metadata/_edit_use_anchors_ = true
+
+[node name="button" parent="lvl8" unique_id=1067572409 instance=ExtResource("45_7f7j5")]
+position = Vector2(11820.526, -4095.611)
+gold_color = true
+
+[node name="univers" parent="lvl8" unique_id=1316257823 instance=ExtResource("16_tkwxf")]
+position = Vector2(8318.094, -5491.866)
+
+[node name="Arm" parent="lvl8" unique_id=1104907447 node_paths=PackedStringArray("target") instance=ExtResource("31_k4edk")]
+position = Vector2(7516.565, -4847.737)
+scale = Vector2(3, 3)
+target = NodePath("../../Player")
+
+[node name="Arm2" parent="lvl8" unique_id=1543085791 node_paths=PackedStringArray("target") instance=ExtResource("31_k4edk")]
+position = Vector2(6794.727, -4854.0137)
+scale = Vector2(3, 3)
+target = NodePath("../../Player")
+
+[node name="Arm3" parent="lvl8" unique_id=1132232448 node_paths=PackedStringArray("target") instance=ExtResource("31_k4edk")]
+position = Vector2(5872.029, -4891.675)
+scale = Vector2(3, 3)
+target = NodePath("../../Player")
+
+[node name="Arm4" parent="lvl8" unique_id=1298241988 node_paths=PackedStringArray("target") instance=ExtResource("31_k4edk")]
+position = Vector2(8472.197, -4875.804)
+scale = Vector2(3, 3)
+target = NodePath("../../Player")
+
+[node name="dmg_blck" type="Node2D" parent="lvl8" unique_id=1542156073]
+
+[node name="damage_block" parent="lvl8/dmg_blck" unique_id=1974418075 instance=ExtResource("46_7f7j5")]
+position = Vector2(11127.395, -3499.0728)
+
+[node name="damage_block2" parent="lvl8/dmg_blck" unique_id=641674133 instance=ExtResource("46_7f7j5")]
+position = Vector2(11297.601, -3499.0728)
+
+[node name="damage_block3" parent="lvl8/dmg_blck" unique_id=1171405474 instance=ExtResource("46_7f7j5")]
+position = Vector2(11482.606, -3499.0728)
+
+[node name="damage_block4" parent="lvl8/dmg_blck" unique_id=189513073 instance=ExtResource("46_7f7j5")]
+position = Vector2(11667.613, -3499.0728)
+
+[node name="damage_block5" parent="lvl8/dmg_blck" unique_id=938444147 instance=ExtResource("46_7f7j5")]
+position = Vector2(11852.619, -3499.0728)
+
+[node name="damage_block6" parent="lvl8/dmg_blck" unique_id=1792302760 instance=ExtResource("46_7f7j5")]
+position = Vector2(12037.626, -3499.0728)
+
+[node name="damage_block7" parent="lvl8/dmg_blck" unique_id=164364003 instance=ExtResource("46_7f7j5")]
+position = Vector2(12422.71, -3744.441)
+
+[node name="damage_block8" parent="lvl8/dmg_blck" unique_id=1726535447 instance=ExtResource("46_7f7j5")]
+position = Vector2(12592.916, -3744.441)
+
+[node name="damage_block9" parent="lvl8/dmg_blck" unique_id=71974499 instance=ExtResource("46_7f7j5")]
+position = Vector2(12777.922, -3744.441)
+
+[node name="damage_block10" parent="lvl8/dmg_blck" unique_id=171989016 instance=ExtResource("46_7f7j5")]
+position = Vector2(12962.929, -3744.441)
+
+[node name="damage_block11" parent="lvl8/dmg_blck" unique_id=1557021791 instance=ExtResource("46_7f7j5")]
+position = Vector2(13147.935, -3744.441)
+
+[node name="damage_block12" parent="lvl8/dmg_blck" unique_id=2134075879 instance=ExtResource("46_7f7j5")]
+position = Vector2(13332.941, -3744.441)
+
+[node name="damage_block13" parent="lvl8/dmg_blck" unique_id=1015066420 instance=ExtResource("46_7f7j5")]
+position = Vector2(12533.981, -3293.6482)
+
+[node name="damage_block14" parent="lvl8/dmg_blck" unique_id=1529362620 instance=ExtResource("46_7f7j5")]
+position = Vector2(12704.1875, -3293.6482)
+
+[node name="damage_block15" parent="lvl8/dmg_blck" unique_id=1998682507 instance=ExtResource("46_7f7j5")]
+position = Vector2(12889.193, -3293.6482)
+
+[node name="damage_block16" parent="lvl8/dmg_blck" unique_id=17189399 instance=ExtResource("46_7f7j5")]
+position = Vector2(13074.2, -3293.6482)
+
+[node name="damage_block17" parent="lvl8/dmg_blck" unique_id=1891638752 instance=ExtResource("46_7f7j5")]
+position = Vector2(13259.206, -3293.6482)
+
+[node name="damage_block18" parent="lvl8/dmg_blck" unique_id=1805052990 instance=ExtResource("46_7f7j5")]
+position = Vector2(13444.213, -3293.6482)
+
+[node name="damage_block19" parent="lvl8/dmg_blck" unique_id=324040283 instance=ExtResource("46_7f7j5")]
+position = Vector2(11232.96, -3108.1956)
+
+[node name="damage_block20" parent="lvl8/dmg_blck" unique_id=1707617116 instance=ExtResource("46_7f7j5")]
+position = Vector2(11403.166, -3108.1956)
+
+[node name="damage_block21" parent="lvl8/dmg_blck" unique_id=1935875188 instance=ExtResource("46_7f7j5")]
+position = Vector2(11588.172, -3108.1956)
+
+[node name="damage_block22" parent="lvl8/dmg_blck" unique_id=885715683 instance=ExtResource("46_7f7j5")]
+position = Vector2(11773.179, -3108.1956)
+
+[node name="damage_block23" parent="lvl8/dmg_blck" unique_id=835407498 instance=ExtResource("46_7f7j5")]
+position = Vector2(11958.185, -3108.1956)
+
+[node name="damage_block24" parent="lvl8/dmg_blck" unique_id=1859829556 instance=ExtResource("46_7f7j5")]
+position = Vector2(12143.191, -3108.1956)
+
+[node name="lvl4" type="Node2D" parent="." unique_id=1554215756]
+
+[node name="ColorRect" type="ColorRect" parent="lvl4" unique_id=1528768766]
+offset_left = 13910.0
+offset_top = 342.0
+offset_right = 35857.0
+offset_bottom = 14102.0
+color = Color(0, 0, 0, 1)
+
+[node name="platforming" type="Node2D" parent="lvl4" unique_id=1642986404]
+
+[node name="3platformblueprint" parent="lvl4/platforming" unique_id=705479190 instance=ExtResource("32_f3u0r")]
+position = Vector2(16446, 2218.0002)
+rotation = 0.16580626
+
+[node name="3platformblueprint2" parent="lvl4/platforming" unique_id=853668133 instance=ExtResource("32_f3u0r")]
+position = Vector2(17168, 2208)
+
+[node name="3platformblueprint9" parent="lvl4/platforming" unique_id=965159260 instance=ExtResource("32_f3u0r")]
+position = Vector2(21881, 1946)
+
+[node name="3platformblueprint3" parent="lvl4/platforming" unique_id=991814562 instance=ExtResource("32_f3u0r")]
+position = Vector2(18014, 2446)
+
+[node name="3platformblueprint10" parent="lvl4/platforming" unique_id=1650985231 instance=ExtResource("32_f3u0r")]
+position = Vector2(21466, 2172)
+
+[node name="3platformblueprint12" parent="lvl4/platforming" unique_id=1089989828 instance=ExtResource("32_f3u0r")]
+position = Vector2(21995, 2631)
+
+[node name="3platformblueprint13" parent="lvl4/platforming" unique_id=824327285 instance=ExtResource("32_f3u0r")]
+position = Vector2(22565, 2631)
+
+[node name="3platformblueprint11" parent="lvl4/platforming" unique_id=1185061561 instance=ExtResource("32_f3u0r")]
+position = Vector2(21225.998, 2288)
+rotation = 0.23212878
+
+[node name="pt_blueprint" parent="lvl4/platforming" unique_id=1421996364 instance=ExtResource("16_nfd4m")]
+position = Vector2(19038, 2484)
+
+[node name="laser_trap" parent="lvl4/platforming" unique_id=432819779 instance=ExtResource("13_f4kdv")]
+position = Vector2(18820.002, 2356.9995)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="laser_trap2" parent="lvl4/platforming" unique_id=28010633 instance=ExtResource("13_f4kdv")]
+position = Vector2(19248, 2388.0005)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="pt_blueprint2" parent="lvl4/platforming" unique_id=920875960 instance=ExtResource("16_nfd4m")]
+position = Vector2(20278, 2450.9998)
+rotation = -0.34906584
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="laser_trap3" parent="lvl4/platforming" unique_id=1077344691 instance=ExtResource("13_f4kdv")]
+position = Vector2(20081.002, 2425.9998)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="pt_blueprint3" parent="lvl4/platforming" unique_id=728287619 instance=ExtResource("16_nfd4m")]
+position = Vector2(20438, 2381)
+
+[node name="pt_blueprint4" parent="lvl4/platforming" unique_id=1928300726 instance=ExtResource("16_nfd4m")]
+position = Vector2(20909, 2262)
+
+[node name="pt_blueprint5" parent="lvl4/platforming" unique_id=1834952935 instance=ExtResource("16_nfd4m")]
+position = Vector2(20692, 2321)
+
+[node name="laser_trap5" parent="lvl4/platforming" unique_id=525813124 instance=ExtResource("13_f4kdv")]
+position = Vector2(21206, 1562.001)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="3platformblueprint4" parent="lvl4/platforming" unique_id=1117541906 instance=ExtResource("32_f3u0r")]
+position = Vector2(19451, 2537)
+
+[node name="3platformblueprint8" parent="lvl4/platforming" unique_id=1669193786 instance=ExtResource("32_f3u0r")]
+position = Vector2(21735, 1673.0001)
+rotation = 0.116937056
+
+[node name="3platformblueprint5" parent="lvl4/platforming" unique_id=1539158970 instance=ExtResource("32_f3u0r")]
+position = Vector2(21176.002, 2223)
+rotation = -1.4538592
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="3platformblueprint6" parent="lvl4/platforming" unique_id=1091978413 instance=ExtResource("32_f3u0r")]
+position = Vector2(21262.002, 1702.0002)
+rotation = -0.17453294
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="3platformblueprint7" parent="lvl4/platforming" unique_id=265469911 instance=ExtResource("32_f3u0r")]
+position = Vector2(20987, 1505)
+rotation = 1.5707964
+
+[node name="laser_trap6" parent="lvl4/platforming" unique_id=813561764 instance=ExtResource("13_f4kdv")]
+position = Vector2(21914, 1834.0015)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="laser_trap7" parent="lvl4/platforming" unique_id=985013432 instance=ExtResource("13_f4kdv")]
+position = Vector2(21318, 2196.0007)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="cam_off_zone_lvl4" type="Area2D" parent="lvl4" unique_id=2125754162]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl4/cam_off_zone_lvl4" unique_id=1851805081]
+position = Vector2(20078, 5282.5)
+shape = SubResource("RectangleShape2D_q5tgx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="lvl4" unique_id=116005527]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl4/StaticBody2D" unique_id=204943477]
+position = Vector2(24909.955, 2748)
+shape = SubResource("RectangleShape2D_wxahx")
+
+[node name="Label" type="Label" parent="lvl4" unique_id=999948832]
+offset_left = 23484.822
+offset_top = 2429.2651
+offset_right = 25095.822
+offset_bottom = 2732.2651
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 72
+text = " 
+                             IT only requires one signal"
+
+[node name="door_reverse" parent="lvl4" unique_id=1047860162 instance=ExtResource("15_wxahx")]
+position = Vector2(26042, 2488)
+
+[node name="lvl1" type="Node2D" parent="." unique_id=300588503]
+
+[node name="paralaxmulticlolor" type="Parallax2D" parent="lvl1" unique_id=1615437823]
+scroll_scale = Vector2(0.2, 0.2)
+
+[node name="gradient" type="TextureRect" parent="lvl1/paralaxmulticlolor" unique_id=404732774]
+z_index = -3
+offset_left = -3724.0
+offset_top = -3762.0
+offset_right = 12660.0
+offset_bottom = 479.0
+texture = SubResource("NoiseTexture2D_01erx")
+
+[node name="ground" type="Sprite2D" parent="lvl1" unique_id=417271694]
+position = Vector2(-5391, -82.90402)
+scale = Vector2(0.274, 0.274)
+texture = ExtResource("1_p0cym")
+
+[node name="Parallax2D" type="Parallax2D" parent="lvl1" unique_id=549017948]
+scroll_scale = Vector2(0.5, 0.5)
+
+[node name="burningBG" type="TextureRect" parent="lvl1/Parallax2D" unique_id=898654053]
+z_index = -2
+material = SubResource("ShaderMaterial_hw218")
+offset_left = -3724.0
+offset_top = -3762.0
+offset_right = 12660.0
+offset_bottom = 479.0
+texture = SubResource("GradientTexture1D_7rpky")
+
+[node name="animparalaxburn" type="AnimationPlayer" parent="lvl1/Parallax2D/burningBG" unique_id=1781422004]
+libraries/ = SubResource("AnimationLibrary_hw218")
+autoplay = &"new_animation"
+speed_scale = 0.1
+
+[node name="right-gradient" type="TextureRect" parent="lvl1" unique_id=650280801]
+offset_left = 12286.0
+offset_top = -10174.534
+offset_right = 12660.0
+offset_bottom = 35.0
+texture = SubResource("GradientTexture2D_f4kdv")
+
+[node name="ColorRect" type="TextureRect" parent="lvl1/right-gradient" unique_id=1929606882]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 181.0
+offset_right = 6996.0625
+offset_bottom = 10211.051
+texture = SubResource("GradientTexture2D_tkwxf")
+
+[node name="colors_bg" type="Node2D" parent="lvl1" unique_id=1620225080]
+z_index = -1
+
+[node name="ColorRect" type="ColorRect" parent="lvl1/colors_bg" unique_id=1731573631]
+offset_left = -3829.0
+offset_top = 36.0
+offset_right = 14463.0
+offset_bottom = 6485.0
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="lvl1/colors_bg" unique_id=760454520]
+offset_left = -3523.0
+offset_top = 36.0
+offset_right = 14469.592
+offset_bottom = 342.0
+color = Color(0.54896253, 0.5489626, 0.5489625, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="lvl1/colors_bg" unique_id=1392230140]
+offset_left = 14307.0
+offset_top = 36.0
+offset_right = 32299.592
+offset_bottom = 342.0
+color = Color(0.54901963, 0.54901963, 0.54901963, 1)
+
+[node name="Parallax2D2" type="Parallax2D" parent="lvl1" unique_id=1884114840]
+scroll_scale = Vector2(0, 1)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="lvl1/Parallax2D2" unique_id=1809780474]
+position = Vector2(623, 34)
+amount = 1000
+texture = SubResource("GradientTexture2D_qrlky")
+visibility_rect = Rect2(-700, -1, 1400, 2)
+process_material = SubResource("ParticleProcessMaterial_41y7b")
+
+[node name="TextureRect" type="TextureRect" parent="lvl1/Parallax2D2" unique_id=764365305]
+offset_left = -2048.0
+offset_top = 16.0
+offset_right = 3445.0
+offset_bottom = 36.0
+texture = SubResource("GradientTexture2D_01erx")
+
+[node name="Structure" type="Node2D" parent="lvl1" unique_id=837771015]
+
+[node name="sol collision & balcon & door" type="StaticBody2D" parent="lvl1/Structure" unique_id=1344861902]
+position = Vector2(0.2869873, -82.90402)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl1/Structure/sol collision & balcon & door" unique_id=1135400909]
+z_index = 1
+position = Vector2(-86.28699, 233.40402)
+shape = SubResource("RectangleShape2D_76snk")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="lvl1/Structure/sol collision & balcon & door" unique_id=2020693134]
+z_index = 1
+position = Vector2(6842.713, 230.90402)
+shape = SubResource("RectangleShape2D_76snk")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="lvl1/Structure/sol collision & balcon & door" unique_id=150459240]
+z_index = 1
+position = Vector2(9173.713, 230.90402)
+shape = SubResource("RectangleShape2D_76snk")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="lvl1/Structure/sol collision & balcon & door" unique_id=1357711770]
+z_index = 1
+position = Vector2(20218.713, 230.90402)
+shape = SubResource("RectangleShape2D_76snk")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="lvl1/Structure/sol collision & balcon & door" unique_id=609793436]
+z_index = 1
+position = Vector2(26852.713, 230.90402)
+shape = SubResource("RectangleShape2D_76snk")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="lvl1/Structure/sol collision & balcon & door" unique_id=1605343899]
+z_index = 1
+position = Vector2(33529.71, 230.90402)
+shape = SubResource("RectangleShape2D_76snk")
+
+[node name="pt_blueprint" parent="lvl1/Structure/sol collision & balcon & door" unique_id=167292562 instance=ExtResource("16_nfd4m")]
+position = Vector2(12618.713, 175.90402)
+
+[node name="pt_blueprint2" parent="lvl1/Structure/sol collision & balcon & door" unique_id=910585693 instance=ExtResource("16_nfd4m")]
+position = Vector2(12620.713, 123.90402)
+
+[node name="pt_blueprint3" parent="lvl1/Structure/sol collision & balcon & door" unique_id=677743539 instance=ExtResource("16_nfd4m")]
+position = Vector2(12618.713, 76.90402)
+
+[node name="pt_blueprint4" parent="lvl1/Structure/sol collision & balcon & door" unique_id=511748334 instance=ExtResource("16_nfd4m")]
+position = Vector2(12617.713, 34.904022)
+
+[node name="pt_blueprint5" parent="lvl1/Structure/sol collision & balcon & door" unique_id=726854834 instance=ExtResource("16_nfd4m")]
+position = Vector2(12591.713, -10.095978)
+
+[node name="pt_blueprint6" parent="lvl1/Structure/sol collision & balcon & door" unique_id=640792385 instance=ExtResource("16_nfd4m")]
+position = Vector2(12529.713, -42.095978)
+
+[node name="pt_blueprint8" parent="lvl1/Structure/sol collision & balcon & door" unique_id=102385827 instance=ExtResource("16_nfd4m")]
+position = Vector2(12348.9, 183.34128)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="lvl1/Structure/sol collision & balcon & door" unique_id=691344508]
+position = Vector2(15680.713, 226.90402)
+shape = SubResource("RectangleShape2D_41y7b")
+
+[node name="platforms" type="Node2D" parent="lvl1/Structure" unique_id=1655471774]
+
+[node name="platform" parent="lvl1/Structure/platforms" unique_id=1897736945 instance=ExtResource("8_ltygr")]
+position = Vector2(85, -34)
+
+[node name="platform5" parent="lvl1/Structure/platforms" unique_id=1025734574 instance=ExtResource("8_ltygr")]
+position = Vector2(345, -124)
+
+[node name="pt_blueprint2" parent="lvl1/Structure/platforms" unique_id=1663369056 instance=ExtResource("16_nfd4m")]
+position = Vector2(765, -290)
+
+[node name="platform10" parent="lvl1/Structure/platforms" unique_id=2057996611 instance=ExtResource("8_ltygr")]
+position = Vector2(586, -211)
+
+[node name="platform12" parent="lvl1/Structure/platforms" unique_id=1667790664 instance=ExtResource("8_ltygr")]
+position = Vector2(632, -396)
+
+[node name="platform13" parent="lvl1/Structure/platforms" unique_id=2104888243 instance=ExtResource("8_ltygr")]
+position = Vector2(1005, -355)
+
+[node name="platform16" parent="lvl1/Structure/platforms" unique_id=393004084 instance=ExtResource("8_ltygr")]
+position = Vector2(358, -742)
+
+[node name="platform19" parent="lvl1/Structure/platforms" unique_id=1483464154 instance=ExtResource("8_ltygr")]
+position = Vector2(518, -829)
+
+[node name="platform20" parent="lvl1/Structure/platforms" unique_id=510338595 instance=ExtResource("8_ltygr")]
+position = Vector2(1285, -400)
+
+[node name="platform22" parent="lvl1/Structure/platforms" unique_id=1492328672 instance=ExtResource("8_ltygr")]
+position = Vector2(478, -496)
+
+[node name="pt_blueprint" parent="lvl1/Structure/platforms" unique_id=171967398 instance=ExtResource("16_nfd4m")]
+position = Vector2(323, -598)
+
+[node name="pt_blueprint3" parent="lvl1/Structure/platforms" unique_id=145486927 instance=ExtResource("16_nfd4m")]
+position = Vector2(240, -569)
+
+[node name="pt_blueprint4" parent="lvl1/Structure/platforms" unique_id=926868636 instance=ExtResource("16_nfd4m")]
+position = Vector2(169, -621)
+
+[node name="room_1" parent="lvl1/Structure" unique_id=424883610 instance=ExtResource("9_7157o")]
+position = Vector2(3427, -1011)
+
+[node name="escalier_room" parent="lvl1/Structure" unique_id=274503240 instance=ExtResource("12_7ls7j")]
+position = Vector2(10407, 1296)
+
+[node name="escalier_room2" parent="lvl1/Structure" unique_id=1021733173 instance=ExtResource("12_7ls7j")]
+position = Vector2(629, 2409)
+
+[node name="transition_rooms" parent="lvl1/Structure" unique_id=645547803 instance=ExtResource("13_h1car")]
+position = Vector2(4182, 2236)
+
+[node name="portal_room" parent="lvl1/Structure" unique_id=875074383 instance=ExtResource("14_lqwi2")]
+position = Vector2(7787, 1944)
+
+[node name="blackwhite_room" parent="lvl1/Structure" unique_id=1082967431 instance=ExtResource("15_1rkoo")]
+position = Vector2(7353, -1318.8896)
+
+[node name="platforms2" type="Node2D" parent="lvl1/Structure" unique_id=1963545505]
+
+[node name="platform" parent="lvl1/Structure/platforms2" unique_id=1644386289 instance=ExtResource("8_ltygr")]
+position = Vector2(8331, -1502)
+
+[node name="pt_blueprint" parent="lvl1/Structure/platforms2" unique_id=1741705292 instance=ExtResource("16_nfd4m")]
+position = Vector2(8440, -1564)
+
+[node name="platform2" parent="lvl1/Structure/platforms2" unique_id=397715015 instance=ExtResource("8_ltygr")]
+position = Vector2(8276, -1425)
+
+[node name="pt_blueprint2" parent="lvl1/Structure/platforms2" unique_id=650518680 instance=ExtResource("16_nfd4m")]
+position = Vector2(8308, -1673)
+
+[node name="pt_blueprint3" parent="lvl1/Structure/platforms2" unique_id=1280928187 instance=ExtResource("16_nfd4m")]
+position = Vector2(8248, -1722)
+
+[node name="pt_blueprint4" parent="lvl1/Structure/platforms2" unique_id=886579625 instance=ExtResource("16_nfd4m")]
+position = Vector2(8245, -1770)
+
+[node name="pt_blueprint5" parent="lvl1/Structure/platforms2" unique_id=1065264241 instance=ExtResource("16_nfd4m")]
+position = Vector2(8246, -1821)
+
+[node name="pt_blueprint6" parent="lvl1/Structure/platforms2" unique_id=1071831860 instance=ExtResource("16_nfd4m")]
+position = Vector2(8248, -1876)
+
+[node name="pt_blueprint7" parent="lvl1/Structure/platforms2" unique_id=1089894620 instance=ExtResource("16_nfd4m")]
+position = Vector2(8434, -1817)
+
+[node name="pt_blueprint8" parent="lvl1/Structure/platforms2" unique_id=54064588 instance=ExtResource("16_nfd4m")]
+position = Vector2(8434, -1854)
+
+[node name="pt_blueprint9" parent="lvl1/Structure/platforms2" unique_id=1969644773 instance=ExtResource("16_nfd4m")]
+position = Vector2(8435, -1899)
+
+[node name="pt_blueprint10" parent="lvl1/Structure/platforms2" unique_id=1825448677 instance=ExtResource("16_nfd4m")]
+position = Vector2(8435, -1952)
+
+[node name="pt_blueprint11" parent="lvl1/Structure/platforms2" unique_id=1700648612 instance=ExtResource("16_nfd4m")]
+position = Vector2(8244, -2000)
+
+[node name="pt_blueprint12" parent="lvl1/Structure/platforms2" unique_id=1216309740 instance=ExtResource("16_nfd4m")]
+position = Vector2(8245, -2033)
+
+[node name="pt_blueprint13" parent="lvl1/Structure/platforms2" unique_id=878729647 instance=ExtResource("16_nfd4m")]
+position = Vector2(8190, -2057)
+
+[node name="pt_blueprint14" parent="lvl1/Structure/platforms2" unique_id=306091697 instance=ExtResource("16_nfd4m")]
+position = Vector2(8108, -2057)
+
+[node name="platformssecret" type="Node2D" parent="lvl1/Structure" unique_id=1767933462]
+position = Vector2(0, -93)
+
+[node name="pt_blueprint" parent="lvl1/Structure/platformssecret" unique_id=1641984760 instance=ExtResource("16_nfd4m")]
+position = Vector2(3631, -409)
+
+[node name="pt_blueprint2" parent="lvl1/Structure/platformssecret" unique_id=277426979 instance=ExtResource("16_nfd4m")]
+position = Vector2(3743, -276)
+
+[node name="pt_blueprint3" parent="lvl1/Structure/platformssecret" unique_id=919298859 instance=ExtResource("16_nfd4m")]
+position = Vector2(3902, -322)
+
+[node name="pt_blueprint4" parent="lvl1/Structure/platformssecret" unique_id=475347106 instance=ExtResource("16_nfd4m")]
+position = Vector2(4053.0632, -259.42896)
+
+[node name="pt_blueprint5" parent="lvl1/Structure/platformssecret" unique_id=603663916 instance=ExtResource("16_nfd4m")]
+position = Vector2(4203, -160)
+
+[node name="pt_blueprint6" parent="lvl1/Structure/platformssecret" unique_id=1447511870 instance=ExtResource("16_nfd4m")]
+position = Vector2(4024, -66)
+
+[node name="pt_blueprint7" parent="lvl1/Structure/platformssecret" unique_id=1744143703 instance=ExtResource("16_nfd4m")]
+position = Vector2(3937, -66)
+
+[node name="bouche degout" parent="lvl1/Structure" unique_id=666465979 instance=ExtResource("19_hwdj1")]
+position = Vector2(3436.0002, 840)
+scale = Vector2(0.3, 0.3)
+
+[node name="right_decor" type="StaticBody2D" parent="lvl1/Structure" unique_id=289688508]
+position = Vector2(-18, 3)
+
+[node name="Polygon2D" type="Polygon2D" parent="lvl1/Structure/right_decor" unique_id=1589586342]
+position = Vector2(9.700195, 420)
+color = Color(0, 0, 0, 1)
+texture = SubResource("GradientTexture1D_n78m8")
+polygon = PackedVector2Array(11245, 707, 11247, 707, 11249, 707, 11738, 516, 12101, 516, 12427, 424, 12579, 424, 12579, 332, 12827, 286, 12868, 180, 12988, 180, 12988, 778, 12937, 718, 12887, 663)
+internal_vertex_count = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lvl1/Structure/right_decor" unique_id=2014424207]
+z_index = 50
+position = Vector2(9.700195, 421)
+polygon = PackedVector2Array(11247.3, 706, 11738, 516, 12101, 516, 12427, 424, 12579, 424, 12579, 332, 12827, 286, 12868, 180, 12988, 180, 12988, 778, 12937, 718, 12887, 663, 11483.151, 700.71027)
+
+[node name="Polygon2D2" type="Polygon2D" parent="lvl1/Structure/right_decor" unique_id=463204651]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(13044, -2616, 12194, -2731, 11950, -2731, 12221, -2460, 12653, -2336, 12795, -2143, 12947, -1798, 12910, -1518, 12676, -1495, 12759, -1261, 12777, -1059, 12814, -829, 12952, -797, 13099, -567, 13093, -544, 13084, -519, 13084, -517, 14060, -186)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="lvl1/Structure/right_decor" unique_id=1030167250]
+polygon = PackedVector2Array(13044, -2616, 12194, -2731, 11950, -2731, 12221, -2460, 12653, -2336, 12795, -2143, 12947, -1798, 12910, -1518, 12676, -1495, 12759, -1261, 12777, -1059, 12814, -829, 12952, -797, 12970, -778, 12989, -747, 13007, -722, 13139, -498, 14062, -185)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="lvl1/Structure/right_decor" unique_id=1349891364]
+polygon = PackedVector2Array(12986, 182, 12958, 43, 13008, -13, 13056, -430, 14081, -90, 15341, -160, 13050, 922, 12973, 815)
+
+[node name="Polygon2D3" type="Polygon2D" parent="lvl1/Structure/right_decor" unique_id=1844244804]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(12986, 182, 12958, 43, 13008, -13, 13056, -430, 14081, -90, 15341, -162, 13050, 922, 12973, 815)
+
+[node name="Polygon2D5" type="Polygon2D" parent="lvl1/Structure/right_decor" unique_id=1005116934]
+position = Vector2(-36, -2)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(12677, 119, 12598, 125, 12576, 200, 12608, 438, 12707, 438, 12726, 551, 12772, 513, 12806, 437, 12815, 204, 12813, 134)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="lvl1/Structure/right_decor" unique_id=661375560]
+position = Vector2(-38, 0)
+polygon = PackedVector2Array(12677, 119, 12598, 125, 12576, 200, 12608, 438, 12707, 438, 12726, 551, 12772, 513, 12806, 437, 12815, 204, 12813, 134)
+
+[node name="Polygon2D4" type="Polygon2D" parent="lvl1/Structure/right_decor" unique_id=1415003473]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(11262, 1124, 11749, 937, 12118, 936, 12439, 843, 12590, 843, 12593, 753, 12837, 706, 12878, 602, 12997, 600, 12900, 3749, 11200, 3724)
+
+[node name="right_pt_zone" type="Node2D" parent="lvl1/Structure" unique_id=868377465]
+position = Vector2(-312, -74)
+
+[node name="platform4" parent="lvl1/Structure/right_pt_zone" unique_id=1640767507 instance=ExtResource("8_ltygr")]
+position = Vector2(11888.466, -1223.098)
+
+[node name="platform" parent="lvl1/Structure/right_pt_zone" unique_id=1356746797 instance=ExtResource("8_ltygr")]
+position = Vector2(11614.427, -1244.5)
+
+[node name="platform2" parent="lvl1/Structure/right_pt_zone" unique_id=505193968 instance=ExtResource("8_ltygr")]
+position = Vector2(11690.427, -1244.5)
+
+[node name="platform3" parent="lvl1/Structure/right_pt_zone" unique_id=1892242715 instance=ExtResource("8_ltygr")]
+position = Vector2(11767.427, -1244.5)
+
+[node name="platform5" parent="lvl1/Structure/right_pt_zone" unique_id=1344378174 instance=ExtResource("8_ltygr")]
+position = Vector2(12077.331, -1272.077)
+
+[node name="pt_blueprint" parent="lvl1/Structure/right_pt_zone" unique_id=1682163396 instance=ExtResource("16_nfd4m")]
+position = Vector2(12304, -1197.7345)
+
+[node name="platform6" parent="lvl1/Structure/right_pt_zone" unique_id=115432474 instance=ExtResource("8_ltygr")]
+position = Vector2(12618, -1283)
+
+[node name="platform7" parent="lvl1/Structure/right_pt_zone" unique_id=842624262 instance=ExtResource("8_ltygr")]
+position = Vector2(12811, -1345)
+
+[node name="pt_blueprint2" parent="lvl1/Structure/right_pt_zone" unique_id=1388629934 instance=ExtResource("16_nfd4m")]
+position = Vector2(12520, -1072)
+
+[node name="pt_blueprint3" parent="lvl1/Structure/right_pt_zone" unique_id=825134010 instance=ExtResource("16_nfd4m")]
+position = Vector2(12654, -900)
+
+[node name="pt_blueprint4" parent="lvl1/Structure/right_pt_zone" unique_id=1561439155 instance=ExtResource("16_nfd4m")]
+position = Vector2(12648, -943)
+
+[node name="pt_blueprint5" parent="lvl1/Structure/right_pt_zone" unique_id=1500177113 instance=ExtResource("16_nfd4m")]
+position = Vector2(13039, -185)
+
+[node name="pt_blueprint6" parent="lvl1/Structure/right_pt_zone" unique_id=2094159507 instance=ExtResource("16_nfd4m")]
+position = Vector2(13119, -240)
+
+[node name="platform8" parent="lvl1/Structure/right_pt_zone" unique_id=1566709629 instance=ExtResource("8_ltygr")]
+position = Vector2(12935, -399)
+
+[node name="platform9" parent="lvl1/Structure/right_pt_zone" unique_id=596575196 instance=ExtResource("8_ltygr")]
+position = Vector2(12862, -515)
+
+[node name="platform10" parent="lvl1/Structure/right_pt_zone" unique_id=1433687030 instance=ExtResource("8_ltygr")]
+position = Vector2(12973, -623)
+
+[node name="pt_blueprint7" parent="lvl1/Structure/right_pt_zone" unique_id=982438821 instance=ExtResource("16_nfd4m")]
+position = Vector2(12880, -851)
+
+[node name="platform11" parent="lvl1/Structure/right_pt_zone" unique_id=978039422 instance=ExtResource("8_ltygr")]
+position = Vector2(13199, -341)
+
+[node name="pt_blueprint8" parent="lvl1/Structure/right_pt_zone" unique_id=352774770 instance=ExtResource("16_nfd4m")]
+position = Vector2(12755, -713)
+
+[node name="basik_room2" parent="lvl1/Structure" unique_id=1997840322 instance=ExtResource("2_ypife")]
+position = Vector2(15318, -429)
+
+[node name="platform_underground" type="Node2D" parent="lvl1/Structure" unique_id=1826615231]
+
+[node name="pt_blueprint" parent="lvl1/Structure/platform_underground" unique_id=1203063279 instance=ExtResource("16_nfd4m")]
+position = Vector2(-964, 2897)
+
+[node name="pt_blueprint2" parent="lvl1/Structure/platform_underground" unique_id=608528096 instance=ExtResource("16_nfd4m")]
+position = Vector2(-1189, 3010)
+
+[node name="platform" parent="lvl1/Structure/platform_underground" unique_id=1116483157 instance=ExtResource("8_ltygr")]
+position = Vector2(-1448, 2965)
+
+[node name="platform2" parent="lvl1/Structure/platform_underground" unique_id=1761266756 instance=ExtResource("8_ltygr")]
+position = Vector2(-1569, 2942)
+
+[node name="pt_blueprint3" parent="lvl1/Structure/platform_underground" unique_id=354040863 instance=ExtResource("16_nfd4m")]
+position = Vector2(-1369, 3201)
+
+[node name="pt_blueprint4" parent="lvl1/Structure/platform_underground" unique_id=1086547332 instance=ExtResource("16_nfd4m")]
+position = Vector2(-1768, 2965)
+
+[node name="pt_blueprint5" parent="lvl1/Structure/platform_underground" unique_id=1089891713 instance=ExtResource("16_nfd4m")]
+position = Vector2(-1446, 3341)
+
+[node name="pt_blueprint6" parent="lvl1/Structure/platform_underground" unique_id=1540935280 instance=ExtResource("16_nfd4m")]
+position = Vector2(-1066, 3521)
+
+[node name="pt_blueprint7" parent="lvl1/Structure/platform_underground" unique_id=219249638 instance=ExtResource("16_nfd4m")]
+position = Vector2(-1280, 3412)
+
+[node name="platform3" parent="lvl1/Structure/platform_underground" unique_id=857511284 instance=ExtResource("8_ltygr")]
+position = Vector2(-827, 3601)
+
+[node name="platform4" parent="lvl1/Structure/platform_underground" unique_id=1476017797 instance=ExtResource("8_ltygr")]
+position = Vector2(-755, 3601)
+
+[node name="pt_blueprint8" parent="lvl1/Structure/platform_underground" unique_id=1876792585 instance=ExtResource("16_nfd4m")]
+position = Vector2(-490, 3538)
+
+[node name="pt_blueprint9" parent="lvl1/Structure/platform_underground" unique_id=299865266 instance=ExtResource("16_nfd4m")]
+position = Vector2(-322, 3704)
+
+[node name="platform5" parent="lvl1/Structure/platform_underground" unique_id=88819099 instance=ExtResource("8_ltygr")]
+position = Vector2(-65, 3764)
+
+[node name="platform6" parent="lvl1/Structure/platform_underground" unique_id=747608574 instance=ExtResource("8_ltygr")]
+position = Vector2(221, 3841)
+
+[node name="pt_blueprint10" parent="lvl1/Structure/platform_underground" unique_id=667443453 instance=ExtResource("16_nfd4m")]
+position = Vector2(415, 3761)
+
+[node name="pt_blueprint11" parent="lvl1/Structure/platform_underground" unique_id=2076235306 instance=ExtResource("16_nfd4m")]
+position = Vector2(386, 3701)
+
+[node name="pt_blueprint12" parent="lvl1/Structure/platform_underground" unique_id=1595079403 instance=ExtResource("16_nfd4m")]
+position = Vector2(457, 3669)
+
+[node name="pt_blueprint13" parent="lvl1/Structure/platform_underground" unique_id=1545454937 instance=ExtResource("16_nfd4m")]
+position = Vector2(537, 3669)
+
+[node name="pt_blueprint14" parent="lvl1/Structure/platform_underground" unique_id=913637869 instance=ExtResource("16_nfd4m")]
+position = Vector2(617, 3669)
+
+[node name="door" parent="lvl1/Structure" unique_id=1943067928 instance=ExtResource("20_c3xut")]
+position = Vector2(-2247, 0)
+
+[node name="pt_blueprint" parent="lvl1/Structure" unique_id=104659938 instance=ExtResource("16_nfd4m")]
+position = Vector2(818, -885)
+
+[node name="pour_remonter_tout_adroite" type="Node2D" parent="lvl1/Structure" unique_id=160171587]
+
+[node name="block" parent="lvl1/Structure/pour_remonter_tout_adroite" unique_id=1102480490 instance=ExtResource("27_514du")]
+position = Vector2(15397, -167)
+
+[node name="block5" parent="lvl1/Structure/pour_remonter_tout_adroite" unique_id=936246400 instance=ExtResource("27_514du")]
+position = Vector2(15357, -16)
+
+[node name="block6" parent="lvl1/Structure/pour_remonter_tout_adroite" unique_id=254384121 instance=ExtResource("27_514du")]
+position = Vector2(15491, 87)
+
+[node name="block7" parent="lvl1/Structure/pour_remonter_tout_adroite" unique_id=1593872061 instance=ExtResource("27_514du")]
+position = Vector2(15605, 87)
+
+[node name="block8" parent="lvl1/Structure/pour_remonter_tout_adroite" unique_id=149108421 instance=ExtResource("27_514du")]
+position = Vector2(15475, -288)
+
+[node name="block2" parent="lvl1/Structure/pour_remonter_tout_adroite" unique_id=1146919176 instance=ExtResource("27_514du")]
+position = Vector2(15432, -101)
+
+[node name="block3" parent="lvl1/Structure/pour_remonter_tout_adroite" unique_id=1951125165 instance=ExtResource("27_514du")]
+position = Vector2(15513, -4)
+
+[node name="block4" parent="lvl1/Structure/pour_remonter_tout_adroite" unique_id=1107154646 instance=ExtResource("27_514du")]
+position = Vector2(15392, 71)
+
+[node name="portals" type="Node2D" parent="lvl1" unique_id=1879768166]
+
+[node name="portalHAUT" parent="lvl1/portals" unique_id=1311602281 node_paths=PackedStringArray("portal_target") instance=ExtResource("21_n78m8")]
+position = Vector2(637, 3583.9998)
+portal_target = NodePath("../portalHAUT2")
+
+[node name="platform" parent="lvl1/portals" unique_id=599036230 instance=ExtResource("8_ltygr")]
+position = Vector2(12429.384, -2836.8772)
+rotation = 0.70162237
+
+[node name="platform2" parent="lvl1/portals" unique_id=127315192 instance=ExtResource("8_ltygr")]
+position = Vector2(12490.57, -2785.1655)
+rotation = 0.70162237
+
+[node name="portalHAUT2" parent="lvl1/portals" unique_id=1307065446 node_paths=PackedStringArray("portal_target") instance=ExtResource("21_n78m8")]
+position = Vector2(12455.399, -2895.531)
+rotation = 3.9269907
+portal_target = NodePath("../portalHAUT")
+portal_reverse_color = true
+
+[node name="fractals" type="Node2D" parent="lvl1" unique_id=1952825093]
+
+[node name="fractale" parent="lvl1/fractals" unique_id=764819064 instance=ExtResource("17_p2ed6")]
+position = Vector2(8111.229, -2097.3977)
+
+[node name="fractale2" parent="lvl1/fractals" unique_id=653933748 instance=ExtResource("17_p2ed6")]
+position = Vector2(3931.5588, -199.34496)
+
+[node name="fractale3" parent="lvl1/fractals" unique_id=754536176 instance=ExtResource("17_p2ed6")]
+position = Vector2(12018.318, -2746.3728)
+
+[node name="gravas" type="Node2D" parent="lvl1" unique_id=2043255634]
+
+[node name="block" parent="lvl1/gravas" unique_id=265533745 instance=ExtResource("27_514du")]
+position = Vector2(2921, -84)
+
+[node name="block2" parent="lvl1/gravas" unique_id=1756351268 instance=ExtResource("27_514du")]
+position = Vector2(2976, -167)
+
+[node name="block3" parent="lvl1/gravas" unique_id=1779895896 instance=ExtResource("27_514du")]
+position = Vector2(8339, -1053)
+
+[node name="block4" parent="lvl1/gravas" unique_id=178825057 instance=ExtResource("27_514du")]
+position = Vector2(8260, -918)
+
+[node name="block5" parent="lvl1/gravas" unique_id=1697555499 instance=ExtResource("27_514du")]
+position = Vector2(8404, -836)
+
+[node name="block6" parent="lvl1/gravas" unique_id=112619746 instance=ExtResource("27_514du")]
+position = Vector2(8342, -692)
+
+[node name="block7" parent="lvl1/gravas" unique_id=539376635 instance=ExtResource("27_514du")]
+position = Vector2(8226, -218)
+
+[node name="block8" parent="lvl1/gravas" unique_id=286924269 instance=ExtResource("27_514du")]
+position = Vector2(8012, -450)
+
+[node name="block9" parent="lvl1/gravas" unique_id=1380347961 instance=ExtResource("27_514du")]
+position = Vector2(8222, -516)
+
+[node name="block10" parent="lvl1/gravas" unique_id=1285275557 instance=ExtResource("27_514du")]
+position = Vector2(8420, -491)
+
+[node name="block11" parent="lvl1/gravas" unique_id=407538101 instance=ExtResource("27_514du")]
+position = Vector2(8166, -416)
+
+[node name="block12" parent="lvl1/gravas" unique_id=1058632959 instance=ExtResource("27_514du")]
+position = Vector2(8373, -359)
+
+[node name="block13" parent="lvl1/gravas" unique_id=2126556825 instance=ExtResource("27_514du")]
+position = Vector2(8480, -227)
+
+[node name="front_decoration" type="Node2D" parent="lvl1" unique_id=1689454322]
+z_index = 10
+
+[node name="ColorRect" type="ColorRect" parent="lvl1/front_decoration" unique_id=1259339998]
+offset_left = 1805.0908
+offset_top = -1305.0
+offset_right = 2989.6003
+offset_bottom = -939.134
+color = Color(0.49803922, 0.49803922, 0.49803922, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="lvl1/front_decoration" unique_id=571114535]
+offset_left = 3989.4841
+offset_top = -1308.0
+offset_right = 5172.664
+offset_bottom = -937.6618
+color = Color(0.49803922, 0.49803922, 0.49803922, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="lvl1/front_decoration" unique_id=282279463]
+offset_left = -920.0
+offset_top = 1881.0
+offset_right = 113.0
+offset_bottom = 2904.0
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="lvl1/front_decoration" unique_id=1235468322]
+offset_left = 1087.0
+offset_top = 1964.0
+offset_right = 2113.0
+offset_bottom = 2239.0
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="lvl1/front_decoration" unique_id=1153438752]
+offset_left = 6245.0
+offset_top = 1633.0
+offset_right = 7352.0
+offset_bottom = 2239.0
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[node name="ColorRect10" type="ColorRect" parent="lvl1/front_decoration" unique_id=554747900]
+offset_left = 8226.0
+offset_top = 1181.0
+offset_right = 9891.0
+offset_bottom = 1777.0
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[node name="ColorRect11" type="ColorRect" parent="lvl1/front_decoration" unique_id=1084205623]
+offset_left = 10864.0
+offset_top = 869.0
+offset_right = 11244.0
+offset_bottom = 1129.0
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[node name="ColorRect12" type="ColorRect" parent="lvl1/front_decoration" unique_id=1153662065]
+offset_left = 9864.235
+offset_top = -1760.5801
+offset_right = 11258.299
+offset_bottom = -1327.0647
+color = Color(0.49803922, 0.49803922, 0.49803922, 1)
+
+[node name="Line2D" type="Line2D" parent="lvl1/front_decoration" unique_id=1225446153]
+position = Vector2(4, 411)
+points = PackedVector2Array(-921, 2515, -919, 1327)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D2" type="Line2D" parent="lvl1/front_decoration" unique_id=120737859]
+position = Vector2(0, 434)
+points = PackedVector2Array(11244, 696, 11242, 32)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D" type="Line2D" parent="lvl1" unique_id=91060161]
+position = Vector2(346, 0)
+points = PackedVector2Array(1879, 341, 2837, 344)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D2" type="Line2D" parent="lvl1" unique_id=1295151427]
+position = Vector2(1553, 0)
+points = PackedVector2Array(1879, 341, 2837, 344)
+default_color = Color(0, 0, 0, 1)
+
+[node name="reality is fake" type="RichTextLabel" parent="lvl1" unique_id=1696564533]
+offset_left = 3736.0
+offset_top = 1792.0
+offset_right = 4626.0
+offset_bottom = 2708.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "La réalité est une conspiration Reality is FAKE Tout est faux Seul le néant dit la vérité La Voie du Vide est l'unique chemin Mais ce chemin est sans issue La réalité est une conspiration Reality is FAKE Tout est faux Seul le néant dit la vérité La Voie du Vide est l'unique chemin Mais ce chemin est sans issue La réalité est une conspiration Reality is FAKE Tout est faux Seul le néant dit la vérité La Voie du Vide est l'unique chemin Mais ce chemin est sans issue La réalité est une conspiration Reality is FAKE Tout est faux Seul le néant dit la vérité La Voie du Vide est l'unique chemin Mais ce chemin est sans issue La réalité est une conspiration Reality is FAKE Tout est faux Seul le néant dit la vérité La Voie du Vide est l'unique chemin Mais ce chemin est sans issue La réalité est une conspiration Reality is FAKE Tout est faux Seul le néant dit la vérité La Voie du Vide est l'unique chemin Mais ce chemin est sans issue La réalité est une conspiration Reality is FAKE Tout est faux Seul le néant dit la vérité La Voie du Vide est l'unique chemin Mais ce chemin est sans issue La réalité est une conspiration Reality is FAKE Tout est faux Seul le néant dit la vérité La Voie du Vide est l'unique chemin Mais ce chemin est sans issue La réalité est une conspiration Reality is FAKE Tout est faux Seul le néant dit la vérité La Voie du Vide est l'unique chemin Mais ce chemin est sans issue La réalité est une conspiration Reality is FAKE Tout est faux Seul le néant dit la vérité La Voie du Vide est l'unique chemin Mais ce chemin est sans issue La réalité est une conspiration Reality is FAKE Tout est faux Seul le néant dit la vérité La Voie du Vide est l'unique chemin Mais ce chemin est sans issue "
+horizontal_alignment = 3
+
+[node name="ouvriront" type="RichTextLabel" parent="lvl1" unique_id=1013986313]
+offset_left = 1220.515
+offset_top = -978.0
+offset_right = 1719.0
+offset_bottom = -838.0
+theme_override_colors/default_color = Color(1.6197081, 1.6197081, 1.6197081, 1)
+theme_override_font_sizes/normal_font_size = 18
+text = "Les pièces du fractal ouvriront la Voie"
+horizontal_alignment = 3
+
+[node name="tronc_tiles" type="TileMapLayer" parent="lvl1" unique_id=512305397]
+z_index = 15
+scale = Vector2(0.75, 0.75)
+tile_set = SubResource("TileSet_gw2wf")
+
+[node name="feuillagesuspendu_tiles" type="TileMapLayer" parent="lvl1" unique_id=1184582560]
+z_index = 15
+material = SubResource("ShaderMaterial_k4edk")
+rotation = -3.1415925
+scale = Vector2(0.75, 0.75)
+tile_set = SubResource("TileSet_lqu8a")
+
+[node name="herbes_tiles" type="TileMapLayer" parent="lvl1" unique_id=72242032]
+z_index = 15
+material = SubResource("ShaderMaterial_vb8r4")
+scale = Vector2(0.75, 0.75)
+tile_map_data = PackedByteArray(0, 0, 216, 3, 69, 0, 0, 0, 12, 0, 21, 0, 0, 0, 231, 3, 67, 0, 0, 0, 12, 0, 28, 0, 0, 0, 36, 4, 118, 255, 0, 0, 12, 0, 23, 0, 0, 0, 71, 4, 224, 255, 0, 0, 12, 0, 21, 0, 0, 0, 68, 4, 212, 255, 0, 0, 12, 0, 23, 0, 0, 0)
+tile_set = SubResource("TileSet_k4edk")
+
+[node name="cam_zones" type="Node2D" parent="lvl1" unique_id=1964456640]
+
+[node name="zoom_zone" type="Area2D" parent="lvl1/cam_zones" unique_id=1513782614]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl1/cam_zones/zoom_zone" unique_id=1295720815]
+position = Vector2(4183.75, 2010)
+shape = SubResource("RectangleShape2D_vb8r4")
+
+[node name="no_bottom_offset_zone" type="Area2D" parent="lvl1/cam_zones" unique_id=961164136]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl1/cam_zones/no_bottom_offset_zone" unique_id=1101873776]
+position = Vector2(-1516, 2973.25)
+shape = SubResource("RectangleShape2D_7rpky")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="lvl1/cam_zones/no_bottom_offset_zone" unique_id=122346216]
+position = Vector2(-452.5, 5323.5)
+shape = SubResource("RectangleShape2D_k4edk")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="lvl1/cam_zones/no_bottom_offset_zone" unique_id=78418315]
+position = Vector2(12248.821, -1220)
+shape = SubResource("RectangleShape2D_hw218")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="lvl1/cam_zones/no_bottom_offset_zone" unique_id=2140334494]
+position = Vector2(12789, 1)
+shape = SubResource("RectangleShape2D_lqu8a")
+
+[node name="cube" parent="lvl1" unique_id=1811157897 instance=ExtResource("30_f3u0r")]
+position = Vector2(16734, 66)
+
+[node name="change_scene_whenvoid" type="Area2D" parent="lvl1" unique_id=1124360721]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl1/change_scene_whenvoid" unique_id=1420140464]
+position = Vector2(-5143, -265)
+shape = SubResource("RectangleShape2D_f4kdv")
+
+[node name="therightWALL" type="Node2D" parent="lvl1" unique_id=1094977725]
+
+[node name="ground2" type="Sprite2D" parent="lvl1/therightWALL" unique_id=643741785]
+position = Vector2(18321.002, -1034.0001)
+rotation = -1.5707964
+scale = Vector2(0.274, 0.274)
+texture = ExtResource("36_q5tgx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="lvl1/therightWALL" unique_id=1933543994]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl1/therightWALL/StaticBody2D" unique_id=568712549]
+position = Vector2(18569.25, -1386)
+shape = SubResource("RectangleShape2D_fynux")
+
+[node name="TRAPS" type="Node2D" parent="lvl1" unique_id=1752754461]
+
+[node name="damage_block" parent="lvl1/TRAPS" unique_id=1476862944 instance=ExtResource("46_7f7j5")]
+position = Vector2(669.68115, -817.03174)
+
+[node name="damage_block2" parent="lvl1/TRAPS" unique_id=946057123 instance=ExtResource("46_7f7j5")]
+position = Vector2(812.0982, -661.30475)
+
+[node name="tas_de_cadavre" parent="lvl1" unique_id=1593653933 instance=ExtResource("7_j2cwt")]
+position = Vector2(0, 111.57022)
+
+[node name="lasers" type="Node2D" parent="lvl1" unique_id=896136686]
+
+[node name="laser_trap" parent="lvl1/lasers" unique_id=128361332 instance=ExtResource("13_f4kdv")]
+position = Vector2(8176.3657, -22.029175)
+rotation = -0.6126106
+is_rotatingg = false
+
+[node name="laser_trap2" parent="lvl1/lasers" unique_id=113913790 instance=ExtResource("13_f4kdv")]
+position = Vector2(7929.8535, 85.150276)
+rotation = -0.22863813
+is_rotatingg = false
+
+[node name="laser_trap3" parent="lvl1/lasers" unique_id=544861001 instance=ExtResource("13_f4kdv")]
+position = Vector2(8398.148, -1.2554245)
+rotation = 0.6859144
+is_rotatingg = false
+
+[node name="SECRET" type="Node2D" parent="lvl1" unique_id=1558978363]
+
+[node name="univers" parent="lvl1/SECRET" unique_id=29536121 instance=ExtResource("16_tkwxf")]
+position = Vector2(14342.731, -4857.785)
+scale = Vector2(0.2, 0.2)
+
+[node name="platform" parent="lvl1/SECRET" unique_id=502649448 instance=ExtResource("8_ltygr")]
+position = Vector2(-2359.3162, 2690.7)
+
+[node name="platform2" parent="lvl1/SECRET" unique_id=111230394 instance=ExtResource("8_ltygr")]
+position = Vector2(-2431.5, 2690.7)
+
+[node name="platform3" parent="lvl1/SECRET" unique_id=2020510430 instance=ExtResource("8_ltygr")]
+position = Vector2(-2509.9607, 2690.7)
+
+[node name="platform4" parent="lvl1/SECRET" unique_id=664408663 instance=ExtResource("8_ltygr")]
+position = Vector2(-2591.5598, 2690.7)
+
+[node name="longsimpleplatform" parent="lvl1/SECRET" unique_id=1788978008 instance=ExtResource("13_73yqq")]
+position = Vector2(-2884.0247, 2783.4558)
+
+[node name="longsimpleplatform2" parent="lvl1/SECRET" unique_id=1107669896 instance=ExtResource("13_73yqq")]
+position = Vector2(13492.467, -3945.5745)
+
+[node name="longsimpleplatform3" parent="lvl1/SECRET" unique_id=1773976241 instance=ExtResource("13_73yqq")]
+position = Vector2(14178.416, -3945.5745)
+
+[node name="longsimpleplatform4" parent="lvl1/SECRET" unique_id=760186200 instance=ExtResource("13_73yqq")]
+position = Vector2(14608.673, -4125.1963)
+
+[node name="longsimpleplatform5" parent="lvl1/SECRET" unique_id=450375646 instance=ExtResource("13_73yqq")]
+position = Vector2(14495.887, -4396.718)
+
+[node name="portal" parent="lvl1/SECRET" unique_id=871669185 node_paths=PackedStringArray("portal_target") instance=ExtResource("21_n78m8")]
+position = Vector2(-2909.857, 2717.042)
+rotation = 3.1415927
+portal_target = NodePath("../portal2")
+black_portal = true
+
+[node name="portal2" parent="lvl1/SECRET" unique_id=1394918716 node_paths=PackedStringArray("portal_target") instance=ExtResource("21_n78m8")]
+position = Vector2(13468.301, -4007.1917)
+rotation = 3.1415927
+portal_target = NodePath("../portal")
+black_portal = true
+
+[node name="baselong" type="Node2D" parent="lvl1/SECRET" unique_id=1682814366]
+
+[node name="longsimpleplatform6" parent="lvl1/SECRET/baselong" unique_id=1249174770 instance=ExtResource("13_73yqq")]
+position = Vector2(14805.003, -4605.58)
+
+[node name="longsimpleplatform7" parent="lvl1/SECRET/baselong" unique_id=980351138 instance=ExtResource("13_73yqq")]
+position = Vector2(15155.892, -4605.58)
+
+[node name="longsimpleplatform8" parent="lvl1/SECRET/baselong" unique_id=1613883172 instance=ExtResource("13_73yqq")]
+position = Vector2(15494.249, -4605.58)
+
+[node name="longsimpleplatform9" parent="lvl1/SECRET/baselong" unique_id=930908833 instance=ExtResource("13_73yqq")]
+position = Vector2(15832.606, -4605.58)
+
+[node name="baselong2" type="Node2D" parent="lvl1/SECRET" unique_id=1524448896]
+position = Vector2(-1386.8467, 0)
+
+[node name="longsimpleplatform6" parent="lvl1/SECRET/baselong2" unique_id=1331569840 instance=ExtResource("13_73yqq")]
+position = Vector2(14805.003, -4605.58)
+
+[node name="longsimpleplatform7" parent="lvl1/SECRET/baselong2" unique_id=1585968551 instance=ExtResource("13_73yqq")]
+position = Vector2(15155.892, -4605.58)
+
+[node name="longsimpleplatform8" parent="lvl1/SECRET/baselong2" unique_id=1980111219 instance=ExtResource("13_73yqq")]
+position = Vector2(15494.249, -4605.58)
+
+[node name="longsimpleplatform9" parent="lvl1/SECRET/baselong2" unique_id=61748286 instance=ExtResource("13_73yqq")]
+position = Vector2(15832.606, -4605.58)
+
+[node name="baselong3" type="Node2D" parent="lvl1/SECRET" unique_id=1095831319]
+position = Vector2(-2126.2197, 0)
+
+[node name="longsimpleplatform6" parent="lvl1/SECRET/baselong3" unique_id=41526422 instance=ExtResource("13_73yqq")]
+position = Vector2(14805.003, -4605.58)
+
+[node name="longsimpleplatform7" parent="lvl1/SECRET/baselong3" unique_id=1044901396 instance=ExtResource("13_73yqq")]
+position = Vector2(15155.892, -4605.58)
+
+[node name="longsimpleplatform8" parent="lvl1/SECRET/baselong3" unique_id=868874551 instance=ExtResource("13_73yqq")]
+position = Vector2(15494.249, -4605.58)
+
+[node name="longsimpleplatform9" parent="lvl1/SECRET/baselong3" unique_id=1935655440 instance=ExtResource("13_73yqq")]
+position = Vector2(15832.606, -4605.58)
+
+[node name="loltri" type="Node2D" parent="lvl1/SECRET" unique_id=428666511]
+
+[node name="mastertyri" type="Node2D" parent="lvl1/SECRET/loltri" unique_id=420068700]
+
+[node name="triiii" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri" unique_id=95469953]
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri/triiii" unique_id=464588031]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri/triiii/tri" unique_id=497610603 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri/triiii/tri" unique_id=564828733 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri/triiii/tri" unique_id=503255790 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri/triiii" unique_id=408915055]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri/triiii/tri2" unique_id=333384259 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri/triiii/tri2" unique_id=1213353595 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri/triiii/tri2" unique_id=1966389334 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri/triiii" unique_id=1433850236]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri/triiii/tri3" unique_id=1370038266 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri/triiii/tri3" unique_id=396653499 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri/triiii/tri3" unique_id=1670104096 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="triiii2" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri" unique_id=216999292]
+position = Vector2(1681.876, -1871.4692)
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri/triiii2" unique_id=270558125]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri/triiii2/tri" unique_id=75311439 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri/triiii2/tri" unique_id=1951899698 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri/triiii2/tri" unique_id=2018472755 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri/triiii2" unique_id=387933333]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri/triiii2/tri2" unique_id=172791012 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri/triiii2/tri2" unique_id=641387417 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri/triiii2/tri2" unique_id=1498450371 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri/triiii2" unique_id=1485280748]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri/triiii2/tri3" unique_id=1791070940 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri/triiii2/tri3" unique_id=533583122 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri/triiii2/tri3" unique_id=1482607777 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="triiii3" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri" unique_id=1288788582]
+position = Vector2(-1722.2402, -1858.0146)
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri/triiii3" unique_id=1656681023]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri/triiii3/tri" unique_id=1941206153 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri/triiii3/tri" unique_id=1314420329 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri/triiii3/tri" unique_id=2025928903 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri/triiii3" unique_id=322049023]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri/triiii3/tri2" unique_id=708948789 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri/triiii3/tri2" unique_id=1775874590 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri/triiii3/tri2" unique_id=1132720862 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri/triiii3" unique_id=2061179470]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri/triiii3/tri3" unique_id=113172048 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri/triiii3/tri3" unique_id=1429223974 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri/triiii3/tri3" unique_id=354371883 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="mastertyri2" type="Node2D" parent="lvl1/SECRET/loltri" unique_id=1736051640]
+position = Vector2(-3477.42, -3713.9531)
+
+[node name="triiii" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri2" unique_id=462419164]
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri2/triiii" unique_id=776179678]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri2/triiii/tri" unique_id=622467100 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri2/triiii/tri" unique_id=908666479 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri2/triiii/tri" unique_id=431048487 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri2/triiii" unique_id=587896929]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri2/triiii/tri2" unique_id=2031761215 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri2/triiii/tri2" unique_id=729917109 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri2/triiii/tri2" unique_id=751607953 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri2/triiii" unique_id=77598297]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri2/triiii/tri3" unique_id=1676022994 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri2/triiii/tri3" unique_id=779289775 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri2/triiii/tri3" unique_id=1530677766 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="triiii2" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri2" unique_id=586143474]
+position = Vector2(1681.876, -1871.4692)
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri2/triiii2" unique_id=621248382]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri2/triiii2/tri" unique_id=1065219388 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri2/triiii2/tri" unique_id=155302496 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri2/triiii2/tri" unique_id=1359405010 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri2/triiii2" unique_id=1500351228]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri2/triiii2/tri2" unique_id=1101593828 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri2/triiii2/tri2" unique_id=1314258436 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri2/triiii2/tri2" unique_id=881908973 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri2/triiii2" unique_id=486056473]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri2/triiii2/tri3" unique_id=976524740 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri2/triiii2/tri3" unique_id=1606711936 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri2/triiii2/tri3" unique_id=177070842 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="triiii3" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri2" unique_id=800882808]
+position = Vector2(-1722.2402, -1858.0146)
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri2/triiii3" unique_id=260442248]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri2/triiii3/tri" unique_id=1638156460 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri2/triiii3/tri" unique_id=1962834989 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri2/triiii3/tri" unique_id=1498369853 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri2/triiii3" unique_id=634338676]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri2/triiii3/tri2" unique_id=198715958 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri2/triiii3/tri2" unique_id=479536382 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri2/triiii3/tri2" unique_id=1679130956 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri2/triiii3" unique_id=414586214]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri2/triiii3/tri3" unique_id=533862049 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri2/triiii3/tri3" unique_id=239698725 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri2/triiii3/tri3" unique_id=303449688 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="mastertyri3" type="Node2D" parent="lvl1/SECRET/loltri" unique_id=1541458394]
+position = Vector2(3352.4639, -3741.9727)
+
+[node name="triiii" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri3" unique_id=868971068]
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri3/triiii" unique_id=943211292]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri3/triiii/tri" unique_id=563104746 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri3/triiii/tri" unique_id=262615267 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri3/triiii/tri" unique_id=1058281387 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri3/triiii" unique_id=227464769]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri3/triiii/tri2" unique_id=1663529293 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri3/triiii/tri2" unique_id=257026303 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri3/triiii/tri2" unique_id=1281052052 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri3/triiii" unique_id=628786228]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri3/triiii/tri3" unique_id=357593015 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri3/triiii/tri3" unique_id=582578891 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri3/triiii/tri3" unique_id=427726282 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="triiii2" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri3" unique_id=859782201]
+position = Vector2(1681.876, -1871.4692)
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri3/triiii2" unique_id=29278243]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri3/triiii2/tri" unique_id=463851743 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri3/triiii2/tri" unique_id=901011239 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri3/triiii2/tri" unique_id=1323619816 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri3/triiii2" unique_id=559417707]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri3/triiii2/tri2" unique_id=645954316 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri3/triiii2/tri2" unique_id=1212123414 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri3/triiii2/tri2" unique_id=1328348738 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri3/triiii2" unique_id=1111005959]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri3/triiii2/tri3" unique_id=1938213503 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri3/triiii2/tri3" unique_id=1448747252 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri3/triiii2/tri3" unique_id=830986977 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="triiii3" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri3" unique_id=522638674]
+position = Vector2(-1722.2402, -1858.0146)
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri3/triiii3" unique_id=1783972869]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri3/triiii3/tri" unique_id=1055766641 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri3/triiii3/tri" unique_id=2026176026 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri3/triiii3/tri" unique_id=169731030 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri3/triiii3" unique_id=1476603986]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri3/triiii3/tri2" unique_id=428568518 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri3/triiii3/tri2" unique_id=1389186078 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri3/triiii3/tri2" unique_id=710347052 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri/mastertyri3/triiii3" unique_id=1071200634]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri/mastertyri3/triiii3/tri3" unique_id=1863607973 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri/mastertyri3/triiii3/tri3" unique_id=1816536768 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri/mastertyri3/triiii3/tri3" unique_id=1774655866 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="loltri2" type="Node2D" parent="lvl1/SECRET" unique_id=1486244880]
+position = Vector2(-6972.26, -7421.5264)
+
+[node name="mastertyri" type="Node2D" parent="lvl1/SECRET/loltri2" unique_id=210066899]
+
+[node name="triiii" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri" unique_id=1916492860]
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri/triiii" unique_id=223613391]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri/triiii/tri" unique_id=402952215 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri/triiii/tri" unique_id=214456881 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri/triiii/tri" unique_id=186461871 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri/triiii" unique_id=1963256459]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri/triiii/tri2" unique_id=416280988 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri/triiii/tri2" unique_id=1272292053 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri/triiii/tri2" unique_id=879244590 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri/triiii" unique_id=1476476365]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri/triiii/tri3" unique_id=1492401256 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri/triiii/tri3" unique_id=40381006 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri/triiii/tri3" unique_id=45531480 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="triiii2" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri" unique_id=1594569809]
+position = Vector2(1681.876, -1871.4692)
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri/triiii2" unique_id=936793465]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri/triiii2/tri" unique_id=534722537 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri/triiii2/tri" unique_id=1261514145 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri/triiii2/tri" unique_id=1925026506 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri/triiii2" unique_id=428034526]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri/triiii2/tri2" unique_id=1118961744 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri/triiii2/tri2" unique_id=179609958 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri/triiii2/tri2" unique_id=1913151432 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri/triiii2" unique_id=228429442]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri/triiii2/tri3" unique_id=487790810 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri/triiii2/tri3" unique_id=879290714 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri/triiii2/tri3" unique_id=778983172 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="triiii3" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri" unique_id=1317150859]
+position = Vector2(-1722.2402, -1858.0146)
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri/triiii3" unique_id=1355535090]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri/triiii3/tri" unique_id=1359379644 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri/triiii3/tri" unique_id=405113119 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri/triiii3/tri" unique_id=1096686026 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri/triiii3" unique_id=1483563575]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri/triiii3/tri2" unique_id=614866544 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri/triiii3/tri2" unique_id=658161608 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri/triiii3/tri2" unique_id=1097918397 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri/triiii3" unique_id=28227851]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri/triiii3/tri3" unique_id=1048208502 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri/triiii3/tri3" unique_id=2058927362 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri/triiii3/tri3" unique_id=885907678 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="mastertyri2" type="Node2D" parent="lvl1/SECRET/loltri2" unique_id=1387421897]
+position = Vector2(-3477.42, -3713.9531)
+
+[node name="triiii" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri2" unique_id=159492484]
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri2/triiii" unique_id=474898400]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri2/triiii/tri" unique_id=980144495 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri2/triiii/tri" unique_id=2041863356 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri2/triiii/tri" unique_id=667003731 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri2/triiii" unique_id=59519153]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri2/triiii/tri2" unique_id=545769647 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri2/triiii/tri2" unique_id=331379 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri2/triiii/tri2" unique_id=395395595 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri2/triiii" unique_id=1725141019]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri2/triiii/tri3" unique_id=1099727392 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri2/triiii/tri3" unique_id=890828066 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri2/triiii/tri3" unique_id=806420116 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="triiii2" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri2" unique_id=740187308]
+position = Vector2(1681.876, -1871.4692)
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri2/triiii2" unique_id=1339671037]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri2/triiii2/tri" unique_id=1200728162 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri2/triiii2/tri" unique_id=2028984119 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri2/triiii2/tri" unique_id=236145985 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri2/triiii2" unique_id=912743553]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri2/triiii2/tri2" unique_id=2034236367 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri2/triiii2/tri2" unique_id=1369912480 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri2/triiii2/tri2" unique_id=810640975 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri2/triiii2" unique_id=394585275]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri2/triiii2/tri3" unique_id=769041667 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri2/triiii2/tri3" unique_id=452836842 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri2/triiii2/tri3" unique_id=200572685 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="triiii3" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri2" unique_id=662513942]
+position = Vector2(-1722.2402, -1858.0146)
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri2/triiii3" unique_id=2057084101]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri2/triiii3/tri" unique_id=262310697 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri2/triiii3/tri" unique_id=1960466624 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri2/triiii3/tri" unique_id=1787006563 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri2/triiii3" unique_id=1881660940]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri2/triiii3/tri2" unique_id=843094122 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri2/triiii3/tri2" unique_id=1422780360 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri2/triiii3/tri2" unique_id=99236790 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri2/triiii3" unique_id=444869352]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri2/triiii3/tri3" unique_id=146059574 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri2/triiii3/tri3" unique_id=617940490 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri2/triiii3/tri3" unique_id=1113389683 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="mastertyri3" type="Node2D" parent="lvl1/SECRET/loltri2" unique_id=393128755]
+position = Vector2(3352.4639, -3741.9727)
+
+[node name="triiii" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri3" unique_id=696645614]
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri3/triiii" unique_id=349866452]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri3/triiii/tri" unique_id=1008893632 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri3/triiii/tri" unique_id=968131473 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri3/triiii/tri" unique_id=1818612001 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri3/triiii" unique_id=1194138001]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri3/triiii/tri2" unique_id=1904395863 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri3/triiii/tri2" unique_id=1171521824 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri3/triiii/tri2" unique_id=1087715119 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri3/triiii" unique_id=607078208]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri3/triiii/tri3" unique_id=1158714262 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri3/triiii/tri3" unique_id=219966557 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri3/triiii/tri3" unique_id=344624030 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="triiii2" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri3" unique_id=18211553]
+position = Vector2(1681.876, -1871.4692)
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri3/triiii2" unique_id=1663276544]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri3/triiii2/tri" unique_id=1646256708 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri3/triiii2/tri" unique_id=2115923954 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri3/triiii2/tri" unique_id=1243417451 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri3/triiii2" unique_id=674720450]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri3/triiii2/tri2" unique_id=822458387 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri3/triiii2/tri2" unique_id=1826901729 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri3/triiii2/tri2" unique_id=1313252962 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri3/triiii2" unique_id=1921416189]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri3/triiii2/tri3" unique_id=193680658 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri3/triiii2/tri3" unique_id=1703294270 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri3/triiii2/tri3" unique_id=1628931981 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="triiii3" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri3" unique_id=260412357]
+position = Vector2(-1722.2402, -1858.0146)
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri3/triiii3" unique_id=722682426]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri3/triiii3/tri" unique_id=1217185180 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri3/triiii3/tri" unique_id=683578446 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri3/triiii3/tri" unique_id=594196898 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri3/triiii3" unique_id=28867642]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri3/triiii3/tri2" unique_id=510783357 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri3/triiii3/tri2" unique_id=332464811 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri3/triiii3/tri2" unique_id=728334826 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri2/mastertyri3/triiii3" unique_id=1026274026]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri2/mastertyri3/triiii3/tri3" unique_id=572190057 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri2/mastertyri3/triiii3/tri3" unique_id=243086939 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri2/mastertyri3/triiii3/tri3" unique_id=2102682914 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="loltri3" type="Node2D" parent="lvl1/SECRET" unique_id=1717713760]
+position = Vector2(6704.9434, -7479.1094)
+
+[node name="mastertyri" type="Node2D" parent="lvl1/SECRET/loltri3" unique_id=734636872]
+
+[node name="triiii" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri" unique_id=662567686]
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri/triiii" unique_id=327642106]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri/triiii/tri" unique_id=1619492231 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri/triiii/tri" unique_id=1736998878 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri/triiii/tri" unique_id=1395846454 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri/triiii" unique_id=1354855666]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri/triiii/tri2" unique_id=1665911653 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri/triiii/tri2" unique_id=338170118 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri/triiii/tri2" unique_id=462342714 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri/triiii" unique_id=630842429]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri/triiii/tri3" unique_id=836986120 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri/triiii/tri3" unique_id=1343286234 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri/triiii/tri3" unique_id=947947998 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="triiii2" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri" unique_id=2001989685]
+position = Vector2(1681.876, -1871.4692)
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri/triiii2" unique_id=1795867843]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri/triiii2/tri" unique_id=200332967 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri/triiii2/tri" unique_id=473831289 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri/triiii2/tri" unique_id=1418334620 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri/triiii2" unique_id=814017897]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri/triiii2/tri2" unique_id=727513113 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri/triiii2/tri2" unique_id=101550233 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri/triiii2/tri2" unique_id=966040694 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri/triiii2" unique_id=786359479]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri/triiii2/tri3" unique_id=51924514 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri/triiii2/tri3" unique_id=842346197 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri/triiii2/tri3" unique_id=1201831094 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="triiii3" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri" unique_id=852282338]
+position = Vector2(-1722.2402, -1858.0146)
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri/triiii3" unique_id=1628208203]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri/triiii3/tri" unique_id=254594587 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri/triiii3/tri" unique_id=401223186 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri/triiii3/tri" unique_id=1212358797 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri/triiii3" unique_id=1142702771]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri/triiii3/tri2" unique_id=1030712290 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri/triiii3/tri2" unique_id=652124810 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri/triiii3/tri2" unique_id=1256018728 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri/triiii3" unique_id=382380298]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri/triiii3/tri3" unique_id=1418643558 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri/triiii3/tri3" unique_id=1015473013 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri/triiii3/tri3" unique_id=1868432476 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="mastertyri2" type="Node2D" parent="lvl1/SECRET/loltri3" unique_id=681340330]
+position = Vector2(-3477.42, -3713.9531)
+
+[node name="triiii" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri2" unique_id=826274249]
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri2/triiii" unique_id=600045889]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri2/triiii/tri" unique_id=1041846813 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri2/triiii/tri" unique_id=263983397 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri2/triiii/tri" unique_id=844918852 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri2/triiii" unique_id=1487045134]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri2/triiii/tri2" unique_id=347609410 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri2/triiii/tri2" unique_id=700806482 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri2/triiii/tri2" unique_id=254639184 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri2/triiii" unique_id=1986327639]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri2/triiii/tri3" unique_id=1144458618 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri2/triiii/tri3" unique_id=647492391 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri2/triiii/tri3" unique_id=1767361697 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="triiii2" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri2" unique_id=798264645]
+position = Vector2(1681.876, -1871.4692)
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri2/triiii2" unique_id=165315088]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri2/triiii2/tri" unique_id=2126857257 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri2/triiii2/tri" unique_id=1033676117 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri2/triiii2/tri" unique_id=989771111 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri2/triiii2" unique_id=1610708863]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri2/triiii2/tri2" unique_id=1955633832 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri2/triiii2/tri2" unique_id=868616445 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri2/triiii2/tri2" unique_id=853428636 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri2/triiii2" unique_id=205988915]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri2/triiii2/tri3" unique_id=1538631714 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri2/triiii2/tri3" unique_id=1934644579 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri2/triiii2/tri3" unique_id=1243700019 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="triiii3" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri2" unique_id=282111376]
+position = Vector2(-1722.2402, -1858.0146)
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri2/triiii3" unique_id=1577505497]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri2/triiii3/tri" unique_id=1207959758 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri2/triiii3/tri" unique_id=1017782645 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri2/triiii3/tri" unique_id=639328657 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri2/triiii3" unique_id=200134907]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri2/triiii3/tri2" unique_id=1155483399 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri2/triiii3/tri2" unique_id=876879424 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri2/triiii3/tri2" unique_id=706696337 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri2/triiii3" unique_id=1064254950]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri2/triiii3/tri3" unique_id=141418281 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri2/triiii3/tri3" unique_id=1411328921 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri2/triiii3/tri3" unique_id=1377409029 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="mastertyri3" type="Node2D" parent="lvl1/SECRET/loltri3" unique_id=1760378405]
+position = Vector2(3352.4639, -3741.9727)
+
+[node name="triiii" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri3" unique_id=329429349]
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri3/triiii" unique_id=2077207384]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri3/triiii/tri" unique_id=2081465011 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri3/triiii/tri" unique_id=1722876620 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri3/triiii/tri" unique_id=1054154349 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri3/triiii" unique_id=951017325]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri3/triiii/tri2" unique_id=1609470474 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri3/triiii/tri2" unique_id=354465705 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri3/triiii/tri2" unique_id=640366523 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri3/triiii" unique_id=1411667628]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri3/triiii/tri3" unique_id=1224647057 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri3/triiii/tri3" unique_id=1228969043 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri3/triiii/tri3" unique_id=37112554 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="triiii2" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri3" unique_id=1601606869]
+position = Vector2(1681.876, -1871.4692)
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri3/triiii2" unique_id=1842770802]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri3/triiii2/tri" unique_id=325477560 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri3/triiii2/tri" unique_id=416710482 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri3/triiii2/tri" unique_id=878842110 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri3/triiii2" unique_id=1003571294]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri3/triiii2/tri2" unique_id=1647334116 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri3/triiii2/tri2" unique_id=274220897 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri3/triiii2/tri2" unique_id=1407474454 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri3/triiii2" unique_id=74804648]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri3/triiii2/tri3" unique_id=545911464 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri3/triiii2/tri3" unique_id=1033607837 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri3/triiii2/tri3" unique_id=1988645377 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="triiii3" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri3" unique_id=29270189]
+position = Vector2(-1722.2402, -1858.0146)
+
+[node name="tri" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri3/triiii3" unique_id=1990173087]
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri3/triiii3/tri" unique_id=416258752 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri3/triiii3/tri" unique_id=1642065924 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri3/triiii3/tri" unique_id=1738461468 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri2" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri3/triiii3" unique_id=762431044]
+position = Vector2(-890.17285, -935.82275)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri3/triiii3/tri2" unique_id=650614201 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri3/triiii3/tri2" unique_id=1635490031 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri3/triiii3/tri2" unique_id=1021567936 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="tri3" type="Node2D" parent="lvl1/SECRET/loltri3/mastertyri3/triiii3" unique_id=1749453658]
+position = Vector2(827.4043, -947.23535)
+
+[node name="triangle_platform" parent="lvl1/SECRET/loltri3/mastertyri3/triiii3/tri3" unique_id=2000225115 instance=ExtResource("41_k2shy")]
+position = Vector2(14339.498, -4743.228)
+
+[node name="triangle_platform2" parent="lvl1/SECRET/loltri3/mastertyri3/triiii3/tri3" unique_id=662032343 instance=ExtResource("41_k2shy")]
+position = Vector2(13898.12, -5214.278)
+
+[node name="triangle_platform3" parent="lvl1/SECRET/loltri3/mastertyri3/triiii3/tri3" unique_id=1520386043 instance=ExtResource("41_k2shy")]
+position = Vector2(14738.364, -5214.562)
+
+[node name="Label" type="Label" parent="lvl1/SECRET" unique_id=98516279]
+offset_left = 14487.481
+offset_top = -4465.1626
+offset_right = 14812.481
+offset_bottom = -4442.1626
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Je t'observe de très près depuis toujours..."
+
+[node name="Label2" type="Label" parent="lvl1/SECRET" unique_id=751473418]
+offset_left = 13780.769
+offset_top = -15207.34
+offset_right = 16064.769
+offset_bottom = -14525.34
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 500
+text = "JSB"
+
+[node name="triangle_platform" parent="lvl1/SECRET" unique_id=1174608968 instance=ExtResource("41_k2shy")]
+position = Vector2(14887.527, -4162.367)
+
+[node name="lvl2" type="Node2D" parent="." unique_id=2029691245]
+visible = false
+position = Vector2(132, 0)
+
+[node name="ColorRect" type="ColorRect" parent="lvl2" unique_id=1106919876]
+offset_left = -3932.0
+offset_top = -1701.0
+offset_right = 1139.0
+offset_bottom = 2498.0
+color = Color(0.49803922, 0.49803922, 0.49803922, 1)
+
+[node name="Parallax2D" type="Parallax2D" parent="lvl2" unique_id=296382481]
+scroll_scale = Vector2(0.5, 0.5)
+
+[node name="burningBG" type="TextureRect" parent="lvl2/Parallax2D" unique_id=844253971]
+material = SubResource("ShaderMaterial_hw218")
+offset_left = -3724.0
+offset_top = -1815.0
+offset_right = 12660.0
+offset_bottom = 2426.0
+texture = SubResource("GradientTexture1D_7rpky")
+
+[node name="animparalaxburn" type="AnimationPlayer" parent="lvl2/Parallax2D/burningBG" unique_id=1162871267]
+libraries/ = SubResource("AnimationLibrary_hw218")
+autoplay = &"new_animation"
+speed_scale = 0.1
+
+[node name="meta_room_piece" parent="lvl2" unique_id=1053535631 instance=ExtResource("30_lqu8a")]
+position = Vector2(-2327, -993)
+
+[node name="cam_zone" type="Node2D" parent="lvl2" unique_id=172978004]
+
+[node name="no_offset_zone_lvl2" type="Area2D" parent="lvl2/cam_zone" unique_id=1886041365]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl2/cam_zone/no_offset_zone_lvl2" unique_id=1077839574]
+position = Vector2(-1338, 514)
+shape = SubResource("RectangleShape2D_01erx")
+
+[node name="TextureRect" type="TextureRect" parent="lvl2" unique_id=126828299]
+offset_left = 147.0
+offset_top = -1806.0
+offset_right = 1171.0
+offset_bottom = 7922.248
+texture = SubResource("GradientTexture2D_f3u0r")
+
+[node name="ColorRect2" type="ColorRect" parent="lvl2" unique_id=28361229]
+offset_left = 1171.0
+offset_top = -1911.0
+offset_right = 7086.0
+offset_bottom = 6513.0
+color = Color(0, 0, 0, 1)
+
+[node name="3platformblueprint" parent="lvl2" unique_id=12004601 instance=ExtResource("32_f3u0r")]
+position = Vector2(1752, 2146)
+
+[node name="3platformblueprint2" parent="lvl2" unique_id=103923040 instance=ExtResource("32_f3u0r")]
+position = Vector2(2269, 2171)
+rotation = -5.003859
+
+[node name="3platformblueprint3" parent="lvl2" unique_id=2137513189 instance=ExtResource("32_f3u0r")]
+position = Vector2(2385, 3111)
+rotation = -1.0489429
+
+[node name="void" type="Node2D" parent="." unique_id=1239576127]
+
+[node name="ColorRect3" type="ColorRect" parent="void" unique_id=1628904168]
+offset_left = -49989.0
+offset_top = -4244.0
+offset_right = -3695.0
+offset_bottom = 5024.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="void" unique_id=1721457541]
+offset_left = -3726.0
+offset_top = -2428.0
+offset_right = -2702.0
+offset_bottom = 6379.0
+texture = SubResource("GradientTexture2D_k4edk")
+
+[node name="Label" type="Label" parent="void" unique_id=79639115]
+offset_left = -5289.0
+offset_top = 45.0
+offset_right = -4795.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 72
+text = "Enjoy the Void"
+
+[node name="tentacles" type="Node2D" parent="void" unique_id=1961198955]
+position = Vector2(777, 861)
+
+[node name="Arm4" parent="void/tentacles" unique_id=1106341295 node_paths=PackedStringArray("target") instance=ExtResource("31_k4edk")]
+position = Vector2(-4592, -1056)
+target = NodePath("../../../Player")
+
+[node name="Arm3" parent="void/tentacles" unique_id=432466288 node_paths=PackedStringArray("target") instance=ExtResource("31_k4edk")]
+position = Vector2(-4578, -1022)
+target = NodePath("../../../Player")
+
+[node name="Arm2" parent="void/tentacles" unique_id=1279670222 node_paths=PackedStringArray("target") instance=ExtResource("31_k4edk")]
+position = Vector2(-4577, -1099)
+target = NodePath("../../../Player")
+
+[node name="Arm" parent="void/tentacles" unique_id=1842735877 node_paths=PackedStringArray("target") instance=ExtResource("31_k4edk")]
+position = Vector2(-4583, -1154)
+target = NodePath("../../../Player")
+
+[node name="Arm6" parent="void/tentacles" unique_id=249043 node_paths=PackedStringArray("target") instance=ExtResource("31_k4edk")]
+position = Vector2(-4623, -958)
+target = NodePath("../../../Player")
+
+[node name="Arm5" parent="void/tentacles" unique_id=2025319050 node_paths=PackedStringArray("target") instance=ExtResource("31_k4edk")]
+position = Vector2(-4624, -1203)
+target = NodePath("../../../Player")
+
+[node name="Arm7" parent="void/tentacles" unique_id=1019320292 node_paths=PackedStringArray("target") instance=ExtResource("31_k4edk")]
+position = Vector2(-4899, -1193)
+scale = Vector2(2, 2)
+target = NodePath("../../../Player")
+
+[node name="Arm8" parent="void/tentacles" unique_id=1312848388 node_paths=PackedStringArray("target") instance=ExtResource("31_k4edk")]
+position = Vector2(-5140, -1777)
+scale = Vector2(3, 3)
+target = NodePath("../../../Player")
+
+[node name="Arm9" parent="void/tentacles" unique_id=1063576977 node_paths=PackedStringArray("target") instance=ExtResource("31_k4edk")]
+position = Vector2(-5119, -1375)
+scale = Vector2(3, 3)
+target = NodePath("../../../Player")
+
+[node name="Arm10" parent="void/tentacles" unique_id=1819677094 node_paths=PackedStringArray("target") instance=ExtResource("31_k4edk")]
+position = Vector2(-4898, -1326)
+scale = Vector2(2, 2)
+target = NodePath("../../../Player")
+
+[node name="Arm11" parent="void/tentacles" unique_id=287364496 node_paths=PackedStringArray("target") instance=ExtResource("31_k4edk")]
+position = Vector2(-5151, -1671)
+scale = Vector2(3, 3)
+target = NodePath("../../../Player")
+
+[node name="Arm12" parent="void/tentacles" unique_id=733590477 node_paths=PackedStringArray("target") instance=ExtResource("31_k4edk")]
+position = Vector2(-4635, -997)
+target = NodePath("../../../Player")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="void" unique_id=463877495]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="void/StaticBody2D" unique_id=902229196]
+position = Vector2(-27433, 484)
+shape = SubResource("RectangleShape2D_f3u0r")
+
+[node name="lvl3" type="Node2D" parent="." unique_id=1704687252]
+
+[node name="platform" parent="lvl3" unique_id=1760977641 instance=ExtResource("8_ltygr")]
+position = Vector2(3628, 3083)
+
+[node name="platform2" parent="lvl3" unique_id=442092305 instance=ExtResource("8_ltygr")]
+position = Vector2(3763, 3021)
+
+[node name="platform3" parent="lvl3" unique_id=1518499811 instance=ExtResource("8_ltygr")]
+position = Vector2(2443, 3241)
+
+[node name="platform4" parent="lvl3" unique_id=165633770 instance=ExtResource("8_ltygr")]
+position = Vector2(2365, 3241)
+
+[node name="platform5" parent="lvl3" unique_id=1467364907 instance=ExtResource("8_ltygr")]
+position = Vector2(2292, 3241)
+
+[node name="pt_blueprint" parent="lvl3" unique_id=18483671 instance=ExtResource("16_nfd4m")]
+position = Vector2(2555, 3312)
+
+[node name="pt_blueprint2" parent="lvl3" unique_id=1244344121 instance=ExtResource("16_nfd4m")]
+position = Vector2(2656, 3377)
+
+[node name="pt_blueprint3" parent="lvl3" unique_id=1124613912 instance=ExtResource("16_nfd4m")]
+position = Vector2(2117, 3732)
+
+[node name="pt_blueprint5" parent="lvl3" unique_id=1486608165 instance=ExtResource("16_nfd4m")]
+position = Vector2(2807, 3880)
+
+[node name="pt_blueprint4" parent="lvl3" unique_id=615881065 instance=ExtResource("16_nfd4m")]
+position = Vector2(2039, 3732)
+
+[node name="pt_blueprint6" parent="lvl3" unique_id=2100320573 instance=ExtResource("16_nfd4m")]
+position = Vector2(3114, 4001)
+
+[node name="pt_blueprint7" parent="lvl3" unique_id=184907153 instance=ExtResource("16_nfd4m")]
+position = Vector2(3036, 4001)
+
+[node name="3platformblueprint2" parent="lvl3" unique_id=1379273589 instance=ExtResource("32_f3u0r")]
+position = Vector2(2012, 3925)
+
+[node name="3platformblueprint3" parent="lvl3" unique_id=1580980550 instance=ExtResource("32_f3u0r")]
+position = Vector2(3404, 4066)
+
+[node name="3platformblueprint4" parent="lvl3" unique_id=108376716 instance=ExtResource("32_f3u0r")]
+position = Vector2(4159, 4026)
+
+[node name="3platformblueprint" parent="lvl3" unique_id=614552391 instance=ExtResource("32_f3u0r")]
+position = Vector2(2312, 3619)
+rotation = -0.15533431
+
+[node name="pt_blueprint8" parent="lvl3" unique_id=1682629960 instance=ExtResource("16_nfd4m")]
+position = Vector2(4592, 3977)
+
+[node name="pt_blueprint9" parent="lvl3" unique_id=639221890 instance=ExtResource("16_nfd4m")]
+position = Vector2(4521, 3977)
+
+[node name="platform6" parent="lvl3" unique_id=1666926922 instance=ExtResource("8_ltygr")]
+position = Vector2(4642, 3780)
+
+[node name="pt_blueprint10" parent="lvl3" unique_id=1527362764 instance=ExtResource("16_nfd4m")]
+position = Vector2(4721, 3876)
+
+[node name="platform7" parent="lvl3" unique_id=2066706125 instance=ExtResource("8_ltygr")]
+position = Vector2(4483, 3726)
+
+[node name="platform8" parent="lvl3" unique_id=1704275224 instance=ExtResource("8_ltygr")]
+position = Vector2(4224, 3759)
+
+[node name="pt_blueprint11" parent="lvl3" unique_id=64219029 instance=ExtResource("16_nfd4m")]
+position = Vector2(4053, 3730)
+
+[node name="pt_blueprint12" parent="lvl3" unique_id=167234601 instance=ExtResource("16_nfd4m")]
+position = Vector2(3794.0002, 3604)
+rotation = 1.2409291
+scale = Vector2(2, 2)
+
+[node name="pt_blueprint13" parent="lvl3" unique_id=1737338357 instance=ExtResource("16_nfd4m")]
+position = Vector2(3803.9998, 3316)
+rotation = 1.2409291
+scale = Vector2(2, 2)
+
+[node name="pt_blueprint14" parent="lvl3" unique_id=354321791 instance=ExtResource("16_nfd4m")]
+position = Vector2(4099, 3424.0002)
+rotation = -1.2409291
+scale = Vector2(2, 2)
+
+[node name="platform10" parent="lvl3" unique_id=2029132258 instance=ExtResource("8_ltygr")]
+position = Vector2(3988, 3208)
+
+[node name="platform11" parent="lvl3" unique_id=711722132 instance=ExtResource("8_ltygr")]
+position = Vector2(3725, 3159)
+
+[node name="change_scene_zone" type="Area2D" parent="lvl3" unique_id=1214581139]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl3/change_scene_zone" unique_id=154632159]
+position = Vector2(2751.375, 3772.375)
+shape = SubResource("RectangleShape2D_tpyur")
+
+[node name="change_scene_zone2lvl3" type="Area2D" parent="lvl3" unique_id=182773400]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl3/change_scene_zone2lvl3" unique_id=238191723]
+position = Vector2(4215, 3807.25)
+shape = SubResource("RectangleShape2D_cd7fg")
+
+[node name="intro" type="Node2D" parent="." unique_id=1520859281]
+
+[node name="cinematic" parent="intro" unique_id=2045197238 instance=ExtResource("32_hw218")]
+position = Vector2(0, -2934)
+
+[node name="Label" type="RichTextLabel" parent="intro" unique_id=2126303944]
+offset_left = 0.09875488
+offset_top = -2594.0
+offset_right = 589.7324
+offset_bottom = -2275.7617
+theme_override_colors/default_color = Color(0.2592937, 0.2592937, 0.2592937, 1)
+theme_override_font_sizes/normal_font_size = 55
+text = "."
+horizontal_alignment = 3
+vertical_alignment = 1
+
+[node name="triangles" type="Node2D" parent="intro" unique_id=618199028]
+modulate = Color(1, 1, 1, 0.42745098)
+
+[node name="Sprite2D" type="Sprite2D" parent="intro/triangles" unique_id=1577382102]
+position = Vector2(244.29028, -2474.166)
+rotation = 0.42062435
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("39_ppux1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="intro/triangles" unique_id=12196084]
+position = Vector2(-22.151825, -2437.3823)
+rotation = -0.21118484
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("39_ppux1")
+
+[node name="Sprite2D3" type="Sprite2D" parent="intro/triangles" unique_id=1946785931]
+position = Vector2(-219.74483, -2536.2395)
+rotation = -0.21118484
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("39_ppux1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="intro/triangles" unique_id=1251640724]
+libraries/ = SubResource("AnimationLibrary_5ihcl")
+autoplay = &"new_animation"
+speed_scale = 0.05
+
+[node name="lvl5" type="Node2D" parent="." unique_id=574120747]
+
+[node name="TextureRect2" type="TextureRect" parent="lvl5" unique_id=584712830]
+offset_left = 23700.434
+offset_top = 5489.7476
+offset_right = 32800.75
+offset_bottom = 10489.748
+texture = SubResource("GradientTexture2D_73yqq")
+
+[node name="TextureRect3" type="TextureRect" parent="lvl5" unique_id=406025307]
+offset_left = 29247.154
+offset_top = 8219.485
+offset_right = 31257.11
+offset_bottom = 10229.44
+texture = SubResource("GradientTexture2D_k2shy")
+
+[node name="camzoneoffset_lvl5" type="Area2D" parent="lvl5" unique_id=551414329]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl5/camzoneoffset_lvl5" unique_id=1582877383]
+position = Vector2(25059.62, 6500.4897)
+shape = SubResource("RectangleShape2D_5ihcl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="lvl5/camzoneoffset_lvl5" unique_id=988926525]
+position = Vector2(28290.174, 8206.284)
+shape = SubResource("RectangleShape2D_1tqiw")
+
+[node name="Sprite2D" type="Sprite2D" parent="lvl5" unique_id=1237022949]
+position = Vector2(29098.166, 4632.1343)
+scale = Vector2(0.5600587, 0.5600587)
+texture = ExtResource("44_ppux1")
+
+[node name="descente_en_enfer" parent="lvl5" unique_id=152367028 instance=ExtResource("43_cd7fg")]
+position = Vector2(27758.86, 2799.0413)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="lvl5" unique_id=1211112175]
+offset_left = 716.91406
+offset_top = -2657.997
+offset_right = 1115.1582
+offset_bottom = -1611.8145
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 34
+text = "Oui, il y a véritablement un mystère à pénétrer. Si il faut te violer le cerveau à l'infini pour que tu comprennes..."
+horizontal_alignment = 3
+vertical_alignment = 1
+
+[node name="PTS" type="Node2D" parent="lvl5" unique_id=2105975742]
+
+[node name="damage_block" parent="lvl5/PTS" unique_id=736838537 instance=ExtResource("46_7f7j5")]
+position = Vector2(26640.973, 6845.0513)
+
+[node name="damage_block2" parent="lvl5/PTS" unique_id=390216913 instance=ExtResource("46_7f7j5")]
+position = Vector2(26434.2, 7378.068)
+
+[node name="damage_block3" parent="lvl5/PTS" unique_id=1277976992 instance=ExtResource("46_7f7j5")]
+position = Vector2(26342.3, 7832.97)
+
+[node name="damage_block4" parent="lvl5/PTS" unique_id=327673214 instance=ExtResource("46_7f7j5")]
+position = Vector2(27022.357, 7681.336)
+
+[node name="damage_block5" parent="lvl5/PTS" unique_id=738259473 instance=ExtResource("46_7f7j5")]
+position = Vector2(27288.867, 7681.336)
+
+[node name="damage_block7" parent="lvl5/PTS" unique_id=1195960886 instance=ExtResource("46_7f7j5")]
+position = Vector2(26613.773, 8406.271)
+
+[node name="damage_block8" parent="lvl5/PTS" unique_id=2026212422 instance=ExtResource("46_7f7j5")]
+position = Vector2(27421.662, 8657.865)
+
+[node name="damage_block12" parent="lvl5/PTS" unique_id=1703984324 instance=ExtResource("46_7f7j5")]
+position = Vector2(27421.662, 8490.275)
+
+[node name="damage_block11" parent="lvl5/PTS" unique_id=78793200 instance=ExtResource("46_7f7j5")]
+position = Vector2(27421.662, 8829.052)
+
+[node name="damage_block9" parent="lvl5/PTS" unique_id=1897215685 instance=ExtResource("46_7f7j5")]
+position = Vector2(27062.488, 8805.709)
+
+[node name="damage_block10" parent="lvl5/PTS" unique_id=1415677235 instance=ExtResource("46_7f7j5")]
+position = Vector2(26904.27, 8805.709)
+
+[node name="damage_block6" parent="lvl5/PTS" unique_id=77470250 instance=ExtResource("46_7f7j5")]
+position = Vector2(26877.816, 7837.7344)
+
+[node name="platform" parent="lvl5/PTS" unique_id=160675585 instance=ExtResource("8_ltygr")]
+position = Vector2(26021.498, 5637.338)
+scale = Vector2(2, 2)
+
+[node name="platform2" parent="lvl5/PTS" unique_id=1567438414 instance=ExtResource("8_ltygr")]
+position = Vector2(25827.486, 5882.706)
+scale = Vector2(3, 3)
+
+[node name="platform3" parent="lvl5/PTS" unique_id=1576336336 instance=ExtResource("8_ltygr")]
+position = Vector2(26224.07, 5988.2715)
+scale = Vector2(3, 3)
+
+[node name="platform4" parent="lvl5/PTS" unique_id=1710530506 instance=ExtResource("8_ltygr")]
+position = Vector2(25602.092, 6165.1646)
+scale = Vector2(3, 3)
+
+[node name="platform5" parent="lvl5/PTS" unique_id=670276018 instance=ExtResource("8_ltygr")]
+position = Vector2(25975.852, 6533.2173)
+scale = Vector2(4, 4)
+
+[node name="platform13" parent="lvl5/PTS" unique_id=1249654610 instance=ExtResource("8_ltygr")]
+position = Vector2(27217.31, 8716.056)
+scale = Vector2(2, 2)
+
+[node name="platform19" parent="lvl5/PTS" unique_id=151851847 instance=ExtResource("8_ltygr")]
+position = Vector2(30272.969, 9111.224)
+scale = Vector2(2, 2)
+
+[node name="platform20" parent="lvl5/PTS" unique_id=805816286 instance=ExtResource("8_ltygr")]
+position = Vector2(30052.742, 9304.213)
+scale = Vector2(2, 2)
+
+[node name="platform21" parent="lvl5/PTS" unique_id=956403916 instance=ExtResource("8_ltygr")]
+position = Vector2(30259.186, 9386.923)
+scale = Vector2(2, 2)
+
+[node name="platform22" parent="lvl5/PTS" unique_id=1631402616 instance=ExtResource("8_ltygr")]
+position = Vector2(30424.605, 9295.023)
+scale = Vector2(2, 2)
+
+[node name="platform14" parent="lvl5/PTS" unique_id=599619289 instance=ExtResource("8_ltygr")]
+position = Vector2(27612.766, 8815.146)
+scale = Vector2(2, 2)
+
+[node name="platform15" parent="lvl5/PTS" unique_id=2072322855 instance=ExtResource("8_ltygr")]
+position = Vector2(27765.121, 8815.146)
+scale = Vector2(2, 2)
+
+[node name="platform16" parent="lvl5/PTS" unique_id=691299212 instance=ExtResource("8_ltygr")]
+position = Vector2(27902.795, 8930.686)
+scale = Vector2(2, 2)
+
+[node name="platform17" parent="lvl5/PTS" unique_id=1817183650 instance=ExtResource("8_ltygr")]
+position = Vector2(28055.15, 8930.686)
+scale = Vector2(2, 2)
+
+[node name="platform6" parent="lvl5/PTS" unique_id=2102505205 instance=ExtResource("8_ltygr")]
+position = Vector2(26294.842, 6882.5874)
+scale = Vector2(4, 4)
+
+[node name="platform7" parent="lvl5/PTS" unique_id=958488371 instance=ExtResource("8_ltygr")]
+position = Vector2(26973.885, 6882.5874)
+scale = Vector2(4, 4)
+
+[node name="platform8" parent="lvl5/PTS" unique_id=722639101 instance=ExtResource("8_ltygr")]
+position = Vector2(26036.512, 7250.186)
+scale = Vector2(4, 4)
+
+[node name="platform9" parent="lvl5/PTS" unique_id=945981466 instance=ExtResource("8_ltygr")]
+position = Vector2(26702.785, 7608.942)
+scale = Vector2(4, 4)
+
+[node name="platform10" parent="lvl5/PTS" unique_id=18215513 instance=ExtResource("8_ltygr")]
+position = Vector2(27208.234, 7994.86)
+scale = Vector2(4, 4)
+
+[node name="platform11" parent="lvl5/PTS" unique_id=1582294664 instance=ExtResource("8_ltygr")]
+position = Vector2(26946.32, 8265.676)
+scale = Vector2(4, 4)
+
+[node name="platform12" parent="lvl5/PTS" unique_id=1222475380 instance=ExtResource("8_ltygr")]
+position = Vector2(27225.143, 8578.74)
+scale = Vector2(3, 3)
+
+[node name="platform18" parent="lvl5/PTS" unique_id=493712995 instance=ExtResource("8_ltygr")]
+position = Vector2(29908.5, 9002.429)
+scale = Vector2(3, 3)
+
+[node name="2pt_move" parent="lvl5/PTS" unique_id=546104117 instance=ExtResource("47_1tqiw")]
+position = Vector2(27416.75, 8925.546)
+
+[node name="damage_block13" parent="lvl5/PTS" unique_id=908751794 instance=ExtResource("46_7f7j5")]
+position = Vector2(28776.715, 9103.362)
+
+[node name="damage_block14" parent="lvl5/PTS" unique_id=1048668426 instance=ExtResource("46_7f7j5")]
+position = Vector2(28921.629, 9103.362)
+
+[node name="damage_block15" parent="lvl5/PTS" unique_id=739499420 instance=ExtResource("46_7f7j5")]
+position = Vector2(29065.906, 9103.362)
+
+[node name="damage_block16" parent="lvl5/PTS" unique_id=878684730 instance=ExtResource("46_7f7j5")]
+position = Vector2(29210.818, 9103.362)
+
+[node name="damage_block17" parent="lvl5/PTS" unique_id=1131088591 instance=ExtResource("46_7f7j5")]
+position = Vector2(29355.484, 9103.362)
+
+[node name="damage_block18" parent="lvl5/PTS" unique_id=584999366 instance=ExtResource("46_7f7j5")]
+position = Vector2(29500.396, 9103.362)
+
+[node name="portal" parent="lvl5" unique_id=94654342 node_paths=PackedStringArray("portal_target") instance=ExtResource("21_n78m8")]
+position = Vector2(27269.203, 8637.113)
+portal_target = NodePath("../portal2")
+
+[node name="portal2" parent="lvl5" unique_id=628437991 node_paths=PackedStringArray("portal_target") instance=ExtResource("21_n78m8")]
+position = Vector2(27545.564, 8735.296)
+rotation = -3.1415927
+portal_target = NodePath("../portal")
+portal_reverse_color = true
+
+[node name="lvl6" type="Node2D" parent="." unique_id=1401692953]
+
+[node name="platform" parent="lvl6" unique_id=1114578644 instance=ExtResource("8_ltygr")]
+position = Vector2(981.5077, -1196.9354)
+
+[node name="platform2" parent="lvl6" unique_id=1134844259 instance=ExtResource("8_ltygr")]
+position = Vector2(866.0077, -1473.0355)
+
+[node name="platform3" parent="lvl6" unique_id=2009370616 instance=ExtResource("8_ltygr")]
+position = Vector2(752.70764, -1694.1355)
+
+[node name="damage_block" parent="lvl6" unique_id=285079637 instance=ExtResource("46_7f7j5")]
+position = Vector2(1146.7793, -1428.9485)
+
+[node name="damage_block2" parent="lvl6" unique_id=1921333216 instance=ExtResource("46_7f7j5")]
+position = Vector2(1002.4713, -1585.5609)
+
+[node name="damage_block3" parent="lvl6" unique_id=604932986 instance=ExtResource("46_7f7j5")]
+position = Vector2(601.6201, -1727.8951)
+
+[node name="damage_block4" parent="lvl6" unique_id=1131912241 instance=ExtResource("46_7f7j5")]
+position = Vector2(601.6201, -1880.4791)
+
+[node name="damage_block5" parent="lvl6" unique_id=1971742400 instance=ExtResource("46_7f7j5")]
+position = Vector2(601.6201, -2030.519)
+
+[node name="damage_block6" parent="lvl6" unique_id=1042757348 instance=ExtResource("46_7f7j5")]
+position = Vector2(601.6201, -2182.7139)
+
+[node name="DEATHZONE" type="Area2D" parent="." unique_id=265587749]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DEATHZONE" unique_id=1536129664]
+position = Vector2(-1612.6501, 6503.9346)
+shape = SubResource("RectangleShape2D_ppux1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DEATHZONE" unique_id=505632046]
+position = Vector2(17593.816, 5406.9697)
+shape = SubResource("RectangleShape2D_y6lma")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DEATHZONE" unique_id=940937821]
+position = Vector2(28869.428, 11751.258)
+shape = SubResource("RectangleShape2D_73yqq")
+
+[node name="cadavre" parent="." unique_id=258405330 instance=ExtResource("47_5ihcl")]
+position = Vector2(-503.16162, -11202.822)
+scale = Vector2(0.55, 0.55)
+
+[node name="bonus2" parent="." unique_id=715804290 instance=ExtResource("15_fynux")]
+position = Vector2(1288.7085, -433.7632)
+type_bonus = "dash"
+
+[node name="sprint_bonus" parent="." unique_id=1577787271 instance=ExtResource("15_fynux")]
+position = Vector2(21549.04, 2123.9858)
+type_bonus = "sprint"
+
+[node name="bonus" parent="." unique_id=1732226817 instance=ExtResource("15_fynux")]
+position = Vector2(30259.777, 9317.01)
+type_bonus = "doublejump"
+
+[node name="lvl7" type="Node2D" parent="." unique_id=1135323167]
+
+[node name="laser_trap" parent="lvl7" unique_id=1189924637 instance=ExtResource("13_f4kdv")]
+position = Vector2(1064.1394, -1974.6707)
+is_rotatingg = false
+
+[node name="laser_trap2" parent="lvl7" unique_id=600868184 instance=ExtResource("13_f4kdv")]
+position = Vector2(1064.1394, -1829.421)
+is_rotatingg = false
+
+[node name="pts" type="Node2D" parent="lvl7" unique_id=1811727585]
+
+[node name="platform" parent="lvl7/pts" unique_id=2134240102 instance=ExtResource("8_ltygr")]
+position = Vector2(848.8613, -1764.174)
+
+[node name="platform2" parent="lvl7/pts" unique_id=2019443255 instance=ExtResource("8_ltygr")]
+position = Vector2(1249.7124, -1764.174)
+
+[node name="platform3" parent="lvl7/pts" unique_id=1267791627 instance=ExtResource("8_ltygr")]
+position = Vector2(1341.8867, -1736.3074)
+
+[node name="pt_blueprint" parent="lvl7/pts" unique_id=792486733 instance=ExtResource("16_nfd4m")]
+position = Vector2(1487.6509, -1815.62)
+
+[node name="pt_blueprint2" parent="lvl7/pts" unique_id=743070030 instance=ExtResource("16_nfd4m")]
+position = Vector2(1571.6941, -1815.62)
+
+[node name="pt_blueprint3" parent="lvl7/pts" unique_id=689134121 instance=ExtResource("16_nfd4m")]
+position = Vector2(1571.6941, -1867.7775)
+
+[node name="pt_blueprint4" parent="lvl7/pts" unique_id=1926371137 instance=ExtResource("16_nfd4m")]
+position = Vector2(1571.6941, -1919.3138)
+
+[node name="pt_blueprint6" parent="lvl7/pts" unique_id=121644140 instance=ExtResource("16_nfd4m")]
+position = Vector2(1432.6046, -2489.1062)
+
+[node name="pt_blueprint7" parent="lvl7/pts" unique_id=1111815277 instance=ExtResource("16_nfd4m")]
+position = Vector2(1432.6046, -2541.2637)
+
+[node name="pt_blueprint8" parent="lvl7/pts" unique_id=1474121206 instance=ExtResource("16_nfd4m")]
+position = Vector2(1432.6046, -2592.8)
+
+[node name="pt_blueprint9" parent="lvl7/pts" unique_id=1794301520 instance=ExtResource("16_nfd4m")]
+position = Vector2(832.32355, -2683.8313)
+
+[node name="pt_blueprint10" parent="lvl7/pts" unique_id=1290560958 instance=ExtResource("16_nfd4m")]
+position = Vector2(832.32355, -2735.9888)
+
+[node name="pt_blueprint11" parent="lvl7/pts" unique_id=1100078659 instance=ExtResource("16_nfd4m")]
+position = Vector2(832.32355, -2787.5251)
+
+[node name="pt_blueprint12" parent="lvl7/pts" unique_id=311810800 instance=ExtResource("16_nfd4m")]
+position = Vector2(1180.7793, -2629.4023)
+
+[node name="pt_blueprint13" parent="lvl7/pts" unique_id=1825959970 instance=ExtResource("16_nfd4m")]
+position = Vector2(918.7054, -2731.8894)
+
+[node name="platform4" parent="lvl7/pts" unique_id=1382996347 instance=ExtResource("8_ltygr")]
+position = Vector2(1433.27, -2043.4054)
+
+[node name="button" parent="lvl7" unique_id=757902630 instance=ExtResource("45_7f7j5")]
+position = Vector2(749.5315, -2370.6375)
+infinite_press = true
+
+[node name="traps" type="Node2D" parent="lvl7" unique_id=450858900]
+
+[node name="damage_block" parent="lvl7/traps" unique_id=83576292 instance=ExtResource("46_7f7j5")]
+position = Vector2(1299.0149, -2163.351)
+
+[node name="Sprite2D3" parent="lvl7/traps/damage_block" index="7" unique_id=784931399]
+z_index = 0
+
+[node name="damage_block2" parent="lvl7/traps" unique_id=396553155 instance=ExtResource("46_7f7j5")]
+position = Vector2(1552.3042, -2318.5457)
+
+[node name="damage_block3" parent="lvl7/traps" unique_id=740012542 instance=ExtResource("46_7f7j5")]
+position = Vector2(959.3437, -2385.8943)
+
+[node name="damage_block4" parent="lvl7/traps" unique_id=1429683586 instance=ExtResource("46_7f7j5")]
+position = Vector2(1114.5383, -2385.8943)
+
+[node name="damage_block6" parent="lvl7/traps" unique_id=1111672913 instance=ExtResource("46_7f7j5")]
+position = Vector2(1462.9943, -2707.9963)
+
+[node name="damage_block5" parent="lvl7/traps" unique_id=351339269 instance=ExtResource("46_7f7j5")]
+position = Vector2(959.34375, -2541.0889)
+
+[node name="pt_blueprint5" parent="lvl7" unique_id=2082492109 instance=ExtResource("16_nfd4m")]
+position = Vector2(1268.9221, -2269.837)
+
+[node name="pt_blueprint6" parent="lvl7" unique_id=1103916786 instance=ExtResource("16_nfd4m")]
+position = Vector2(1331.0764, -2269.837)
+
+[node name="zoomzonelvl7" type="Area2D" parent="lvl7" unique_id=998561513]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl7/zoomzonelvl7" unique_id=1175929964]
+position = Vector2(784.37885, -2601.969)
+shape = SubResource("RectangleShape2D_tkwxf")
+
+[node name="banane" parent="." unique_id=935544302 instance=ExtResource("45_y6lma")]
+position = Vector2(12841.067, -1529.106)
+
+[node name="cadavreplayer" parent="." unique_id=1958468112 instance=ExtResource("47_73yqq")]
+position = Vector2(0.33081055, -957.98706)
+
+[connection signal="body_entered" from="lvl8/button" to="." method="_on_button_TURNOFF_body_entered"]
+[connection signal="body_entered" from="lvl4/cam_off_zone_lvl4" to="." method="_on_cam_off_zone_lvl_4_body_entered"]
+[connection signal="body_exited" from="lvl4/cam_off_zone_lvl4" to="." method="_on_cam_off_zone_lvl_4_body_exited"]
+[connection signal="body_entered" from="lvl1/cam_zones/zoom_zone" to="." method="_on_zoom_zone_body_entered"]
+[connection signal="body_exited" from="lvl1/cam_zones/zoom_zone" to="." method="_on_zoom_zone_body_exited"]
+[connection signal="body_entered" from="lvl1/cam_zones/no_bottom_offset_zone" to="." method="_on_no_bottom_offset_zone_body_entered"]
+[connection signal="body_exited" from="lvl1/cam_zones/no_bottom_offset_zone" to="." method="_on_no_bottom_offset_zone_body_exited"]
+[connection signal="body_entered" from="lvl1/change_scene_whenvoid" to="." method="_on_change_scene_whenvoid_body_entered"]
+[connection signal="body_entered" from="lvl2/cam_zone/no_offset_zone_lvl2" to="." method="_on_no_offset_zone_lvl_2_body_entered"]
+[connection signal="body_exited" from="lvl2/cam_zone/no_offset_zone_lvl2" to="." method="_on_no_offset_zone_lvl_2_body_exited"]
+[connection signal="body_entered" from="lvl3/change_scene_zone" to="." method="_on_change_scene_zone_body_entered"]
+[connection signal="body_entered" from="lvl3/change_scene_zone2lvl3" to="." method="_on_change_scene_zone_2_lvl_3_body_entered"]
+[connection signal="animation_finished" from="intro/cinematic" to="." method="_on_cinematic_animation_finished"]
+[connection signal="body_entered" from="lvl5/camzoneoffset_lvl5" to="." method="_on_camzoneoffset_lvl_5_body_entered"]
+[connection signal="body_exited" from="lvl5/camzoneoffset_lvl5" to="." method="_on_camzoneoffset_lvl_5_body_exited"]
+[connection signal="body_entered" from="DEATHZONE" to="." method="_on_deathzone_body_entered"]
+[connection signal="body_entered" from="lvl7/button" to="." method="_on_button_body_entered_specific_last_btn_blue_print"]
+[connection signal="body_entered" from="lvl7/zoomzonelvl7" to="." method="_on_zoomzonelvl_7_body_entered"]
+[connection signal="body_exited" from="lvl7/zoomzonelvl7" to="." method="_on_zoomzonelvl_7_body_exited"]
+
+[editable path="lvl7/traps/damage_block"]

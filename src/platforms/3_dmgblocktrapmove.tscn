@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://cgc1boc3xaavx"]
+
+[ext_resource type="PackedScene" uid="uid://bdd03axytgixu" path="res://src/platforms/damage_block.tscn" id="1_vocdi"]
+
+[sub_resource type="Animation" id="Animation_brhbg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3550, -1697)]
+}
+
+[sub_resource type="Animation" id="Animation_gxno5"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3550, -1697), Vector2(3682, -1697)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gg7o2"]
+_data = {
+&"RESET": SubResource("Animation_brhbg"),
+&"new_animation": SubResource("Animation_gxno5")
+}
+
+[sub_resource type="Animation" id="Animation_w6qp3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3437.0002, -1568)]
+}
+
+[sub_resource type="Animation" id="Animation_g62an"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3437.0002, -1568), Vector2(3787, -1568)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_50vnw"]
+_data = {
+&"RESET": SubResource("Animation_w6qp3"),
+&"new_animation": SubResource("Animation_g62an")
+}
+
+[sub_resource type="Animation" id="Animation_wm35a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3321, -1441)]
+}
+
+[sub_resource type="Animation" id="Animation_tuy4g"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3321, -1441), Vector2(3881, -1441)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ssj76"]
+_data = {
+&"RESET": SubResource("Animation_wm35a"),
+&"new_animation": SubResource("Animation_tuy4g")
+}
+
+[node name="3dmgblocktrapmove" type="Node2D" unique_id=177334153]
+
+[node name="damage_block5" parent="." unique_id=1974418075 instance=ExtResource("1_vocdi")]
+position = Vector2(3550, -1697)
+scale = Vector2(0.75, 0.75)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="damage_block5" unique_id=1022339924]
+libraries/ = SubResource("AnimationLibrary_gg7o2")
+autoplay = &"new_animation"
+speed_scale = 3.0
+
+[node name="damage_block7" parent="." unique_id=754746155 instance=ExtResource("1_vocdi")]
+position = Vector2(3437.0002, -1568)
+scale = Vector2(0.75, 0.75)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="damage_block7" unique_id=1806516348]
+libraries/ = SubResource("AnimationLibrary_50vnw")
+autoplay = &"new_animation"
+speed_scale = 4.0
+
+[node name="damage_block8" parent="." unique_id=1861883688 instance=ExtResource("1_vocdi")]
+position = Vector2(3321, -1441)
+scale = Vector2(0.75, 0.75)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="damage_block8" unique_id=815805533]
+libraries/ = SubResource("AnimationLibrary_ssj76")
+autoplay = &"new_animation"
+speed_scale = 5.0

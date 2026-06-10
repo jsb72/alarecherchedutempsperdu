@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://dvio2nnm1fv8q"]
+
+[ext_resource type="PackedScene" uid="uid://3t2f2pn81x60" path="res://src/elements/univers.tscn" id="1_ola0s"]
+[ext_resource type="PackedScene" uid="uid://ufnf3lc7ewin" path="res://src/vivants/a_atentacle.tscn" id="2_un7e7"]
+
+[node name="Yog-Sothoth" type="Node2D" unique_id=1666917716]
+
+[node name="tentacles" type="Node2D" parent="." unique_id=7449367]
+
+[node name="AAtentacle" parent="tentacles" unique_id=1566691538 instance=ExtResource("2_un7e7")]
+position = Vector2(0, 602)
+size_multiple = 2
+
+[node name="AAtentacle2" parent="tentacles" unique_id=1956084406 instance=ExtResource("2_un7e7")]
+position = Vector2(-360, 416)
+size_multiple = 2
+
+[node name="AAtentacle3" parent="tentacles" unique_id=1607520897 instance=ExtResource("2_un7e7")]
+position = Vector2(359, 413)
+size_multiple = 2
+
+[node name="AAtentacle4" parent="tentacles" unique_id=1167261122 instance=ExtResource("2_un7e7")]
+position = Vector2(-159, 403)
+size_multiple = 2
+
+[node name="AAtentacle5" parent="tentacles" unique_id=1943879462 instance=ExtResource("2_un7e7")]
+position = Vector2(162, 402)
+size_multiple = 2
+
+[node name="AAtentacle6" parent="tentacles" unique_id=876699358 instance=ExtResource("2_un7e7")]
+position = Vector2(84, 403)
+
+[node name="AAtentacle7" parent="tentacles" unique_id=95600324 instance=ExtResource("2_un7e7")]
+position = Vector2(-84, 403)
+
+[node name="AAtentacle8" parent="tentacles" unique_id=83996261 instance=ExtResource("2_un7e7")]
+position = Vector2(-207, 358)
+
+[node name="AAtentacle9" parent="tentacles" unique_id=666890855 instance=ExtResource("2_un7e7")]
+position = Vector2(-317, 264)
+
+[node name="AAtentacle10" parent="tentacles" unique_id=255340357 instance=ExtResource("2_un7e7")]
+position = Vector2(207, 356)
+
+[node name="AAtentacle11" parent="tentacles" unique_id=2069881851 instance=ExtResource("2_un7e7")]
+position = Vector2(317, 265)
+
+[node name="AAtentacle12" parent="tentacles" unique_id=625608036 instance=ExtResource("2_un7e7")]
+position = Vector2(2, 479)
+size_multiple = 3
+
+[node name="AAtentacle13" parent="tentacles" unique_id=1317381094 instance=ExtResource("2_un7e7")]
+position = Vector2(-295, 349)
+size_multiple = 3
+
+[node name="AAtentacle14" parent="tentacles" unique_id=58035110 instance=ExtResource("2_un7e7")]
+position = Vector2(294, 346)
+size_multiple = 3
+
+[node name="yeux" type="Node2D" parent="." unique_id=1343258063]
+
+[node name="univers" parent="yeux" unique_id=1925631253 instance=ExtResource("1_ola0s")]
+position = Vector2(0, 4)
+scale = Vector2(0.34791666, 0.34791666)
+
+[node name="univers2" parent="yeux" unique_id=1868229803 instance=ExtResource("1_ola0s")]
+position = Vector2(1.9999695, 481)
+scale = Vector2(0.07520833, 0.07520833)
+
+[node name="univers4" parent="yeux" unique_id=76719460 instance=ExtResource("1_ola0s")]
+position = Vector2(294.00003, 349.00003)
+scale = Vector2(0.055104177, 0.055104177)
+
+[node name="univers5" parent="yeux" unique_id=1084443528 instance=ExtResource("1_ola0s")]
+position = Vector2(-294, 349)
+scale = Vector2(0.055104177, 0.055104177)
+
+[node name="univers6" parent="yeux" unique_id=202535797 instance=ExtResource("1_ola0s")]
+position = Vector2(-359, 416.00003)
+scale = Vector2(0.027552089, 0.027552089)
+
+[node name="univers10" parent="yeux" unique_id=927435946 instance=ExtResource("1_ola0s")]
+position = Vector2(-207.00002, 357.00003)
+scale = Vector2(0.015110689, 0.015110689)
+
+[node name="univers11" parent="yeux" unique_id=1373843721 instance=ExtResource("1_ola0s")]
+position = Vector2(207, 357)
+scale = Vector2(0.015110689, 0.015110689)
+
+[node name="univers12" parent="yeux" unique_id=659393063 instance=ExtResource("1_ola0s")]
+position = Vector2(316.00003, 264)
+scale = Vector2(0.015110689, 0.015110689)
+
+[node name="univers13" parent="yeux" unique_id=840525784 instance=ExtResource("1_ola0s")]
+position = Vector2(-316, 264)
+scale = Vector2(0.015110689, 0.015110689)
+
+[node name="univers14" parent="yeux" unique_id=705393754 instance=ExtResource("1_ola0s")]
+position = Vector2(-84.00003, 404)
+scale = Vector2(0.015110689, 0.015110689)
+
+[node name="univers15" parent="yeux" unique_id=1588511972 instance=ExtResource("1_ola0s")]
+position = Vector2(84, 404)
+scale = Vector2(0.015110689, 0.015110689)
+
+[node name="univers7" parent="yeux" unique_id=1413846534 instance=ExtResource("1_ola0s")]
+position = Vector2(358.00003, 415.00003)
+scale = Vector2(0.027552089, 0.027552089)
+
+[node name="univers3" parent="yeux" unique_id=541867037 instance=ExtResource("1_ola0s")]
+position = Vector2(3.8146973e-06, 603)
+scale = Vector2(0.03302083, 0.03302083)
+
+[node name="univers8" parent="yeux" unique_id=814433567 instance=ExtResource("1_ola0s")]
+position = Vector2(-158.99998, 403)
+scale = Vector2(0.03302083, 0.03302083)
+
+[node name="univers9" parent="yeux" unique_id=1653702426 instance=ExtResource("1_ola0s")]
+position = Vector2(158.99998, 403)
+scale = Vector2(0.03302083, 0.03302083)

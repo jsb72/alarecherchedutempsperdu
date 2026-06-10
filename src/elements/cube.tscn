@@ -1,0 +1,405 @@
+[gd_scene format=3 uid="uid://3d4xp58s7wbm"]
+
+[ext_resource type="Texture2D" uid="uid://bjlnw36eo5oqt" path="res://sprites/vaulti.png" id="1_be4ci"]
+[ext_resource type="Script" uid="uid://fcjjtoa5ao8c" path="res://src/elements/cube.gd" id="1_ksnvo"]
+[ext_resource type="Texture2D" uid="uid://dl5ldax2usub5" path="res://sprites/vaulti_door.png" id="2_sljeo"]
+[ext_resource type="Texture2D" uid="uid://bqg5am60828ng" path="res://sprites/vaulti_front.png" id="3_1xtlu"]
+[ext_resource type="Texture2D" uid="uid://db82fej7xukpf" path="res://sprites/lock.png" id="4_1xtlu"]
+[ext_resource type="AudioStream" uid="uid://dk5kioakoosjv" path="res://sounds/creatorshome-digital-click-357350.mp3" id="6_0rqph"]
+[ext_resource type="AudioStream" uid="uid://b2t86f4qbq3mr" path="res://sounds/dragon-studio-menu-open-433000.mp3" id="7_pxktc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sljeo"]
+size = Vector2(15.999985, 98)
+
+[sub_resource type="Animation" id="Animation_sljeo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mf83c"]
+resource_name = "up_door"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -95)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ksnvo"]
+_data = {
+&"RESET": SubResource("Animation_sljeo"),
+&"up_door": SubResource("Animation_mf83c")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mf83c"]
+size = Vector2(16, 25)
+
+[sub_resource type="Animation" id="Animation_1xtlu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0rqph"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pxktc"]
+_data = {
+&"RESET": SubResource("Animation_1xtlu"),
+&"new_animation": SubResource("Animation_0rqph")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xtlu"]
+size = Vector2(6, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rqph"]
+size = Vector2(109, 6)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0rqph"]
+random_pitch = 1.0293022
+streams_count = 1
+stream_0/stream = ExtResource("6_0rqph")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxktc"]
+size = Vector2(309, 276)
+
+[node name="cube" type="Node2D" unique_id=1811157897]
+script = ExtResource("1_ksnvo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1529093504]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_be4ci")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1438434013]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_sljeo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=522188647]
+scale = Vector2(4.9999995, 4.9999995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=879880464]
+position = Vector2(-52.999985, 1.9999975)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_sljeo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=634025577]
+libraries/ = SubResource("AnimationLibrary_ksnvo")
+
+[node name="openlockzone" type="Area2D" parent="." unique_id=851986770]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="openlockzone" unique_id=2079760111]
+position = Vector2(-57, 51.5)
+shape = SubResource("RectangleShape2D_mf83c")
+
+[node name="locklayer" type="CanvasLayer" parent="." unique_id=377172618]
+visible = false
+
+[node name="Node2D" type="Node2D" parent="locklayer" unique_id=1919972276]
+
+[node name="ColorRect2" type="ColorRect" parent="locklayer/Node2D" unique_id=1149773217]
+offset_left = 514.0
+offset_top = 183.0
+offset_right = 768.0
+offset_bottom = 532.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="locklayer/Node2D" unique_id=202382228]
+visible = false
+offset_left = 537.0
+offset_top = 213.0
+offset_right = 749.0
+offset_bottom = 480.0
+
+[node name="Sprite2D" type="Sprite2D" parent="locklayer/Node2D" unique_id=253614758]
+visible = false
+position = Vector2(710, 407)
+texture = ExtResource("4_1xtlu")
+
+[node name="white" type="Node2D" parent="locklayer/Node2D" unique_id=1953036162]
+
+[node name="ColorRect3" type="ColorRect" parent="locklayer/Node2D/white" unique_id=839925827]
+offset_left = 622.0
+offset_top = 485.0
+offset_right = 659.0
+offset_bottom = 515.0
+
+[node name="ColorRect4" type="ColorRect" parent="locklayer/Node2D/white" unique_id=534760901]
+offset_left = 622.0
+offset_top = 441.0
+offset_right = 659.0
+offset_bottom = 471.0
+
+[node name="ColorRect5" type="ColorRect" parent="locklayer/Node2D/white" unique_id=1280639583]
+offset_left = 622.0
+offset_top = 385.0
+offset_right = 659.0
+offset_bottom = 415.0
+
+[node name="ColorRect6" type="ColorRect" parent="locklayer/Node2D/white" unique_id=150670034]
+offset_left = 622.0
+offset_top = 327.0
+offset_right = 659.0
+offset_bottom = 357.0
+
+[node name="ColorRect7" type="ColorRect" parent="locklayer/Node2D/white" unique_id=1313388003]
+offset_left = 678.0
+offset_top = 327.0
+offset_right = 715.0
+offset_bottom = 357.0
+
+[node name="ColorRect8" type="ColorRect" parent="locklayer/Node2D/white" unique_id=703030979]
+offset_left = 678.0
+offset_top = 385.0
+offset_right = 715.0
+offset_bottom = 415.0
+
+[node name="ColorRect9" type="ColorRect" parent="locklayer/Node2D/white" unique_id=35282652]
+offset_left = 678.0
+offset_top = 441.0
+offset_right = 715.0
+offset_bottom = 471.0
+
+[node name="ColorRect10" type="ColorRect" parent="locklayer/Node2D/white" unique_id=849096773]
+offset_left = 567.0
+offset_top = 441.0
+offset_right = 604.0
+offset_bottom = 471.0
+
+[node name="ColorRect11" type="ColorRect" parent="locklayer/Node2D/white" unique_id=1915401984]
+offset_left = 567.0
+offset_top = 385.0
+offset_right = 604.0
+offset_bottom = 415.0
+
+[node name="ColorRect12" type="ColorRect" parent="locklayer/Node2D/white" unique_id=351805299]
+offset_left = 567.0
+offset_top = 326.0
+offset_right = 604.0
+offset_bottom = 356.0
+
+[node name="SCREEN" type="ColorRect" parent="locklayer/Node2D/white" unique_id=41422464]
+offset_left = 546.0
+offset_top = 220.0
+offset_right = 737.0
+offset_bottom = 298.0
+
+[node name="LabelA" type="Label" parent="locklayer/Node2D" unique_id=1240434382]
+offset_left = 575.0
+offset_top = 477.0
+offset_right = 615.0
+offset_bottom = 522.0
+theme_override_colors/font_color = Color(0.23333335, 1, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "A"
+
+[node name="Label0" type="Label" parent="locklayer/Node2D" unique_id=1281887604]
+offset_left = 631.0
+offset_top = 477.0
+offset_right = 671.0
+offset_bottom = 522.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="LabelB" type="Label" parent="locklayer/Node2D" unique_id=905504978]
+offset_left = 678.0
+offset_top = 487.0
+offset_right = 725.0
+offset_bottom = 532.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "EXIT"
+
+[node name="Label" type="Label" parent="locklayer/Node2D" unique_id=510910140]
+offset_left = 575.0
+offset_top = 433.0
+offset_right = 615.0
+offset_bottom = 478.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "1"
+
+[node name="Label2" type="Label" parent="locklayer/Node2D" unique_id=1291184128]
+offset_left = 632.0
+offset_top = 433.0
+offset_right = 672.0
+offset_bottom = 478.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "2"
+
+[node name="Label3" type="Label" parent="locklayer/Node2D" unique_id=989529723]
+offset_left = 688.0
+offset_top = 433.0
+offset_right = 728.0
+offset_bottom = 478.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "3"
+
+[node name="Label6" type="Label" parent="locklayer/Node2D" unique_id=269990150]
+offset_left = 688.0
+offset_top = 377.0
+offset_right = 728.0
+offset_bottom = 422.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "6"
+
+[node name="Label5" type="Label" parent="locklayer/Node2D" unique_id=1424276170]
+offset_left = 633.0
+offset_top = 377.0
+offset_right = 673.0
+offset_bottom = 422.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "5"
+
+[node name="Label4" type="Label" parent="locklayer/Node2D" unique_id=24515782]
+offset_left = 577.0
+offset_top = 377.0
+offset_right = 617.0
+offset_bottom = 422.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "4"
+
+[node name="Label9" type="Label" parent="locklayer/Node2D" unique_id=1305783598]
+offset_left = 688.0
+offset_top = 318.0
+offset_right = 728.0
+offset_bottom = 363.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "9"
+
+[node name="Label8" type="Label" parent="locklayer/Node2D" unique_id=50520828]
+offset_left = 633.0
+offset_top = 318.0
+offset_right = 673.0
+offset_bottom = 363.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "8"
+
+[node name="Label7" type="Label" parent="locklayer/Node2D" unique_id=1315695585]
+offset_left = 577.0
+offset_top = 318.0
+offset_right = 617.0
+offset_bottom = 363.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "7"
+
+[node name="res" type="Label" parent="locklayer/Node2D" unique_id=1802113912]
+visible = false
+offset_left = 558.0
+offset_top = 224.0
+offset_right = 725.0
+offset_bottom = 291.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="resdisplay" type="Label" parent="locklayer/Node2D" unique_id=1365889529]
+offset_left = 558.0
+offset_top = 224.0
+offset_right = 725.0
+offset_bottom = 291.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="fadeoutdigit" type="AnimationPlayer" parent="locklayer/Node2D" unique_id=1292282210]
+libraries/ = SubResource("AnimationLibrary_pxktc")
+
+[node name="front" type="Node2D" parent="." unique_id=1578185653]
+z_index = 200
+z_as_relative = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="front" unique_id=2115067068]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_1xtlu")
+
+[node name="Label" type="RichTextLabel" parent="front" unique_id=1829085221]
+visible = false
+offset_left = -41.0
+offset_top = -41.0
+offset_right = 74.0
+offset_bottom = 64.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 10
+text = "Toutes les pièces du fractal étaient réunies là sous mes yeux"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="front" unique_id=545178988]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+text = "The only thing you have to do now is reboot, restart your character, find the one you hate, retrouve celui que tu haies"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1281244091]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1652528800]
+position = Vector2(61, 11)
+shape = SubResource("RectangleShape2D_1xtlu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1971734795]
+position = Vector2(9.5, -44)
+shape = SubResource("RectangleShape2D_0rqph")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=639615716]
+stream = SubResource("AudioStreamRandomizer_0rqph")
+
+[node name="ouverture" type="AudioStreamPlayer2D" parent="." unique_id=1867146132]
+stream = ExtResource("7_pxktc")
+
+[node name="close_zone" type="Area2D" parent="." unique_id=1841033003]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="close_zone" unique_id=204112044]
+z_index = 500
+position = Vector2(230, 203)
+shape = SubResource("RectangleShape2D_pxktc")
+
+[connection signal="body_entered" from="openlockzone" to="." method="_on_openlockzone_body_entered"]
+[connection signal="body_entered" from="close_zone" to="." method="_on_close_zone_body_entered"]

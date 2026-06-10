@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dbb8hs07i2gg2"]
+
+[ext_resource type="VideoStream" uid="uid://cfu7l2nt5cv6j" path="res://video/cutscene.ogv" id="1_2yq12"]
+[ext_resource type="Script" uid="uid://dq64h2v7ite7m" path="res://src/cutscene.gd" id="1_8ttup"]
+[ext_resource type="Shader" uid="uid://be2m7dd85xemn" path="res://shaders/vignette.gdshader" id="2_u6bt8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ttup"]
+shader = ExtResource("2_u6bt8")
+shader_parameter/vignette_intensity = 50.0
+shader_parameter/vignette_opacity = 1.0
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
+
+[node name="cutscene" type="Node2D" unique_id=1348483193]
+script = ExtResource("1_8ttup")
+
+[node name="blackbg" type="ColorRect" parent="." unique_id=1455962707]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1723408120]
+offset_left = 400.0
+offset_top = 120.0
+offset_right = 1360.0
+offset_bottom = 1080.0
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("1_2yq12")
+
+[node name="vignette" type="ColorRect" parent="." unique_id=1734789560]
+material = SubResource("ShaderMaterial_8ttup")
+offset_left = 400.0
+offset_top = 120.0
+offset_right = 1360.0
+offset_bottom = 1080.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Timer" type="Timer" parent="." unique_id=776334085]
+wait_time = 5.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

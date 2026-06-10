@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://qfht3ffettlq"]
+
+[ext_resource type="Script" uid="uid://c1myjyo415ms3" path="res://src/accueil.gd" id="1_o1nyv"]
+
+[node name="accueil" type="Node2D" unique_id=2027268033]
+script = ExtResource("1_o1nyv")
+
+[node name="bg" type="ColorRect" parent="." unique_id=1853480591]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="pressbutton" type="RichTextLabel" parent="." unique_id=1309220633]
+offset_right = 1280.0
+offset_bottom = 720.0
+text = "press_start_txt"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=427057289]
+layer = 2000
+
+[node name="damn" type="RichTextLabel" parent="CanvasLayer" unique_id=1357302827]
+offset_left = 320.0
+offset_right = 960.0
+offset_bottom = 720.0
+theme_override_font_sizes/italics_font_size = 16
+text = "intro_txt"
+horizontal_alignment = 3
+vertical_alignment = 1
+
+[node name="loading" type="Label" parent="CanvasLayer" unique_id=337391387]
+offset_left = 1202.0
+offset_top = 697.0
+offset_right = 1277.0
+offset_bottom = 720.0
+text = "loading_txt"

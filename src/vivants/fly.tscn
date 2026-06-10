@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://bj4n8g1hlaep5"]
+
+[ext_resource type="Texture2D" uid="uid://df67royhaj2fm" path="res://sprites/test_fly_bug.png" id="1_1nper"]
+[ext_resource type="Script" uid="uid://rqckvadgdnc1" path="res://src/vivants/fly.gd" id="1_wjpkc"]
+[ext_resource type="PackedScene" uid="uid://bmwyobu5l8pyt" path="res://src/elements/bomb.tscn" id="2_gpxll"]
+[ext_resource type="Script" uid="uid://b2shq2gjd4fvt" path="res://addons/ropesim/Rope.gd" id="4_5ynmd"]
+[ext_resource type="Script" uid="uid://brklaoabvl73l" path="res://addons/ropesim/RopeAnchor.gd" id="5_evxss"]
+[ext_resource type="Script" uid="uid://dfppmnngy2wx4" path="res://addons/ropesim/RopeRendererLine2D.gd" id="5_wfyor"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpxll"]
+atlas = ExtResource("1_1nper")
+region = Rect2(0, 0, 484, 520)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjpkc"]
+atlas = ExtResource("1_1nper")
+region = Rect2(484, 0, 484, 520)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqihm"]
+atlas = ExtResource("1_1nper")
+region = Rect2(968, 0, 484, 520)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ynmd"]
+atlas = ExtResource("1_1nper")
+region = Rect2(1452, 0, 484, 520)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wfyor"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpxll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjpkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqihm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ynmd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_wfyor"]
+offsets = PackedFloat32Array(0, 0.4347826)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wfyor"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wfyor"]
+radius = 161.0
+height = 846.0
+
+[node name="fly" type="CharacterBody2D" unique_id=1079513456]
+z_index = 5
+script = ExtResource("1_wjpkc")
+metadata/_edit_horizontal_guides_ = [85.0]
+
+[node name="Timer" type="Timer" parent="." unique_id=137943850]
+one_shot = true
+autostart = true
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=2071677612]
+target_position = Vector2(0, 1000)
+collision_mask = 2
+
+[node name="rendu" type="Node2D" parent="." unique_id=800080577]
+position = Vector2(0, -129)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="rendu" unique_id=1687051031]
+position = Vector2(-8, 4.999999)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_wfyor")
+autoplay = "default"
+frame_progress = 0.038138397
+
+[node name="Rope" type="Node2D" parent="." unique_id=1065471867]
+position = Vector2(-1, -117)
+script = ExtResource("4_5ynmd")
+num_segments = 15
+line_width = 0.0
+metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
+
+[node name="RopeRendererLine2D" type="Line2D" parent="Rope" unique_id=945559420]
+z_index = 5
+points = PackedVector2Array(0, 0, 0, 8.722748, 0, 17.371956, 0, 25.920254, 0, 34.346664, 0, 42.635834, 0, 50.776997, 0, 58.762894, 0, 66.58884, 0, 74.25188, 0, 81.75029, 0, 89.083046, 0, 96.249596, 0, 103.24962, 0, 110.08296, 0, 116.74963)
+width = 1.0
+default_color = Color(0, 0, 0, 1)
+gradient = SubResource("Gradient_wfyor")
+antialiased = true
+script = ExtResource("5_wfyor")
+metadata/_custom_type_script = "uid://dfppmnngy2wx4"
+
+[node name="bomb" parent="." unique_id=1115807001 instance=ExtResource("2_gpxll")]
+position = Vector2(-1, 0)
+
+[node name="RopeAnchor" type="Marker2D" parent="." unique_id=948405414]
+position = Vector2(-1, -0.2503662)
+script = ExtResource("5_evxss")
+rope_path = NodePath("../Rope")
+metadata/_custom_type_script = "uid://brklaoabvl73l"
+
+[node name="ancrerouge" type="ColorRect" parent="RopeAnchor" unique_id=720024693]
+modulate = Color(1, 0, 0, 0)
+offset_top = 22.0
+offset_right = 40.0
+offset_bottom = 62.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=544128252]
+position = Vector2(0, -129)
+shape = SubResource("RectangleShape2D_wfyor")
+
+[node name="free_zone" type="Area2D" parent="." unique_id=1356994127]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="free_zone" unique_id=2053539486]
+position = Vector2(0, 19)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wfyor")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

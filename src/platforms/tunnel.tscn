@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cwmh0r3f2teg7"]
+
+[ext_resource type="PackedScene" uid="uid://mtmitx3k0avp" path="res://src/platforms/3_platformblueprint.tscn" id="1_2hjhf"]
+
+[node name="tunnel" type="Node2D" unique_id=1067650181]
+
+[node name="3platformblueprint" parent="." unique_id=853668133 instance=ExtResource("1_2hjhf")]
+position = Vector2(-251, -100)
+
+[node name="3platformblueprint2" parent="." unique_id=26130805 instance=ExtResource("1_2hjhf")]
+position = Vector2(-251, 100)

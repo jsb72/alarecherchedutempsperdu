@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://n80ossa7y51v"]
+
+[ext_resource type="Texture2D" uid="uid://dx6gktk6x6dyn" path="res://sprites/rooms/escalier_little_black_reverse.png" id="1_ewq7p"]
+
+[node name="escalier_blanc_room" type="Node2D" unique_id=274503240]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=801998414]
+position = Vector2(-523.0981, -226.1025)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_ewq7p")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1948350371]
+position = Vector2(39.875793, -39.30136)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_ewq7p")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=45564661]
+position = Vector2(604.1758, 147.69862)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_ewq7p")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1824018828]
+position = Vector2(-214, -174)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=905805932]
+position = Vector2(771.69226, -116.923096)
+polygon = PackedVector2Array(-1364.365, 28.755432, 403.86584, 614.1219, 208.0658, 666.9218, -1331.9342, 261.02185)

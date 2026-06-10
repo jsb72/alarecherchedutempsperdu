@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://d2iu76n7i4seb"]
+
+[ext_resource type="Texture2D" uid="uid://0krpdldcn1rw" path="res://sprites/sprint1.png" id="1_ea6r3"]
+[ext_resource type="Script" uid="uid://mscdt2l6ixx3" path="res://src/bonus/bonus.gd" id="1_k404d"]
+[ext_resource type="Texture2D" uid="uid://c1pwixmon4bp2" path="res://sprites/dash1.png" id="3_yyq72"]
+[ext_resource type="Texture2D" uid="uid://ctef644vqx5ad" path="res://sprites/doublejump.png" id="4_whhxl"]
+[ext_resource type="Texture2D" uid="uid://be4rl0m53xwjh" path="res://sprites/walljump.png" id="5_eb3bx"]
+[ext_resource type="Script" uid="uid://cv80afgvbn3p7" path="res://addons/controller_icons/objects/ControllerIconTexture.gd" id="6_1bvym"]
+
+[sub_resource type="Animation" id="Animation_kbf15"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_l1wwa"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cqd35"]
+_data = {
+&"RESET": SubResource("Animation_kbf15"),
+&"new_animation": SubResource("Animation_l1wwa")
+}
+
+[sub_resource type="Animation" id="Animation_ea6r3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_k404d"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yyq72"]
+_data = {
+&"RESET": SubResource("Animation_ea6r3"),
+&"new_animation": SubResource("Animation_k404d")
+}
+
+[sub_resource type="Animation" id="Animation_g7j44"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1ae7t"]
+resource_name = "new_animation"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kbf15"]
+_data = {
+&"RESET": SubResource("Animation_g7j44"),
+&"new_animation": SubResource("Animation_1ae7t")
+}
+
+[sub_resource type="Texture2D" id="Texture2D_1bvym"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("6_1bvym")
+path = "dash"
+metadata/_custom_type_script = "uid://cv80afgvbn3p7"
+
+[sub_resource type="Texture2D" id="Texture2D_eb3bx"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("6_1bvym")
+path = "jump"
+metadata/_custom_type_script = "uid://cv80afgvbn3p7"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ea6r3"]
+size = Vector2(41, 41)
+
+[node name="bonus" type="Node2D" unique_id=1577787271]
+z_index = 500
+script = ExtResource("1_k404d")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1730740890]
+
+[node name="sprites" type="Node2D" parent="Node2D" unique_id=352828044]
+
+[node name="sprintsprite" type="Sprite2D" parent="Node2D/sprites" unique_id=2083008858]
+visible = false
+modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_ea6r3")
+
+[node name="dashsprite" type="Sprite2D" parent="Node2D/sprites" unique_id=447138727]
+visible = false
+modulate = Color(2.454227, 2.454227, 2.454227, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_yyq72")
+
+[node name="doublejump" type="Sprite2D" parent="Node2D/sprites" unique_id=2089020610]
+visible = false
+modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_whhxl")
+
+[node name="walljump" type="Sprite2D" parent="Node2D/sprites" unique_id=1293609352]
+visible = false
+modulate = Color(2.454227, 2.454227, 2.454227, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_eb3bx")
+
+[node name="fadout_sprit_anim" type="AnimationPlayer" parent="Node2D/sprites" unique_id=551738100]
+libraries/ = SubResource("AnimationLibrary_cqd35")
+
+[node name="move_y_anim" type="AnimationPlayer" parent="Node2D" unique_id=867834668]
+libraries/ = SubResource("AnimationLibrary_yyq72")
+autoplay = &"new_animation"
+speed_scale = 2.0
+
+[node name="info_bonus" type="RichTextLabel" parent="Node2D" unique_id=1801805091]
+modulate = Color(1, 1, 1, 0)
+z_index = 1000
+offset_left = -88.0
+offset_top = -103.0
+offset_right = 88.0
+offset_bottom = 20.0
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text_anim" type="AnimationPlayer" parent="Node2D/info_bonus" unique_id=757014903]
+libraries/ = SubResource("AnimationLibrary_kbf15")
+speed_scale = 0.2
+
+[node name="dash_icon" type="TextureRect" parent="Node2D/info_bonus" unique_id=1167158699]
+visible = false
+z_index = 100
+z_as_relative = false
+layout_mode = 0
+offset_left = 68.0
+offset_top = 82.0
+offset_right = 168.0
+offset_bottom = 182.0
+scale = Vector2(0.3, 0.3)
+texture = SubResource("Texture2D_1bvym")
+
+[node name="jump_icon" type="TextureRect" parent="Node2D/info_bonus" unique_id=178442262]
+visible = false
+z_index = 100
+z_as_relative = false
+layout_mode = 0
+offset_left = 68.0
+offset_top = 82.0
+offset_right = 168.0
+offset_bottom = 182.0
+scale = Vector2(0.3, 0.3)
+texture = SubResource("Texture2D_eb3bx")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=993949078]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=410195672]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_ea6r3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://besje3xv4kcv1"]
+
+[ext_resource type="PackedScene" uid="uid://jitchrxcsgsf" path="res://src/elements/ball.tscn" id="1_hvqoc"]
+[ext_resource type="Script" uid="uid://kx0bw32o75bj" path="res://src/elements/balls_gen.gd" id="1_qdytm"]
+
+[node name="balls_gen" type="Node2D" unique_id=115811286]
+script = ExtResource("1_qdytm")
+
+[node name="ball" parent="." unique_id=2002415136 instance=ExtResource("1_hvqoc")]
+inertia = 1.0
+linear_velocity = Vector2(-20, 0)
+
+[node name="Timer" type="Timer" parent="." unique_id=21575230]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

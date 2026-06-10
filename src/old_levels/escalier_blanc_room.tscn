@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cgd4r3uocbabf"]
+
+[ext_resource type="Texture2D" uid="uid://g20ypdeee8ik" path="res://sprites/rooms/escalier_blanc.png" id="1_5ojg8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xoqhc"]
+size = Vector2(122, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4p2d"]
+size = Vector2(174, 23.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lr8qc"]
+size = Vector2(466, 29)
+
+[node name="escalier_blanc_room" type="Node2D" unique_id=274503240]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=801998414]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_5ojg8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1824018828]
+position = Vector2(-214, -174)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=2123248166]
+position = Vector2(-325, 656.5)
+shape = SubResource("RectangleShape2D_xoqhc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1867713593]
+polygon = PackedVector2Array(139, 690, 140, 633, 161, 633, 165, 609, 191, 607, 192, 576, 212, 574, 212, 550, 237, 548, 238, 516, 258, 509, 259, 480, 283, 477, 285, 449, 305, 449, 308, 409, 326, 409, 334, 382, 350, 376, 353, 352, 374, 345, 379, 319, 393, 314, 401, 288, 424, 278, 425, 255, 439, 248, 447, 222, 467, 219, 471, 185, 489, 185, 495, 155, 521, 153, 522, 123, 543, 120, 549, 89, 566, 85, 570, 56, 589, 52, 587, 23, 589, 12, 674, 11, 674, 699)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1082121651]
+position = Vector2(746, 6.125)
+shape = SubResource("RectangleShape2D_x4p2d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=483649387]
+position = Vector2(-33, 674.5)
+shape = SubResource("RectangleShape2D_lr8qc")

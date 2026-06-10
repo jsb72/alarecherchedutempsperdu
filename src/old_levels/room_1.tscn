@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://bl14lcvp4g2nh"]
+
+[ext_resource type="Texture2D" uid="uid://rq2qwrrfwtuq" path="res://sprites/rooms3/room1true.png" id="2_j2aff"]
+[ext_resource type="PackedScene" uid="uid://c0g2bfslm40qt" path="res://src/platforms/pt_blueprint.tscn" id="3_1wdfw"]
+[ext_resource type="PackedScene" uid="uid://mtmitx3k0avp" path="res://src/platforms/3_platformblueprint.tscn" id="3_weegy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2aff"]
+size = Vector2(260.0744, 348.37494)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xuog"]
+size = Vector2(61, 346.37494)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hsou"]
+size = Vector2(123, 348.37494)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cks4"]
+size = Vector2(215.75256, 346.37494)
+
+[node name="room_1" type="Node2D" unique_id=424883610]
+metadata/_edit_horizontal_guides_ = [66.0]
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1991795860]
+position = Vector2(-518.3088, -381.6614)
+scale = Vector2(0.27368686, 0.27368686)
+texture = ExtResource("2_j2aff")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1950227588]
+position = Vector2(-161.25256, -0.37493896)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2103037025]
+position = Vector2(-60.0372, 240.18747)
+shape = SubResource("RectangleShape2D_j2aff")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=990777064]
+position = Vector2(163.5, 239.18747)
+shape = SubResource("RectangleShape2D_4xuog")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1742077667]
+position = Vector2(319.5, 240.18747)
+shape = SubResource("RectangleShape2D_3hsou")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=59443795]
+position = Vector2(615.3763, 239.18747)
+shape = SubResource("RectangleShape2D_6cks4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1733049233]
+visible = false
+position = Vector2(-161.25256, -0.37493896)
+gravity_space_override = 3
+gravity = 100.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=2105894756]
+visible = false
+polygon = PackedVector2Array(-270.74744, 73.37494, -227.74744, 56.37494, -227.74744, -167.62506, -272.74744, -172.62506)
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1883810058]
+visible = false
+position = Vector2(290, 1)
+rotation = -3.1415927
+scale = Vector2(1, -1)
+gravity_space_override = 3
+gravity = 100.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2" unique_id=2049379194]
+visible = false
+polygon = PackedVector2Array(-274, 75, -227.74744, 56.37494, -228, -166, -275, -172)
+
+[node name="pt_blueprint" parent="." unique_id=920875960 instance=ExtResource("3_1wdfw")]
+position = Vector2(2570.3145, 36.251755)
+
+[node name="pt_blueprint2" parent="." unique_id=1476778285 instance=ExtResource("3_1wdfw")]
+position = Vector2(2653.5776, 36.251755)
+
+[node name="pt_blueprint3" parent="." unique_id=39889285 instance=ExtResource("3_1wdfw")]
+position = Vector2(2825.419, -32.839066)
+
+[node name="pt_blueprint4" parent="." unique_id=2020857426 instance=ExtResource("3_1wdfw")]
+position = Vector2(2908.6824, -32.839066)
+
+[node name="pt_blueprint5" parent="." unique_id=1025351682 instance=ExtResource("3_1wdfw")]
+position = Vector2(2908.6824, -82.4427)
+
+[node name="3platformblueprint" parent="." unique_id=853668133 instance=ExtResource("3_weegy")]
+position = Vector2(1787.2844, 87.62712)
+
+[node name="3platformblueprint2" parent="." unique_id=304707078 instance=ExtResource("3_weegy")]
+position = Vector2(-2184.255, 87.62712)
+
+[node name="3platformblueprint3" parent="." unique_id=766430537 instance=ExtResource("3_weegy")]
+position = Vector2(-1516.6255, 19.152267)
+
+[node name="3platformblueprint4" parent="." unique_id=2065021962 instance=ExtResource("3_weegy")]
+position = Vector2(-1017.32996, -32.20369)
+
+[node name="3platformblueprint5" parent="." unique_id=1506200646 instance=ExtResource("3_weegy")]
+position = Vector2(863.7461, 28.995651)

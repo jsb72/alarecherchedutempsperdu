@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c0g2bfslm40qt"]
+
+[ext_resource type="Texture2D" uid="uid://b5gmrdmjvgxag" path="res://sprites/rooms/ground_pt.png" id="1_62cvp"]
+[ext_resource type="Script" uid="uid://bb0qqmce8np5n" path="res://src/platforms/pt_blueprint.gd" id="1_t5hha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jnf2"]
+size = Vector2(83, 45.177742)
+
+[node name="pt_blueprint" type="StaticBody2D" unique_id=920875960]
+script = ExtResource("1_t5hha")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1580286866]
+position = Vector2(-0.16351318, -0.9810486)
+scale = Vector2(0.274, 0.274)
+texture = ExtResource("1_62cvp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=852608201]
+position = Vector2(0.5, 0.588871)
+shape = SubResource("RectangleShape2D_2jnf2")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://31knhhh3i6jt"
+
+[deps]
+
+files=["res://enjoythevoid_translate.en.translation", "res://enjoythevoid_translate.fr.translation"]
+
+source_file="res://enjoythevoid_translate.csv"
+dest_files=["res://enjoythevoid_translate.en.translation", "res://enjoythevoid_translate.fr.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://duq6tqvfy58l6"]
+
+[ext_resource type="Script" uid="uid://c8r2b1rnbb4t6" path="res://src/vivants/sage3.gd" id="1_qm4ud"]
+[ext_resource type="Texture2D" uid="uid://bfgyr2nqo6pc4" path="res://sprites/bigvector.png" id="2_kieqj"]
+[ext_resource type="Texture2D" uid="uid://dmrsbbrarvw1n" path="res://sprites/bigvectorBLACK.png" id="3_m0huf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8qme"]
+atlas = ExtResource("2_kieqj")
+region = Rect2(0, 5000, 1250, 1250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbc1u"]
+atlas = ExtResource("3_m0huf")
+region = Rect2(5000, 5000, 1250, 1250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1y06"]
+atlas = ExtResource("2_kieqj")
+region = Rect2(0, 5000, 1250, 1250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ehoc"]
+atlas = ExtResource("2_kieqj")
+region = Rect2(1250, 5000, 1250, 1250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6legv"]
+atlas = ExtResource("2_kieqj")
+region = Rect2(2500, 5000, 1250, 1250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcl4r"]
+atlas = ExtResource("2_kieqj")
+region = Rect2(5000, 5000, 1250, 1250)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_juy4e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8qme")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbc1u")
+}],
+"loop": true,
+"name": &"stone",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1y06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ehoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6legv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcl4r")
+}],
+"loop": false,
+"name": &"wakeup",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_o04tx"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_atlln"]
+gradient = SubResource("Gradient_o04tx")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.85, 0.15)
+metadata/_snap_enabled = true
+metadata/_snap_count = 20
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atlln"]
+size = Vector2(379, 160)
+
+[node name="sage3" type="Node2D" unique_id=242949502]
+script = ExtResource("1_qm4ud")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=922847804]
+z_index = 4
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_juy4e")
+animation = &"wakeup"
+autoplay = "default"
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=506416439]
+color = Color(1.0309138, 0, 0, 1)
+texture = SubResource("GradientTexture2D_atlln")
+texture_scale = 2.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=634358545]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+offset_left = -84.0
+offset_top = -147.0
+offset_right = 68.0
+offset_bottom = -27.0
+theme_override_font_sizes/normal_font_size = 12
+text = "happiness"
+horizontal_alignment = 3
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1786713614]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1842024017]
+position = Vector2(148.78204, -7)
+shape = SubResource("RectangleShape2D_atlln")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

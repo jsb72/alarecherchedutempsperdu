@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://dhmslis0y0ejr"]
+
+[ext_resource type="PackedScene" uid="uid://c0g2bfslm40qt" path="res://src/platforms/pt_blueprint.tscn" id="1_tr5ni"]
+[ext_resource type="PackedScene" uid="uid://mtmitx3k0avp" path="res://src/platforms/3_platformblueprint.tscn" id="3_4yfx7"]
+[ext_resource type="PackedScene" uid="uid://do35bbyy0qllr" path="res://src/platforms/platform.tscn" id="9_v5qbg"]
+
+[sub_resource type="Animation" id="Animation_l88fe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(381.7179, 8.794861)]
+}
+
+[sub_resource type="Animation" id="Animation_u4oek"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(381.7179, 8.794861), Vector2(1558.8544, 8.794861)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tr5ni"]
+_data = {
+&"RESET": SubResource("Animation_l88fe"),
+&"new_animation": SubResource("Animation_u4oek")
+}
+
+[node name="blackwhite_room" type="Node2D" unique_id=1082967431]
+
+[node name="platform" parent="." unique_id=1968047125 instance=ExtResource("9_v5qbg")]
+position = Vector2(381.7179, 8.794861)
+scale = Vector2(2, 2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="platform" unique_id=1974731677]
+libraries/ = SubResource("AnimationLibrary_tr5ni")
+autoplay = &"new_animation"
+speed_scale = 0.2
+
+[node name="pt_blueprint5" parent="." unique_id=920875960 instance=ExtResource("1_tr5ni")]
+position = Vector2(-901.1026, 149.06097)
+
+[node name="pt_blueprint3" parent="." unique_id=592158019 instance=ExtResource("1_tr5ni")]
+position = Vector2(-817.4397, 101.63916)
+
+[node name="pt_blueprint4" parent="." unique_id=2128446030 instance=ExtResource("1_tr5ni")]
+position = Vector2(-901.1026, 101.63916)
+
+[node name="pt_blueprint2" parent="." unique_id=809168719 instance=ExtResource("1_tr5ni")]
+position = Vector2(-817.4397, 53.44629)
+
+[node name="pt_blueprint" parent="." unique_id=1927134749 instance=ExtResource("1_tr5ni")]
+position = Vector2(-817.4397, 5.2533875)
+
+[node name="pt_blueprint6" parent="." unique_id=825780786 instance=ExtResource("1_tr5ni")]
+position = Vector2(-730.9247, 5.2533264)
+
+[node name="pt_blueprint7" parent="." unique_id=691354861 instance=ExtResource("1_tr5ni")]
+position = Vector2(-730.9247, -42.66269)
+
+[node name="pt_blueprint8" parent="." unique_id=733393391 instance=ExtResource("1_tr5ni")]
+position = Vector2(-730.9247, -90.578705)
+
+[node name="pt_blueprint9" parent="." unique_id=854364051 instance=ExtResource("1_tr5ni")]
+position = Vector2(-730.9247, -139.82571)
+
+[node name="pt_blueprint12" parent="." unique_id=507113143 instance=ExtResource("1_tr5ni")]
+position = Vector2(-644.44464, -141.15671)
+
+[node name="pt_blueprint13" parent="." unique_id=1304675152 instance=ExtResource("1_tr5ni")]
+position = Vector2(-644.44464, -189.07272)
+
+[node name="pt_blueprint14" parent="." unique_id=1246221692 instance=ExtResource("1_tr5ni")]
+position = Vector2(-644.44464, -236.98874)
+
+[node name="pt_blueprint15" parent="." unique_id=1423164278 instance=ExtResource("1_tr5ni")]
+position = Vector2(-644.44464, -286.23575)
+
+[node name="pt_blueprint24" parent="." unique_id=869863862 instance=ExtResource("1_tr5ni")]
+position = Vector2(-510.52594, -82.76355)
+
+[node name="pt_blueprint25" parent="." unique_id=1285517698 instance=ExtResource("1_tr5ni")]
+position = Vector2(-510.52594, -130.67957)
+
+[node name="pt_blueprint27" parent="." unique_id=575818616 instance=ExtResource("1_tr5ni")]
+position = Vector2(-427.79865, -130.67957)
+
+[node name="pt_blueprint26" parent="." unique_id=165651443 instance=ExtResource("1_tr5ni")]
+position = Vector2(-510.52594, -179.92657)
+
+[node name="3platformblueprint" parent="." unique_id=853668133 instance=ExtResource("3_4yfx7")]
+position = Vector2(-323.43298, -26.620056)
+
+[node name="3platformblueprint2" parent="." unique_id=1446602168 instance=ExtResource("3_4yfx7")]
+position = Vector2(1724.9325, -26.620056)
+
+[node name="3platformblueprint5" parent="." unique_id=673725549 instance=ExtResource("3_4yfx7")]
+position = Vector2(3535.6702, -26.620056)
+
+[node name="3platformblueprint3" parent="." unique_id=1474372304 instance=ExtResource("3_4yfx7")]
+position = Vector2(2304.0283, -78.49481)
+
+[node name="3platformblueprint4" parent="." unique_id=811186568 instance=ExtResource("3_4yfx7")]
+position = Vector2(2884.0754, -123.7121)

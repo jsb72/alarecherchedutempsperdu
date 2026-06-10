@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cpabc1fdo4alr"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1jt8c"]
+b = Vector2(60, 0)
+
+[node name="segmentRope" type="RigidBody2D" unique_id=460885286]
+
+[node name="Line2D" type="Line2D" parent="." unique_id=837213847]
+position = Vector2(-30, 0)
+points = PackedVector2Array(0, 0, 60, 0)
+width = 5.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=939163096]
+position = Vector2(-30, 0)
+shape = SubResource("SegmentShape2D_1jt8c")

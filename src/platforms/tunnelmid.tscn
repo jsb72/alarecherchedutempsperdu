@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bf2hbc3ucd83i"]
+
+[ext_resource type="PackedScene" uid="uid://c0g2bfslm40qt" path="res://src/platforms/pt_blueprint.tscn" id="2_owbrs"]
+[ext_resource type="PackedScene" uid="uid://cwmh0r3f2teg7" path="res://src/platforms/tunnel.tscn" id="3_2gbrb"]
+
+[node name="tunnelmid" type="Node2D" unique_id=2032612795]
+
+[node name="tunnel" parent="." unique_id=1067650181 instance=ExtResource("3_2gbrb")]
+
+[node name="tunnel2" parent="." unique_id=910762253 instance=ExtResource("3_2gbrb")]
+position = Vector2(368, -358)
+rotation = 1.5707964
+
+[node name="pt_blueprint" parent="." unique_id=920875960 instance=ExtResource("2_owbrs")]
+position = Vector2(326, 100)
+
+[node name="pt_blueprint2" parent="." unique_id=933910882 instance=ExtResource("2_owbrs")]
+position = Vector2(408, 100)
+
+[node name="pt_blueprint3" parent="." unique_id=906036337 instance=ExtResource("2_owbrs")]
+position = Vector2(452, 100)

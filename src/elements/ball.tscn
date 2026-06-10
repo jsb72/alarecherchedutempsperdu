@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://jitchrxcsgsf"]
+
+[ext_resource type="Script" uid="uid://btuohortlmjc7" path="res://src/elements/ball.gd" id="1_dht28"]
+[ext_resource type="Texture2D" uid="uid://dlm5ckn5uidyv" path="res://sprites/ball.png" id="1_ooewl"]
+[ext_resource type="AudioStream" uid="uid://tlvm3ropbaau" path="res://sounds/universfield-funny-spring-jump-02-277576.mp3" id="3_eueje"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dht28"]
+radius = 14.0
+
+[sub_resource type="Gradient" id="Gradient_ooewl"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dht28"]
+gradient = SubResource("Gradient_ooewl")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0.2)
+metadata/_snap_enabled = true
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_w1bnt"]
+random_pitch = 1.8459114
+streams_count = 1
+stream_0/stream = ExtResource("3_eueje")
+
+[node name="ball" type="CharacterBody2D" unique_id=2080036255]
+script = ExtResource("1_dht28")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1746818905]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_ooewl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=96468265]
+shape = SubResource("CircleShape2D_dht28")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1672441485]
+texture = SubResource("GradientTexture2D_dht28")
+texture_scale = 0.6
+
+[node name="bouing" type="AudioStreamPlayer2D" parent="." unique_id=1699926883]
+stream = SubResource("AudioStreamRandomizer_w1bnt")

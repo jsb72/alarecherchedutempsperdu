@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cuk53lm5g5rl3"]
+
+[ext_resource type="PackedScene" uid="uid://bdd03axytgixu" path="res://src/platforms/damage_block.tscn" id="1_1cld0"]
+
+[node name="litlelongdmgblock" type="Node2D" unique_id=483214926]
+
+[node name="damage_block" parent="." unique_id=1974418075 instance=ExtResource("1_1cld0")]
+position = Vector2(-55.441753, 0)
+scale = Vector2(0.2, 0.2)
+
+[node name="damage_block2" parent="." unique_id=2063168341 instance=ExtResource("1_1cld0")]
+position = Vector2(-28.358137, 0)
+scale = Vector2(0.2, 0.2)
+
+[node name="damage_block3" parent="." unique_id=833929807 instance=ExtResource("1_1cld0")]
+scale = Vector2(0.2, 0.2)
+
+[node name="damage_block4" parent="." unique_id=1573814831 instance=ExtResource("1_1cld0")]
+position = Vector2(27.40224, 0)
+scale = Vector2(0.2, 0.2)
+
+[node name="damage_block5" parent="." unique_id=144034224 instance=ExtResource("1_1cld0")]
+position = Vector2(55.76038, 0)
+scale = Vector2(0.2, 0.2)

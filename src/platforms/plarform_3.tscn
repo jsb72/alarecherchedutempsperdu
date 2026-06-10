@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c8mkgg0r4x32f"]
+
+[ext_resource type="Texture2D" uid="uid://b7sw5al4k42t0" path="res://sprites/rooms/platform.png" id="1_qwhea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwhea"]
+size = Vector2(231.20131, 17.228363)
+
+[node name="plarform3" type="AnimatableBody2D" unique_id=857333791]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1124735122]
+position = Vector2(-77.108665, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_qwhea")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=543307299]
+position = Vector2(-0.6372757, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_qwhea")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=922266901]
+position = Vector2(75.834114, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_qwhea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1390590742]
+position = Vector2(0.1338501, -7.758438)
+shape = SubResource("RectangleShape2D_qwhea")

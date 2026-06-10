@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bmwyobu5l8pyt"]
+
+[ext_resource type="Script" uid="uid://chpajwyvmyrrn" path="res://src/elements/bomb.gd" id="1_q7g1g"]
+[ext_resource type="AudioStream" uid="uid://brqn65oxrnljo" path="res://sounds/11325622-big-cine-boom-sound-effect-245851.mp3" id="2_gsh55"]
+
+[sub_resource type="Gradient" id="Gradient_gsh55"]
+offsets = PackedFloat32Array(0.8298969, 0.8453608)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5lftc"]
+gradient = SubResource("Gradient_gsh55")
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0.2)
+metadata/_snap_enabled = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lop08"]
+radius = 25.019993
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7g1g"]
+size = Vector2(88, 76)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5lftc"]
+random_pitch = 1.0656005
+streams_count = 1
+stream_0/stream = ExtResource("2_gsh55")
+
+[sub_resource type="Gradient" id="Gradient_o04tx"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gsh55"]
+gradient = SubResource("Gradient_o04tx")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.85, 0.15)
+metadata/_snap_enabled = true
+metadata/_snap_count = 20
+
+[node name="bomb" type="RigidBody2D" unique_id=324640493]
+z_index = 5
+script = ExtResource("1_q7g1g")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=366587372]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("GradientTexture2D_5lftc")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1035405127]
+position = Vector2(-32, -32)
+polygon = PackedVector2Array(19, 33, -4, 47, 22, 40, 12, 55, 20, 48, 24, 71, 32, 50, 36, 61, 36, 49, 49, 79, 40, 46, 53, 56, 48, 45, 66, 45, 49, 36, 67, 28, 51, 29, 58, 15, 47, 23, 46, -6, 43, 17, 34, 12, 32, -3, 27, 15, 18, 5, 22, 15, 2, 5, 21, 21, 5, 20, 16, 25, -23, 26, 19, 28, 4, 33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1406633298]
+shape = SubResource("CircleShape2D_lop08")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1763080022]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=787207383]
+shape = SubResource("RectangleShape2D_q7g1g")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1919821673]
+stream = SubResource("AudioStreamRandomizer_5lftc")
+volume_db = -5.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1847348375]
+color = Color(1.031, 1.031, 1.031, 1)
+texture = SubResource("GradientTexture2D_gsh55")
+texture_scale = 2.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

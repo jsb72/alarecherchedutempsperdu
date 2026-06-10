@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://g6tnr8up2uac"]
+
+[ext_resource type="PackedScene" uid="uid://cpabc1fdo4alr" path="res://src/rope/segment_rope.tscn" id="1_aukri"]
+[ext_resource type="Script" uid="uid://di0aw7xwoir0" path="res://src/rope/character_body_2d.gd" id="2_1fo4x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fo4x"]
+size = Vector2(168, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhgqi"]
+size = Vector2(40, 42)
+
+[node name="testrope" type="Node2D" unique_id=1920247526]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=95467622]
+position = Vector2(4, -46)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=860000912]
+offset_left = 276.0
+offset_top = 150.0
+offset_right = 443.0
+offset_bottom = 214.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1174210366]
+position = Vector2(359, 182)
+shape = SubResource("RectangleShape2D_1fo4x")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=772229536]
+position = Vector2(-36, 160)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2" unique_id=1991848090]
+offset_left = 276.0
+offset_top = 150.0
+offset_right = 443.0
+offset_bottom = 214.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=523080284]
+position = Vector2(359, 182)
+shape = SubResource("RectangleShape2D_1fo4x")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=243973808]
+position = Vector2(365, 168)
+node_a = NodePath("../StaticBody2D")
+node_b = NodePath("../segmentRope")
+motor_target_velocity = 0.1717404
+
+[node name="segmentRope" parent="." unique_id=460885286 instance=ExtResource("1_aukri")]
+position = Vector2(355, 240)
+rotation = 1.5707964
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1474217762]
+position = Vector2(203, 127)
+script = ExtResource("2_1fo4x")
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D" unique_id=813981140]
+offset_left = 43.0
+offset_top = 128.0
+offset_right = 83.0
+offset_bottom = 168.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1879205975]
+position = Vector2(64, 148)
+shape = SubResource("RectangleShape2D_qhgqi")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="." unique_id=1452828174]
+position = Vector2(288, 275)
+node_a = NodePath("../CharacterBody2D")
+node_b = NodePath("../segmentRope")

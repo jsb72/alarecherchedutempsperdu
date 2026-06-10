@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://dayo7lbiwbhw3"]
+
+[ext_resource type="Texture2D" uid="uid://crgtd0ldflfvn" path="res://sprites/rooms/dmg_block_blackFAKE.png" id="1_0unbm"]
+[ext_resource type="PackedScene" uid="uid://denjct5e4x1jd" path="res://src/elements/cadavre.tscn" id="1_8y430"]
+[ext_resource type="Texture2D" uid="uid://bdkn38qhpynww" path="res://sprites/rooms/dmg_block_blackFAKEFRONT.png" id="3_8t4du"]
+
+[node name="tas_de_cadavre" type="Node2D" unique_id=1593653933]
+scale = Vector2(2.25, 2.25)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1567787198]
+position = Vector2(-3.742446, 49.726177)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_0unbm")
+
+[node name="cadavre10" parent="." unique_id=258405330 instance=ExtResource("1_8y430")]
+position = Vector2(33, -15)
+rotation = -0.06981317
+flip_h = true
+
+[node name="cadavre9" parent="." unique_id=192107765 instance=ExtResource("1_8y430")]
+position = Vector2(20, -19)
+
+[node name="cadavre7" parent="." unique_id=77739676 instance=ExtResource("1_8y430")]
+position = Vector2(-27, -23)
+
+[node name="cadavre8" parent="." unique_id=2019279971 instance=ExtResource("1_8y430")]
+position = Vector2(-5.999999, -30)
+rotation = 0.5270894
+
+[node name="cadavre" parent="." unique_id=642299986 instance=ExtResource("1_8y430")]
+position = Vector2(-2, -16)
+
+[node name="cadavre2" parent="." unique_id=976326458 instance=ExtResource("1_8y430")]
+position = Vector2(-24, -15)
+flip_h = true
+
+[node name="cadavre3" parent="." unique_id=237487877 instance=ExtResource("1_8y430")]
+position = Vector2(16, -14)
+flip_h = true
+
+[node name="cadavre4" parent="." unique_id=1623066231 instance=ExtResource("1_8y430")]
+position = Vector2(-36.000004, -15)
+rotation = 0.21118484
+
+[node name="cadavre6" parent="." unique_id=1292858379 instance=ExtResource("1_8y430")]
+position = Vector2(13, -27)
+flip_h = true
+
+[node name="cadavre5" parent="." unique_id=1936853478 instance=ExtResource("1_8y430")]
+position = Vector2(-8.000002, -22)
+rotation = 0.06981317
+
+[node name="cadavre11" parent="." unique_id=420671756 instance=ExtResource("1_8y430")]
+position = Vector2(-4.999996, -37)
+rotation = -0.13962634
+
+[node name="cadavre12" parent="." unique_id=1885056903 instance=ExtResource("1_8y430")]
+position = Vector2(20.000002, -35)
+rotation = -5.546656
+flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1343204809]
+position = Vector2(-3.742446, 49.726177)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_8t4du")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1195932993]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1031988038]
+polygon = PackedVector2Array(-49, -4, -31, -15, -20, -20, -26, -24, -13, -26, -5, -29, -4, -34, -1, -32, 3.5555556, -38.666668, 8.888889, -39.11111, 16, -33, 15, -30, 18, -23, 20, -18, 25, -14, 32, -13, 35, -9, 46, -4, 48, -1, 28, 2, 3, 1, -24, 1, -27, 3)

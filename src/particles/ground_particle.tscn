@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://kur8cpiyrv8b"]
+
+[ext_resource type="Texture2D" uid="uid://fpmf15gpgqgg" path="res://sprites/dust.png" id="1_hs080"]
+
+[sub_resource type="Gradient" id="Gradient_n10ca"]
+colors = PackedColorArray(0.2159017, 0.21590173, 0.21590167, 1, 1, 1, 1, 0)
+
+[node name="ground_particle" type="CPUParticles2D"]
+z_index = 3
+emitting = false
+amount = 5
+texture = ExtResource("1_hs080")
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.81
+randomness = 1.0
+lifetime_randomness = 0.33
+fixed_fps = 30
+draw_order = 1
+emission_shape = 3
+emission_rect_extents = Vector2(15, 1)
+gravity = Vector2(0, -2)
+linear_accel_max = 35.64
+tangential_accel_min = 13.86
+tangential_accel_max = 13.86
+scale_amount_min = 0.099999994
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_n10ca")

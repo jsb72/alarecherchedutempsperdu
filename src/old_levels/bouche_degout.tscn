@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b05muqmrcfpjp"]
+
+[ext_resource type="Texture2D" uid="uid://ds23ynuqkc3" path="res://sprites/rooms/TUNNEL.png" id="1_kvi24"]
+[ext_resource type="Texture2D" uid="uid://bycbkri5p15f4" path="res://sprites/rooms/frontun.png" id="2_m74nn"]
+[ext_resource type="Texture2D" uid="uid://cujs8030pk2s2" path="res://sprites/rooms/alonge_tun_front.png" id="3_5t46q"]
+[ext_resource type="Texture2D" uid="uid://2ys01tbwn8wf" path="res://sprites/rooms/alonge_tun.png" id="3_7ine3"]
+[ext_resource type="Script" uid="uid://ddhu3qfummrc2" path="res://addons/antialiased_line2d/antialiased_polygon2d.gd" id="5_1easv"]
+
+[node name="bouche degout" type="Node2D" unique_id=666465979]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=810955225]
+modulate = Color(0.47843137, 0.47843137, 0.47843137, 1)
+texture = ExtResource("1_kvi24")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=697038786]
+modulate = Color(0.47788018, 0.47788012, 0.47788012, 1)
+z_index = 20
+texture = ExtResource("2_m74nn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=953189899]
+
+[node name="Polygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=916409187]
+z_index = 100
+polygon = PackedVector2Array(-13.59668, -2395.55, -40, -1657, -558, -1663, -555, -1434, 528, -1434, 522, -292, -859, -288, -853, -53, 913, -46, 925.77026, 2183.2085, 2269, 795, 1442, -1984)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1536434695]
+z_index = 100
+polygon = PackedVector2Array(-366.44482, -2392.6218, -341, -1958, -828, -1961, -828, -1067, 178, -1062, 175, -795, -1171, -798, -1168, 407, 590, 407, 591.59033, 2158.145, -2278, 552, -1976, -1796)
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1152256750]
+modulate = Color(0.47843137, 0.47843137, 0.47843137, 1)
+position = Vector2(-0.28198242, 1382.1318)
+texture = ExtResource("3_7ine3")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=316641775]
+modulate = Color(0.47843137, 0.47843137, 0.47843137, 1)
+z_index = 20
+position = Vector2(-0.28198242, 1382.1318)
+texture = ExtResource("3_5t46q")
+
+[node name="AntialiasedPolygon2D" type="Polygon2D" parent="." unique_id=1888249414]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-12.900635, -2398.2554, 68.16943, -2377.6855, 172.22937, -2363.1655, 285.96936, -2353.4854, -21.370605, -2338.9656)
+script = ExtResource("5_1easv")
+stroke_width = 0.0
+metadata/_custom_type_script = "uid://ddhu3qfummrc2"
+
+[node name="AntialiasedPolygon2D2" type="Polygon2D" parent="." unique_id=92938515]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-355.33063, -2400.6755, -410.99066, -2389.7854, -530.78064, -2374.0554, -711.0707, -2359.5354, -355.33063, -2315.9756)
+script = ExtResource("5_1easv")
+stroke_width = 0.0
+metadata/_custom_type_script = "uid://ddhu3qfummrc2"

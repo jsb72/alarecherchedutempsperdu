@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://ca0qqvc5pjlky"]
+
+[ext_resource type="Script" uid="uid://dwg2pohsrlcyf" path="res://src/elements/button.gd" id="1_ihcdu"]
+[ext_resource type="Texture2D" uid="uid://csuiewxwaqi25" path="res://sprites/btn1.png" id="4_wl5o2"]
+[ext_resource type="Texture2D" uid="uid://viwuftj2virg" path="res://sprites/btn2.png" id="5_utlp5"]
+[ext_resource type="Texture2D" uid="uid://bt5xylad21rh8" path="res://sprites/btn1gold.png" id="5_vvdvm"]
+[ext_resource type="AudioStream" uid="uid://ij7h5h6vm1qw" path="res://sounds/microwave-button-82493.mp3" id="5_wl5o2"]
+[ext_resource type="Texture2D" uid="uid://dqn5qfu82doyy" path="res://sprites/btn2gold.png" id="6_ewf5h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ab8rq"]
+size = Vector2(33.42717, 8.222731)
+
+[sub_resource type="Animation" id="Animation_wl5o2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.7399995, -0.18999481)]
+}
+
+[sub_resource type="Animation" id="Animation_utlp5"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3.7399995, -0.18999481), Vector2(3.7399995, 4.9999995)]
+}
+
+[sub_resource type="Animation" id="Animation_vvdvm"]
+resource_name = "new_animation_reverse"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3.74, 5), Vector2(3.7399995, -0.18999481)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vvdvm"]
+_data = {
+&"RESET": SubResource("Animation_wl5o2"),
+&"new_animation": SubResource("Animation_utlp5"),
+&"new_animation_reverse": SubResource("Animation_vvdvm")
+}
+
+[sub_resource type="Gradient" id="Gradient_wl5o2"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_utlp5"]
+gradient = SubResource("Gradient_wl5o2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0.2)
+metadata/_snap_enabled = true
+
+[node name="button" type="Area2D" unique_id=1067572409]
+script = ExtResource("1_ihcdu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=529146898]
+position = Vector2(3.713585, -8.909747)
+shape = SubResource("RectangleShape2D_ab8rq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1845375758]
+position = Vector2(3.7400036, -0.19000101)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("4_wl5o2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2087049204]
+position = Vector2(3.7399995, -0.18999481)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("5_utlp5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D2" unique_id=726804004]
+libraries/ = SubResource("AnimationLibrary_vvdvm")
+speed_scale = 4.0
+
+[node name="gold" type="Sprite2D" parent="." unique_id=130809993]
+visible = false
+position = Vector2(3.7400036, -0.19000101)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("5_vvdvm")
+
+[node name="goldtop" type="Sprite2D" parent="." unique_id=640265032]
+visible = false
+position = Vector2(3.7399995, -0.18999481)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("6_ewf5h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="goldtop" unique_id=1353871432]
+libraries/ = SubResource("AnimationLibrary_vvdvm")
+speed_scale = 4.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1180587349]
+stream = ExtResource("5_wl5o2")
+volume_db = -12.0
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=997509681]
+position = Vector2(4, 1.0000005)
+scale = Vector2(0.78125, 0.78125)
+texture = SubResource("GradientTexture2D_utlp5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

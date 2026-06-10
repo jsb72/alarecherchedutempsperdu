@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cqafrfx31iqu6"]
+
+[ext_resource type="PackedScene" uid="uid://cwmh0r3f2teg7" path="res://src/platforms/tunnel.tscn" id="1_6j802"]
+[ext_resource type="PackedScene" uid="uid://mtmitx3k0avp" path="res://src/platforms/3_platformblueprint.tscn" id="1_yx2a6"]
+[ext_resource type="PackedScene" uid="uid://c0g2bfslm40qt" path="res://src/platforms/pt_blueprint.tscn" id="2_6j802"]
+
+[node name="tunnelcorner" type="Node2D" unique_id=1322568270]
+
+[node name="tunnel" parent="." unique_id=1067650181 instance=ExtResource("1_6j802")]
+
+[node name="tunnel2" parent="." unique_id=1897494326 instance=ExtResource("1_6j802")]
+position = Vector2(368, -358)
+rotation = 1.5707964
+
+[node name="pt_blueprint" parent="." unique_id=920875960 instance=ExtResource("2_6j802")]
+position = Vector2(326, 100)
+
+[node name="pt_blueprint2" parent="." unique_id=1062801586 instance=ExtResource("2_6j802")]
+position = Vector2(408, 100)
+
+[node name="pt_blueprint3" parent="." unique_id=1304525354 instance=ExtResource("2_6j802")]
+position = Vector2(448, 100)
+
+[node name="3platformblueprint2" parent="." unique_id=853668133 instance=ExtResource("1_yx2a6")]
+position = Vector2(468, -456)
+rotation = 1.5707964

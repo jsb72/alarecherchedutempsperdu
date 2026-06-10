@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cekaf18v66rc3"]
+
+[ext_resource type="Texture2D" path="res://sprites/rooms/first_true_room.png" id="1_n7tk1"]
+[ext_resource type="Script" uid="uid://bvvoxocw1djfi" path="res://src/old_levels/portal_room.gd" id="1_ry7q4"]
+[ext_resource type="Texture2D" uid="uid://b5gmrdmjvgxag" path="res://sprites/rooms/ground_pt.png" id="2_777ht"]
+[ext_resource type="PackedScene" uid="uid://c0g2bfslm40qt" path="res://src/platforms/pt_blueprint.tscn" id="4_lmkbf"]
+[ext_resource type="PackedScene" uid="uid://bhno22n7k5cmv" path="res://src/elements/portal.tscn" id="7_tl7he"]
+
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2qre"]
+size = Vector2(383, 561.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbesy"]
+size = Vector2(1188.75, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdbuc"]
+size = Vector2(2403, 270)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_777ht"]
+size = Vector2(88.30795, 110.25609)
+
+[node name="portal_room" type="Node2D" unique_id=864433486]
+script = ExtResource("1_ry7q4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=913873019]
+position = Vector2(-107.99999, -205.99998)
+rotation = 0.8412487
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_777ht")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=71356909]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_n7tk1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1826423135]
+position = Vector2(-214, -174)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1932125822]
+position = Vector2(825, 294.875)
+shape = SubResource("RectangleShape2D_v2qre")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1093016209]
+z_index = 3
+position = Vector2(1228.375, 19)
+shape = SubResource("RectangleShape2D_lbesy")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=481804644]
+position = Vector2(-33.5, 594)
+shape = SubResource("RectangleShape2D_gdbuc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=463882324]
+position = Vector2(67.9214, -61.22998)
+rotation = 0.8412487
+shape = SubResource("RectangleShape2D_777ht")
+
+[node name="portal" parent="." unique_id=1750795610 node_paths=PackedStringArray("portal_target") instance=ExtResource("7_tl7he")]
+position = Vector2(115, 279)
+rotation = 1.5707964
+portal_target = NodePath("../portal2")
+
+[node name="portal2" parent="." unique_id=1331243644 node_paths=PackedStringArray("portal_target") instance=ExtResource("7_tl7he")]
+position = Vector2(-41, -209)
+rotation = -3.8798668
+portal_target = NodePath("../portal")
+portal_reverse_color = true
+
+[node name="pt_blueprint" parent="." unique_id=920875960 instance=ExtResource("4_lmkbf")]
+position = Vector2(391, -160)
+
+[node name="pt_blueprint2" parent="." unique_id=1312151585 instance=ExtResource("4_lmkbf")]
+position = Vector2(308, -160)

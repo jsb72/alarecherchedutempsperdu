@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://chfqb1iho3vax"]
+
+[ext_resource type="Texture2D" uid="uid://codhwkl8p1fi6" path="res://sprites/rooms/jump_room.png" id="1_jgx4s"]
+[ext_resource type="PackedScene" uid="uid://c0g2bfslm40qt" path="res://src/platforms/pt_blueprint.tscn" id="3_jq7w8"]
+[ext_resource type="PackedScene" uid="uid://cuuupedh70x4h" path="res://src/elements/temps.tscn" id="6_jjfcg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjfcg"]
+size = Vector2(857, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2qre"]
+size = Vector2(383, 410)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdbuc"]
+size = Vector2(1785, 11)
+
+[node name="jump_room" type="Node2D" unique_id=864433486]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=71356909]
+position = Vector2(-185.99998, 155.99998)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_jgx4s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1826423135]
+position = Vector2(-214, -174)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1112012685]
+position = Vector2(788.5, 273.9)
+shape = SubResource("RectangleShape2D_jjfcg")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1932125822]
+position = Vector2(671, 498)
+shape = SubResource("RectangleShape2D_v2qre")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=481804644]
+z_index = 100
+position = Vector2(-345.5, 641.5)
+shape = SubResource("RectangleShape2D_gdbuc")
+
+[node name="Temps" parent="." unique_id=1268341129 instance=ExtResource("6_jjfcg")]
+offset_left = -440.0
+offset_top = -10.0
+offset_right = -439.0
+offset_bottom = 89.0
+
+[node name="pt_blueprint" parent="." unique_id=920875960 instance=ExtResource("3_jq7w8")]
+position = Vector2(-378, 432)
+
+[node name="pt_blueprint2" parent="." unique_id=1444054274 instance=ExtResource("3_jq7w8")]
+position = Vector2(-378, 388)
+
+[node name="pt_blueprint3" parent="." unique_id=506620835 instance=ExtResource("3_jq7w8")]
+position = Vector2(-378, 343)
+
+[node name="pt_blueprint4" parent="." unique_id=1662548334 instance=ExtResource("3_jq7w8")]
+position = Vector2(-378, 297)
+
+[node name="pt_blueprint5" parent="." unique_id=1983069176 instance=ExtResource("3_jq7w8")]
+position = Vector2(-301, 297)
+
+[node name="pt_blueprint6" parent="." unique_id=1464070160 instance=ExtResource("3_jq7w8")]
+position = Vector2(-227, 297)
+
+[node name="pt_blueprint7" parent="." unique_id=1547887356 instance=ExtResource("3_jq7w8")]
+position = Vector2(-225, 253)
+
+[node name="pt_blueprint8" parent="." unique_id=217381760 instance=ExtResource("3_jq7w8")]
+position = Vector2(-225, 203)

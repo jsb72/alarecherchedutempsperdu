@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b4f82f88p06cq"]
+
+[ext_resource type="Texture2D" uid="uid://ip51sxn2eihj" path="res://sprites/butterfly.png" id="1_w4w8o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocskk"]
+atlas = ExtResource("1_w4w8o")
+region = Rect2(0, 0, 500, 543)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtfj1"]
+atlas = ExtResource("1_w4w8o")
+region = Rect2(500, 0, 500, 543)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2ooj"]
+atlas = ExtResource("1_w4w8o")
+region = Rect2(1000, 0, 500, 543)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgswk"]
+atlas = ExtResource("1_w4w8o")
+region = Rect2(1500, 0, 500, 543)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otvq6"]
+atlas = ExtResource("1_w4w8o")
+region = Rect2(2000, 0, 500, 543)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4fcs1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocskk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtfj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2ooj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgswk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otvq6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="butterfly" type="Node2D" unique_id=86634657]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=295567565]
+sprite_frames = SubResource("SpriteFrames_4fcs1")
+autoplay = "default"
+frame_progress = 0.16823764
