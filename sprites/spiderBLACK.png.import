@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk7ewev4vgxwx"
-path="res://.godot/imported/Tilemap_AutoTile_128OLD.png-87e3ca6181b964e5404a8190ff6c89d9.ctex"
+uid="uid://idkf4bid5awb"
+path="res://.godot/imported/spiderBLACK.png-6f4e05839145572e364e811eea989630.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Tilemap_AutoTile_128OLD.png"
-dest_files=["res://.godot/imported/Tilemap_AutoTile_128OLD.png-87e3ca6181b964e5404a8190ff6c89d9.ctex"]
+source_file="res://sprites/spiderBLACK.png"
+dest_files=["res://.godot/imported/spiderBLACK.png-6f4e05839145572e364e811eea989630.ctex"]
 
 [params]
 

@@ -205,7 +205,7 @@ func getcollisionbody(rcast:RayCast2D):
 func getCollisionSurface(rcast:RayCast2D):
 	if rcast.is_colliding():
 		var collidobj = rcast.get_collider()
-		if collidobj is StaticBody2D :
+		if collidobj is TileMapLayer :
 			return collidobj
 	return null
 

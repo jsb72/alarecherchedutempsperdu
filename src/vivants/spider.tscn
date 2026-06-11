@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dij3e8be2nf5t"]
 
 [ext_resource type="Script" uid="uid://bfhk2ktud1ae3" path="res://src/vivants/spider.gd" id="1_xf7fx"]
-[ext_resource type="Texture2D" uid="uid://d1n0eaxg3qmy1" path="res://sprites/spider.png" id="1_y2cfc"]
+[ext_resource type="Texture2D" uid="uid://b6td1hqxvc8oc" path="res://sprites/spider.png" id="1_y2cfc"]
 [ext_resource type="AudioStream" uid="uid://dhletlwelfu1n" path="res://sounds/yodguard-spider-attack-1-482542.mp3" id="3_kstva"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b3p18"]
@@ -184,7 +184,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xf7fx"]
-size = Vector2(40, 40)
+size = Vector2(33, 33)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5l1ft"]
 random_pitch = 1.0717734

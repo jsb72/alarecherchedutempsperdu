@@ -1,4 +1,5 @@
 extends Area2D
+@onready var animation_player: AnimationPlayer = $AntialiasedRegularPolygon2D/AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,8 +14,9 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		#body.jump()
-		body.velocity = body.velocity*1.66
+		body.jump()
+		animation_player.play("new_animation")
+		#body.velocity = body.velocity*1.66
 		"""if Input.is_action_pressed("interaction"):
 			body.velocity = body.velocity*1.66"""
 		"""if Input.is_action_pressed("interaction"):

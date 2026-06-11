@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ducp7rsjpf40n" path="res://src/player/player.tscn" id="7_hmy3j"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="8_fk03h"]
 [ext_resource type="PackedScene" uid="uid://jdtuwgdfffnk" path="res://src/platforms/spike128.tscn" id="8_h18od"]
+[ext_resource type="PackedScene" uid="uid://dij3e8be2nf5t" path="res://src/vivants/spider.tscn" id="8_kswsn"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="9_60jrg"]
 [ext_resource type="Script" uid="uid://dimvdouy8g0sv" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_2d.gd" id="10_82s3x"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="11_aob8m"]
@@ -414,6 +415,10 @@ metadata/_edit_horizontal_guides_ = [-6351.0, -7121.0, -1009.0]
 unique_name_in_owner = true
 z_index = 0
 position = Vector2(1026, 410)
+
+[node name="spider" parent="." unique_id=1458701811 instance=ExtResource("8_kswsn")]
+z_index = 0
+position = Vector2(928, 688)
 
 [node name="cam" type="Node2D" parent="." unique_id=1498018793 node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true

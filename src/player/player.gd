@@ -443,9 +443,14 @@ func camera_logic()->void:
 	else :
 		cam.noise.positional_noise= false
 
+
 func try_play_new_anim(anim,rotation_=0.0) -> void:
 	if sprite.animation != anim or anim=="jumpup":
 		sprite.rotation=rotation_
+		
+		"""var tween = get_tree().create_tween()
+		tween.tween_property(sprite, "rotation", rotation_, 0.2)"""
+		
 		sprite.play(anim)
 		
 var en_train_de_tomber = false

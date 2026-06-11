@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxqxqn0ytevep"
-path="res://.godot/imported/spiderORIGIN.png-72807fabf0b1947aa7885bf0b57a00ab.ctex"
+uid="uid://2qb821r2ltk"
+path="res://.godot/imported/bouncing_ball.png-3439a95597963487183a0e9ff3db2c23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/spiderORIGIN.png"
-dest_files=["res://.godot/imported/spiderORIGIN.png-72807fabf0b1947aa7885bf0b57a00ab.ctex"]
+source_file="res://sprites/bouncing_ball.png"
+dest_files=["res://.godot/imported/bouncing_ball.png-3439a95597963487183a0e9ff3db2c23.ctex"]
 
 [params]
 

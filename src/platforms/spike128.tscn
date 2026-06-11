@@ -1,19 +1,43 @@
 [gd_scene format=3 uid="uid://jdtuwgdfffnk"]
 
 [ext_resource type="Texture2D" uid="uid://bfc8v2fku56bl" path="res://sprites/Remastered_Spikes.png" id="1_ntqcc"]
-[ext_resource type="Shader" uid="uid://bmhrnmwu4o3op" path="res://shaders/extensible-color-palette.gdshader" id="1_plq7p"]
 
-[sub_resource type="Gradient" id="Gradient_bwk7c"]
-offsets = PackedFloat32Array(0.046511628, 0.17209302, 0.29767442, 0.37209302, 0.9162791)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0.45378152, 0.45378152, 0.45378152, 1, 0.012617188, 0.012617188, 0.012617188, 1, 1, 1, 1, 1)
+[sub_resource type="Animation" id="Animation_bwk7c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.6440252, 0.62439024)]
+}
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_plq7p"]
-gradient = SubResource("Gradient_bwk7c")
+[sub_resource type="Animation" id="Animation_plq7p"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.6440252, 0.62439024), Vector2(0.6, 0.581)]
+}
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fcaif"]
-shader = ExtResource("1_plq7p")
-shader_parameter/pal0 = SubResource("GradientTexture2D_plq7p")
-shader_parameter/lerper = 0.0
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fcaif"]
+_data = {
+&"RESET": SubResource("Animation_bwk7c"),
+&"new_animation": SubResource("Animation_plq7p")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_grb3a"]
 radius = 203.2978
@@ -21,10 +45,13 @@ radius = 203.2978
 [node name="spike128" type="AnimatableBody2D" unique_id=1944370081]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=949922720]
-material = SubResource("ShaderMaterial_fcaif")
 position = Vector2(3.0517578e-05, 7.6293945e-06)
 scale = Vector2(0.6440252, 0.62439024)
 texture = ExtResource("1_ntqcc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1717129560]
+libraries/ = SubResource("AnimationLibrary_fcaif")
+autoplay = &"new_animation"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=83128286]
 shape = SubResource("CircleShape2D_grb3a")
