@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	newSprite.global_position = player.global_position+sprite.position
 	
 	newSprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
-	newSprite.z_index=4
+	#newSprite.z_index=-1
 	#get_tree().root.add_child(newSprite)
 	#player.add_sibling(newSprite)
 	trailplayer.add_child(newSprite)

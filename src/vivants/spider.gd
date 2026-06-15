@@ -10,15 +10,27 @@ extends CharacterBody2D
 
 @onready var right: RayCast2D = $right
 @onready var left: RayCast2D = $left
-@onready var down: RayCast2D = $down
 @onready var top: RayCast2D = $top
+@onready var down: RayCast2D = $down
 
 func _physics_process(delta: float) -> void:
 
-	if Input.is_action_just_pressed("right"):
+	"""if spiderrendu.scale.x == 1:
+		top.position.x = 7
+		down.position.x = 7
+		right.position.x = 7
+		left.position.x = 7
+	else:
+		top.position.x = -7
+		down.position.x = -7
+		right.position.x = -7
+		left.position.x = -7"""
+		
+	"""if Input.is_action_just_pressed("right"):
 		direction=1
 	if Input.is_action_just_pressed("left"):
-		direction=-1
+		direction=-1"""
+		
 	atk_logik()
 	if !is_attacking():
 		move_logic(delta)
@@ -190,7 +202,8 @@ func atk_logik()->void:
 			if last_surface=="top" or last_surface=="left":
 				spiderrendu.scale.x = -1
 			await get_tree().create_timer(0.1).timeout
-			bodycol_front.position.x += 3
+			if last_surface=="right" : bodycol_front.position.x -= 3
+			else: bodycol_front.position.x += 3
 			
 func is_attacking()->bool:
 	return animated_sprite_2d.animation == "attack" and animated_sprite_2d.is_playing()
@@ -211,5 +224,5 @@ func getCollisionSurface(rcast:RayCast2D):
 
 func _on_timer_timeout() -> void:
 	if !changement_de_surface : direction = rng.randi_range(-1, 1)
-	
+	timer.wait_time=randf_range(0.1, 10)
 	timer.start()

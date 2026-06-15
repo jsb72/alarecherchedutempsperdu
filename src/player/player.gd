@@ -119,6 +119,7 @@ func try_double_jump() -> void:
 func get_facing_dir() -> float:
 	return -1.0 if flip_h else 1.0
 
+"""var facing_dir_save_walljump:float=1.0"""
 func set_flip_h(value: bool) -> void:
 	if not is_node_ready():
 		await ready
@@ -126,14 +127,18 @@ func set_flip_h(value: bool) -> void:
 	flip_h = value
 	shape.scale.x = absf(shape.scale.x) * get_facing_dir()
 	sprite.scale.x = absf(sprite.scale.x) * get_facing_dir()
+	"""if !state_machine.active_state is WallJumpState:
+		sprite.scale.x = absf(sprite.scale.x) * get_facing_dir()
+	else:
+		sprite.scale.x =absf(sprite.scale.x) * facing_dir_save_walljump*-1"""
 
 func update_flip_h() -> void:
 	var h_input_dir: float = signf(get_input_vector().x)
 	
 	if h_input_dir:
 		flip_h = h_input_dir != 1.0
-		if state_machine.active_state is WallSlideState:
-			flip_h=!flip_h
+		"""if state_machine.active_state is WallSlideState:
+			flip_h=!flip_h"""
 
 func get_input_vector() -> Vector2:
 	if dead_: return Vector2(0,0)
@@ -233,11 +238,18 @@ func can_wall_slide() -> bool:
 	return isonwall
 	
 var is_sliding:bool=false
+var waitplayslideanim:bool=false
 func try_wall_slide() -> void:
 	if can_wall_slide():
 		state_machine.activate_state_by_name("WallSlideState")
+		
+		"""if !is_sliding:try_play_new_anim("slide_enter")
+		else:"""
+			
 		is_sliding=true
 		try_play_new_anim("slide")
+		"""if sprite.animation=="slide_enter" and sprite.frame==3:
+			try_play_new_anim("slide")"""
 		"""await get_tree().create_timer(0.1).timeout
 		if is_sliding:
 			try_play_new_anim("slide")
@@ -263,10 +275,12 @@ func wall_jump() -> void:
 	
 	state_machine.activate_state_by_name("WallJumpState")
 		
-	try_play_new_anim("jumpup",0.33*wall_jump_dir)
+	try_play_new_anim("walljumpup",0.33*wall_jump_dir)
 	walljump_sound.play()
 	jump_particle.restart()
 	is_sliding=false
+	
+	"""facing_dir_save_walljump=get_facing_dir()"""
 	
 	
 
@@ -401,7 +415,8 @@ func apply_stretch() -> void:
 
 @onready var cam: PhantomCamera2D = %cam
 
-@onready var shakecamtimer: Timer = $shakecamtimer
+@onready var groundshaketimer: Timer = $shakecamtimers/groundshaketimer
+
 @onready var animationdistorsion: AnimationPlayer = $CanvasLayer/distorsionrect/animationdistorsion
 @onready var glitch_rect: ColorRect = $CanvasLayer2/glitch_rect
 
@@ -438,19 +453,27 @@ func camera_logic()->void:
 		var tween = get_tree().create_tween()
 		tween.tween_property(cam, "follow_offset", Vector2(-50,0), 1.0)
 		
-	if state_machine.active_state is DashState or !shakecamtimer.is_stopped():
+	cam.noise.positional_noise= false
+	Input.stop_joy_vibration(0)
+	if state_machine.active_state is DashState:
+		cam.noise.amplitude=20.0
+		cam.noise.frequency=0.8
 		cam.noise.positional_noise= true
-	else :
-		cam.noise.positional_noise= false
-
+		Input.start_joy_vibration(0,0.5,0.5)
+	if !groundshaketimer.is_stopped():
+		cam.noise.amplitude=5.0
+		cam.noise.frequency=0.2
+		cam.noise.positional_noise= true
+		Input.start_joy_vibration(0,0.25,0.25)
 
 func try_play_new_anim(anim,rotation_=0.0) -> void:
-	if sprite.animation != anim or anim=="jumpup":
-		sprite.rotation=rotation_
+	if sprite.animation != anim or anim=="jumpup" or anim=="walljumpup":
+		#sprite.rotation=rotation_
 		
 		"""var tween = get_tree().create_tween()
 		tween.tween_property(sprite, "rotation", rotation_, 0.2)"""
-		
+		if anim=="jumpup":sprite.frame=0
+		if anim=="walljumpup":sprite.frame=0
 		sprite.play(anim)
 		
 var en_train_de_tomber = false
@@ -484,6 +507,7 @@ func sprite_animation() -> void:
 			try_play_new_anim("robe")
 			
 		if en_train_de_tomber and is_on_floor():
+			groundshaketimer.start()
 			try_play_new_anim("jumpground")
 			en_train_de_tomber = false
 		
@@ -494,9 +518,9 @@ func particle_animation() -> void:
 	if is_sliding:
 		if !dead_:slide_particle.emitting = true
 		if get_facing_dir() < 0 :
-			slide_particle.position.x = 13
-		if get_facing_dir() > 0 :
 			slide_particle.position.x = -13
+		if get_facing_dir() > 0 :
+			slide_particle.position.x = 13
 	else :
 		slide_particle.emitting = false
 	
@@ -517,24 +541,26 @@ func sound_animation() -> void:
 	else :
 		run_sound.stop()
 		
-	if is_on_wall_only():
+	if is_sliding:
 		if !slide_sound.playing and !dead_: slide_sound.play()
 	else :
 		slide_sound.stop()
 		
-		if velocity.y > 800 :
+		if velocity.y > 0 :
 			if !falling_sound.playing : 
 				if !falling_started:
 					var tween = get_tree().create_tween()
-					tween.tween_property(falling_sound, "volume_db", 0.0, 1.0)
+					tween.tween_property(falling_sound, "volume_db", 0.0, 0.5)
 					falling_started=true
 				
 				falling_sound.play()
 		else :
+			#if falling_started:shakecamtimer.start()
 			falling_sound.stop()
 			var tween = get_tree().create_tween()
-			tween.tween_property(falling_sound, "volume_db", -80.0, 1.0)
+			tween.tween_property(falling_sound, "volume_db", -80.0, 0.5)
 			falling_started=false
+			
 		
 	if velocity.y != 0.0 :
 		saut_en_cours_for_sound = true

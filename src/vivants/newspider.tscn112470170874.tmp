@@ -1,113 +1,112 @@
-[gd_scene format=3 uid="uid://dij3e8be2nf5t"]
+[gd_scene format=3 uid="uid://dhrgjny51lom7"]
 
-[ext_resource type="Script" uid="uid://bfhk2ktud1ae3" path="res://src/vivants/spider.gd" id="1_xf7fx"]
-[ext_resource type="Texture2D" uid="uid://b6td1hqxvc8oc" path="res://sprites/spider.png" id="1_y2cfc"]
-[ext_resource type="Shader" uid="uid://bmhrnmwu4o3op" path="res://shaders/extensible-color-palette.gdshader" id="2_5l1ft"]
-[ext_resource type="AudioStream" uid="uid://dhletlwelfu1n" path="res://sounds/yodguard-spider-attack-1-482542.mp3" id="3_kstva"]
+[ext_resource type="Shader" uid="uid://bmhrnmwu4o3op" path="res://shaders/extensible-color-palette.gdshader" id="1_sk0mc"]
+[ext_resource type="Script" uid="uid://dn5c715uvysjx" path="res://src/vivants/newspider.gd" id="1_tf23j"]
+[ext_resource type="Texture2D" uid="uid://b6td1hqxvc8oc" path="res://sprites/spider.png" id="2_tf23j"]
 
-[sub_resource type="Gradient" id="Gradient_jhm3r"]
+[sub_resource type="Gradient" id="Gradient_lvyff"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bjwor"]
-gradient = SubResource("Gradient_jhm3r")
+gradient = SubResource("Gradient_lvyff")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k6ooj"]
-shader = ExtResource("2_5l1ft")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_36xei"]
+shader = ExtResource("1_sk0mc")
 shader_parameter/pal0 = SubResource("GradientTexture2D_bjwor")
 shader_parameter/lerper = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b3p18"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(800, 0, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_talhr"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(1200, 0, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t3qor"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(1600, 0, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fnhcr"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(2000, 0, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_un1ox"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(2400, 0, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ovv8"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(2800, 0, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y2lid"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(3200, 0, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4000"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(3600, 0, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rmig8"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(4000, 0, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xf7fx"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(0, 1636, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kstva"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(400, 1636, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5l1ft"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(800, 1636, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jhm3r"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(1200, 1636, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjwor"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(0, 1227, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k6ooj"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(400, 1227, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ldf8h"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(800, 1227, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbkcs"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(1200, 1227, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_33gvx"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(1600, 1227, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8khs1"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(2000, 1227, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r4sfb"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(2400, 1227, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mtdbk"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(2800, 1227, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sn35f"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(3200, 1227, 400, 409)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wnwjt"]
-atlas = ExtResource("1_y2cfc")
+atlas = ExtResource("2_tf23j")
 region = Rect2(3600, 1227, 400, 409)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dfh1t"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_45pos"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -194,57 +193,21 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xf7fx"]
-size = Vector2(33, 33)
+[node name="newspider" type="Node2D" unique_id=485356090]
+script = ExtResource("1_tf23j")
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5l1ft"]
-random_pitch = 1.0717734
-streams_count = 1
-stream_0/stream = ExtResource("3_kstva")
+[node name="spiderrendu" type="Node2D" parent="." unique_id=380263695]
 
-[node name="spider" type="CharacterBody2D" unique_id=1458701811]
-z_index = 6
-motion_mode = 1
-script = ExtResource("1_xf7fx")
-
-[node name="spiderrendu" type="Node2D" parent="." unique_id=293386959]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spiderrendu" unique_id=1834145763]
-material = SubResource("ShaderMaterial_k6ooj")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spiderrendu" unique_id=833103731]
+material = SubResource("ShaderMaterial_36xei")
 position = Vector2(10.464499, -12.753623)
 scale = Vector2(0.2, 0.2)
-sprite_frames = SubResource("SpriteFrames_dfh1t")
+sprite_frames = SubResource("SpriteFrames_45pos")
 animation = &"attack"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1358698793]
-shape = SubResource("RectangleShape2D_xf7fx")
-
-[node name="Timer" type="Timer" parent="." unique_id=110527535]
-one_shot = true
-autostart = true
-
-[node name="right" type="RayCast2D" parent="." unique_id=2124646767]
+[node name="hray" type="RayCast2D" parent="spiderrendu" unique_id=794114878]
 target_position = Vector2(20, 0)
 
-[node name="left" type="RayCast2D" parent="." unique_id=2075609731]
-target_position = Vector2(-20, 0)
-
-[node name="top" type="RayCast2D" parent="." unique_id=2025843064]
-target_position = Vector2(0, -20)
-
-[node name="down" type="RayCast2D" parent="." unique_id=784114022]
+[node name="vray" type="RayCast2D" parent="spiderrendu" unique_id=2003494226]
 target_position = Vector2(0, 20)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1198711378]
-stream = SubResource("AudioStreamRandomizer_5l1ft")
-volume_db = -5.0
-
-[node name="changementdesurfacetimer" type="Timer" parent="." unique_id=171047853]
-one_shot = true
-
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=775097706]
-rect = Rect2(-30, -30, 60, 60)
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="changementdesurfacetimer" to="." method="_on_changementdesurfacetimer_timeout"]
