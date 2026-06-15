@@ -258,7 +258,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 15.0
+"speed": 20.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tf23j"]
@@ -274,15 +274,15 @@ material = SubResource("ShaderMaterial_36xei")
 position = Vector2(10.464499, -12.753623)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_45pos")
-animation = &"death"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="hray" type="RayCast2D" parent="spiderrendu" unique_id=794114878]
-target_position = Vector2(20, 0)
+target_position = Vector2(18, 0)
 
 [node name="vray" type="RayCast2D" parent="spiderrendu" unique_id=2003494226]
 position = Vector2(16, 0)
-target_position = Vector2(0, 20)
+target_position = Vector2(0, 18)
 
 [node name="Area2D" type="Area2D" parent="spiderrendu" unique_id=1767895151]
 
