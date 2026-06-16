@@ -576,7 +576,7 @@ func sound_animation() -> void:
 				land_sound.play()
 				ground_particle.restart()
 			
-var last_floor_pos : Vector2= Vector2(0.0,0.0)
+var last_floor_pos : Vector2= Vector2(5312.0,32.0)
 var respawned : bool = false
 func respawn():
 	var tween22 = get_tree().create_tween()
