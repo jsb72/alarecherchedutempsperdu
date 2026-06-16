@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cv2bwoqw07lnb" path="res://src/particles/run_particle.tscn" id="15_j2873"]
 [ext_resource type="AudioStream" uid="uid://bdcg2t8w75wa8" path="res://sounds/hero_dash.wav" id="16_4uy46"]
 [ext_resource type="PackedScene" uid="uid://cvsfd3471pa4e" path="res://src/particles/blood_particle.tscn" id="16_dpt0q"]
+[ext_resource type="Texture2D" uid="uid://cblhdfe5ttflu" path="res://sprites/blood_c_0001.png" id="17_e7e1q"]
 [ext_resource type="AudioStream" uid="uid://bpabs1jo2k3i7" path="res://sounds/hero_wall_slide.wav" id="17_k60ra"]
 [ext_resource type="Shader" uid="uid://bmhrnmwu4o3op" path="res://shaders/extensible-color-palette.gdshader" id="17_p6grl"]
 [ext_resource type="AudioStream" uid="uid://bk1u2t0pf6uu3" path="res://sounds/hero_run_footsteps_stone.wav" id="18_a4vah"]
@@ -595,7 +596,7 @@ shader_parameter/shake_color_rate = 0.01
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j2873"]
 shader = ExtResource("18_o04tx")
-shader_parameter/hit_effect = 1.0
+shader_parameter/hit_effect = 0.0
 shader_parameter/shake_intensity = 2.0
 shader_parameter/flash_speed = 10.0
 shader_parameter/flash_color = Color(0.4745098, 0, 0, 1)
@@ -652,7 +653,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 2.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -848,6 +849,7 @@ position = Vector2(0, -5)
 [node name="blood_particle" parent="particles" unique_id=1148518955 instance=ExtResource("16_dpt0q")]
 position = Vector2(0, -32)
 amount = 30
+texture = ExtResource("17_e7e1q")
 lifetime = 1.0
 explosiveness = 0.5
 randomness = 1.0

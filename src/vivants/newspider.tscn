@@ -3,7 +3,7 @@
 [ext_resource type="Shader" uid="uid://bmhrnmwu4o3op" path="res://shaders/extensible-color-palette.gdshader" id="1_sk0mc"]
 [ext_resource type="Script" uid="uid://dn5c715uvysjx" path="res://src/vivants/newspider.gd" id="1_tf23j"]
 [ext_resource type="Texture2D" uid="uid://b6td1hqxvc8oc" path="res://sprites/spider.png" id="2_tf23j"]
-[ext_resource type="AudioStream" uid="uid://dixptxy6nm0fy" path="res://sounds/squish.mp3" id="4_lvyff"]
+[ext_resource type="AudioStream" uid="uid://dt8klv05wm0g2" path="res://sounds/spider_squish.mp3" id="4_lvyff"]
 
 [sub_resource type="Gradient" id="Gradient_lvyff"]
 

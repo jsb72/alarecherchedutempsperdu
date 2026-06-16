@@ -480,11 +480,15 @@ tile_map_data = PackedByteArray("AAAuABQAAAAKAAEAAAAuABMAAAAKAAEAAAAuABIAAAAIAAM
 tile_set = SubResource("TileSet_hf4py")
 
 [node name="spike" parent="." unique_id=1944370081 instance=ExtResource("8_h18od")]
-position = Vector2(1056, 544)
+position = Vector2(1056, 416)
 scale = Vector2(0.125, 0.125)
 
 [node name="spike2" parent="." unique_id=2040417899 instance=ExtResource("8_h18od")]
-position = Vector2(1088, 448)
+position = Vector2(1088, 320)
+scale = Vector2(0.25, 0.25)
+
+[node name="spike3" parent="." unique_id=1186197481 instance=ExtResource("8_h18od")]
+position = Vector2(1088, 192)
 scale = Vector2(0.25, 0.25)
 
 [node name="bomb" parent="." unique_id=324640493 instance=ExtResource("10_knf4u")]
