@@ -23,15 +23,12 @@
 [ext_resource type="AudioStream" uid="uid://bpabs1jo2k3i7" path="res://sounds/hero_wall_slide.wav" id="17_k60ra"]
 [ext_resource type="Shader" uid="uid://bmhrnmwu4o3op" path="res://shaders/extensible-color-palette.gdshader" id="17_p6grl"]
 [ext_resource type="AudioStream" uid="uid://bk1u2t0pf6uu3" path="res://sounds/hero_run_footsteps_stone.wav" id="18_a4vah"]
-[ext_resource type="Shader" uid="uid://d1cnualeuqjos" path="res://shaders/damage_impact.gdshader" id="18_o04tx"]
 [ext_resource type="PackedScene" uid="uid://bf78142na1p7k" path="res://src/particles/jump_particle.tscn" id="19_vwi60"]
 [ext_resource type="PackedScene" uid="uid://kur8cpiyrv8b" path="res://src/particles/ground_particle.tscn" id="20_o04tx"]
 [ext_resource type="PackedScene" uid="uid://wok5htmqtlc8" path="res://src/particles/slide_particle.tscn" id="21_hja65"]
 [ext_resource type="Script" uid="uid://b6rm5gkxphdna" path="res://src/player/spritetrail.gd" id="22_5shm8"]
-[ext_resource type="Shader" uid="uid://chycd0t8penwl" path="res://shaders/teleport.gdshader" id="26_a4vah"]
 [ext_resource type="AudioStream" uid="uid://bd2ytox8or26g" path="res://sounds/hero_falling.wav" id="29_p6grl"]
 [ext_resource type="Shader" uid="uid://chet47u8v3pes" path="res://shaders/distorsion.gdshader" id="34_xmpm3"]
-[ext_resource type="Shader" uid="uid://ncq23qfexrtu" path="res://shaders/glitch.gdshader" id="35_h0enb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qnmj6"]
 size = Vector3(48, 64, 1)
@@ -401,13 +398,6 @@ animations = [{
 "speed": 9.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o04tx"]
-shader = ExtResource("18_o04tx")
-shader_parameter/hit_effect = 0.50000002375
-shader_parameter/shake_intensity = 10.0
-shader_parameter/flash_speed = 400.0
-shader_parameter/flash_color = Color(1, 0, 0, 1)
-
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dpt0q"]
 random_pitch = 1.2
 streams_count = 1
@@ -466,81 +456,6 @@ fill_to = Vector2(0.85, 0.15)
 metadata/_snap_enabled = true
 metadata/_snap_count = 20
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vwi60"]
-shader = ExtResource("26_a4vah")
-shader_parameter/progress = 1.0
-shader_parameter/noise_desnity = 60.0
-shader_parameter/beam_size = 0.15000000596046
-shader_parameter/color = Color(1.2, 1.2, 1.2, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v3rjw"]
-atlas = ExtResource("14_4uy46")
-region = Rect2(0, 0, 133, 133)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_fd7k5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v3rjw")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="Animation" id="Animation_a4vah"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:shader_parameter/progress")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-
-[sub_resource type="Animation" id="Animation_vwi60"]
-resource_name = "new_animation"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:shader_parameter/progress")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.93333334, 1.0333333, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.2150000102125, 0.1535100062689092, 0.07200000342, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_o04tx"]
-resource_name = "new_animation_reverse"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:shader_parameter/progress")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.2150000102125]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_o04tx"]
-_data = {
-&"RESET": SubResource("Animation_a4vah"),
-&"new_animation": SubResource("Animation_vwi60"),
-&"new_animation_reverse": SubResource("Animation_o04tx")
-}
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h0enb"]
 shader = ExtResource("34_xmpm3")
 shader_parameter/strength = 0.08
@@ -585,21 +500,6 @@ _data = {
 &"RESET": SubResource("Animation_78vs0"),
 &"new_animation": SubResource("Animation_doi8u")
 }
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_phdu6"]
-shader = ExtResource("35_h0enb")
-shader_parameter/shake_power = 0.03
-shader_parameter/shake_rate = 0.2
-shader_parameter/shake_speed = 5.0
-shader_parameter/shake_block_size = 30.5
-shader_parameter/shake_color_rate = 0.01
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j2873"]
-shader = ExtResource("18_o04tx")
-shader_parameter/hit_effect = 0.0
-shader_parameter/shake_intensity = 2.0
-shader_parameter/flash_speed = 10.0
-shader_parameter/flash_color = Color(0.4745098, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bw7q3"]
 atlas = ExtResource("14_4uy46")
@@ -872,16 +772,6 @@ frame = 3
 frame_progress = 1.0
 script = ExtResource("14_5efpn")
 
-[node name="SpriteShader" type="AnimatedSprite2D" parent="." unique_id=576551087]
-visible = false
-material = SubResource("ShaderMaterial_o04tx")
-position = Vector2(0, -36)
-scale = Vector2(0.55, 0.55)
-sprite_frames = SubResource("SpriteFrames_j2873")
-animation = &"robe"
-autoplay = "idle"
-script = ExtResource("14_5efpn")
-
 [node name="sounds" type="Node" parent="." unique_id=1592920555]
 
 [node name="jump_sound" type="AudioStreamPlayer" parent="sounds" unique_id=703265265]
@@ -925,17 +815,6 @@ texture = SubResource("GradientTexture2D_5shm8")
 [node name="spritetrail" type="Node" parent="." unique_id=556906390]
 script = ExtResource("22_5shm8")
 
-[node name="AnimatedSpriteForTeleportShader" type="AnimatedSprite2D" parent="." unique_id=793368792]
-visible = false
-material = SubResource("ShaderMaterial_vwi60")
-position = Vector2(0, -36)
-scale = Vector2(0.55, 0.55)
-sprite_frames = SubResource("SpriteFrames_fd7k5")
-
-[node name="AnimationPlayerForTeleportShader" type="AnimationPlayer" parent="AnimatedSpriteForTeleportShader" unique_id=238446722]
-libraries/ = SubResource("AnimationLibrary_o04tx")
-speed_scale = 2.0
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1434982329]
 
 [node name="distorsionrect" type="ColorRect" parent="CanvasLayer" unique_id=2137329780]
@@ -946,15 +825,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="animationdistorsion" type="AnimationPlayer" parent="CanvasLayer/distorsionrect" unique_id=1833195375]
 libraries/ = SubResource("AnimationLibrary_phdu6")
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=716557329]
-
-[node name="glitch_rect" type="ColorRect" parent="CanvasLayer2" unique_id=1678420934]
-visible = false
-material = SubResource("ShaderMaterial_phdu6")
-offset_right = 1280.0
-offset_bottom = 720.0
-color = Color(1, 1, 1, 0)
 
 [node name="shakecamtimers" type="Node2D" parent="." unique_id=1792204790]
 
@@ -967,7 +837,7 @@ one_shot = true
 
 [node name="deathspriteanim" type="AnimatedSprite2D" parent="." unique_id=969468519]
 visible = false
-material = SubResource("ShaderMaterial_j2873")
+modulate = Color(1, 0.36078432, 0, 1)
 position = Vector2(0, -36)
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_tjw5d")

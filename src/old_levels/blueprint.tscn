@@ -491,5 +491,9 @@ scale = Vector2(0.25, 0.25)
 position = Vector2(1088, 192)
 scale = Vector2(0.25, 0.25)
 
+[node name="spike4" parent="." unique_id=230838033 instance=ExtResource("8_h18od")]
+position = Vector2(1920, 640)
+scale = Vector2(0.25, 0.25)
+
 [node name="bomb" parent="." unique_id=324640493 instance=ExtResource("10_knf4u")]
 position = Vector2(1536, 544)

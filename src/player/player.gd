@@ -419,7 +419,6 @@ func apply_stretch() -> void:
 @onready var dmgshaketimer: Timer = $shakecamtimers/dmgshaketimer
 
 @onready var animationdistorsion: AnimationPlayer = $CanvasLayer/distorsionrect/animationdistorsion
-@onready var glitch_rect: ColorRect = $CanvasLayer2/glitch_rect
 
 
 func sprint_logic():
@@ -441,7 +440,6 @@ func logic_spe():
 	
 	camera_logic()
 	
-	laser_logic_anim()
 	
 	if Global.sprint_unlock:
 		sprint_logic()
@@ -579,8 +577,6 @@ func sound_animation() -> void:
 				ground_particle.restart()
 			
 var last_floor_pos : Vector2= Vector2(0.0,0.0)
-@onready var animated_sprite_for_teleport_shader: AnimatedSprite2D = $AnimatedSpriteForTeleportShader
-@onready var animation_player_for_teleport_shader: AnimationPlayer = $AnimatedSpriteForTeleportShader/AnimationPlayerForTeleportShader
 var respawned : bool = false
 func respawn():
 	var tween22 = get_tree().create_tween()
@@ -588,43 +584,24 @@ func respawn():
 	var tween2 = get_tree().create_tween()
 	tween2.tween_property(point_light_2d_2, "energy", 1.0, 1.0)
 	
-	dead_ = false
 	respawned=true
-	deathspriteanim.hide()
-	sprite.hide()
-	sprite_shader.hide()
+	
+	dead_ = false
+	
 	global_position = last_floor_pos
 	velocity = Vector2(0.0,0.0)
-	await get_tree().create_timer(0.1).timeout
-	if get_facing_dir() > 0 :
-		animated_sprite_for_teleport_shader.flip_h = false
-	if get_facing_dir() < 0 :
-		animated_sprite_for_teleport_shader.flip_h = true
-	animated_sprite_for_teleport_shader.show()
-	animation_player_for_teleport_shader.play("new_animation")
-	await get_tree().create_timer(1).timeout
-	animated_sprite_for_teleport_shader.hide()
+	
 	sprite.show()
+	deathspriteanim.hide()
+	sprite.modulate.a = 0.0
+	
+	var tween3 = get_tree().create_tween()
+	tween3.tween_property(sprite, "modulate:a", 1.0, 2.0)
+	
+	await get_tree().create_timer(2).timeout
 	
 	respawned=false
 	
-			
-@onready var sprite_shader: AnimatedSprite2D = $SpriteShader
-var laser_dmg:bool=false
-func laser_logic_anim():
-	if laser_dmg :
-		Engine.time_scale = 0.04
-		velocity=velocity/7
-		duplicate_sprite()
-		sprite.hide()
-		sprite_shader.show()
-func duplicate_sprite():
-	sprite_shader.position = sprite.position
-	sprite_shader.rotation = sprite.rotation
-	sprite_shader.scale = sprite.scale
-	sprite_shader.skew = sprite.skew
-	sprite_shader.animation = sprite.animation
-	sprite_shader.frame = sprite.frame
 
 @onready var deathspriteanim: Node2D = $deathspriteanim
 
@@ -637,11 +614,22 @@ func play_death_anim():
 	
 	blood_particle.restart()
 	dead_ = true
+	
 	sprite.hide()
 	deathspriteanim.show()
+	deathspriteanim.modulate.s = 100
+	
+	if get_facing_dir() > 0 :
+		deathspriteanim.flip_h = false
+	if get_facing_dir() < 0 :
+		deathspriteanim.flip_h = true
 	
 	deathspriteanim.play("default")
 	
-	await get_tree().create_timer(5).timeout
+	var tween4 = get_tree().create_tween()
+	tween4.tween_property(deathspriteanim, "modulate:s", 0.0, 2.0)
+	
+	
+	await get_tree().create_timer(6).timeout
 	respawn()
 		
