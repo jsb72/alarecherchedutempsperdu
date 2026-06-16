@@ -1,5 +1,6 @@
 extends Area2D
 @onready var animation_player: AnimationPlayer = $AntialiasedRegularPolygon2D/AnimationPlayer
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,7 +16,10 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.jump()
+		body.velocity = body.velocity*1.3
 		animation_player.play("new_animation")
+		audio_stream_player_2d.play()
+		body.groundshaketimer.start()
 		#body.velocity = body.velocity*1.66
 		"""if Input.is_action_pressed("interaction"):
 			body.velocity = body.velocity*1.66"""

@@ -4,13 +4,16 @@ extends Node2D
 @onready var spiderrendu: Node2D = $spiderrendu
 @onready var vray: RayCast2D = $spiderrendu/vray
 @onready var hray: RayCast2D = $spiderrendu/hray
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var speed_move:float = 0.4
 var dead:bool=false
 
+@export var angle_spiderrendu:int=0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	spiderrendu.rotation_degrees=angle_spiderrendu
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -67,4 +70,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		if !dead:
 			animated_sprite_2d.play("death")
+			audio_stream_player_2d.play()
 		dead=true

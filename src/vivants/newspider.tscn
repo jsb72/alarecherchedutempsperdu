@@ -3,6 +3,7 @@
 [ext_resource type="Shader" uid="uid://bmhrnmwu4o3op" path="res://shaders/extensible-color-palette.gdshader" id="1_sk0mc"]
 [ext_resource type="Script" uid="uid://dn5c715uvysjx" path="res://src/vivants/newspider.gd" id="1_tf23j"]
 [ext_resource type="Texture2D" uid="uid://b6td1hqxvc8oc" path="res://sprites/spider.png" id="2_tf23j"]
+[ext_resource type="AudioStream" uid="uid://dixptxy6nm0fy" path="res://sounds/squish.mp3" id="4_lvyff"]
 
 [sub_resource type="Gradient" id="Gradient_lvyff"]
 
@@ -264,6 +265,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tf23j"]
 size = Vector2(44, 32)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_36xei"]
+random_pitch = 1.0717734
+streams_count = 1
+stream_0/stream = ExtResource("4_lvyff")
+
 [node name="newspider" type="Node2D" unique_id=485356090]
 script = ExtResource("1_tf23j")
 
@@ -288,5 +294,9 @@ target_position = Vector2(0, 18)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spiderrendu/Area2D" unique_id=10350516]
 shape = SubResource("RectangleShape2D_tf23j")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=90922197]
+stream = SubResource("AudioStreamRandomizer_36xei")
+volume_db = 5.0
 
 [connection signal="body_entered" from="spiderrendu/Area2D" to="." method="_on_area_2d_body_entered"]

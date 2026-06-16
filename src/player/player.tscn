@@ -42,7 +42,7 @@ size = Vector3(16, 16, 1)
 size = Vector2(32, 61)
 
 [sub_resource type="Gradient" id="Gradient_p6grl"]
-colors = PackedColorArray(0, 0, 0, 1, 1.3807716, 0.5108496, 0, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 0.36078432, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_e7e1q"]
 gradient = SubResource("Gradient_p6grl")
@@ -79,14 +79,6 @@ region = Rect2(532, 931, 133, 133)
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ayw0"]
 atlas = ExtResource("14_4uy46")
 region = Rect2(665, 931, 133, 133)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xxcdl"]
-atlas = ExtResource("14_4uy46")
-region = Rect2(798, 931, 133, 133)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f4k14"]
-atlas = ExtResource("14_4uy46")
-region = Rect2(931, 931, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpqwn"]
 atlas = ExtResource("14_4uy46")
@@ -248,16 +240,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7ayw0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xxcdl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f4k14")
 }],
 "loop": false,
 "name": &"die",
-"speed": 5.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -554,96 +540,6 @@ _data = {
 &"new_animation_reverse": SubResource("Animation_o04tx")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j2873"]
-shader = ExtResource("18_o04tx")
-shader_parameter/hit_effect = 1.0
-shader_parameter/shake_intensity = 2.0
-shader_parameter/flash_speed = 10.0
-shader_parameter/flash_color = Color(0.4745098, 0, 0, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bw7q3"]
-atlas = ExtResource("14_4uy46")
-region = Rect2(133, 931, 133, 133)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wtop7"]
-atlas = ExtResource("14_4uy46")
-region = Rect2(266, 931, 133, 133)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_35drp"]
-atlas = ExtResource("14_4uy46")
-region = Rect2(399, 931, 133, 133)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tk6d3"]
-atlas = ExtResource("14_4uy46")
-region = Rect2(532, 931, 133, 133)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6b11c"]
-atlas = ExtResource("14_4uy46")
-region = Rect2(665, 931, 133, 133)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ts0mu"]
-atlas = ExtResource("14_4uy46")
-region = Rect2(798, 931, 133, 133)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n7jib"]
-atlas = ExtResource("14_4uy46")
-region = Rect2(931, 931, 133, 133)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tjw5d"]
-atlas = ExtResource("14_4uy46")
-region = Rect2(133, 931, 133, 133)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2hgpa"]
-atlas = ExtResource("14_4uy46")
-region = Rect2(266, 931, 133, 133)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hcg4k"]
-atlas = ExtResource("14_4uy46")
-region = Rect2(399, 931, 133, 133)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_tjw5d"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bw7q3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wtop7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_35drp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tk6d3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6b11c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ts0mu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n7jib")
-}],
-"loop": false,
-"name": &"default",
-"speed": 2.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tjw5d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2hgpa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hcg4k")
-}],
-"loop": false,
-"name": &"wall_only",
-"speed": 5.0
-}]
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h0enb"]
 shader = ExtResource("34_xmpm3")
 shader_parameter/strength = 0.08
@@ -696,6 +592,82 @@ shader_parameter/shake_rate = 0.2
 shader_parameter/shake_speed = 5.0
 shader_parameter/shake_block_size = 30.5
 shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j2873"]
+shader = ExtResource("18_o04tx")
+shader_parameter/hit_effect = 1.0
+shader_parameter/shake_intensity = 2.0
+shader_parameter/flash_speed = 10.0
+shader_parameter/flash_color = Color(0.4745098, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bw7q3"]
+atlas = ExtResource("14_4uy46")
+region = Rect2(133, 931, 133, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtop7"]
+atlas = ExtResource("14_4uy46")
+region = Rect2(266, 931, 133, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35drp"]
+atlas = ExtResource("14_4uy46")
+region = Rect2(399, 931, 133, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tk6d3"]
+atlas = ExtResource("14_4uy46")
+region = Rect2(532, 931, 133, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b11c"]
+atlas = ExtResource("14_4uy46")
+region = Rect2(665, 931, 133, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjw5d"]
+atlas = ExtResource("14_4uy46")
+region = Rect2(133, 931, 133, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hgpa"]
+atlas = ExtResource("14_4uy46")
+region = Rect2(266, 931, 133, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcg4k"]
+atlas = ExtResource("14_4uy46")
+region = Rect2(399, 931, 133, 133)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tjw5d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bw7q3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtop7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35drp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tk6d3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b11c")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjw5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hgpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcg4k")
+}],
+"loop": false,
+"name": &"wall_only",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=2070335124]
 collision_layer = 3
@@ -875,14 +847,27 @@ position = Vector2(0, -5)
 
 [node name="blood_particle" parent="particles" unique_id=1148518955 instance=ExtResource("16_dpt0q")]
 position = Vector2(0, -32)
+amount = 30
+lifetime = 1.0
+explosiveness = 0.5
+randomness = 1.0
+lifetime_randomness = 0.5
+emission_sphere_radius = 25.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+scale_amount_min = 0.01
+scale_amount_max = 1.0
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=969411766]
 material = SubResource("ShaderMaterial_e7e1q")
 position = Vector2(0, -36)
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_j2873")
-animation = &"walljumpup"
+animation = &"jumpup"
 autoplay = "idle"
+frame = 3
+frame_progress = 1.0
 script = ExtResource("14_5efpn")
 
 [node name="SpriteShader" type="AnimatedSprite2D" parent="." unique_id=576551087]
@@ -925,13 +910,11 @@ stream = SubResource("AudioStreamRandomizer_h0enb")
 [node name="lights" type="Node2D" parent="." unique_id=1203052506]
 
 [node name="PointLight2D" type="PointLight2D" parent="lights" unique_id=479851347]
-visible = false
 position = Vector2(0, -17)
 texture = SubResource("GradientTexture2D_hja65")
 texture_scale = 6.0
 
 [node name="PointLight2D2" type="PointLight2D" parent="lights" unique_id=1117608192]
-visible = false
 position = Vector2(0, -41)
 color = Color(1.0309138, 0, 0, 1)
 energy = 2.46
@@ -950,14 +933,6 @@ sprite_frames = SubResource("SpriteFrames_fd7k5")
 [node name="AnimationPlayerForTeleportShader" type="AnimationPlayer" parent="AnimatedSpriteForTeleportShader" unique_id=238446722]
 libraries/ = SubResource("AnimationLibrary_o04tx")
 speed_scale = 2.0
-
-[node name="deathspriteanim" type="AnimatedSprite2D" parent="." unique_id=969468519]
-visible = false
-material = SubResource("ShaderMaterial_j2873")
-position = Vector2(0, -36)
-scale = Vector2(0.55, 0.55)
-sprite_frames = SubResource("SpriteFrames_tjw5d")
-animation = &"wall_only"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1434982329]
 
@@ -984,6 +959,16 @@ color = Color(1, 1, 1, 0)
 [node name="groundshaketimer" type="Timer" parent="shakecamtimers" unique_id=1457225656]
 wait_time = 0.1
 one_shot = true
+
+[node name="dmgshaketimer" type="Timer" parent="shakecamtimers" unique_id=1271170076]
+one_shot = true
+
+[node name="deathspriteanim" type="AnimatedSprite2D" parent="." unique_id=969468519]
+visible = false
+material = SubResource("ShaderMaterial_j2873")
+position = Vector2(0, -36)
+scale = Vector2(0.55, 0.55)
+sprite_frames = SubResource("SpriteFrames_tjw5d")
 
 [connection signal="wall_entered" from="." to="." method="_on_wall_entered"]
 [connection signal="wall_exited" from="." to="." method="_on_wall_exited"]

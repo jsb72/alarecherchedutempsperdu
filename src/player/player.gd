@@ -416,6 +416,7 @@ func apply_stretch() -> void:
 @onready var cam: PhantomCamera2D = %cam
 
 @onready var groundshaketimer: Timer = $shakecamtimers/groundshaketimer
+@onready var dmgshaketimer: Timer = $shakecamtimers/dmgshaketimer
 
 @onready var animationdistorsion: AnimationPlayer = $CanvasLayer/distorsionrect/animationdistorsion
 @onready var glitch_rect: ColorRect = $CanvasLayer2/glitch_rect
@@ -465,6 +466,12 @@ func camera_logic()->void:
 		cam.noise.frequency=0.2
 		cam.noise.positional_noise= true
 		Input.start_joy_vibration(0,0.25,0.25)
+	if!dmgshaketimer.is_stopped():
+		cam.noise.amplitude=40.0
+		cam.noise.frequency=2
+		cam.noise.positional_noise= true
+		Input.start_joy_vibration(0,0.5,0.5)
+		
 
 func try_play_new_anim(anim,rotation_=0.0) -> void:
 	if sprite.animation != anim or anim=="jumpup" or anim=="walljumpup":
@@ -571,7 +578,7 @@ func sound_animation() -> void:
 				land_sound.play()
 				ground_particle.restart()
 			
-var last_floor_pos : Vector2
+var last_floor_pos : Vector2= Vector2(0.0,0.0)
 @onready var animated_sprite_for_teleport_shader: AnimatedSprite2D = $AnimatedSpriteForTeleportShader
 @onready var animation_player_for_teleport_shader: AnimationPlayer = $AnimatedSpriteForTeleportShader/AnimationPlayerForTeleportShader
 var respawned : bool = false
@@ -619,7 +626,8 @@ func duplicate_sprite():
 	sprite_shader.animation = sprite.animation
 	sprite_shader.frame = sprite.frame
 
-@onready var deathspriteanim: AnimatedSprite2D = $deathspriteanim
+@onready var deathspriteanim: Node2D = $deathspriteanim
+
 var dead_ : bool = false
 func play_death_anim():
 	var tween22 = get_tree().create_tween()
@@ -633,4 +641,7 @@ func play_death_anim():
 	deathspriteanim.show()
 	
 	deathspriteanim.play("default")
+	
+	await get_tree().create_timer(5).timeout
+	respawn()
 		

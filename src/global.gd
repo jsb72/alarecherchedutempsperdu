@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 	if debug_mod:
 		dash_unlock = true
 		sprint_unlock = false
-		doublejump_unlock = false
+		doublejump_unlock = true
 		walljump_unlock = true
 		nb_fractal=3
 		
