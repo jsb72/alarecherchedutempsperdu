@@ -521,17 +521,9 @@ region = Rect2(532, 931, 133, 133)
 atlas = ExtResource("14_4uy46")
 region = Rect2(665, 931, 133, 133)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tjw5d"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygxm1"]
 atlas = ExtResource("14_4uy46")
-region = Rect2(133, 931, 133, 133)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2hgpa"]
-atlas = ExtResource("14_4uy46")
-region = Rect2(266, 931, 133, 133)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hcg4k"]
-atlas = ExtResource("14_4uy46")
-region = Rect2(399, 931, 133, 133)
+region = Rect2(0, 931, 133, 133)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tjw5d"]
 animations = [{
@@ -552,21 +544,15 @@ animations = [{
 "texture": SubResource("AtlasTexture_6b11c")
 }],
 "loop": false,
-"name": &"default",
+"name": &"death",
 "speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tjw5d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2hgpa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hcg4k")
+"texture": SubResource("AtlasTexture_ygxm1")
 }],
 "loop": false,
-"name": &"wall_only",
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -840,6 +826,8 @@ visible = false
 position = Vector2(0, -36)
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_tjw5d")
+animation = &"death"
+autoplay = "idle"
 
 [connection signal="wall_entered" from="." to="." method="_on_wall_entered"]
 [connection signal="wall_exited" from="." to="." method="_on_wall_exited"]

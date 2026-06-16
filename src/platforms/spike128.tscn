@@ -51,10 +51,10 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_grb3a"]
-radius = 203.2978
+radius = 224.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ntqcc"]
-radius = 224.0
+radius = 256.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fcaif"]
 random_pitch = 1.0717734
@@ -66,7 +66,7 @@ script = ExtResource("1_bwk7c")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=949922720]
 material = SubResource("ShaderMaterial_an6px")
-position = Vector2(3.0517578e-05, 7.6293945e-06)
+position = Vector2(1.9073486e-05, 1.8119812e-05)
 scale = Vector2(0.6440252, 0.62439024)
 texture = ExtResource("1_ntqcc")
 

@@ -611,6 +611,15 @@ func play_death_anim():
 	blood_particle.restart()
 	dead_ = true
 	
+	sprite.hide()
+	deathspriteanim.show()
+	deathspriteanim.play("idle")
+	
+	if get_facing_dir() > 0 :
+		deathspriteanim.flip_h = false
+	if get_facing_dir() < 0 :
+		deathspriteanim.flip_h = true
+		
 	var tween22 = get_tree().create_tween()
 	tween22.tween_property(point_light_2d, "energy", 0.0, 0.0)
 	var tween2 = get_tree().create_tween()
@@ -618,15 +627,9 @@ func play_death_anim():
 	
 	await get_tree().create_timer(1).timeout
 	
-	sprite.hide()
-	deathspriteanim.show()
 	#deathspriteanim.modulate.s = 100
 	
-	if get_facing_dir() > 0 :
-		deathspriteanim.flip_h = false
-	if get_facing_dir() < 0 :
-		deathspriteanim.flip_h = true
-	deathspriteanim.play("default")
+	deathspriteanim.play("death")
 	
 	"""var tween4 = get_tree().create_tween()
 	tween4.tween_property(deathspriteanim, "modulate:s", 0.0, 2.0)"""

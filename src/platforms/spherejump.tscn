@@ -57,7 +57,7 @@ image = SubResource("Image_51qly")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_51qly"]
 radius = 26.0
-height = 60.0
+height = 64.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_j3fes"]
 random_pitch = 1.0987908
