@@ -6,9 +6,7 @@ extends Node2D
 var iswaken : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if Global.first_cycle_done:
-		animated_sprite_2d.play("stone")
-		point_light_2d_2.hide()
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
