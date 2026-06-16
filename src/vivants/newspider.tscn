@@ -207,7 +207,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"death",
-"speed": 15.0
+"speed": 25.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -263,7 +263,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tf23j"]
-size = Vector2(44, 32)
+size = Vector2(64, 54)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_36xei"]
 random_pitch = 1.0717734
@@ -280,11 +280,14 @@ material = SubResource("ShaderMaterial_36xei")
 position = Vector2(10.464499, -12.753623)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_45pos")
-animation = &"walk"
+animation = &"death"
 autoplay = "idle"
 
 [node name="hray" type="RayCast2D" parent="spiderrendu" unique_id=794114878]
 target_position = Vector2(18, 0)
+
+[node name="antihumanhray" type="RayCast2D" parent="spiderrendu" unique_id=1582952657]
+target_position = Vector2(80, 0)
 
 [node name="vray" type="RayCast2D" parent="spiderrendu" unique_id=2003494226]
 position = Vector2(16, 0)

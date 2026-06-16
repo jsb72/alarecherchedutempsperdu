@@ -4,6 +4,8 @@ extends Node2D
 @onready var spiderrendu: Node2D = $spiderrendu
 @onready var vray: RayCast2D = $spiderrendu/vray
 @onready var hray: RayCast2D = $spiderrendu/hray
+@onready var antihumanhray: RayCast2D = $spiderrendu/antihumanhray
+
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var speed_move:float = 0.4
@@ -15,7 +17,13 @@ var dead:bool=false
 func _ready() -> void:
 	spiderrendu.rotation_degrees=angle_spiderrendu
 
-
+func _process(delta: float) -> void:
+	if !dead:
+		if antihumanhray.is_colliding():
+			var collidobj = antihumanhray.get_collider()
+			if collidobj is Player :
+				spiderrendu.scale.x*=-1
+			
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if !dead:
@@ -69,6 +77,6 @@ func getCollisionSurface(rcast:RayCast2D):
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		if !dead:
+			dead=true
 			animated_sprite_2d.play("death")
 			audio_stream_player_2d.play()
-		dead=true

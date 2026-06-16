@@ -439,6 +439,22 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(2022, 696)
 scale = Vector2(0.5, 0.5)
 
+[node name="newspider5" parent="." unique_id=2027126116 instance=ExtResource("1_h18od")]
+position = Vector2(2272, 696)
+scale = Vector2(0.5, 0.5)
+
+[node name="newspider6" parent="." unique_id=763442791 instance=ExtResource("1_h18od")]
+position = Vector2(2496, 696)
+scale = Vector2(0.5, 0.5)
+
+[node name="newspider7" parent="." unique_id=234712807 instance=ExtResource("1_h18od")]
+position = Vector2(2400, 696)
+scale = Vector2(0.5, 0.5)
+
+[node name="newspider8" parent="." unique_id=802227252 instance=ExtResource("1_h18od")]
+position = Vector2(2656, 696)
+scale = Vector2(0.5, 0.5)
+
 [node name="newspider3" parent="." unique_id=629864730 instance=ExtResource("1_h18od")]
 position = Vector2(1710, 391)
 scale = Vector2(0.5, 0.5)
