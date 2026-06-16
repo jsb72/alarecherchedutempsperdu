@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://ddchdb85wtdxa"]
 
 [ext_resource type="PackedScene" uid="uid://dhrgjny51lom7" path="res://src/vivants/newspider.tscn" id="1_h18od"]
+[ext_resource type="Script" uid="uid://b2shq2gjd4fvt" path="res://addons/ropesim/Rope.gd" id="3_sf5ds"]
 [ext_resource type="PackedScene" uid="uid://ducp7rsjpf40n" path="res://src/player/player.tscn" id="7_hmy3j"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="8_fk03h"]
 [ext_resource type="PackedScene" uid="uid://jdtuwgdfffnk" path="res://src/platforms/spike128.tscn" id="8_h18od"]
@@ -497,3 +498,10 @@ scale = Vector2(0.25, 0.25)
 
 [node name="bomb" parent="." unique_id=324640493 instance=ExtResource("10_knf4u")]
 position = Vector2(1536, 544)
+
+[node name="Rope" type="Node2D" parent="." unique_id=1864141425]
+position = Vector2(1696, 384)
+script = ExtResource("3_sf5ds")
+line_width = 1.0
+enable_collisions = true
+metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
