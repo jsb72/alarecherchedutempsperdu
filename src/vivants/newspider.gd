@@ -5,6 +5,7 @@ extends Node2D
 @onready var vray: RayCast2D = $spiderrendu/vray
 @onready var hray: RayCast2D = $spiderrendu/hray
 @onready var antihumanhray: RayCast2D = $spiderrendu/antihumanhray
+@onready var blood_particle: CPUParticles2D = $blood_particle
 
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
@@ -77,6 +78,8 @@ func getCollisionSurface(rcast:RayCast2D):
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		if !dead:
-			dead=true
-			animated_sprite_2d.play("death")
-			audio_stream_player_2d.play()
+			if body.state_machine.active_state is FallState or body.state_machine.active_state is JumpState or body.state_machine.active_state is WallJumpState:
+				dead=true
+				animated_sprite_2d.play("death")
+				audio_stream_player_2d.play()
+				blood_particle.restart()

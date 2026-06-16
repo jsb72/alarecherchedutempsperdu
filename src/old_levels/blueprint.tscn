@@ -410,17 +410,6 @@ terrain_set_0/terrain_0/name = "walkable"
 terrain_set_0/terrain_0/color = Color(0.7052548, 0, 0.35776773, 1)
 sources/0 = SubResource("TileSetAtlasSource_pu26t")
 
-[sub_resource type="Environment" id="Environment_m3x7u"]
-background_mode = 3
-tonemap_mode = 1
-glow_enabled = true
-glow_bloom = 1.0
-fog_light_energy = 6.77
-fog_sun_scatter = 0.59
-fog_density = 0.3614
-fog_height = 1024.0
-fog_height_density = 10.6667
-
 [node name="blueprint" type="Node2D" unique_id=1528742533]
 metadata/_edit_vertical_guides_ = [-3490.0, -231.0, 538.0, 1954.8828]
 metadata/_edit_horizontal_guides_ = [-6351.0, -7121.0, -1009.0]
@@ -527,12 +516,8 @@ scale = Vector2(0.25, 0.25)
 position = Vector2(1536, 544)
 
 [node name="Rope" type="Node2D" parent="." unique_id=1864141425]
-position = Vector2(1696, 384)
+position = Vector2(3808, 1024)
 script = ExtResource("3_sf5ds")
-stiffness = 5.0
 line_width = 1.0
 enable_collisions = true
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=565499136]
-environment = SubResource("Environment_m3x7u")

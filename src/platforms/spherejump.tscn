@@ -103,7 +103,6 @@ shape = SubResource("CapsuleShape2D_51qly")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1680144052]
 stream = SubResource("AudioStreamRandomizer_j3fes")
-pitch_scale = 3.24
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dn5c715uvysjx" path="res://src/vivants/newspider.gd" id="1_tf23j"]
 [ext_resource type="Texture2D" uid="uid://b6td1hqxvc8oc" path="res://sprites/spider.png" id="2_tf23j"]
 [ext_resource type="AudioStream" uid="uid://bylblr8ekdmu7" path="res://sounds/slime.mp3" id="4_lvyff"]
+[ext_resource type="PackedScene" uid="uid://cvsfd3471pa4e" path="res://src/particles/blood_particle.tscn" id="5_45pos"]
 
 [sub_resource type="Gradient" id="Gradient_lvyff"]
 
@@ -263,12 +264,23 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tf23j"]
-size = Vector2(64, 54)
+size = Vector2(64, 78)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_36xei"]
 random_pitch = 1.0717734
 streams_count = 1
 stream_0/stream = ExtResource("4_lvyff")
+
+[sub_resource type="Gradient" id="Gradient_36xei"]
+offsets = PackedFloat32Array(0, 0.83146065, 1)
+colors = PackedColorArray(0.5058824, 0.29411766, 0.1254902, 0.96862745, 0.5058824, 0.29411766, 0.1254902, 0.96862745, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_45pos"]
+gradient = SubResource("Gradient_36xei")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0.2)
+metadata/_snap_enabled = true
 
 [node name="newspider" type="Node2D" unique_id=485356090]
 script = ExtResource("1_tf23j")
@@ -296,10 +308,24 @@ target_position = Vector2(0, 18)
 [node name="Area2D" type="Area2D" parent="spiderrendu" unique_id=1767895151]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spiderrendu/Area2D" unique_id=10350516]
+position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_tf23j")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=90922197]
 stream = SubResource("AudioStreamRandomizer_36xei")
 volume_db = 5.0
+
+[node name="blood_particle" parent="." unique_id=1148518955 instance=ExtResource("5_45pos")]
+texture = SubResource("GradientTexture2D_45pos")
+lifetime = 1.0
+explosiveness = 0.5
+randomness = 1.0
+lifetime_randomness = 0.5
+emission_sphere_radius = 25.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+scale_amount_min = 0.01
+scale_amount_max = 0.1
 
 [connection signal="body_entered" from="spiderrendu/Area2D" to="." method="_on_area_2d_body_entered"]
