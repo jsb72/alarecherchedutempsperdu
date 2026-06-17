@@ -299,9 +299,6 @@ autoplay = "idle"
 [node name="hray" type="RayCast2D" parent="spiderrendu" unique_id=794114878]
 target_position = Vector2(18, 0)
 
-[node name="antihumanhray" type="RayCast2D" parent="spiderrendu" unique_id=1582952657]
-target_position = Vector2(80, 0)
-
 [node name="vray" type="RayCast2D" parent="spiderrendu" unique_id=2003494226]
 position = Vector2(-18, 0)
 target_position = Vector2(0, 40)

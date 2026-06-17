@@ -4,7 +4,6 @@ extends Node2D
 @onready var spiderrendu: Node2D = $spiderrendu
 @onready var vray: RayCast2D = $spiderrendu/vray
 @onready var hray: RayCast2D = $spiderrendu/hray
-@onready var antihumanhray: RayCast2D = $spiderrendu/antihumanhray
 @onready var blood_particle: CPUParticles2D = $blood_particle
 @onready var timer: Timer = $Timer
 
@@ -15,17 +14,15 @@ var dead:bool=false
 
 @export var angle_spiderrendu:int=0
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	spiderrendu.scale.x=-1
+	if randi_range(0, 1)==0:
+		spiderrendu.scale.x=-1
 	spiderrendu.rotation_degrees=angle_spiderrendu
 
 func _process(delta: float) -> void:
-	if !dead:
-		if antihumanhray.is_colliding():
-			var collidobj = antihumanhray.get_collider()
-			if collidobj is Player :
-				spiderrendu.scale.x*=-1
+	pass
 			
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -52,6 +49,8 @@ func _physics_process(delta: float) -> void:
 					spiderrendu.rotation_degrees=spiderrendu.rotation_degrees-90
 					if spiderrendu.rotation_degrees==-90:
 						spiderrendu.rotation_degrees=270
+						
+				
 			
 		if spiderrendu.rotation_degrees==-360 or spiderrendu.rotation_degrees==360:
 			spiderrendu.rotation_degrees=0

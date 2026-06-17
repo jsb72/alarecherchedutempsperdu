@@ -90,7 +90,6 @@ _data = {
 radius = 21.023796
 
 [node name="bomb" type="RigidBody2D" unique_id=324640493]
-z_index = 5
 script = ExtResource("1_q7g1g")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1763080022]
