@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://brpkpgdng6710"]
+
+[ext_resource type="Script" uid="uid://cqdp0ntlj73mt" path="res://src/platforms/spike_128.gd" id="1_dsnr2"]
+[ext_resource type="Shader" uid="uid://d1cnualeuqjos" path="res://shaders/damage_impact.gdshader" id="2_0ovom"]
+[ext_resource type="Texture2D" uid="uid://cxtn71l0epy6t" path="res://sprites/Remastered_Spikes_mid.png" id="3_dsnr2"]
+[ext_resource type="AudioStream" uid="uid://bexul6uu4wqt6" path="res://sounds/dragon-studio-violent-sword-slice-2-393841.mp3" id="4_ac8ns"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_an6px"]
+resource_local_to_scene = true
+shader = ExtResource("2_0ovom")
+shader_parameter/hit_effect = 0.0
+shader_parameter/shake_intensity = 10.0
+shader_parameter/flash_speed = 30.0
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_grb3a"]
+radius = 224.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ntqcc"]
+radius = 256.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fcaif"]
+random_pitch = 1.0717734
+streams_count = 1
+stream_0/stream = ExtResource("4_ac8ns")
+
+[node name="spikeMID128" type="AnimatableBody2D" unique_id=1944370081]
+script = ExtResource("1_dsnr2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=949922720]
+material = SubResource("ShaderMaterial_an6px")
+position = Vector2(1.9073486e-05, 1.8119812e-05)
+rotation = 0.27385196
+scale = Vector2(0.6440252, 0.62439024)
+texture = ExtResource("3_dsnr2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=83128286]
+shape = SubResource("CircleShape2D_grb3a")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=394913089]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=16194045]
+shape = SubResource("CircleShape2D_ntqcc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1870408288]
+stream = SubResource("AudioStreamRandomizer_fcaif")
+volume_db = 5.0
+pitch_scale = 1.1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
