@@ -6,6 +6,7 @@ extends Node2D
 @onready var hray: RayCast2D = $spiderrendu/hray
 @onready var antihumanhray: RayCast2D = $spiderrendu/antihumanhray
 @onready var blood_particle: CPUParticles2D = $blood_particle
+@onready var timer: Timer = $Timer
 
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
@@ -16,6 +17,7 @@ var dead:bool=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	spiderrendu.scale.x=-1
 	spiderrendu.rotation_degrees=angle_spiderrendu
 
 func _process(delta: float) -> void:
@@ -33,15 +35,29 @@ func _physics_process(delta: float) -> void:
 				spiderrendu.rotation_degrees=spiderrendu.rotation_degrees-90
 			if spiderrendu.scale.x==-1:
 				spiderrendu.rotation_degrees=spiderrendu.rotation_degrees+90
-		if !getCollisionSurface(vray):
+		"""if !getCollisionSurface(vray):
 			spiderrendu.scale.x*=-1
 			if spiderrendu.scale.x==-1:
 				spiderrendu.rotation_degrees=360+spiderrendu.rotation_degrees
 			if spiderrendu.scale.x==1:
-				spiderrendu.rotation_degrees=-spiderrendu.rotation_degrees
+				spiderrendu.rotation_degrees=-spiderrendu.rotation_degrees"""
+		if !getCollisionSurface(vray):
+			if timer.is_stopped():
+				timer.start()
+				if spiderrendu.scale.x==1:
+					spiderrendu.rotation_degrees=spiderrendu.rotation_degrees+90
+					if spiderrendu.rotation_degrees==90:
+						spiderrendu.rotation_degrees=-270
+				if spiderrendu.scale.x==-1:
+					spiderrendu.rotation_degrees=spiderrendu.rotation_degrees-90
+					if spiderrendu.rotation_degrees==-90:
+						spiderrendu.rotation_degrees=270
 			
 		if spiderrendu.rotation_degrees==-360 or spiderrendu.rotation_degrees==360:
 			spiderrendu.rotation_degrees=0
+			
+		
+
 			
 		if spiderrendu.scale.x==1:
 			if spiderrendu.rotation_degrees==0:

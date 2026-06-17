@@ -286,6 +286,7 @@ metadata/_snap_enabled = true
 script = ExtResource("1_tf23j")
 
 [node name="spiderrendu" type="Node2D" parent="." unique_id=380263695]
+position = Vector2(0, -18)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="spiderrendu" unique_id=833103731]
 material = SubResource("ShaderMaterial_36xei")
@@ -302,8 +303,8 @@ target_position = Vector2(18, 0)
 target_position = Vector2(80, 0)
 
 [node name="vray" type="RayCast2D" parent="spiderrendu" unique_id=2003494226]
-position = Vector2(16, 0)
-target_position = Vector2(0, 18)
+position = Vector2(-18, 0)
+target_position = Vector2(0, 40)
 
 [node name="Area2D" type="Area2D" parent="spiderrendu" unique_id=1767895151]
 
@@ -312,10 +313,12 @@ position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_tf23j")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=90922197]
+position = Vector2(0, -18)
 stream = SubResource("AudioStreamRandomizer_36xei")
 volume_db = 5.0
 
 [node name="blood_particle" parent="." unique_id=1148518955 instance=ExtResource("5_45pos")]
+position = Vector2(0, -18)
 texture = SubResource("GradientTexture2D_45pos")
 lifetime = 1.0
 explosiveness = 0.5
@@ -327,5 +330,9 @@ spread = 180.0
 gravity = Vector2(0, 0)
 scale_amount_min = 0.01
 scale_amount_max = 0.1
+
+[node name="Timer" type="Timer" parent="." unique_id=1220389864]
+wait_time = 2.0
+one_shot = true
 
 [connection signal="body_entered" from="spiderrendu/Area2D" to="." method="_on_area_2d_body_entered"]

@@ -13,12 +13,6 @@ shader_parameter/shake_intensity = 10.0
 shader_parameter/flash_speed = 30.0
 shader_parameter/flash_color = Color(1, 0, 0, 1)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_grb3a"]
-radius = 224.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ntqcc"]
-radius = 256.0
-
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fcaif"]
 random_pitch = 1.0717734
 streams_count = 1
@@ -34,13 +28,13 @@ rotation = 0.25113767
 scale = Vector2(0.6523282, 0.55733484)
 texture = ExtResource("3_dsnr2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=83128286]
-shape = SubResource("CircleShape2D_grb3a")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=221801802]
+polygon = PackedVector2Array(-221, 11, -225, -58, -202, -136, -125, -206, -26, -234, 67, -223, 156, -172, 218, -99, 234, -51, 239, 12, 164, 24, 100, 31, 23, 33, -96, 28)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=394913089]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=16194045]
-shape = SubResource("CircleShape2D_ntqcc")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1846942868]
+polygon = PackedVector2Array(-243, 20, -249, -72, -210, -168, -129, -225, -52, -249, 6, -257, 106, -229, 177, -184, 232, -118, 255, -63, 257, 23, 151, 41, 32, 47)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1870408288]
 stream = SubResource("AudioStreamRandomizer_fcaif")
