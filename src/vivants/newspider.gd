@@ -2,24 +2,25 @@ extends Node2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $spiderrendu/AnimatedSprite2D
 @onready var spiderrendu: Node2D = $spiderrendu
-@onready var vray: RayCast2D = $spiderrendu/vray
-@onready var hray: RayCast2D = $spiderrendu/hray
+@onready var rays: Node2D = $rays
+@onready var vray: RayCast2D = $rays/vray
+@onready var hray: RayCast2D = $rays/hray
 @onready var blood_particle: CPUParticles2D = $blood_particle
-@onready var timer: Timer = $Timer
+@onready var turnangleexttimer: Timer = $turnangleexttimer
+@onready var rotateanimtimer: Timer = $rotateanimtimer
 
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var speed_move:float = 0.4
 var dead:bool=false
 
-@export var angle_spiderrendu:int=0
-
+var angle:int=0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if randi_range(0, 1)==0:
 		spiderrendu.scale.x=-1
-	spiderrendu.rotation_degrees=angle_spiderrendu
+		rays.scale.x=-1
 
 func _process(delta: float) -> void:
 	pass
@@ -29,57 +30,111 @@ func _physics_process(delta: float) -> void:
 	if !dead:
 		if getCollisionSurface(hray):
 			if spiderrendu.scale.x==1:
-				spiderrendu.rotation_degrees=spiderrendu.rotation_degrees-90
+				angle-=90
 			if spiderrendu.scale.x==-1:
-				spiderrendu.rotation_degrees=spiderrendu.rotation_degrees+90
+				angle+=90
 		"""if !getCollisionSurface(vray):
 			spiderrendu.scale.x*=-1
 			if spiderrendu.scale.x==-1:
-				spiderrendu.rotation_degrees=360+spiderrendu.rotation_degrees
+				angle=360+angle
 			if spiderrendu.scale.x==1:
-				spiderrendu.rotation_degrees=-spiderrendu.rotation_degrees"""
+				angle=-angle"""
 		if !getCollisionSurface(vray):
-			if timer.is_stopped():
-				timer.start()
-				if spiderrendu.scale.x==1:
-					spiderrendu.rotation_degrees=spiderrendu.rotation_degrees+90
-					if spiderrendu.rotation_degrees==90:
-						spiderrendu.rotation_degrees=-270
-				if spiderrendu.scale.x==-1:
-					spiderrendu.rotation_degrees=spiderrendu.rotation_degrees-90
-					if spiderrendu.rotation_degrees==-90:
-						spiderrendu.rotation_degrees=270
-						
+			#print("mais what")
+			if turnangleexttimer.is_stopped():
+				turnangleexttimer.start()
 				
-			
-		if spiderrendu.rotation_degrees==-360 or spiderrendu.rotation_degrees==360:
-			spiderrendu.rotation_degrees=0
-			
+				var fixe_longueur:int=9
+				var new_pos:Vector2=global_position
+				
+				if spiderrendu.scale.x==1:
+					angle+=90
+					if angle==90:
+						angle=-270
+						
+					if angle==0:
+						new_pos.y-=fixe_longueur
+						new_pos.x+=fixe_longueur
+					if angle==-90:
+						new_pos.x-=fixe_longueur
+						new_pos.y-=fixe_longueur
+					if angle==-180:
+						new_pos.y+=fixe_longueur
+						new_pos.x-=fixe_longueur
+					if angle==-270:
+						new_pos.x+=fixe_longueur
+						new_pos.y+=fixe_longueur
+				
+				if spiderrendu.scale.x==-1:
+					angle-=90
+					if angle==-90:
+						angle=270
+						
+					if angle==0:
+						new_pos.y-=fixe_longueur
+						new_pos.x-=fixe_longueur
+					if angle==90:
+						new_pos.x+=fixe_longueur
+						new_pos.y-=fixe_longueur
+					if angle==180:
+						new_pos.y+=fixe_longueur
+						new_pos.x+=fixe_longueur
+					if angle==270:
+						new_pos.x-=fixe_longueur
+						new_pos.y+=fixe_longueur
+						
 		
-
+				var tween = get_tree().create_tween()
+				tween.tween_property(self, "global_position", new_pos, 0.5)
+				
+		if angle==-360 or angle==360:
+			angle=0
+		
+		rays.rotation_degrees=angle
+		#spiderrendu.rotation_degrees=angle
+		
+		
+		if spiderrendu.rotation_degrees!=angle:
+			if rotateanimtimer.is_stopped():
+				rotateanimtimer.start()
+				
+				if angle==-270 and spiderrendu.rotation_degrees==0:
+					spiderrendu.rotation_degrees=-360
+				if angle==270 and spiderrendu.rotation_degrees==0:
+					spiderrendu.rotation_degrees=360
+					
+				if angle==0 and spiderrendu.rotation_degrees==-270:
+					spiderrendu.rotation_degrees=90
+				if angle==0 and spiderrendu.rotation_degrees==270:
+					spiderrendu.rotation_degrees=-90
+						
+				var tween = get_tree().create_tween()
+				tween.tween_property(spiderrendu, "rotation_degrees", angle, 0.5)
+			
 			
 		if spiderrendu.scale.x==1:
-			if spiderrendu.rotation_degrees==0:
+			if angle==0:
 				global_position.x+=speed_move
-			if spiderrendu.rotation_degrees==-90:
+			if angle==-90:
 				global_position.y-=speed_move
-			if spiderrendu.rotation_degrees==-180:
+			if angle==-180:
 				global_position.x-=speed_move
-			if spiderrendu.rotation_degrees==-270:
+			if angle==-270:
 				global_position.y+=speed_move
 				
 				
 		if spiderrendu.scale.x==-1:
-			if spiderrendu.rotation_degrees==0:
+			if angle==0:
 				global_position.x-=speed_move
-			if spiderrendu.rotation_degrees==90:
+			if angle==90:
 				global_position.y-=speed_move
-			if spiderrendu.rotation_degrees==180:
+			if angle==180:
 				global_position.x+=speed_move
-			if spiderrendu.rotation_degrees==270:
+			if angle==270:
 				global_position.y+=speed_move
 				
-			
+		
+		
 		animated_sprite_2d.play("walk")
 	
 func getCollisionSurface(rcast:RayCast2D):

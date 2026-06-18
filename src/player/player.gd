@@ -4,6 +4,8 @@ extends CharacterBody2D
 signal wall_entered
 signal wall_exited
 
+@export var color_dress:Color
+
 @export var flip_h: bool: set = set_flip_h
 
 @export_group("Horizontal Movement")
@@ -103,7 +105,9 @@ var _on_wall: bool = false: # This variable mustn't be edited manually
 var can_double_jump : bool = true
 
 func _ready() -> void:
-	pass
+	var mygradient:GradientTexture2D=sprite.material.get_shader_parameter("pal0")
+	mygradient.gradient.colors[1]=color_dress
+	sprite.material.set_shader_parameter("pal0", mygradient)
 	
 func _physics_process(_delta: float) -> void:
 	_on_wall = is_on_wall()
@@ -576,7 +580,7 @@ func sound_animation() -> void:
 				land_sound.play()
 				ground_particle.restart()
 			
-var last_floor_pos : Vector2= Vector2(0.0,0.0)
+var last_floor_pos : Vector2= Vector2(960.0,512.0)
 var respawned : bool = false
 func respawn():
 	var tween22 = get_tree().create_tween()

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dj261xf8jugsh"]
+
+[ext_resource type="Script" uid="uid://cnxop5pf2rtq6" path="res://src/vivants/generator_spider.gd" id="1_4si0g"]
+[ext_resource type="Texture2D" uid="uid://crdah8dpu7ixh" path="res://sprites/spawn_spider.png" id="1_632cn"]
+
+[node name="generatorSpider" type="Node2D" unique_id=1099270166]
+script = ExtResource("1_4si0g")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1813227028]
+scale = Vector2(0.12800002, 0.12800002)
+texture = ExtResource("1_632cn")
+
+[node name="Timer" type="Timer" parent="." unique_id=767423507]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

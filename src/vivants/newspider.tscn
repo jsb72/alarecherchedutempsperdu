@@ -283,6 +283,7 @@ fill_to = Vector2(0.8, 0.2)
 metadata/_snap_enabled = true
 
 [node name="newspider" type="Node2D" unique_id=485356090]
+z_index = -1
 script = ExtResource("1_tf23j")
 
 [node name="spiderrendu" type="Node2D" parent="." unique_id=380263695]
@@ -296,18 +297,20 @@ sprite_frames = SubResource("SpriteFrames_45pos")
 animation = &"death"
 autoplay = "idle"
 
-[node name="hray" type="RayCast2D" parent="spiderrendu" unique_id=794114878]
-target_position = Vector2(18, 0)
-
-[node name="vray" type="RayCast2D" parent="spiderrendu" unique_id=2003494226]
-position = Vector2(-18, 0)
-target_position = Vector2(0, 40)
-
 [node name="Area2D" type="Area2D" parent="spiderrendu" unique_id=1767895151]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spiderrendu/Area2D" unique_id=10350516]
 position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_tf23j")
+
+[node name="rays" type="Node2D" parent="." unique_id=704307447]
+position = Vector2(0, -18)
+
+[node name="hray" type="RayCast2D" parent="rays" unique_id=794114878]
+target_position = Vector2(18, 0)
+
+[node name="vray" type="RayCast2D" parent="rays" unique_id=2003494226]
+target_position = Vector2(0, 40)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=90922197]
 position = Vector2(0, -18)
@@ -328,8 +331,11 @@ gravity = Vector2(0, 0)
 scale_amount_min = 0.01
 scale_amount_max = 0.1
 
-[node name="Timer" type="Timer" parent="." unique_id=1220389864]
-wait_time = 2.0
+[node name="turnangleexttimer" type="Timer" parent="." unique_id=1220389864]
+one_shot = true
+autostart = true
+
+[node name="rotateanimtimer" type="Timer" parent="." unique_id=321619928]
 one_shot = true
 
 [connection signal="body_entered" from="spiderrendu/Area2D" to="." method="_on_area_2d_body_entered"]

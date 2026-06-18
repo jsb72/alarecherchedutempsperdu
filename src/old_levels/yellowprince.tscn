@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://jdtuwgdfffnk" path="res://src/platforms/spike128.tscn" id="9_pyjc5"]
 [ext_resource type="PackedScene" uid="uid://bmwyobu5l8pyt" path="res://src/elements/bomb.tscn" id="10_84rf5"]
 [ext_resource type="PackedScene" uid="uid://brpkpgdng6710" path="res://src/platforms/spikeMID128.tscn" id="11_d62i1"]
+[ext_resource type="PackedScene" uid="uid://dj261xf8jugsh" path="res://src/vivants/generator_spider.tscn" id="12_hyfa2"]
 
 [sub_resource type="Resource" id="Resource_7157o"]
 script = ExtResource("5_kchq0")
@@ -715,3 +716,6 @@ scale = Vector2(0.125, 0.125)
 position = Vector2(5408, -192)
 rotation = 3.1415927
 scale = Vector2(0.125, 0.125)
+
+[node name="generatorSpider" parent="." unique_id=1099270166 instance=ExtResource("12_hyfa2")]
+position = Vector2(896, 640)

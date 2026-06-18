@@ -40,12 +40,15 @@ size = Vector3(16, 16, 1)
 size = Vector2(32, 61)
 
 [sub_resource type="Gradient" id="Gradient_p6grl"]
-colors = PackedColorArray(0, 0, 0, 1, 1, 0.36078432, 0, 1)
+resource_local_to_scene = true
+colors = PackedColorArray(0, 0, 0, 1, 0, 1, 0.5999999, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_e7e1q"]
+resource_local_to_scene = true
 gradient = SubResource("Gradient_p6grl")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e7e1q"]
+resource_local_to_scene = true
 shader = ExtResource("17_p6grl")
 shader_parameter/pal0 = SubResource("GradientTexture2D_e7e1q")
 shader_parameter/lerper = 0.0
@@ -561,6 +564,7 @@ collision_layer = 3
 floor_snap_length = 2.0
 safe_margin = 0.1
 script = ExtResource("1_4anbu")
+color_dress = Color(1, 0, 0.016666412, 1)
 max_speed_init = 389.0
 max_h_velocity_ratio = 3.0
 running_acc_time = 0.188
