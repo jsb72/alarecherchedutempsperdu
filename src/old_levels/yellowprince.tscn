@@ -525,6 +525,7 @@ scale = Vector2(0.5, 0.5)
 [node name="Player" parent="." unique_id=2070335124 instance=ExtResource("3_kg35n")]
 unique_name_in_owner = true
 position = Vector2(960, 576)
+color_dress = Color(0, 0.64705884, 0.23921569, 1)
 
 [node name="cam" type="Node2D" parent="." unique_id=1498018793 node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true

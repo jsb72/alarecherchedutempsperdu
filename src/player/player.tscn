@@ -41,7 +41,7 @@ size = Vector2(32, 61)
 
 [sub_resource type="Gradient" id="Gradient_p6grl"]
 resource_local_to_scene = true
-colors = PackedColorArray(0, 0, 0, 1, 0, 1, 0.5999999, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0.6454514, 0.23877141, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_e7e1q"]
 resource_local_to_scene = true
