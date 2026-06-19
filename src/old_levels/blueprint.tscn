@@ -702,9 +702,26 @@ position = Vector2(1152, 576)
 [node name="generatorSpider2" parent="." unique_id=1240603348 instance=ExtResource("12_xib2c")]
 position = Vector2(320, -896)
 
-[node name="Rope" type="Node2D" parent="." unique_id=468141730]
-position = Vector2(1568, 384)
+[node name="ropes" type="Node2D" parent="." unique_id=1440518008]
+
+[node name="Rope" type="Node2D" parent="ropes" unique_id=468141730]
+position = Vector2(960, -192)
 script = ExtResource("13_xib2c")
+color = Color(0, 0, 0, 1)
+enable_collisions = true
+metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
+
+[node name="Rope2" type="Node2D" parent="ropes" unique_id=1316738254]
+position = Vector2(64, -1152)
+script = ExtResource("13_xib2c")
+color = Color(0, 0, 0, 1)
+enable_collisions = true
+metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
+
+[node name="Rope3" type="Node2D" parent="ropes" unique_id=1767654563]
+position = Vector2(576, -1792)
+script = ExtResource("13_xib2c")
+rope_length = 200.0
 color = Color(0, 0, 0, 1)
 enable_collisions = true
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
