@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="À la recherche du temps perdu"
 run/main_scene="uid://ddchdb85wtdxa"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/stretch_mode=0
 config/windows_native_icon="res://icons/icon.ico"
 
