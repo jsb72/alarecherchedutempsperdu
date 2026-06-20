@@ -106,12 +106,13 @@ var can_double_jump : bool = true
 
 func _ready() -> void:
 	var mygradient:GradientTexture2D=sprite.material.get_shader_parameter("pal0")
-	mygradient.gradient.colors[1]=color_dress
+	mygradient.gradient.set_color(1,color_dress)
 	sprite.material.set_shader_parameter("pal0", mygradient)
 	
 func _physics_process(_delta: float) -> void:
 	_on_wall = is_on_wall()
-	
+	if Input.is_action_just_pressed("interaction"):
+		launch_bomb()
 	logic_spe()
 
 func try_double_jump() -> void:
@@ -173,7 +174,7 @@ func calculate_gravity() -> float:
 	return get_default_gravity() * (
 			jump_peak_gravity_ratio if not jump_peak_gravity_timer.is_stopped()
 			else after_dash_gravity_ratio if not after_dash_gravity_timer.is_stopped()
-			else jump_not_held_gravity_ratio if not Input.is_action_pressed("jump") and not Input.is_action_pressed("interaction")
+			else jump_not_held_gravity_ratio if not Input.is_action_pressed("jump")
 			else down_held_gravity_ratio if Input.is_action_pressed("down") and velocity.y > 0
 			else 1.0
 	)
@@ -279,7 +280,7 @@ func wall_jump() -> void:
 	
 	state_machine.activate_state_by_name("WallJumpState")
 		
-	try_play_new_anim("walljumpup",0.33*wall_jump_dir)
+	try_play_new_anim("walljumpup")
 	walljump_sound.play()
 	jump_particle.restart()
 	is_sliding=false
@@ -432,9 +433,9 @@ func sprint_logic():
 		max_speed = 389
 
 func logic_spe():
-	Engine.time_scale = 1
+	"""Engine.time_scale = 1
 	if Input.is_action_pressed("interaction"):
-			Engine.time_scale = 0.1
+			Engine.time_scale = 0.1"""
 			
 	sprite_animation()
 	
@@ -475,7 +476,7 @@ func camera_logic()->void:
 		Input.start_joy_vibration(0,0.5,0.5)
 		
 
-func try_play_new_anim(anim,rotation_=0.0) -> void:
+func try_play_new_anim(anim) -> void:
 	if sprite.animation != anim or anim=="jumpup" or anim=="walljumpup":
 		#sprite.rotation=rotation_
 		
@@ -579,8 +580,25 @@ func sound_animation() -> void:
 			if !respawned :
 				land_sound.play()
 				ground_particle.restart()
+	
+@onready var bomblist: Node2D = $"../bomblist"			
+func launch_bomb():
+	var bombspawedpacked = load("res://src/elements/bomb.tscn")
+	var bombspawed = bombspawedpacked.instantiate()
+	
+	#bombspawed.scale=Vector2(0.5,0.5)
+	bombspawed.global_position=global_position
+	bombspawed.global_position.x+=64*get_facing_dir()
+	bombspawed.global_position.y-=32
+	bombspawed.linear_velocity=Vector2(1000*get_facing_dir(),-220)
+	
+	bombspawed.modulate.a = 0.0
+	bomblist.add_child(bombspawed)
+	var tween3 = get_tree().create_tween()
+	tween3.tween_property(bombspawed, "modulate:a", 1.0, 0.25)
+	
 			
-var last_floor_pos : Vector2= Vector2(960.0,512.0)
+var last_floor_pos : Vector2= Vector2(1920,576)
 var respawned : bool = false
 func respawn():
 	var tween22 = get_tree().create_tween()
@@ -643,3 +661,4 @@ func play_death_anim():
 	await get_tree().create_timer(2).timeout
 	respawn()
 		
+	

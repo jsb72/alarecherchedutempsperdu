@@ -34,7 +34,7 @@ polygon = PackedVector2Array(-221, 11, -225, -58, -202, -136, -125, -206, -26, -
 [node name="Area2D" type="Area2D" parent="." unique_id=394913089]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1846942868]
-polygon = PackedVector2Array(-243, 20, -249, -72, -210, -168, -129, -225, -52, -249, 6, -257, 106, -229, 177, -184, 232, -118, 255, -63, 257, 23, 151, 41, 32, 47)
+polygon = PackedVector2Array(-224, 0, -249, -72, -210, -168, -129, -225, -52, -249, 6, -257, 106, -229, 177, -184, 232, -118, 255, -63, 224, 0)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1870408288]
 stream = SubResource("AudioStreamRandomizer_fcaif")

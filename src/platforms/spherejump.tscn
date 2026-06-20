@@ -149,7 +149,7 @@ _data = {
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_j3fes"]
-random_pitch = 1.0987908
+random_pitch = 2.4169147
 streams_count = 1
 stream_0/stream = ExtResource("5_51qly")
 
