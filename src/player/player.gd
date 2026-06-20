@@ -496,7 +496,7 @@ func sprite_animation() -> void:
 			if sprite.animation=="jumpground" and sprite.is_playing():
 				pass
 			else:
-				if velocity.x < -150 or velocity.x > 150 :
+				if velocity.x < -0 or velocity.x > 0 :
 					try_play_new_anim("run")
 				else:
 					var choose_idle = randi_range(0, 25)
