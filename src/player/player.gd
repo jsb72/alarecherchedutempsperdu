@@ -602,7 +602,7 @@ func launch_bomb():
 	tween3.tween_property(bombspawed, "modulate:a", 1.0, 0.25)
 	
 			
-var last_floor_pos : Vector2= Vector2(1920,576)
+var last_floor_pos : Vector2= Vector2(1024,1216)
 var respawned : bool = false
 func respawn():
 	var tween22 = get_tree().create_tween()
@@ -633,36 +633,37 @@ func respawn():
 
 var dead_ : bool = false
 func play_death_anim():
+	if !Global.godmode:
 	
-	blood_particle.restart()
-	dead_ = true
-	
-	sprite.hide()
-	deathspriteanim.show()
-	deathspriteanim.play("idle")
-	
-	if get_facing_dir() > 0 :
-		deathspriteanim.flip_h = false
-	if get_facing_dir() < 0 :
-		deathspriteanim.flip_h = true
+		blood_particle.restart()
+		dead_ = true
 		
-	var tween22 = get_tree().create_tween()
-	tween22.tween_property(point_light_2d, "energy", 0.0, 0.0)
-	var tween2 = get_tree().create_tween()
-	tween2.tween_property(point_light_2d_2, "energy", 0.0, 0.0)
-	
-	await get_tree().create_timer(1).timeout
-	
-	#deathspriteanim.modulate.s = 100
-	
-	deathspriteanim.play("death")
-	
-	"""var tween4 = get_tree().create_tween()
-	tween4.tween_property(deathspriteanim, "modulate:s", 0.0, 2.0)"""
-	
-	
-	
-	await get_tree().create_timer(2).timeout
-	respawn()
+		sprite.hide()
+		deathspriteanim.show()
+		deathspriteanim.play("idle")
 		
+		if get_facing_dir() > 0 :
+			deathspriteanim.flip_h = false
+		if get_facing_dir() < 0 :
+			deathspriteanim.flip_h = true
+			
+		var tween22 = get_tree().create_tween()
+		tween22.tween_property(point_light_2d, "energy", 0.0, 0.0)
+		var tween2 = get_tree().create_tween()
+		tween2.tween_property(point_light_2d_2, "energy", 0.0, 0.0)
+		
+		await get_tree().create_timer(1).timeout
+		
+		#deathspriteanim.modulate.s = 100
+		
+		deathspriteanim.play("death")
+		
+		"""var tween4 = get_tree().create_tween()
+		tween4.tween_property(deathspriteanim, "modulate:s", 0.0, 2.0)"""
+		
+		
+		
+		await get_tree().create_timer(2).timeout
+		respawn()
+			
 	
