@@ -415,16 +415,14 @@ terrain_set_0/terrain_0/name = "walkable"
 terrain_set_0/terrain_0/color = Color(0.7052548, 0, 0.35776773, 1)
 sources/0 = SubResource("TileSetAtlasSource_xib2c")
 
-[sub_resource type="Gradient" id="Gradient_0cmqt"]
-
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_sqkqu"]
+noise_type = 0
 frequency = 0.005
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qgxte"]
-width = 2048
-height = 2048
+width = 1024
+height = 1024
 noise = SubResource("FastNoiseLite_sqkqu")
-color_ramp = SubResource("Gradient_0cmqt")
 seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_60ogs"]
@@ -812,7 +810,7 @@ curve = SubResource("Curve_2ktho")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hmy3j"]
 particle_flag_disable_z = true
 emission_shape = 3
-emission_box_extents = Vector3(250, 200, 1)
+emission_box_extents = Vector3(3000, 3000, 1)
 spread = 180.0
 initial_velocity_min = 4.0
 initial_velocity_max = 8.0
@@ -1001,6 +999,21 @@ scale = Vector2(0.125, 0.125)
 [node name="spikeMID55" parent="spikes" unique_id=1778917066 instance=ExtResource("11_m3x7u")]
 position = Vector2(-1152, -1056)
 rotation = -1.5707964
+scale = Vector2(0.125, 0.125)
+
+[node name="spikeMID174" parent="spikes" unique_id=1474238351 instance=ExtResource("11_m3x7u")]
+position = Vector2(768, -2336)
+rotation = -1.5707964
+scale = Vector2(0.125, 0.125)
+
+[node name="spikeMID175" parent="spikes" unique_id=1391648422 instance=ExtResource("11_m3x7u")]
+position = Vector2(768, -2272)
+rotation = -1.5707964
+scale = Vector2(0.125, 0.125)
+
+[node name="spikeMID176" parent="spikes" unique_id=184603640 instance=ExtResource("11_m3x7u")]
+position = Vector2(736, -2368)
+rotation = 3.1415927
 scale = Vector2(0.125, 0.125)
 
 [node name="spikeMID150" parent="spikes" unique_id=1748451606 instance=ExtResource("11_m3x7u")]
@@ -1999,7 +2012,7 @@ enable_collisions = true
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope21" type="Node2D" parent="ropes" unique_id=1404019646]
-position = Vector2(-224, -3264)
+position = Vector2(-512, -3264)
 script = ExtResource("13_xib2c")
 color = Color(0, 0, 0, 1)
 enable_collisions = true
@@ -2178,12 +2191,12 @@ scale = Vector2(0.128, 0.128)
 texture = ExtResource("16_xwf30")
 
 [node name="Sprite2D14" type="Sprite2D" parent="DECO/webs_top" unique_id=2098555023]
-position = Vector2(-223.99998, -3232)
+position = Vector2(-544, -3232)
 scale = Vector2(-0.128, 0.064)
 texture = ExtResource("16_xwf30")
 
 [node name="Sprite2D15" type="Sprite2D" parent="DECO/webs_top" unique_id=253445518]
-position = Vector2(224, -3232)
+position = Vector2(-928, -3232)
 scale = Vector2(0.064, 0.064)
 texture = ExtResource("16_xwf30")
 
@@ -2247,6 +2260,13 @@ texture = ExtResource("17_2ktho")
 region_enabled = true
 region_rect = Rect2(0, 1157.6178, 1020.95215, 1342.3822)
 
+[node name="botleft2" type="Sprite2D" parent="DECO/foreground" unique_id=1485606065]
+position = Vector2(-1472, 192)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_2ktho")
+region_enabled = true
+region_rect = Rect2(0, 1157.6178, 1020.95215, 1342.3822)
+
 [node name="botright" type="Sprite2D" parent="DECO/foreground" unique_id=2142600234]
 position = Vector2(2030.8585, 1019.0853)
 scale = Vector2(0.5, 0.5)
@@ -2254,9 +2274,44 @@ texture = ExtResource("17_2ktho")
 region_enabled = true
 region_rect = Rect2(1046.4932, 1188.9482, 1453.5068, 1311.0518)
 
+[node name="botright2" type="Sprite2D" parent="DECO/foreground" unique_id=1185674455]
+position = Vector2(-2400, 224)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_2ktho")
+region_enabled = true
+region_rect = Rect2(1046.4932, 1188.9482, 1453.5068, 1311.0518)
+
+[node name="botright3" type="Sprite2D" parent="DECO/foreground" unique_id=265671515]
+position = Vector2(1421.0107, -1300.4661)
+rotation = -1.5707964
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_2ktho")
+region_enabled = true
+region_rect = Rect2(1046.4932, 1188.9482, 1453.5068, 1311.0518)
+
+[node name="botright4" type="Sprite2D" parent="DECO/foreground" unique_id=1996618375]
+position = Vector2(1951.8619, 678.94794)
+rotation = -1.5707964
+texture = ExtResource("17_2ktho")
+region_enabled = true
+region_rect = Rect2(1046.4932, 1188.9482, 1453.5068, 1311.0518)
+
 [node name="topright" type="Sprite2D" parent="DECO/foreground" unique_id=351991101]
 position = Vector2(607.89276, -3544.7805)
 scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_2ktho")
+region_enabled = true
+region_rect = Rect2(1184.8779, 0, 1315.1221, 1311.0525)
+
+[node name="topright4" type="Sprite2D" parent="DECO/foreground" unique_id=1038458581]
+position = Vector2(1216.142, -512.1239)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_2ktho")
+region_enabled = true
+region_rect = Rect2(1184.8779, 0, 1315.1221, 1311.0525)
+
+[node name="topright3" type="Sprite2D" parent="DECO/foreground" unique_id=115420278]
+position = Vector2(337.63824, -2594.3882)
 texture = ExtResource("17_2ktho")
 region_enabled = true
 region_rect = Rect2(1184.8779, 0, 1315.1221, 1311.0525)
@@ -2275,13 +2330,6 @@ texture = ExtResource("17_2ktho")
 region_enabled = true
 region_rect = Rect2(0, 0, 1298.8418, 1140.1067)
 
-[node name="topleft3" type="Sprite2D" parent="DECO/foreground" unique_id=1019137378]
-position = Vector2(-490.8195, -213.09668)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("17_2ktho")
-region_enabled = true
-region_rect = Rect2(0, 0, 1298.8418, 1140.1067)
-
 [node name="topleft2" type="Sprite2D" parent="DECO/foreground" unique_id=2124199448]
 position = Vector2(-1669.1741, -3580.1475)
 scale = Vector2(0.5, 0.5)
@@ -2289,28 +2337,42 @@ texture = ExtResource("17_2ktho")
 region_enabled = true
 region_rect = Rect2(0, 0, 1298.8418, 1140.1067)
 
-[node name="particles" type="Node2D" parent="." unique_id=856857405]
+[node name="particles" type="Node" parent="." unique_id=802502874]
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="particles" unique_id=488111858]
+[node name="CanvasLayer" type="CanvasLayer" parent="particles" unique_id=2095159633]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.9
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="particles/CanvasLayer" unique_id=488111858]
 z_index = 11
-position = Vector2(1152, 1184)
-amount = 25
+position = Vector2(-448, -960)
+amount = 1000
 texture = SubResource("GradientTexture2D_hf4py")
 lifetime = 5.0
+visibility_rect = Rect2(-3000, -3000, 6000, 6000)
 process_material = SubResource("ParticleProcessMaterial_hmy3j")
 
-[node name="GPUParticles2D2" type="GPUParticles2D" parent="particles" unique_id=2001728618]
+[node name="CanvasLayer2" type="CanvasLayer" parent="particles" unique_id=970337706]
+follow_viewport_enabled = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="particles/CanvasLayer2" unique_id=1544979868]
 z_index = 11
-position = Vector2(1664, 1184)
-amount = 25
+position = Vector2(-448, -960)
+amount = 1000
 texture = SubResource("GradientTexture2D_hf4py")
 lifetime = 5.0
+visibility_rect = Rect2(-3000, -3000, 6000, 6000)
 process_material = SubResource("ParticleProcessMaterial_hmy3j")
 
-[node name="GPUParticles2D3" type="GPUParticles2D" parent="particles" unique_id=273581276]
+[node name="CanvasLayer3" type="CanvasLayer" parent="particles" unique_id=2040511721]
+follow_viewport_enabled = true
+follow_viewport_scale = 1.1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="particles/CanvasLayer3" unique_id=303723186]
 z_index = 11
-position = Vector2(1920, 896)
-amount = 25
+position = Vector2(-448, -960)
+amount = 1000
 texture = SubResource("GradientTexture2D_hf4py")
 lifetime = 5.0
+visibility_rect = Rect2(-3000, -3000, 6000, 6000)
 process_material = SubResource("ParticleProcessMaterial_hmy3j")
