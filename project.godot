@@ -26,14 +26,12 @@ PhantomCameraManager="*uid://duq6jhf6unyis"
 Global="*uid://dvc4rc2c5h0fd"
 DebugMenu="*uid://cggqb75a8w8r"
 AntialiasedLine2DTexture="*uid://bm7y8g3ie5ma0"
-ControllerIcons="*uid://bos4bpvus00ve"
 Fadetoblack="*uid://c6x8kt3tba3ki"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=3
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
@@ -45,7 +43,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/antialiased_line2d/plugin.cfg", "res://addons/controller_icons/plugin.cfg", "res://addons/debug_menu/plugin.cfg", "res://addons/minimize_html_build/plugin.cfg", "res://addons/parallax2d_preview/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/ropesim/plugin.cfg")
+enabled=PackedStringArray("res://addons/antialiased_line2d/plugin.cfg", "res://addons/debug_menu/plugin.cfg", "res://addons/minimize_html_build/plugin.cfg", "res://addons/parallax2d_preview/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/ropesim/plugin.cfg")
 
 [input]
 

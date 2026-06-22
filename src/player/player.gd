@@ -104,10 +104,15 @@ var _on_wall: bool = false: # This variable mustn't be edited manually
 
 var can_double_jump : bool = true
 
+var is_bouncing:bool=false
+
 func _ready() -> void:
 	var mygradient:GradientTexture2D=sprite.material.get_shader_parameter("pal0")
 	mygradient.gradient.set_color(1,color_dress)
 	sprite.material.set_shader_parameter("pal0", mygradient)
+	
+func _process(delta: float) -> void:
+	pass
 	
 func _physics_process(_delta: float) -> void:
 	_on_wall = is_on_wall()
@@ -172,9 +177,9 @@ func get_default_gravity() -> float:
 
 func calculate_gravity() -> float:
 	return get_default_gravity() * (
-			jump_peak_gravity_ratio if not jump_peak_gravity_timer.is_stopped()
+			jump_peak_gravity_ratio if not jump_peak_gravity_timer.is_stopped() or is_bouncing
 			else after_dash_gravity_ratio if not after_dash_gravity_timer.is_stopped()
-			else jump_not_held_gravity_ratio if not Input.is_action_pressed("jump")
+			else jump_not_held_gravity_ratio if not Input.is_action_pressed("jump") or is_bouncing
 			else down_held_gravity_ratio if Input.is_action_pressed("down") and velocity.y > 0
 			else 1.0
 	)
@@ -186,13 +191,14 @@ func calculate_gravity_limit() -> float:
 	)
 
 func jump() -> void:
+	is_bouncing=false
+	is_sliding=false
 	velocity.y = jump_velocity
 	apply_stretch()
 		
 	try_play_new_anim("jumpup")
 	jump_sound.play()
 	jump_particle.restart()
-	is_sliding=false
 
 func try_jump() -> void:
 	if Input.is_action_just_pressed("jump") and !dead_:
@@ -272,6 +278,8 @@ func calculate_wall_slide_speed() -> float:
 	)
 
 func wall_jump() -> void:
+	is_bouncing=false
+	is_sliding=false
 	var wall_jump_dir: float = -get_last_wall_dir()
 	
 	velocity.y = jump_velocity * wall_jump_v_velocity_ratio
@@ -283,7 +291,6 @@ func wall_jump() -> void:
 	try_play_new_anim("walljumpup")
 	walljump_sound.play()
 	jump_particle.restart()
-	is_sliding=false
 	
 	"""facing_dir_save_walljump=get_facing_dir()"""
 	

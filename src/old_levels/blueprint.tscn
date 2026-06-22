@@ -434,10 +434,11 @@ shader_parameter/speed = Vector2(0.01, 0.01)
 
 [sub_resource type="Environment" id="Environment_xib2c"]
 background_mode = 3
-tonemap_mode = 1
+tonemap_white = 16.0
 glow_enabled = true
 glow_intensity = 1.3
 glow_bloom = 0.3
+fog_light_color = Color(0.5176471, 0.5529412, 0.60784316, 1)
 fog_light_energy = 6.77
 fog_sun_scatter = 0.59
 fog_density = 0.3614
@@ -2161,12 +2162,6 @@ texture = ExtResource("15_0cmqt")
 
 [node name="web23" type="Sprite2D" parent="DECO/webs_corner" unique_id=1347624916]
 position = Vector2(1312, -288.00006)
-rotation = -1.5707964
-scale = Vector2(0.064, 0.064)
-texture = ExtResource("15_0cmqt")
-
-[node name="web24" type="Sprite2D" parent="DECO/webs_corner" unique_id=662347341]
-position = Vector2(-2016, -2464)
 rotation = -1.5707964
 scale = Vector2(0.064, 0.064)
 texture = ExtResource("15_0cmqt")

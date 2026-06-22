@@ -15,28 +15,20 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		if 1 or body.state_machine.active_state is FallState:
-			#body.jump()
-			"""body.velocity.y = -1000
-			body.apply_stretch()"""
-			
-			body.velocity.y = -900
-			
-			body.apply_stretch()
-			body.try_play_new_anim("jumpup")
-			#body.jump_sound.play()
-			body.jump_particle.restart()
-			body.is_sliding=false
-			
-			
-			animation_player.play("new_animation")
-			audio_stream_player_2d.play()
-			body.groundshaketimer.start()
-			#body.velocity = body.velocity*1.66
-			"""if Input.is_action_pressed("interaction"):
-				body.velocity = body.velocity*1.66"""
-			"""if Input.is_action_pressed("interaction"):
-				body.jump()"""
+		body.is_sliding=false
+		body.is_bouncing=true
+		
+		body.global_position.y=global_position.y
+		body.velocity.y = -800
+		
+		body.apply_stretch()
+		body.try_play_new_anim("jumpup")
+		body.groundshaketimer.start()
+		body.jump_particle.restart()
+		
+		
+		animation_player.play("new_animation")
+		audio_stream_player_2d.play()
 		
 func _on_body_exited(body: Node2D) -> void:
 	pass
