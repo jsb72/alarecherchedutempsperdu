@@ -111,7 +111,7 @@ func _ready() -> void:
 	
 func _physics_process(_delta: float) -> void:
 	_on_wall = is_on_wall()
-	if Input.is_action_just_pressed("interaction"):
+	if Input.is_action_just_pressed("item"):
 		launch_bomb()
 	logic_spe()
 
@@ -433,9 +433,9 @@ func sprint_logic():
 		max_speed = 389
 
 func logic_spe():
-	"""Engine.time_scale = 1
-	if Input.is_action_pressed("interaction"):
-			Engine.time_scale = 0.1"""
+	Engine.time_scale = 1
+	if Input.is_action_pressed("skill"):
+			Engine.time_scale = 0.1
 			
 	sprite_animation()
 	

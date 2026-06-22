@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var timer: Timer = $Timer
-@onready var spiderlist: Node2D = $"../spiderlist"
+@onready var spiderlist: Node2D = $"../../spiderlist"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
