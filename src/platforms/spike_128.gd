@@ -16,7 +16,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		if !body.dead_:
 			body.play_death_anim()
-			body.dmgshaketimer.start()
+			if !Global.godmode:body.dmgshaketimer.start()
 			audio_stream_player_2d.play()
 			
 			sprite_2d.material.set_shader_parameter("hit_effect", 1)

@@ -1,37 +1,37 @@
-[gd_scene format=3 uid="uid://ducp7rsjpf40n"]
+[gd_scene format=3 uid="uid://bspqlctvyhswp"]
 
-[ext_resource type="Script" uid="uid://spewh8xv7lts" path="res://src/player/player.gd" id="1_4anbu"]
-[ext_resource type="Script" uid="uid://bwbxypkqm7bgl" path="res://src/state_machine/state_machine.gd" id="2_rxibo"]
-[ext_resource type="Script" uid="uid://btp87202ddbxl" path="res://src/player/states/air_entry_state.gd" id="3_x42xx"]
-[ext_resource type="Script" uid="uid://dx15tnwh62i1l" path="res://src/player/states/fall_state.gd" id="4_l271a"]
-[ext_resource type="Script" uid="uid://cl2swaeebfu0s" path="res://src/player/states/jump_state.gd" id="5_8ydov"]
-[ext_resource type="Script" uid="uid://b6w2sn3ikefko" path="res://src/player/states/floor_entry_state.gd" id="6_ylhto"]
-[ext_resource type="Script" uid="uid://m06e3ohv0ud1" path="res://src/player/states/idle_state.gd" id="7_cwolq"]
-[ext_resource type="Script" uid="uid://bgrdchyvffn8v" path="res://src/player/states/run_state.gd" id="8_2smqc"]
-[ext_resource type="Script" uid="uid://b04xgcpknjjdw" path="res://src/player/states/wall_slide_state.gd" id="9_8ydov"]
-[ext_resource type="Script" uid="uid://d00j5gw538kn2" path="res://src/player/states/wall_jump_state.gd" id="10_ylhto"]
-[ext_resource type="Script" uid="uid://crbn04ab1d1vk" path="res://src/player/states/dash_state.gd" id="11_ylhto"]
-[ext_resource type="AudioStream" uid="uid://d3ppmku2r4mc" path="res://sounds/hero_jump.wav" id="13_hja65"]
-[ext_resource type="Texture2D" uid="uid://dmayxtc1kkd33" path="res://sprites/AnimationSheet_CharacterVECTOR.png" id="14_4uy46"]
-[ext_resource type="Script" uid="uid://de7am2l57juc4" path="res://src/player/sprite.gd" id="14_5efpn"]
-[ext_resource type="AudioStream" uid="uid://bdy3mdrl28qmq" path="res://sounds/hero_land_soft.wav" id="14_5shm8"]
-[ext_resource type="AudioStream" uid="uid://cqr02pa8h5tob" path="res://sounds/hero_wall_jump.wav" id="15_5efpn"]
-[ext_resource type="PackedScene" uid="uid://cv2bwoqw07lnb" path="res://src/particles/run_particle.tscn" id="15_j2873"]
-[ext_resource type="AudioStream" uid="uid://bdcg2t8w75wa8" path="res://sounds/hero_dash.wav" id="16_4uy46"]
-[ext_resource type="PackedScene" uid="uid://cvsfd3471pa4e" path="res://src/particles/blood_particle.tscn" id="16_dpt0q"]
-[ext_resource type="Texture2D" uid="uid://bwecia1lhpg1n" path="res://sprites/bloodnew.png" id="17_j2873"]
-[ext_resource type="AudioStream" uid="uid://bpabs1jo2k3i7" path="res://sounds/hero_wall_slide.wav" id="17_k60ra"]
-[ext_resource type="Shader" uid="uid://bmhrnmwu4o3op" path="res://shaders/extensible-color-palette.gdshader" id="17_p6grl"]
-[ext_resource type="AudioStream" uid="uid://bk1u2t0pf6uu3" path="res://sounds/hero_run_footsteps_stone.wav" id="18_a4vah"]
-[ext_resource type="PackedScene" uid="uid://bf78142na1p7k" path="res://src/particles/jump_particle.tscn" id="19_vwi60"]
-[ext_resource type="PackedScene" uid="uid://kur8cpiyrv8b" path="res://src/particles/ground_particle.tscn" id="20_o04tx"]
-[ext_resource type="PackedScene" uid="uid://wok5htmqtlc8" path="res://src/particles/slide_particle.tscn" id="21_hja65"]
-[ext_resource type="Script" uid="uid://b6rm5gkxphdna" path="res://src/player/spritetrail.gd" id="22_5shm8"]
-[ext_resource type="AudioStream" uid="uid://bd2ytox8or26g" path="res://sounds/hero_falling.wav" id="29_p6grl"]
-[ext_resource type="Shader" uid="uid://chet47u8v3pes" path="res://shaders/distorsion.gdshader" id="34_xmpm3"]
+[ext_resource type="Script" uid="uid://spewh8xv7lts" path="res://src/player/player.gd" id="1_65l1k"]
+[ext_resource type="Shader" uid="uid://chet47u8v3pes" path="res://shaders/distorsion.gdshader" id="2_8hd40"]
+[ext_resource type="PackedScene" uid="uid://wok5htmqtlc8" path="res://src/particles/slide_particle.tscn" id="3_sa3g3"]
+[ext_resource type="PackedScene" uid="uid://bf78142na1p7k" path="res://src/particles/jump_particle.tscn" id="4_104bl"]
+[ext_resource type="PackedScene" uid="uid://kur8cpiyrv8b" path="res://src/particles/ground_particle.tscn" id="5_vgmgy"]
+[ext_resource type="PackedScene" uid="uid://cv2bwoqw07lnb" path="res://src/particles/run_particle.tscn" id="6_02pkx"]
+[ext_resource type="PackedScene" uid="uid://cvsfd3471pa4e" path="res://src/particles/blood_particle.tscn" id="7_fo72j"]
+[ext_resource type="Texture2D" uid="uid://bwecia1lhpg1n" path="res://sprites/bloodnew.png" id="8_cyfwk"]
+[ext_resource type="Shader" uid="uid://bmhrnmwu4o3op" path="res://shaders/extensible-color-palette.gdshader" id="9_rpjyu"]
+[ext_resource type="Texture2D" uid="uid://dmayxtc1kkd33" path="res://sprites/AnimationSheet_CharacterVECTOR.png" id="10_lfi2x"]
+[ext_resource type="Script" uid="uid://de7am2l57juc4" path="res://src/player/sprite.gd" id="11_tielh"]
+[ext_resource type="Script" uid="uid://b6rm5gkxphdna" path="res://src/player/spritetrail.gd" id="12_3hd1r"]
+[ext_resource type="Script" uid="uid://bwbxypkqm7bgl" path="res://src/state_machine/state_machine.gd" id="13_fnxhx"]
+[ext_resource type="Script" uid="uid://btp87202ddbxl" path="res://src/player/states/air_entry_state.gd" id="14_wob0a"]
+[ext_resource type="Script" uid="uid://dx15tnwh62i1l" path="res://src/player/states/fall_state.gd" id="15_cr78m"]
+[ext_resource type="Script" uid="uid://cl2swaeebfu0s" path="res://src/player/states/jump_state.gd" id="16_mmphe"]
+[ext_resource type="Script" uid="uid://b6w2sn3ikefko" path="res://src/player/states/floor_entry_state.gd" id="17_js5ch"]
+[ext_resource type="Script" uid="uid://m06e3ohv0ud1" path="res://src/player/states/idle_state.gd" id="18_h4agt"]
+[ext_resource type="Script" uid="uid://bgrdchyvffn8v" path="res://src/player/states/run_state.gd" id="19_8ih2e"]
+[ext_resource type="Script" uid="uid://b04xgcpknjjdw" path="res://src/player/states/wall_slide_state.gd" id="20_h7tqf"]
+[ext_resource type="Script" uid="uid://d00j5gw538kn2" path="res://src/player/states/wall_jump_state.gd" id="21_5vif2"]
+[ext_resource type="Script" uid="uid://crbn04ab1d1vk" path="res://src/player/states/dash_state.gd" id="22_rt3sj"]
+[ext_resource type="AudioStream" uid="uid://d3ppmku2r4mc" path="res://sounds/hero_jump.wav" id="23_fqqs7"]
+[ext_resource type="AudioStream" uid="uid://bdy3mdrl28qmq" path="res://sounds/hero_land_soft.wav" id="24_n7tqi"]
+[ext_resource type="AudioStream" uid="uid://cqr02pa8h5tob" path="res://sounds/hero_wall_jump.wav" id="25_isj3f"]
+[ext_resource type="AudioStream" uid="uid://bdcg2t8w75wa8" path="res://sounds/hero_dash.wav" id="26_pq3lb"]
+[ext_resource type="AudioStream" uid="uid://bpabs1jo2k3i7" path="res://sounds/hero_wall_slide.wav" id="27_jum6h"]
+[ext_resource type="AudioStream" uid="uid://bd2ytox8or26g" path="res://sounds/hero_falling.wav" id="28_mtj8d"]
+[ext_resource type="AudioStream" uid="uid://bk1u2t0pf6uu3" path="res://sounds/hero_run_footsteps_stone.wav" id="29_4i8xs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h0enb"]
-shader = ExtResource("34_xmpm3")
+shader = ExtResource("2_8hd40")
 shader_parameter/strength = 0.08
 shader_parameter/center = Vector2(0.5, 0.5)
 shader_parameter/radius = 0.0
@@ -94,184 +94,184 @@ gradient = SubResource("Gradient_p6grl")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e7e1q"]
 resource_local_to_scene = true
-shader = ExtResource("17_p6grl")
+shader = ExtResource("9_rpjyu")
 shader_parameter/pal0 = SubResource("GradientTexture2D_e7e1q")
 shader_parameter/lerper = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_evlgt"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(266, 133, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3fw2w"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(0, 931, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xmhh8"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(133, 931, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_awger"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(266, 931, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2swit"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(399, 931, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2qo8f"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(532, 931, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ayw0"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(665, 931, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpqwn"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(0, 0, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4bkl8"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(0, 266, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3uvft"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(133, 266, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xxcdl"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(266, 266, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f4k14"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(399, 266, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8iif5"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(133, 0, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0iufa"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(532, 665, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o04tx"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(798, 668, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j2873"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(931, 668, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dpt0q"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(133, 668, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wcxbk"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(266, 668, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p6grl"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(399, 668, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bgxyk"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(532, 665, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gsylq"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(665, 266, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_utg71"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(798, 266, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f0c71"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(931, 266, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e7e1q"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(0, 402, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h0enb"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(133, 402, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_phdu6"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(266, 402, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ptlo"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(399, 402, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kpcs5"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(532, 402, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rhq4p"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(665, 402, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w56km"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(798, 402, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2rxss"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(931, 402, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xmpm3"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(399, 133, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rvvlk"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(399, 0, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7anmh"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(798, 0, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_frddd"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(931, 0, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wpy2u"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(931, 0, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_okvrv"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(399, 133, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ymg6t"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(0, 269, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jqx1k"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(133, 269, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_07fph"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(266, 269, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8o3kr"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(399, 269, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_axsi3"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(266, 0, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u3ern"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(532, 0, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vhlnr"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(665, 0, 133, 133)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j2873"]
@@ -498,27 +498,27 @@ metadata/_snap_enabled = true
 metadata/_snap_count = 20
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bw7q3"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(133, 931, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wtop7"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(266, 931, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_35drp"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(399, 931, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tk6d3"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(532, 931, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6b11c"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(665, 931, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ygxm1"]
-atlas = ExtResource("14_4uy46")
+atlas = ExtResource("10_lfi2x")
 region = Rect2(0, 931, 133, 133)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tjw5d"]
@@ -555,43 +555,43 @@ animations = [{
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dpt0q"]
 random_pitch = 1.2
 streams_count = 1
-stream_0/stream = ExtResource("13_hja65")
+stream_0/stream = ExtResource("23_fqqs7")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wcxbk"]
 random_pitch = 1.4
 streams_count = 1
-stream_0/stream = ExtResource("14_5shm8")
+stream_0/stream = ExtResource("24_n7tqi")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_p6grl"]
 random_pitch = 1.2
 streams_count = 1
-stream_0/stream = ExtResource("15_5efpn")
+stream_0/stream = ExtResource("25_isj3f")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_e7e1q"]
 random_pitch = 1.4
 streams_count = 1
-stream_0/stream = ExtResource("16_4uy46")
+stream_0/stream = ExtResource("26_pq3lb")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xmpm3"]
 random_pitch = 1.4
 streams_count = 1
-stream_0/stream = ExtResource("17_k60ra")
+stream_0/stream = ExtResource("27_jum6h")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_phdu6"]
 random_pitch = 1.3348398
 streams_count = 1
-stream_0/stream = ExtResource("29_p6grl")
+stream_0/stream = ExtResource("28_mtj8d")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_h0enb"]
 random_pitch = 1.5
 streams_count = 1
-stream_0/stream = ExtResource("18_a4vah")
+stream_0/stream = ExtResource("29_4i8xs")
 
-[node name="Player" type="CharacterBody2D" unique_id=2070335124]
+[node name="NonPlayer" type="CharacterBody2D" unique_id=2070335124]
 collision_layer = 3
 floor_snap_length = 2.0
 safe_margin = 0.1
-script = ExtResource("1_4anbu")
+script = ExtResource("1_65l1k")
 color_dress = Color(1, 0, 0.016666412, 1)
 max_speed_init = 420.0
 max_h_velocity_ratio = 3.0
@@ -690,21 +690,21 @@ target_position = Vector2(-20, 0)
 [node name="particles" type="Node2D" parent="." unique_id=2142660045]
 position = Vector2(0, 31.574997)
 
-[node name="slide_particle" parent="particles" unique_id=993295293 instance=ExtResource("21_hja65")]
+[node name="slide_particle" parent="particles" unique_id=993295293 instance=ExtResource("3_sa3g3")]
 position = Vector2(-13, -12)
 emitting = false
 
-[node name="jump_particle" parent="particles" unique_id=842905782 instance=ExtResource("19_vwi60")]
+[node name="jump_particle" parent="particles" unique_id=842905782 instance=ExtResource("4_104bl")]
 
-[node name="ground_particle" parent="particles" unique_id=1979884965 instance=ExtResource("20_o04tx")]
+[node name="ground_particle" parent="particles" unique_id=1979884965 instance=ExtResource("5_vgmgy")]
 
-[node name="run_particle" parent="particles" unique_id=247846387 instance=ExtResource("15_j2873")]
+[node name="run_particle" parent="particles" unique_id=247846387 instance=ExtResource("6_02pkx")]
 position = Vector2(0, -5)
 
-[node name="blood_particle" parent="particles" unique_id=1148518955 instance=ExtResource("16_dpt0q")]
+[node name="blood_particle" parent="particles" unique_id=1148518955 instance=ExtResource("7_fo72j")]
 position = Vector2(0, -32)
 amount = 30
-texture = ExtResource("17_j2873")
+texture = ExtResource("8_cyfwk")
 lifetime = 1.0
 explosiveness = 0.5
 randomness = 1.0
@@ -723,7 +723,7 @@ scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_j2873")
 animation = &"run"
 autoplay = "idle"
-script = ExtResource("14_5efpn")
+script = ExtResource("11_tielh")
 
 [node name="lights" type="Node2D" parent="." unique_id=1203052506]
 position = Vector2(0, 31.574997)
@@ -749,48 +749,48 @@ animation = &"death"
 autoplay = "idle"
 
 [node name="spritetrail" type="Node" parent="." unique_id=556906390]
-script = ExtResource("22_5shm8")
+script = ExtResource("12_3hd1r")
 
 [node name="StateMachine" type="Node" parent="." unique_id=2054057317 node_paths=PackedStringArray("target_node", "default_state")]
-script = ExtResource("2_rxibo")
+script = ExtResource("13_fnxhx")
 target_node = NodePath("..")
 default_state = NodePath("AirEntryState")
 metadata/_custom_type_script = "uid://bwbxypkqm7bgl"
 
 [node name="AirEntryState" type="Node" parent="StateMachine" unique_id=549728677]
-script = ExtResource("3_x42xx")
+script = ExtResource("14_wob0a")
 metadata/_custom_type_script = "uid://btp87202ddbxl"
 
 [node name="FallState" type="Node" parent="StateMachine/AirEntryState" unique_id=1159993235]
-script = ExtResource("4_l271a")
+script = ExtResource("15_cr78m")
 metadata/_custom_type_script = "uid://dx15tnwh62i1l"
 
 [node name="JumpState" type="Node" parent="StateMachine/AirEntryState" unique_id=610039875]
-script = ExtResource("5_8ydov")
+script = ExtResource("16_mmphe")
 metadata/_custom_type_script = "uid://cl2swaeebfu0s"
 
 [node name="FloorEntryState" type="Node" parent="StateMachine" unique_id=32818473]
-script = ExtResource("6_ylhto")
+script = ExtResource("17_js5ch")
 metadata/_custom_type_script = "uid://b6w2sn3ikefko"
 
 [node name="IdleState" type="Node" parent="StateMachine/FloorEntryState" unique_id=1530464151]
-script = ExtResource("7_cwolq")
+script = ExtResource("18_h4agt")
 metadata/_custom_type_script = "uid://m06e3ohv0ud1"
 
 [node name="RunState" type="Node" parent="StateMachine/FloorEntryState" unique_id=622199257]
-script = ExtResource("8_2smqc")
+script = ExtResource("19_8ih2e")
 metadata/_custom_type_script = "uid://bgrdchyvffn8v"
 
 [node name="WallSlideState" type="Node" parent="StateMachine" unique_id=1278021011]
-script = ExtResource("9_8ydov")
+script = ExtResource("20_h7tqf")
 metadata/_custom_type_script = "uid://b04xgcpknjjdw"
 
 [node name="WallJumpState" type="Node" parent="StateMachine" unique_id=1438294549]
-script = ExtResource("10_ylhto")
+script = ExtResource("21_5vif2")
 metadata/_custom_type_script = "uid://d00j5gw538kn2"
 
 [node name="DashState" type="Node" parent="StateMachine" unique_id=79126621]
-script = ExtResource("11_ylhto")
+script = ExtResource("22_rt3sj")
 metadata/_custom_type_script = "uid://crbn04ab1d1vk"
 
 [node name="Timers" type="Node" parent="." unique_id=2100185851]
