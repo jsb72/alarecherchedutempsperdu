@@ -106,6 +106,12 @@ var can_double_jump : bool = true
 
 var is_bouncing:bool=false
 
+@onready var wall_ray_right_2: RayCast2D = $rays/WallRayRight2
+@onready var wall_ray_left_2: RayCast2D = $rays/WallRayLeft2
+@onready var wall_ray_right_3: RayCast2D = $rays/WallRayRight3
+@onready var wall_ray_left_3: RayCast2D = $rays/WallRayLeft3
+
+
 func _ready() -> void:
 	var mygradient:GradientTexture2D=sprite.material.get_shader_parameter("pal0")
 	mygradient.gradient.set_color(1,color_dress)
@@ -223,29 +229,56 @@ func stop_jump_timers() -> void:
 	wall_jump_coyote_timer.stop()
 	wall_jump_buffer_timer.stop()
 
+var the_last_wall_dir:int=1
+func is_there_a_wall_here()-> int:
+	var is_there_a_wall:int=0
+	
+			
+	if wall_ray_right_2.is_colliding():
+		var collidobj = wall_ray_right_2.get_collider()
+		if collidobj is TileMapLayer :
+			is_there_a_wall=1
+			the_last_wall_dir=1
+	if wall_ray_left_2.is_colliding():
+		var collidobj = wall_ray_left_2.get_collider()
+		if collidobj is TileMapLayer :
+			is_there_a_wall=-1
+			the_last_wall_dir=-1
+			
+	if wall_ray_right_3.is_colliding():
+		var collidobj = wall_ray_right_3.get_collider()
+		if collidobj is TileMapLayer :
+			is_there_a_wall=1
+			the_last_wall_dir=1
+	if wall_ray_left_3.is_colliding():
+		var collidobj = wall_ray_left_3.get_collider()
+		if collidobj is TileMapLayer :
+			is_there_a_wall=-1
+			the_last_wall_dir=-1
+			
+	return is_there_a_wall
+	
 func get_last_wall_dir() -> float:
-	return -signf(get_wall_normal().x)
+	return the_last_wall_dir
+	#return -signf(get_wall_normal().x)
 
 func apply_wall_slide(delta: float) -> void:
 	var step: float = max_wall_slide_speed / wall_slide_acc_time
 	velocity.y = move_toward(velocity.y, calculate_wall_slide_speed(), step * delta)
 
-@onready var wall_ray_right: RayCast2D = $WallRayRight
-@onready var wall_ray_left: RayCast2D = $WallRayLeft
 func can_wall_slide() -> bool:
 	# Can wall slide if the player is touching the wall and moving towards it.
 	#return is_on_wall() and get_input_vector().x * get_last_wall_dir() > 0
 	var isonwall=false
 	var input_x=get_input_vector().x
-	if wall_ray_right.is_colliding():
-		var collidobj = wall_ray_right.get_collider()
-		if (collidobj is TileMapLayer) and input_x > 0:
-			isonwall=true
-	if wall_ray_left.is_colliding():
-		var collidobj = wall_ray_left.get_collider()
-		#collidobj is StaticBody2D or 
-		if (collidobj is TileMapLayer) and input_x < 0:
-			isonwall=true
+	
+	
+	var is_there_a_wall=is_there_a_wall_here()
+	if is_there_a_wall==1 and input_x > 0:
+		isonwall=true
+	if is_there_a_wall==-1 and input_x < 0:
+		isonwall=true
+			
 	return isonwall
 	
 var is_sliding:bool=false
@@ -297,7 +330,7 @@ func wall_jump() -> void:
 	
 
 func try_wall_jump(ignore_wall: bool = false) -> void:
-	if Input.is_action_just_pressed("jump") and (is_on_wall() or ignore_wall) and Global.walljump_unlock and !dead_:
+	if Input.is_action_just_pressed("jump") and (is_there_a_wall_here()!=0 or ignore_wall) and Global.walljump_unlock and !dead_:
 		wall_jump()
 
 func try_coyote_wall_jump() -> void:

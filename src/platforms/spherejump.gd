@@ -20,6 +20,7 @@ func _on_body_entered(body: Node2D) -> void:
 		
 		body.global_position.y=global_position.y
 		body.velocity.y = -800
+		#body.velocity.y = -1200
 		
 		body.apply_stretch()
 		body.try_play_new_anim("jumpup")

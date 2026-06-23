@@ -641,12 +641,22 @@ z_index = 5
 position = Vector2(0, -0.92500305)
 shape = SubResource("RectangleShape2D_qnmj6")
 
-[node name="WallRayRight" type="RayCast2D" parent="." unique_id=685109009]
-position = Vector2(0, -0.42500305)
+[node name="rays" type="Node2D" parent="." unique_id=1015963888]
+
+[node name="WallRayRight2" type="RayCast2D" parent="rays" unique_id=1138039437]
+position = Vector2(0, 24)
 target_position = Vector2(20, 0)
 
-[node name="WallRayLeft" type="RayCast2D" parent="." unique_id=473465288]
-position = Vector2(0, -0.42500305)
+[node name="WallRayLeft2" type="RayCast2D" parent="rays" unique_id=1989678564]
+position = Vector2(0, 24)
+target_position = Vector2(-20, 0)
+
+[node name="WallRayRight3" type="RayCast2D" parent="rays" unique_id=2042184040]
+position = Vector2(0, -24)
+target_position = Vector2(20, 0)
+
+[node name="WallRayLeft3" type="RayCast2D" parent="rays" unique_id=1156868153]
+position = Vector2(0, -24)
 target_position = Vector2(-20, 0)
 
 [node name="particles" type="Node2D" parent="." unique_id=2142660045]
@@ -784,7 +794,7 @@ one_shot = true
 [node name="WallJumpBuffer" type="Timer" parent="Timers" unique_id=1276400043]
 unique_name_in_owner = true
 process_callback = 0
-wait_time = 0.2
+wait_time = 0.1
 one_shot = true
 
 [node name="DashCooldown" type="Timer" parent="Timers" unique_id=1515432951]
