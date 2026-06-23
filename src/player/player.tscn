@@ -130,6 +130,22 @@ region = Rect2(665, 931, 133, 133)
 atlas = ExtResource("14_4uy46")
 region = Rect2(0, 0, 133, 133)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bkl8"]
+atlas = ExtResource("14_4uy46")
+region = Rect2(0, 266, 133, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uvft"]
+atlas = ExtResource("14_4uy46")
+region = Rect2(133, 266, 133, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxcdl"]
+atlas = ExtResource("14_4uy46")
+region = Rect2(266, 266, 133, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4k14"]
+atlas = ExtResource("14_4uy46")
+region = Rect2(399, 266, 133, 133)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_8iif5"]
 atlas = ExtResource("14_4uy46")
 region = Rect2(133, 0, 133, 133)
@@ -294,10 +310,22 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fpqwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bkl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uvft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxcdl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4k14")
 }],
 "loop": 1,
 "name": &"idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -693,7 +721,7 @@ material = SubResource("ShaderMaterial_e7e1q")
 position = Vector2(0, -4.425003)
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_j2873")
-animation = &"walk"
+animation = &"idle2"
 autoplay = "idle"
 script = ExtResource("14_5efpn")
 

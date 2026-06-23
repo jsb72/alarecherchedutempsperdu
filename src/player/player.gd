@@ -562,7 +562,7 @@ func sprite_animation() -> void:
 						if velocity.x < -100 or velocity.x > 100 :
 							try_play_new_anim("run")
 						else:
-							try_play_new_anim("walk")
+							try_play_new_anim("run")
 				else:
 					var choose_idle = randi_range(0, 25)
 					if choose_idle==0:
