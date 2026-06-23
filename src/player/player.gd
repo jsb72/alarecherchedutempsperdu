@@ -489,13 +489,34 @@ func logic_spe():
 	if Global.sprint_unlock:
 		sprint_logic()
 
+var cam_offset_x:int=50
+var cam_offset_y:int=0
+
 func camera_logic()->void:
-	if velocity.x > 0 and is_on_floor_only(): 
+	"""if velocity.x > 0 and is_on_floor_only(): 
 		var tween = get_tree().create_tween()
 		tween.tween_property(cam, "follow_offset", Vector2(50,0), 1.0)
 	if velocity.x < 0 and is_on_floor_only(): 
 		var tween = get_tree().create_tween()
-		tween.tween_property(cam, "follow_offset", Vector2(-50,0), 1.0)
+		tween.tween_property(cam, "follow_offset", Vector2(-50,0), 1.0)"""
+	
+	cam_offset_y=0
+	if Input.is_action_pressed("cam_top"):
+		cam_offset_y=-400
+	if Input.is_action_pressed("cam_bot"):
+		cam_offset_y=400
+		
+	var tweenfdf = get_tree().create_tween()
+	tweenfdf.tween_property(cam, "follow_offset:y", cam_offset_y, 1.0)
+		
+	if velocity.x > 0 and is_on_floor_only(): 
+		cam_offset_x=50
+	if velocity.x < 0 and is_on_floor_only(): 
+		cam_offset_x=-50
+		
+	var tween = get_tree().create_tween()
+	tween.tween_property(cam, "follow_offset:x", cam_offset_x, 1.0)
+	
 		
 	cam.noise.positional_noise= false
 	Input.stop_joy_vibration(0)
