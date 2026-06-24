@@ -2,18 +2,15 @@ extends Node
 
 var debug_mod:bool=true
 
-var nb_fractal:int = 0
 
-var door_opened:bool = false
 
 var dash_unlock:bool = false
 var sprint_unlock:bool = false
 var doublejump_unlock:bool = false
 var walljump_unlock:bool=true
 
-var godmode:bool=true
+var godmode:bool=false
 
-var fractal_list: Array[bool] = [true, true, true]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,7 +34,6 @@ func _process(delta: float) -> void:
 		sprint_unlock = false
 		doublejump_unlock = false
 		walljump_unlock = true
-		nb_fractal=3
 		
 	if Input.is_action_just_pressed("start"):
 		get_tree().reload_current_scene()
