@@ -871,7 +871,7 @@ color_dress = Color(0, 0.76862746, 1, 1)
 
 [node name="Player2" parent="." unique_id=1970513996 instance=ExtResource("7_hmy3j")]
 unique_name_in_owner = true
-position = Vector2(704, -32)
+position = Vector2(992, 1184)
 color_dress = Color(1, 0.36078432, 0, 1)
 
 [node name="cam" type="Node2D" parent="." unique_id=1498018793 node_paths=PackedStringArray("follow_target")]
