@@ -120,12 +120,14 @@ func _ready() -> void:
 	sprite.material.set_shader_parameter("pal0", mygradient)
 	
 func _physics_process(_delta: float) -> void:
-	var there_is_wall = is_there_a_wall_here()
+	"""var there_is_wall = is_there_a_wall_here()
 	if there_is_wall!=0:
 		_on_wall = true
 	else :
-		_on_wall = false
-	#_on_wall = is_on_wall()
+		_on_wall = false"""
+		
+	_on_wall = is_on_wall()
+	
 	if is_action_pressed_custom("item"):
 		launch_bomb()
 	logic_spe()

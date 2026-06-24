@@ -2081,9 +2081,11 @@ environment = SubResource("Environment_xib2c")
 
 [node name="bomb" parent="." unique_id=324640493 instance=ExtResource("10_knf4u")]
 position = Vector2(224, 608)
+should_disapear = false
 
 [node name="bomb2" parent="." unique_id=637721056 instance=ExtResource("10_knf4u")]
 position = Vector2(-640, -544)
+should_disapear = false
 
 [node name="DECO" type="Node2D" parent="." unique_id=685871285]
 
