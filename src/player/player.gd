@@ -644,7 +644,7 @@ func sound_animation() -> void:
 			if !falling_sound.playing : 
 				if !falling_started:
 					var tween = get_tree().create_tween()
-					tween.tween_property(falling_sound, "volume_db", 4.0, 0.5)
+					tween.tween_property(falling_sound, "volume_db", 8.0, 0.5)
 					falling_started=true
 				
 				falling_sound.play()
