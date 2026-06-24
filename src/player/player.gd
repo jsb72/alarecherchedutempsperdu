@@ -663,24 +663,28 @@ func sound_animation() -> void:
 				land_sound.play()
 				ground_particle.restart()
 	
-@onready var bomblist: Node2D = $"../bomblist"			
+@onready var bomblist: Node2D = $"../bomblist"
+@onready var bombtimer: Timer = $skilltimers/bombtimer
 func launch_bomb():
-	var bombspawedpacked = load("res://src/elements/bomb.tscn")
-	var bombspawed = bombspawedpacked.instantiate()
-	
-	#bombspawed.scale=Vector2(0.5,0.5)
-	bombspawed.global_position=global_position
-	bombspawed.global_position.x+=64*get_facing_dir()
-	bombspawed.global_position.y-=32
-	bombspawed.linear_velocity=Vector2(1000*get_facing_dir(),-220)
-	
-	bombspawed.modulate.a = 0.0
-	bomblist.add_child(bombspawed)
-	var tween3 = get_tree().create_tween()
-	tween3.tween_property(bombspawed, "modulate:a", 1.0, 0.25)
+	if bombtimer.is_stopped() and !dead_:
+		bombtimer.start()
+		
+		var bombspawedpacked = load("res://src/elements/bomb.tscn")
+		var bombspawed = bombspawedpacked.instantiate()
+		
+		#bombspawed.scale=Vector2(0.5,0.5)
+		bombspawed.global_position=global_position
+		bombspawed.global_position.x+=64*get_facing_dir()
+		bombspawed.global_position.y-=32
+		bombspawed.linear_velocity=Vector2(1000*get_facing_dir(),-220)
+		
+		bombspawed.modulate.a = 0.0
+		bomblist.add_child(bombspawed)
+		var tween3 = get_tree().create_tween()
+		tween3.tween_property(bombspawed, "modulate:a", 1.0, 0.1)
 	
 			
-var last_floor_pos : Vector2= Vector2(1024,1216)
+var last_floor_pos : Vector2= Vector2(1120.0,1216.0)
 var respawned : bool = false
 func respawn():
 	var tween22 = get_tree().create_tween()

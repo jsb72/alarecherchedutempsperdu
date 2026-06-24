@@ -873,5 +873,10 @@ one_shot = true
 [node name="dmgshaketimer" type="Timer" parent="shakecamtimers" unique_id=1271170076]
 one_shot = true
 
+[node name="skilltimers" type="Node" parent="." unique_id=272239763]
+
+[node name="bombtimer" type="Timer" parent="skilltimers" unique_id=90914381]
+one_shot = true
+
 [connection signal="wall_entered" from="." to="." method="_on_wall_entered"]
 [connection signal="wall_exited" from="." to="." method="_on_wall_exited"]
