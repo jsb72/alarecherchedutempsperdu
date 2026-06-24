@@ -681,7 +681,7 @@ func launch_bomb():
 		bombspawed.modulate.a = 0.0
 		bomblist.add_child(bombspawed)
 		var tween3 = get_tree().create_tween()
-		tween3.tween_property(bombspawed, "modulate:a", 1.0, 0.1)
+		tween3.tween_property(bombspawed, "modulate:a", 1.0, 0.0)
 	
 			
 var last_floor_pos : Vector2= Vector2(1120.0,1216.0)

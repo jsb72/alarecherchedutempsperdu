@@ -3,6 +3,10 @@ extends RigidBody2D
 
 @onready var animation_player: AnimationPlayer = $Sprite2D/AnimationPlayer
 
+@export var should_disapear:bool=true
+var is_disapearing:bool=false
+@onready var disapeartimer: Timer = $disapeartimer
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	rotation=randfn(-0.3, 0.3)
@@ -14,7 +18,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is Player:
+	if body is Player and !is_disapearing:
 		audio_stream_player_2d.play()
 		#process_mode=Node.PROCESS_MODE_DISABLED
 		body.dmgshaketimer.start()
@@ -33,3 +37,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		
 		#hide()
 		
+		
+
+
+func _on_disapeartimer_timeout() -> void:
+	if should_disapear:
+		is_disapearing=true
+		set_deferred("process_mode",Node.PROCESS_MODE_DISABLED)
+		var tween2 = get_tree().create_tween()
+		tween2.tween_property(self, "modulate:a", 0.0, 0.5)
+		#await get_tree().create_timer(0.5).timeout
