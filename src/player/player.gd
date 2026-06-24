@@ -4,6 +4,8 @@ extends CharacterBody2D
 signal wall_entered
 signal wall_exited
 
+@export var self_control:bool=false
+
 @export var color_dress:Color
 
 @export var flip_h: bool: set = set_flip_h
@@ -117,9 +119,6 @@ func _ready() -> void:
 	mygradient.gradient.set_color(1,color_dress)
 	sprite.material.set_shader_parameter("pal0", mygradient)
 	
-func _process(delta: float) -> void:
-	pass
-	
 func _physics_process(_delta: float) -> void:
 	var there_is_wall = is_there_a_wall_here()
 	if there_is_wall!=0:
@@ -127,13 +126,35 @@ func _physics_process(_delta: float) -> void:
 	else :
 		_on_wall = false
 	#_on_wall = is_on_wall()
-	if Input.is_action_just_pressed("item"):
+	if is_action_pressed_custom("item"):
 		launch_bomb()
 	logic_spe()
+	
+func is_action_pressed_custom(action_name:String,just_pressed_option:bool=true) -> bool:
+	if self_control:
+		if just_pressed_option:
+			if Input.is_action_just_pressed(action_name):
+				return true
+		else:
+			if Input.is_action_pressed(action_name):
+				return true
+	else:
+		if action_name=="jump":return true
+		
+	return false
+
+func get_input_vector() -> Vector2:
+	if dead_: 
+		return Vector2(0,0)
+	else : 
+		if self_control:
+			return Input.get_vector("left", "right", "up", "down")
+		else:
+			return Vector2(0,0)
 
 func try_double_jump() -> void:
 	if jump_coyote_timer.is_stopped():
-		if Input.is_action_just_pressed("jump") and can_double_jump and Global.doublejump_unlock and !dead_:
+		if is_action_pressed_custom("jump") and can_double_jump and Global.doublejump_unlock and !dead_:
 			jump()
 			can_double_jump = false	
 
@@ -161,10 +182,6 @@ func update_flip_h() -> void:
 		"""if state_machine.active_state is WallSlideState:
 			flip_h=!flip_h"""
 
-func get_input_vector() -> Vector2:
-	if dead_: return Vector2(0,0)
-	else : return Input.get_vector("left", "right", "up", "down")
-
 func apply_movement(delta: float, acc_time: float, dec_time: float) -> void:
 	var speed_dir: float = max_speed * get_input_vector().x
 	var h_velocity_dir: float = signf(velocity.x)
@@ -190,14 +207,14 @@ func calculate_gravity() -> float:
 	return get_default_gravity() * (
 			jump_peak_gravity_ratio if not jump_peak_gravity_timer.is_stopped() or is_bouncing
 			else after_dash_gravity_ratio if not after_dash_gravity_timer.is_stopped()
-			else jump_not_held_gravity_ratio if not Input.is_action_pressed("jump") or is_bouncing
-			else down_held_gravity_ratio if Input.is_action_pressed("down") and velocity.y > 0
+			else jump_not_held_gravity_ratio if not is_action_pressed_custom("jump",false) or is_bouncing
+			else down_held_gravity_ratio if is_action_pressed_custom("down",false) and velocity.y > 0
 			else 1.0
 	)
 
 func calculate_gravity_limit() -> float:
 	return gravity_limit * (
-			down_held_gravity_ratio if Input.is_action_pressed("down") and velocity.y > 0
+			down_held_gravity_ratio if is_action_pressed_custom("down",false) and velocity.y > 0
 			else 1.0
 	)
 
@@ -212,7 +229,7 @@ func jump() -> void:
 	jump_particle.restart()
 
 func try_jump() -> void:
-	if Input.is_action_just_pressed("jump") and !dead_:
+	if is_action_pressed_custom("jump") and !dead_:
 		jump()
 
 func try_coyote_jump() -> void:
@@ -221,7 +238,7 @@ func try_coyote_jump() -> void:
 		
 
 func try_jump_buffer_timer() -> void:
-	if Input.is_action_just_pressed("jump"):
+	if is_action_pressed_custom("jump"):
 		jump_buffer_timer.start()
 
 func try_buffer_jump() -> void:
@@ -311,7 +328,7 @@ func try_wall_slide() -> void:
 
 func calculate_wall_slide_speed() -> float:
 	return max_wall_slide_speed * (
-			down_held_wall_slide_ratio if Input.is_action_pressed("down")
+			down_held_wall_slide_ratio if is_action_pressed_custom("down",false)
 			else 1.0
 	)
 
@@ -335,7 +352,7 @@ func wall_jump() -> void:
 	
 
 func try_wall_jump(ignore_wall: bool = false) -> void:
-	if Input.is_action_just_pressed("jump") and (is_there_a_wall_here()!=0 or ignore_wall) and Global.walljump_unlock and !dead_:
+	if is_action_pressed_custom("jump") and (is_there_a_wall_here()!=0 or ignore_wall) and Global.walljump_unlock and !dead_:
 		wall_jump()
 
 func try_coyote_wall_jump() -> void:
@@ -343,7 +360,7 @@ func try_coyote_wall_jump() -> void:
 		try_wall_jump(true)
 
 func try_wall_jump_buffer_timer() -> void:
-	if Input.is_action_just_pressed("jump"):
+	if is_action_pressed_custom("jump"):
 		wall_jump_buffer_timer.start()
 
 func _on_wall_entered() -> void:
@@ -366,7 +383,7 @@ func can_dash() -> bool:
 	return dash_allowed and dash_cooldown_timer.is_stopped()
 
 func try_dash() -> void:
-	if Input.is_action_just_pressed("dash") and can_dash() and Global.dash_unlock and !dead_:
+	if is_action_pressed_custom("dash") and can_dash() and Global.dash_unlock and !dead_:
 		state_machine.activate_state_by_name("DashState")
 		dash_sound.play()
 		is_sliding=false
@@ -471,15 +488,10 @@ func apply_stretch() -> void:
 @onready var animationdistorsion: AnimationPlayer = $CanvasLayer/distorsionrect/animationdistorsion
 
 
-func sprint_logic():
-	if Input.is_action_pressed("dash") and !(state_machine.active_state is DashState):
-		max_speed = 389.0*1.5
-	else:
-		max_speed = 389
 
 func logic_spe():
 	Engine.time_scale = 1
-	if Input.is_action_pressed("skill"):
+	if is_action_pressed_custom("skill"):
 			Engine.time_scale = 0.1
 			
 	sprite_animation()
@@ -491,8 +503,6 @@ func logic_spe():
 	camera_logic()
 	
 	
-	if Global.sprint_unlock:
-		sprint_logic()
 
 var cam_offset_x:int=50
 var cam_offset_y:int=0
@@ -506,9 +516,9 @@ func camera_logic()->void:
 		tween.tween_property(cam, "follow_offset", Vector2(-50,0), 1.0)"""
 	
 	cam_offset_y=0
-	if Input.is_action_pressed("cam_top"):
+	if is_action_pressed_custom("cam_top",false):
 		cam_offset_y=-400
-	if Input.is_action_pressed("cam_bot"):
+	if is_action_pressed_custom("cam_bot",false):
 		cam_offset_y=400
 		
 	var tweenfdf = get_tree().create_tween()

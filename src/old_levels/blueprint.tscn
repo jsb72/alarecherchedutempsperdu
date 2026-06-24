@@ -866,12 +866,12 @@ position = Vector2(-2912, -1792)
 [node name="Player" parent="." unique_id=2070335124 instance=ExtResource("7_hmy3j")]
 unique_name_in_owner = true
 position = Vector2(1120, 1216)
+self_control = true
 color_dress = Color(0, 0.76862746, 1, 1)
 
 [node name="Player2" parent="." unique_id=1970513996 instance=ExtResource("7_hmy3j")]
 unique_name_in_owner = true
-process_mode = 4
-position = Vector2(962, 483)
+position = Vector2(992, 1248)
 color_dress = Color(1, 0.36078432, 0, 1)
 
 [node name="cam" type="Node2D" parent="." unique_id=1498018793 node_paths=PackedStringArray("follow_target")]
