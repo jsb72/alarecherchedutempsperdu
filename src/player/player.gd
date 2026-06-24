@@ -139,7 +139,7 @@ func is_action_pressed_custom(action_name:String,just_pressed_option:bool=true) 
 			if Input.is_action_pressed(action_name):
 				return true
 	else:
-		if action_name=="jump":return true
+		pass
 		
 	return false
 
@@ -463,7 +463,7 @@ func apply_stretch() -> void:
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var _default_sprite_scale: Vector2 = sprite.scale
 
-@onready var jump_sound: AudioStreamPlayer = $sounds/jump_sound
+@onready var jump_sound: AudioStreamPlayer2D = $sounds/jump_sound
 @onready var land_sound: AudioStreamPlayer = $sounds/land_sound
 @onready var walljump_sound: AudioStreamPlayer = $sounds/walljump_sound
 @onready var dash_sound: AudioStreamPlayer = $sounds/dash_sound
@@ -490,9 +490,10 @@ func apply_stretch() -> void:
 
 
 func logic_spe():
-	Engine.time_scale = 1
-	if is_action_pressed_custom("skill"):
-			Engine.time_scale = 0.1
+	if self_control:
+		Engine.time_scale = 1
+		if is_action_pressed_custom("skill",false):
+				Engine.time_scale = 0.1
 			
 	sprite_animation()
 	

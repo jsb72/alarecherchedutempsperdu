@@ -839,7 +839,7 @@ one_shot = true
 
 [node name="sounds" type="Node" parent="." unique_id=1592920555]
 
-[node name="jump_sound" type="AudioStreamPlayer" parent="sounds" unique_id=703265265]
+[node name="jump_sound" type="AudioStreamPlayer2D" parent="sounds" unique_id=630961145]
 stream = SubResource("AudioStreamRandomizer_dpt0q")
 volume_db = -4.0
 
