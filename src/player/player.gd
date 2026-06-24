@@ -140,6 +140,7 @@ func is_action_pressed_custom(action_name:String,just_pressed_option:bool=true) 
 				return true
 	else:
 		pass
+		if action_name=="jump":return true
 		
 	return false
 
@@ -464,12 +465,12 @@ func apply_stretch() -> void:
 @onready var _default_sprite_scale: Vector2 = sprite.scale
 
 @onready var jump_sound: AudioStreamPlayer2D = $sounds/jump_sound
-@onready var land_sound: AudioStreamPlayer = $sounds/land_sound
-@onready var walljump_sound: AudioStreamPlayer = $sounds/walljump_sound
-@onready var dash_sound: AudioStreamPlayer = $sounds/dash_sound
-@onready var slide_sound: AudioStreamPlayer = $sounds/slide_sound
-@onready var falling_sound: AudioStreamPlayer = $sounds/falling_sound
-@onready var run_sound: AudioStreamPlayer = $sounds/run_sound
+@onready var land_sound: AudioStreamPlayer2D = $sounds/land_sound
+@onready var walljump_sound: AudioStreamPlayer2D = $sounds/walljump_sound
+@onready var dash_sound: AudioStreamPlayer2D = $sounds/dash_sound
+@onready var slide_sound: AudioStreamPlayer2D = $sounds/slide_sound
+@onready var falling_sound: AudioStreamPlayer2D = $sounds/falling_sound
+@onready var run_sound: AudioStreamPlayer2D = $sounds/run_sound
 
 @onready var jump_particle: CPUParticles2D = $particles/jump_particle
 @onready var ground_particle: CPUParticles2D = $particles/ground_particle
@@ -501,14 +502,14 @@ func logic_spe():
 	
 	sound_animation()
 	
-	camera_logic()
+	if self_control:camera_and_joystick_vibration_logic()
 	
 	
 
 var cam_offset_x:int=50
 var cam_offset_y:int=0
 
-func camera_logic()->void:
+func camera_and_joystick_vibration_logic()->void:
 	"""if velocity.x > 0 and is_on_floor_only(): 
 		var tween = get_tree().create_tween()
 		tween.tween_property(cam, "follow_offset", Vector2(50,0), 1.0)
@@ -641,7 +642,7 @@ func sound_animation() -> void:
 			if !falling_sound.playing : 
 				if !falling_started:
 					var tween = get_tree().create_tween()
-					tween.tween_property(falling_sound, "volume_db", 0.0, 0.5)
+					tween.tween_property(falling_sound, "volume_db", 4.0, 0.5)
 					falling_started=true
 				
 				falling_sound.play()

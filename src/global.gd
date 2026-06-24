@@ -9,7 +9,7 @@ var sprint_unlock:bool = false
 var doublejump_unlock:bool = false
 var walljump_unlock:bool=true
 
-var godmode:bool=false
+var godmode:bool=true
 
 
 # Called when the node enters the scene tree for the first time.

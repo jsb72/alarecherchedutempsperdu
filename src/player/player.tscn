@@ -837,32 +837,32 @@ process_callback = 0
 wait_time = 0.1
 one_shot = true
 
-[node name="sounds" type="Node" parent="." unique_id=1592920555]
+[node name="sounds" type="Node2D" parent="." unique_id=978684717]
 
 [node name="jump_sound" type="AudioStreamPlayer2D" parent="sounds" unique_id=630961145]
 stream = SubResource("AudioStreamRandomizer_dpt0q")
-volume_db = -4.0
 
-[node name="land_sound" type="AudioStreamPlayer" parent="sounds" unique_id=125982520]
+[node name="land_sound" type="AudioStreamPlayer2D" parent="sounds" unique_id=1017052350]
 stream = SubResource("AudioStreamRandomizer_wcxbk")
+volume_db = 4.0
 
-[node name="walljump_sound" type="AudioStreamPlayer" parent="sounds" unique_id=742090384]
+[node name="walljump_sound" type="AudioStreamPlayer2D" parent="sounds" unique_id=763304697]
 stream = SubResource("AudioStreamRandomizer_p6grl")
-volume_db = -4.0
 
-[node name="dash_sound" type="AudioStreamPlayer" parent="sounds" unique_id=107878534]
+[node name="dash_sound" type="AudioStreamPlayer2D" parent="sounds" unique_id=1891608899]
 stream = SubResource("AudioStreamRandomizer_e7e1q")
-volume_db = -4.0
 
-[node name="slide_sound" type="AudioStreamPlayer" parent="sounds" unique_id=1193293659]
+[node name="slide_sound" type="AudioStreamPlayer2D" parent="sounds" unique_id=1334237310]
 stream = SubResource("AudioStreamRandomizer_xmpm3")
+volume_db = 4.0
 
-[node name="falling_sound" type="AudioStreamPlayer" parent="sounds" unique_id=1781746039]
+[node name="falling_sound" type="AudioStreamPlayer2D" parent="sounds" unique_id=230400844]
 stream = SubResource("AudioStreamRandomizer_phdu6")
 volume_db = -80.0
 
-[node name="run_sound" type="AudioStreamPlayer" parent="sounds" unique_id=335528450]
+[node name="run_sound" type="AudioStreamPlayer2D" parent="sounds" unique_id=1787229966]
 stream = SubResource("AudioStreamRandomizer_h0enb")
+volume_db = 4.0
 
 [node name="shakecamtimers" type="Node" parent="." unique_id=1779334777]
 

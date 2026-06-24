@@ -18,8 +18,8 @@ func _on_body_entered(body: Node2D) -> void:
 		body.is_sliding=false
 		body.is_bouncing=true
 		
-		body.global_position.y=global_position.y-40
-		body.velocity.y = -800
+		body.global_position.y=global_position.y-20
+		body.velocity.y = -750
 		#body.velocity.y = -1200
 		
 		body.apply_stretch()
