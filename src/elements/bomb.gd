@@ -34,16 +34,22 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			var normal_dir = dir_.normalized()
 			
 			body.velocity=normal_dir*1500
-		
-		
+			
+		is_disapearing=true
+		await get_tree().create_timer(0.5).timeout
+		delete_me_plz()
 		
 
 
 func _on_disapeartimer_timeout() -> void:
-	if should_disapear:
-		is_disapearing=true
-		set_deferred("process_mode",Node.PROCESS_MODE_DISABLED)
-		var tween2 = get_tree().create_tween()
-		tween2.tween_property(self, "modulate:a", 0.0, 0.5)
-		await get_tree().create_timer(0.5).timeout
-		hide()
+	if should_disapear:delete_me_plz()
+
+
+func delete_me_plz()->void:
+	is_disapearing=true
+	set_deferred("process_mode",Node.PROCESS_MODE_DISABLED)
+	var tween2 = get_tree().create_tween()
+	tween2.tween_property(self, "modulate:a", 0.0, 0.5)
+	await get_tree().create_timer(0.5).timeout
+	hide()
+	

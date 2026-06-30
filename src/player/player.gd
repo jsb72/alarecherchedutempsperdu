@@ -612,6 +612,8 @@ func set_color_player()->void:
 	color_dress.v=0.75
 	color_dress.s=1
 	color_dress.h=float("0."+str(name))
+	var value:=0.5
+	color_dress = (color_dress.srgb_to_linear() * 2 ** value).linear_to_srgb()
 	var mygradient:GradientTexture2D=sprite.material.get_shader_parameter("pal0")
 	mygradient.gradient.set_color(1,color_dress)
 	sprite.material.set_shader_parameter("pal0", mygradient)

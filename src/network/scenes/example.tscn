@@ -2081,7 +2081,7 @@ position = Vector2(224, 608)
 should_disapear = false
 
 [node name="bomb2" parent="." unique_id=611286316 instance=ExtResource("15_lfbgm")]
-position = Vector2(-640, -544)
+position = Vector2(-672, -544)
 should_disapear = false
 
 [node name="DECO" type="Node2D" parent="." unique_id=1624657997]
