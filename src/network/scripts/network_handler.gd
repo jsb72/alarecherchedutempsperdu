@@ -1,8 +1,8 @@
 extends Node
 
-const IP_ADDRESS:String="localhost"#"176.31.252.194"
+const IP_ADDRESS:String="176.31.252.194"#""
 const PORT:int=7272
-const MAX_CLIENTS:int=16#default 32
+const MAX_CLIENTS:int=32#default 32
 var peer:ENetMultiplayerPeer
 
 

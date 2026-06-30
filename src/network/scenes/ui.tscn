@@ -17,11 +17,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="server" type="Button" parent="VBoxContainer" unique_id=496209581]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "serv"
 
 [node name="client" type="Button" parent="VBoxContainer" unique_id=440078856]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "client"
