@@ -36,7 +36,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			body.velocity=normal_dir*1500
 			
 		is_disapearing=true
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.2).timeout
 		delete_me_plz()
 		
 
