@@ -20,22 +20,21 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player and !is_disapearing:
 		audio_stream_player_2d.play()
-		#process_mode=Node.PROCESS_MODE_DISABLED
-		body.dmgshaketimer.start()
-		if body.self_control:
+		animation_player.play("new_animation")
+		
+		if body.is_multiplayer_authority():
+			body.dmgshaketimer.start()
 			body.animationdistorsion.stop()
 			body.animationdistorsion.play("new_animation")
-		animation_player.play("new_animation")
-		var dir_ = body.global_position-global_position
+			var dir_ = body.global_position-global_position
+			
+			if dir_.y > 0 :
+				dir_.y = dir_.y * -1
+			
+			var normal_dir = dir_.normalized()
+			
+			body.velocity=normal_dir*1500
 		
-		if dir_.y > 0 :
-			dir_.y = dir_.y * -1
-		
-		var normal_dir = dir_.normalized()
-		
-		body.velocity=normal_dir*1500
-		
-		#hide()
 		
 		
 
@@ -46,4 +45,5 @@ func _on_disapeartimer_timeout() -> void:
 		set_deferred("process_mode",Node.PROCESS_MODE_DISABLED)
 		var tween2 = get_tree().create_tween()
 		tween2.tween_property(self, "modulate:a", 0.0, 0.5)
-		#await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.5).timeout
+		hide()

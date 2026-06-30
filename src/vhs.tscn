@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dxih6l1o6qkiu"]
 
 [ext_resource type="Script" uid="uid://bcjgjvth0nf5f" path="res://src/vhs.gd" id="1_78vs0"]
-[ext_resource type="PackedScene" uid="uid://ddchdb85wtdxa" path="res://src/old_levels/blueprint.tscn" id="2_78vs0"]
 [ext_resource type="Shader" uid="uid://c22exyahuh2n4" path="res://shaders/vhs.gdshader" id="2_estqd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_78vs0"]
@@ -30,8 +29,6 @@ shader_parameter/vignette_opacity = 0.50000002375
 
 [node name="VHS" type="Node2D" unique_id=1960534501]
 script = ExtResource("1_78vs0")
-
-[node name="room_blueprint" parent="." unique_id=1528742533 instance=ExtResource("2_78vs0")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1999686670]
 layer = 1000

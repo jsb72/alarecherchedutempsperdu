@@ -283,7 +283,7 @@ fill_to = Vector2(0.8, 0.2)
 metadata/_snap_enabled = true
 
 [node name="newspider" type="Node2D" unique_id=485356090]
-z_index = -2
+z_index = -20
 script = ExtResource("1_tf23j")
 
 [node name="spiderrendu" type="Node2D" parent="." unique_id=380263695]

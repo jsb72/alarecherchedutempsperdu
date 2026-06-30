@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cvsfd3471pa4e"]
 
-[ext_resource type="Texture2D" uid="uid://brpa3pui1ir8t" path="res://sprites/blood.png" id="1_x1ybg"]
+[ext_resource type="Texture2D" uid="uid://ksf04wylfo8k" path="res://sprites/blood.png" id="1_x1ybg"]
 
 [sub_resource type="Gradient" id="Gradient_n10ca"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="blood_particle" type="CPUParticles2D" unique_id=1148518955]
-z_index = 3
+z_index = 500
 emitting = false
 amount = 10
 texture = ExtResource("1_x1ybg")

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c5sxmvs6uu3cv"]
+
+[ext_resource type="PackedScene" uid="uid://b1xupt462kw0l" path="res://src/network/scenes/ui.tscn" id="1_jfmh2"]
+[ext_resource type="Script" uid="uid://cxfrd52kaq8g6" path="res://src/network/scripts/multiplayer_spawner.gd" id="2_w5fbd"]
+[ext_resource type="PackedScene" uid="uid://ducp7rsjpf40n" path="res://src/player/player.tscn" id="3_pyrup"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oqhvv"]
+distance = -352.0
+
+[node name="example" type="Node2D" unique_id=1938062818]
+
+[node name="ui" parent="." unique_id=1126025752 instance=ExtResource("1_jfmh2")]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1032872580]
+_spawnable_scenes = PackedStringArray("uid://ducp7rsjpf40n")
+spawn_path = NodePath("..")
+script = ExtResource("2_w5fbd")
+network_player = ExtResource("3_pyrup")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2059983255]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=451647290]
+shape = SubResource("WorldBoundaryShape2D_oqhvv")

@@ -62,6 +62,7 @@ streams_count = 1
 stream_0/stream = ExtResource("3_plq7p")
 
 [node name="spike128" type="AnimatableBody2D" unique_id=1944370081]
+z_index = 110
 script = ExtResource("1_bwk7c")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=949922720]

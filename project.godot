@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="À la recherche du temps perdu"
-run/main_scene="uid://ddchdb85wtdxa"
+run/main_scene="uid://c5sxmvs6uu3cv"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/stretch_mode=0
 config/windows_native_icon="res://icons/icon.ico"
@@ -27,12 +27,12 @@ Global="*uid://dvc4rc2c5h0fd"
 DebugMenu="*uid://cggqb75a8w8r"
 AntialiasedLine2DTexture="*uid://bm7y8g3ie5ma0"
 Fadetoblack="*uid://c6x8kt3tba3ki"
+NetworkHandler="*uid://boy2masednkqh"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=3
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
