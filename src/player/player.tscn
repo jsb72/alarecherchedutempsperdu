@@ -599,7 +599,8 @@ properties/2/spawn = true
 properties/2/replication_mode = 1
 
 [node name="Player" type="CharacterBody2D" unique_id=2070335124]
-collision_layer = 3
+collision_layer = 16
+collision_mask = 3
 floor_snap_length = 2.0
 safe_margin = 0.1
 script = ExtResource("1_4anbu")
@@ -684,18 +685,22 @@ shape = SubResource("RectangleShape2D_qnmj6")
 [node name="WallRayRight" type="RayCast2D" parent="rays" unique_id=2042184040]
 position = Vector2(0, -24)
 target_position = Vector2(20, 0)
+collision_mask = 2
 
 [node name="WallRayLeft" type="RayCast2D" parent="rays" unique_id=1156868153]
 position = Vector2(0, -24)
 target_position = Vector2(-20, 0)
+collision_mask = 2
 
 [node name="WallRayRight2" type="RayCast2D" parent="rays" unique_id=1138039437]
 position = Vector2(0, 24)
 target_position = Vector2(20, 0)
+collision_mask = 2
 
 [node name="WallRayLeft2" type="RayCast2D" parent="rays" unique_id=1989678564]
 position = Vector2(0, 24)
 target_position = Vector2(-20, 0)
+collision_mask = 2
 
 [node name="particles" type="Node2D" parent="." unique_id=2142660045]
 position = Vector2(0, 31.574997)

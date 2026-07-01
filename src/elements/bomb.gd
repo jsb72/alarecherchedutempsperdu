@@ -35,8 +35,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			
 			body.velocity=normal_dir*1500
 			
-		is_disapearing=true
-		await get_tree().create_timer(0.2).timeout
 		delete_me_plz()
 		
 
@@ -47,9 +45,13 @@ func _on_disapeartimer_timeout() -> void:
 
 func delete_me_plz()->void:
 	is_disapearing=true
-	set_deferred("process_mode",Node.PROCESS_MODE_DISABLED)
-	var tween2 = get_tree().create_tween()
-	tween2.tween_property(self, "modulate:a", 0.0, 0.5)
-	await get_tree().create_timer(0.5).timeout
-	hide()
+	#self.set_collision_mask_value(5, false)
+	set_collision_layer_value(1, false)
 	
+	await get_tree().create_timer(1).timeout
+	var tween2 = get_tree().create_tween()
+	tween2.tween_property(self, "modulate:a", 0.0, 1)
+	
+	await get_tree().create_timer(2).timeout
+	hide()
+	set_deferred("process_mode",Node.PROCESS_MODE_DISABLED)

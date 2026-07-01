@@ -411,7 +411,8 @@ texture_region_size = Vector2i(128, 128)
 
 [sub_resource type="TileSet" id="TileSet_dgur1"]
 tile_size = Vector2i(128, 128)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 17
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "walkable"
 terrain_set_0/terrain_0/color = Color(0.7052548, 0, 0.35776773, 1)
@@ -1910,6 +1911,7 @@ position = Vector2(960, -192)
 script = ExtResource("13_i1cc5")
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope2" type="Node2D" parent="ropes" unique_id=1764239748]
@@ -1917,6 +1919,7 @@ position = Vector2(64, -1152)
 script = ExtResource("13_i1cc5")
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope5" type="Node2D" parent="ropes" unique_id=145713706]
@@ -1924,6 +1927,7 @@ position = Vector2(-832, -1792)
 script = ExtResource("13_i1cc5")
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope18" type="Node2D" parent="ropes" unique_id=1467285693]
@@ -1932,6 +1936,7 @@ script = ExtResource("13_i1cc5")
 rope_length = 270.0
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope19" type="Node2D" parent="ropes" unique_id=1068316014]
@@ -1940,6 +1945,7 @@ script = ExtResource("13_i1cc5")
 rope_length = 200.0
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope7" type="Node2D" parent="ropes" unique_id=2018649990]
@@ -1947,6 +1953,7 @@ position = Vector2(-544, -640)
 script = ExtResource("13_i1cc5")
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope8" type="Node2D" parent="ropes" unique_id=413210118]
@@ -1954,6 +1961,7 @@ position = Vector2(-512, -320)
 script = ExtResource("13_i1cc5")
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope12" type="Node2D" parent="ropes" unique_id=1200296834]
@@ -1961,6 +1969,7 @@ position = Vector2(-1696, 320)
 script = ExtResource("13_i1cc5")
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope13" type="Node2D" parent="ropes" unique_id=880366241]
@@ -1968,6 +1977,7 @@ position = Vector2(-1504, 320)
 script = ExtResource("13_i1cc5")
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope14" type="Node2D" parent="ropes" unique_id=329137359]
@@ -1975,6 +1985,7 @@ position = Vector2(-1856, 320)
 script = ExtResource("13_i1cc5")
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope15" type="Node2D" parent="ropes" unique_id=1148747655]
@@ -1982,6 +1993,7 @@ position = Vector2(-2176, 320)
 script = ExtResource("13_i1cc5")
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope16" type="Node2D" parent="ropes" unique_id=959256610]
@@ -1990,6 +2002,7 @@ script = ExtResource("13_i1cc5")
 rope_length = 70.0
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope17" type="Node2D" parent="ropes" unique_id=1644375177]
@@ -1998,6 +2011,7 @@ script = ExtResource("13_i1cc5")
 rope_length = 80.0
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope9" type="Node2D" parent="ropes" unique_id=1483675715]
@@ -2006,6 +2020,7 @@ script = ExtResource("13_i1cc5")
 rope_length = 80.0
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope10" type="Node2D" parent="ropes" unique_id=1826637445]
@@ -2014,6 +2029,7 @@ script = ExtResource("13_i1cc5")
 rope_length = 80.0
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope6" type="Node2D" parent="ropes" unique_id=426252181]
@@ -2021,6 +2037,7 @@ position = Vector2(-1024, -1024)
 script = ExtResource("13_i1cc5")
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope3" type="Node2D" parent="ropes" unique_id=1317299707]
@@ -2029,6 +2046,7 @@ script = ExtResource("13_i1cc5")
 rope_length = 200.0
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope4" type="Node2D" parent="ropes" unique_id=1918078765]
@@ -2037,6 +2055,7 @@ script = ExtResource("13_i1cc5")
 rope_length = 200.0
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope11" type="Node2D" parent="ropes" unique_id=1423332360]
@@ -2045,6 +2064,7 @@ script = ExtResource("13_i1cc5")
 rope_length = 200.0
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope20" type="Node2D" parent="ropes" unique_id=559272720]
@@ -2052,6 +2072,7 @@ position = Vector2(-640, -3264)
 script = ExtResource("13_i1cc5")
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="Rope21" type="Node2D" parent="ropes" unique_id=1192793568]
@@ -2059,6 +2080,7 @@ position = Vector2(-512, -3264)
 script = ExtResource("13_i1cc5")
 color = Color(0, 0, 0, 1)
 enable_collisions = true
+collision_mask = 16
 metadata/_custom_type_script = "uid://b2shq2gjd4fvt"
 
 [node name="bomblist" type="Node2D" parent="." unique_id=1505254468]

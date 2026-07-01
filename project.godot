@@ -135,6 +135,13 @@ cam_top={
 
 locale/translations=PackedStringArray("res://enjoythevoid_translate.en.translation", "res://enjoythevoid_translate.fr.translation")
 
+[layer_names]
+
+2d_physics/layer_1="Tout le reste"
+2d_physics/layer_2="TileMap"
+2d_physics/layer_3="Bomb"
+2d_physics/layer_5="Players"
+
 [physics]
 
 common/physics_interpolation=true

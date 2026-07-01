@@ -20,6 +20,7 @@ stream_0/stream = ExtResource("4_ac8ns")
 
 [node name="spikeMID128" type="AnimatableBody2D" unique_id=1944370081]
 z_index = 110
+collision_mask = 17
 script = ExtResource("1_dsnr2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=949922720]
@@ -33,6 +34,7 @@ texture = ExtResource("3_dsnr2")
 polygon = PackedVector2Array(-221, 11, -225, -58, -202, -136, -125, -206, -26, -234, 67, -223, 156, -172, 218, -99, 234, -51, 239, 12, 164, 24, 100, 31, 23, 33, -96, 28)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=394913089]
+collision_mask = 16
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1846942868]
 polygon = PackedVector2Array(-256, 0, -256, -64, -224, -160, -128, -224, 0, -256, 128, -224, 224, -160, 255, -63, 256, 0)
