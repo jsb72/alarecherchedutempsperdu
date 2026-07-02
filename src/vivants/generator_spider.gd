@@ -3,6 +3,8 @@ extends Node2D
 @onready var timer: Timer = $Timer
 @onready var spiderlist: Node2D = $"../../spiderlist"
 
+var nb_spider : int = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -14,12 +16,15 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	
-	var spiderspawedpacked = load("res://src/vivants/newspider.tscn")
-	var spiderspawed = spiderspawedpacked.instantiate()
-	
-	spiderspawed.scale=Vector2(0.5,0.5)
-	spiderspawed.global_position=global_position
-	spiderspawed.global_position.y+=64
-	spiderlist.add_child(spiderspawed)
-	timer.start()
+	if multiplayer.is_server():return
+	if nb_spider < 50:
+		nb_spider+=1
+		
+		var spiderspawedpacked = load("res://src/vivants/newspider.tscn")
+		var spiderspawed = spiderspawedpacked.instantiate()
+		
+		spiderspawed.scale=Vector2(0.5,0.5)
+		spiderspawed.global_position=global_position
+		spiderspawed.global_position.y+=64
+		spiderlist.add_child(spiderspawed)
+		timer.start()

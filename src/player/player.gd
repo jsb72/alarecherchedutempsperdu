@@ -482,6 +482,11 @@ func camera_and_joystick_logic()->void:
 		cam.noise.frequency=2
 		cam.noise.positional_noise= true
 		Input.start_joy_vibration(0,0.5,0.5)
+	if!bombshaketimer.is_stopped():
+		cam.noise.amplitude=20.0
+		cam.noise.frequency=1
+		cam.noise.positional_noise= true
+		Input.start_joy_vibration(0,0.35,0.35)
 		
 func try_play_new_anim(anim) -> void:
 	if sprite.animation=="jumpground" and sprite.is_playing():return
@@ -734,6 +739,7 @@ func _process(delta: float) -> void:
 
 @onready var bomblist: Node2D = $"../bomblist"
 @onready var bombtimer: Timer = $skilltimers/bombtimer
+@onready var bombshaketimer: Timer = $shakecamtimers/bombshaketimer
 @rpc("call_local")
 func launch_bomb():
 	if bombtimer.is_stopped() and !dead_:
@@ -743,11 +749,15 @@ func launch_bomb():
 		var bombspawed = bombspawedpacked.instantiate()
 		
 		bombspawed.global_position=global_position
-		bombspawed.global_position.x+=64*get_facing_dir()
+		bombspawed.global_position.x+=10*get_facing_dir()
 		
 		bomblist.add_child(bombspawed)
 		
-		bombspawed.linear_velocity=Vector2(1000*get_facing_dir(),-220)
+		bombspawed.linear_velocity=Vector2(2000*get_facing_dir(),0)
+		
+		global_position.x+=-10*get_facing_dir()
+		bombshaketimer.start()
+		
 	
 var last_floor_pos : Vector2= Vector2(1120.0,1216.0)
 var respawned : bool = false

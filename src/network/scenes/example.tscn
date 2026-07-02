@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://dj261xf8jugsh" path="res://src/vivants/generator_spider.tscn" id="12_623ea"]
 [ext_resource type="Script" uid="uid://b2shq2gjd4fvt" path="res://addons/ropesim/Rope.gd" id="13_i1cc5"]
 [ext_resource type="Shader" uid="uid://dnc0olck3agla" path="res://shaders/fog.gdshader" id="14_qka43"]
-[ext_resource type="PackedScene" uid="uid://bmwyobu5l8pyt" path="res://src/elements/bomb.tscn" id="15_lfbgm"]
 [ext_resource type="Texture2D" uid="uid://dcec3qfgclrx8" path="res://sprites/web_spider.png" id="16_x4cvx"]
 [ext_resource type="Texture2D" uid="uid://deiplpn6yq5yb" path="res://sprites/spiderwebtop.png" id="17_yrx2l"]
 [ext_resource type="Texture2D" uid="uid://c51pjjecogef4" path="res://sprites/—Pngtree—spider web corner overlay_18676530.png" id="18_q5wkn"]
@@ -2097,14 +2096,6 @@ offset_bottom = 2416.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1592922036]
 environment = SubResource("Environment_l4m57")
-
-[node name="bomb" parent="." unique_id=324640493 instance=ExtResource("15_lfbgm")]
-position = Vector2(224, 608)
-should_disapear = false
-
-[node name="bomb2" parent="." unique_id=611286316 instance=ExtResource("15_lfbgm")]
-position = Vector2(-672, -544)
-should_disapear = false
 
 [node name="DECO" type="Node2D" parent="." unique_id=1624657997]
 

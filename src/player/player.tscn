@@ -889,9 +889,14 @@ one_shot = true
 [node name="dmgshaketimer" type="Timer" parent="shakecamtimers" unique_id=1271170076]
 one_shot = true
 
+[node name="bombshaketimer" type="Timer" parent="shakecamtimers" unique_id=1567619397]
+wait_time = 0.2
+one_shot = true
+
 [node name="skilltimers" type="Node" parent="." unique_id=272239763]
 
 [node name="bombtimer" type="Timer" parent="skilltimers" unique_id=90914381]
+wait_time = 0.5
 one_shot = true
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=337335966]
