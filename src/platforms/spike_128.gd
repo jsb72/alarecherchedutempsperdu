@@ -7,6 +7,8 @@ extends AnimatableBody2D
 func _ready() -> void:
 	pass
 	#rotation=randfn(0.0, 1.0)
+	"""if randi_range(0,1)==0:
+		sprite_2d.scale.x=-0.652"""
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -14,7 +16,7 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
-		if !body.dead_:
+		if !body.dead_ and body.is_multiplayer_authority():
 			body.play_death_anim()
 			if !Global.godmode:body.dmgshaketimer.start()
 			audio_stream_player_2d.play()

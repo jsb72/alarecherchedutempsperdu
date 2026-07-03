@@ -1,10 +1,19 @@
 extends Area2D
 @onready var animation_player: AnimationPlayer = $AntialiasedRegularPolygon2D/AnimationPlayer
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var sprite_2d: Sprite2D = $AntialiasedRegularPolygon2D/Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	var color_dress:Color
+	color_dress.v=0.75
+	color_dress.s=1
+	color_dress.h=randf_range(0,1)
+	var value:=0.5
+	color_dress = (color_dress.srgb_to_linear() * 2 ** value).linear_to_srgb()
+	
+	sprite_2d.modulate=color_dress
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

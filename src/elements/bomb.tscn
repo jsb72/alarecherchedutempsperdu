@@ -109,7 +109,7 @@ one_shot = true
 autostart = true
 
 [node name="init_no_dmg_timer" type="Timer" parent="." unique_id=685809852]
-wait_time = 0.1
+wait_time = 0.05
 one_shot = true
 autostart = true
 

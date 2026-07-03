@@ -273,7 +273,7 @@ stream_0/stream = ExtResource("4_lvyff")
 
 [sub_resource type="Gradient" id="Gradient_36xei"]
 offsets = PackedFloat32Array(0, 0.83146065, 1)
-colors = PackedColorArray(0.5058824, 0.29411766, 0.1254902, 0.96862745, 0.5058824, 0.29411766, 0.1254902, 0.96862745, 0, 0, 0, 0)
+colors = PackedColorArray(1, 1, 1, 0.96862745, 1, 1, 1, 0.96862745, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_45pos"]
 gradient = SubResource("Gradient_36xei")
@@ -320,6 +320,7 @@ position = Vector2(0, -18)
 stream = SubResource("AudioStreamRandomizer_36xei")
 
 [node name="blood_particle" parent="." unique_id=1148518955 instance=ExtResource("5_45pos")]
+modulate = Color(0, 1.996, 3.167, 1)
 position = Vector2(0, -18)
 texture = SubResource("GradientTexture2D_45pos")
 lifetime = 1.0
@@ -332,6 +333,8 @@ spread = 180.0
 gravity = Vector2(0, 0)
 scale_amount_min = 0.01
 scale_amount_max = 0.1
+hue_variation_min = -1.0
+hue_variation_max = 1.0
 
 [node name="turnangleexttimer" type="Timer" parent="." unique_id=1220389864]
 one_shot = true

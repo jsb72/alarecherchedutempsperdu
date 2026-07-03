@@ -757,6 +757,7 @@ func launch_bomb():
 		
 		global_position.x+=-10*get_facing_dir()
 		bombshaketimer.start()
+		apply_stretch()
 		
 	
 var last_floor_pos : Vector2= Vector2(1120.0,1216.0)

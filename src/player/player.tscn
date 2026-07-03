@@ -718,6 +718,7 @@ position = Vector2(0, -5)
 emitting = false
 
 [node name="blood_particle" parent="particles" unique_id=1148518955 instance=ExtResource("16_dpt0q")]
+modulate = Color(0, 1.9964589, 3.1672676, 1)
 position = Vector2(0, -32)
 amount = 30
 texture = ExtResource("17_j2873")

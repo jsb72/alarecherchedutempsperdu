@@ -14,7 +14,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="À la recherche du temps perdu"
+config/name="100%HIGH"
 run/main_scene="uid://c5sxmvs6uu3cv"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/stretch_mode=0
