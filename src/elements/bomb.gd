@@ -4,15 +4,16 @@ extends RigidBody2D
 @onready var animation_player: AnimationPlayer = $Sprite2D/AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
-@export var should_disapear:bool=true
 var is_disapearing:bool=false
 @onready var disapeartimer: Timer = $disapeartimer
-@onready var init_no_dmg_timer: Timer = $init_no_dmg_timer
+
+var init_pos:Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	rotation=randfn(-0.3, 0.3)
 	
+	init_pos=global_position
 	
 	sprite_2d.scale=Vector2(0.01,0.01)
 	var tween22 = get_tree().create_tween()
@@ -25,7 +26,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is Player and !is_disapearing and init_no_dmg_timer.is_stopped():
+	if body is Player and !is_disapearing and (global_position.x<init_pos.x-40 or global_position.x>init_pos.x+40):
 		audio_stream_player_2d.play()
 		animation_player.play("new_animation")
 		
@@ -47,7 +48,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_disapeartimer_timeout() -> void:
-	if should_disapear:delete_me_plz()
+	delete_me_plz()
 
 
 func delete_me_plz()->void:

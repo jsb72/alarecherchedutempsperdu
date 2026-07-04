@@ -755,9 +755,10 @@ func launch_bomb():
 		
 		bombspawed.linear_velocity=Vector2(2000*get_facing_dir(),0)
 		
-		global_position.x+=-10*get_facing_dir()
-		bombshaketimer.start()
+		if is_multiplayer_authority():
+			global_position.x+=-10*get_facing_dir()
 		apply_stretch()
+		bombshaketimer.start()
 		
 	
 var last_floor_pos : Vector2= Vector2(1120.0,1216.0)

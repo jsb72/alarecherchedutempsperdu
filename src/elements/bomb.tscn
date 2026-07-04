@@ -108,11 +108,6 @@ wait_time = 4.0
 one_shot = true
 autostart = true
 
-[node name="init_no_dmg_timer" type="Timer" parent="." unique_id=685809852]
-wait_time = 0.05
-one_shot = true
-autostart = true
-
 [node name="shootaudio" type="AudioStreamPlayer2D" parent="." unique_id=1396363997]
 stream = SubResource("AudioStreamRandomizer_oqhvv")
 volume_db = -2.0
