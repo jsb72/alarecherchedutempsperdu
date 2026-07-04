@@ -16,11 +16,15 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
-		if !body.dead_ and body.is_multiplayer_authority():
-			body.play_death_anim()
+		if !body.dead_:
+			dmg()
+			if body.is_multiplayer_authority():body.play_death_anim.rpc()
 			if !Global.godmode:body.dmgshaketimer.start()
-			audio_stream_player_2d.play()
-			
-			sprite_2d.material.set_shader_parameter("hit_effect", 1)
-			await get_tree().create_timer(1).timeout
-			sprite_2d.material.set_shader_parameter("hit_effect", 0)
+
+
+func dmg()->void:
+	audio_stream_player_2d.play()
+	
+	sprite_2d.material.set_shader_parameter("hit_effect", 1)
+	await get_tree().create_timer(1).timeout
+	sprite_2d.material.set_shader_parameter("hit_effect", 0)

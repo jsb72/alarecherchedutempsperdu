@@ -772,8 +772,9 @@ func respawn():
 	
 	dead_ = false
 	
-	global_position = last_floor_pos
-	velocity = Vector2(0.0,0.0)
+	if is_multiplayer_authority():
+		global_position = last_floor_pos
+		velocity = Vector2(0.0,0.0)
 	
 	sprite.show()
 	deathspriteanim.hide()
@@ -787,6 +788,7 @@ func respawn():
 	respawned=false
 	
 @onready var deathspriteanim: Node2D = $deathspriteanim
+@rpc("call_local")
 func play_death_anim():
 	if !Global.godmode:
 	
