@@ -76,8 +76,8 @@ turbulence_enabled = true
 
 [node name="bomb" type="RigidBody2D" unique_id=324640493]
 z_index = 110
-collision_layer = 16
-collision_mask = 3
+collision_layer = 4
+collision_mask = 19
 script = ExtResource("1_q7g1g")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1763080022]

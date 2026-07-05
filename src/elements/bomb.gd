@@ -26,7 +26,8 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is Player and !is_disapearing and (global_position.x<init_pos.x-40 or global_position.x>init_pos.x+40):
+	#(global_position.x<init_pos.x-40 or global_position.x>init_pos.x+40 or global_position.y<init_pos.y-80 or global_position.y>init_pos.y+80)
+	if body is Player and !is_disapearing and 1:
 		audio_stream_player_2d.play()
 		animation_player.play("new_animation")
 		
@@ -53,8 +54,7 @@ func _on_disapeartimer_timeout() -> void:
 
 func delete_me_plz()->void:
 	is_disapearing=true
-	#self.set_collision_mask_value(5, false)
-	set_collision_layer_value(1, false)
+	set_collision_mask_value(5, false)
 	
 	await get_tree().create_timer(1).timeout
 	var tween2 = get_tree().create_tween()

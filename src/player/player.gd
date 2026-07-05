@@ -749,7 +749,7 @@ func launch_bomb():
 		var bombspawed = bombspawedpacked.instantiate()
 		
 		bombspawed.global_position=global_position
-		bombspawed.global_position.x+=10*get_facing_dir()
+		bombspawed.global_position.x+=50*get_facing_dir()
 		
 		bomblist.add_child(bombspawed)
 		
