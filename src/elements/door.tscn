@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://30jc7td6qss4"]
+
+[ext_resource type="Script" uid="uid://bnacbshyav0wj" path="res://src/elements/door.gd" id="1_hq4rk"]
+[ext_resource type="Texture2D" uid="uid://p2k1woauadh2" path="res://sprites/door.png" id="1_kjjeb"]
+[ext_resource type="Texture2D" uid="uid://easc8sn7or3m" path="res://sprites/justdoor.png" id="2_qgr33"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqhvv"]
+size = Vector2(246, 305)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olkul"]
+size = Vector2(100, 384)
+
+[node name="door" type="Node2D" unique_id=1623015435]
+z_index = -1
+script = ExtResource("1_hq4rk")
+
+[node name="door" type="Sprite2D" parent="." unique_id=828213278]
+position = Vector2(16, -3.8146973e-06)
+scale = Vector2(0.256, 0.25599998)
+texture = ExtResource("1_kjjeb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1045578761]
+
+[node name="justdoor" type="Sprite2D" parent="StaticBody2D" unique_id=775247891]
+position = Vector2(16, -3.8146973e-06)
+scale = Vector2(0.256, 0.25599998)
+texture = ExtResource("2_qgr33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=973864063]
+position = Vector2(139, -13.5)
+shape = SubResource("RectangleShape2D_oqhvv")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1303870834]
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=998446303]
+position = Vector2(18, 0)
+shape = SubResource("RectangleShape2D_olkul")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

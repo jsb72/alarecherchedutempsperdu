@@ -10,7 +10,7 @@ func _ready() -> void:
 	color_dress.s=1
 	color_dress.h=randf_range(0,1)
 	var value:=0.5
-	color_dress = (color_dress.srgb_to_linear() * 2 ** value).linear_to_srgb()
+	#color_dress = (color_dress.srgb_to_linear() * 2 ** value).linear_to_srgb()
 	
 	sprite_2d.modulate=color_dress
 	

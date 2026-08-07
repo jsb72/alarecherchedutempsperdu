@@ -113,7 +113,8 @@ var dead_ : bool = false
 
 
 func _ready() -> void:
-	global_position=Vector2(1120.0,1216.0)
+	global_position=Vector2(960.0,1376.0)
+	last_floor_pos=global_position
 	if is_multiplayer_authority():cam.follow_target=self
 
 	set_color_player()
@@ -753,7 +754,7 @@ func launch_bomb():
 		
 		bomblist.add_child(bombspawed)
 		
-		bombspawed.linear_velocity=Vector2(2000*get_facing_dir(),0)
+		bombspawed.linear_velocity=Vector2(1500*get_facing_dir(),0)
 		
 		if is_multiplayer_authority():
 			global_position.x+=-10*get_facing_dir()
@@ -761,7 +762,7 @@ func launch_bomb():
 		bombshaketimer.start()
 		
 	
-var last_floor_pos : Vector2= Vector2(1120.0,1216.0)
+var last_floor_pos : Vector2
 var respawned : bool = false
 func respawn():
 	var tween22 = get_tree().create_tween()

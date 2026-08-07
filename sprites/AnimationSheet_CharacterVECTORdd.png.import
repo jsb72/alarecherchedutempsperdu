@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x37xys3mrtko"
-path="res://.godot/imported/Remastered_Spikes - Copy.png-3121366ac8dd1e015fd7cb0171b51103.ctex"
+uid="uid://tl1xhftf1mio"
+path="res://.godot/imported/AnimationSheet_CharacterVECTORdd.png-7b163380c8f4516decffc2bbb461d092.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Remastered_Spikes - Copy.png"
-dest_files=["res://.godot/imported/Remastered_Spikes - Copy.png-3121366ac8dd1e015fd7cb0171b51103.ctex"]
+source_file="res://sprites/AnimationSheet_CharacterVECTORdd.png"
+dest_files=["res://.godot/imported/AnimationSheet_CharacterVECTORdd.png-7b163380c8f4516decffc2bbb461d092.ctex"]
 
 [params]
 

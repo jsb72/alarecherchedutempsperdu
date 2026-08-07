@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4b70g31k5u7o"
-path="res://.godot/imported/bounce_sphere - Copy.png-befb53401d72c43ed0e83dbbf86242e7.ctex"
+uid="uid://b8a7db7xkwuss"
+path="res://.godot/imported/Tilemap_AutoTile_128old.png-22c782b6ce21d2e7ffa6f8fa1584cb8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bounce_sphere - Copy.png"
-dest_files=["res://.godot/imported/bounce_sphere - Copy.png-befb53401d72c43ed0e83dbbf86242e7.ctex"]
+source_file="res://sprites/Tilemap_AutoTile_128old.png"
+dest_files=["res://.godot/imported/Tilemap_AutoTile_128old.png-22c782b6ce21d2e7ffa6f8fa1584cb8a.ctex"]
 
 [params]
 

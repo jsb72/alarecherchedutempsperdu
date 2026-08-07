@@ -474,11 +474,11 @@ animations = [{
 "speed": 9.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_e7e1q"]
+[sub_resource type="Gradient" id="Gradient_j2873"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_hja65"]
-gradient = SubResource("Gradient_e7e1q")
+gradient = SubResource("Gradient_j2873")
 use_hdr = true
 fill = 1
 fill_from = Vector2(0.5, 0.5)
@@ -718,7 +718,7 @@ position = Vector2(0, -5)
 emitting = false
 
 [node name="blood_particle" parent="particles" unique_id=1148518955 instance=ExtResource("16_dpt0q")]
-modulate = Color(0, 1.9964589, 3.1672676, 1)
+modulate = Color(0.4392157, 0, 0, 1)
 position = Vector2(0, -32)
 amount = 30
 texture = ExtResource("17_j2873")

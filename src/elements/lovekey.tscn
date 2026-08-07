@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bcspu3yon4cyy"]
+
+[ext_resource type="Script" uid="uid://d3eqwllojejqt" path="res://src/elements/lovekey.gd" id="1_d7a5p"]
+[ext_resource type="Texture2D" uid="uid://wxjbqkahdc0r" path="res://sprites/key23.png" id="3_mru1x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqhvv"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olkul"]
+size = Vector2(32, 32)
+
+[node name="lovekey" type="RigidBody2D" unique_id=1777536853]
+z_index = 1
+collision_layer = 32
+collision_mask = 0
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_d7a5p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1608411735]
+shape = SubResource("RectangleShape2D_oqhvv")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=1026723915]
+softness = 1.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1401876493]
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2056857630]
+shape = SubResource("RectangleShape2D_olkul")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1927977839]
+position = Vector2(-4.7683716e-07, 2.3841858e-07)
+rotation = -1.5707964
+scale = Vector2(0.37772414, 0.37772414)
+texture = ExtResource("3_mru1x")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

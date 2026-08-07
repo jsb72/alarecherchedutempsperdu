@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqnrgcuaruiek"
-path="res://.godot/imported/nuclearbomb - Copy.png-0ab51b62a8978af93451466838647a01.ctex"
+uid="uid://jxpnbtbufq3n"
+path="res://.godot/imported/bounce_sphereold.png-072ab77c3ee6ebdc10ed1c40a4fa72bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/nuclearbomb - Copy.png"
-dest_files=["res://.godot/imported/nuclearbomb - Copy.png-0ab51b62a8978af93451466838647a01.ctex"]
+source_file="res://sprites/bounce_sphereold.png"
+dest_files=["res://.godot/imported/bounce_sphereold.png-072ab77c3ee6ebdc10ed1c40a4fa72bc.ctex"]
 
 [params]
 

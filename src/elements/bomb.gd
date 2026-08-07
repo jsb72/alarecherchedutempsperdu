@@ -15,7 +15,7 @@ func _ready() -> void:
 	
 	init_pos=global_position
 	
-	sprite_2d.scale=Vector2(0.01,0.01)
+	sprite_2d.scale=Vector2(0.089,0.089)
 	var tween22 = get_tree().create_tween()
 	tween22.tween_property(sprite_2d, "scale", Vector2(0.089,0.089), 0.1)
 

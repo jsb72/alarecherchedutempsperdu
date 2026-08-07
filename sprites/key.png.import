@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqv8qp5lynhqy"
-path="res://.godot/imported/Tilemap_AutoTile_128 - Copy.png-664559fcae4c23b60f865d3a01bc65b1.ctex"
+uid="uid://cmph8gnpx3ths"
+path="res://.godot/imported/key.png-a2d709fe99edac93aea180e2d39da8db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Tilemap_AutoTile_128 - Copy.png"
-dest_files=["res://.godot/imported/Tilemap_AutoTile_128 - Copy.png-664559fcae4c23b60f865d3a01bc65b1.ctex"]
+source_file="res://sprites/key.png"
+dest_files=["res://.godot/imported/key.png-a2d709fe99edac93aea180e2d39da8db.ctex"]
 
 [params]
 

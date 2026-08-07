@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1cnnvlqkvqub"
-path="res://.godot/imported/Remastered_Spikes_mid - Copy.png-d71cbcc9db7759573e64aafa6d481bec.ctex"
+uid="uid://cb304abjy5irf"
+path="res://.godot/imported/nuclearbombold.png-b9f434167d67229b6d8312130cc2e6a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Remastered_Spikes_mid - Copy.png"
-dest_files=["res://.godot/imported/Remastered_Spikes_mid - Copy.png-d71cbcc9db7759573e64aafa6d481bec.ctex"]
+source_file="res://sprites/nuclearbombold.png"
+dest_files=["res://.godot/imported/nuclearbombold.png-b9f434167d67229b6d8312130cc2e6a8.ctex"]
 
 [params]
 
