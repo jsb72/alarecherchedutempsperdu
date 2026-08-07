@@ -113,7 +113,7 @@ var dead_ : bool = false
 
 
 func _ready() -> void:
-	global_position=Vector2(960.0,1376.0)
+	global_position=Vector2(448.0,1216.0)
 	last_floor_pos=global_position
 	if is_multiplayer_authority():cam.follow_target=self
 
