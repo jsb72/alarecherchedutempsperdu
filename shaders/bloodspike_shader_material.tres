@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b42k31k6txi1m"]
+
+[ext_resource type="Shader" uid="uid://d1cnualeuqjos" path="res://shaders/damage_impact.gdshader" id="1_3b8yy"]
+
+[resource]
+shader = ExtResource("1_3b8yy")
+shader_parameter/hit_effect = 1.0
+shader_parameter/shake_intensity = 10.0
+shader_parameter/flash_speed = 30.0
+shader_parameter/flash_color = Color(1, 0, 0, 1)

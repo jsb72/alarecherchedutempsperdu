@@ -650,9 +650,9 @@ var last_floor_pos : Vector2
 var respawned : bool = false
 func respawn():
 	var tween22 = get_tree().create_tween()
-	tween22.tween_property(point_light_2d, "energy", 1.0, 1.0)
+	tween22.tween_property(point_light_2d, "energy", 0.5, 1.0)
 	var tween2 = get_tree().create_tween()
-	tween2.tween_property(point_light_2d_2, "energy", 1.0, 1.0)
+	tween2.tween_property(point_light_2d_2, "energy", 0.5, 1.0)
 	
 	respawned=true
 	

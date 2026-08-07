@@ -2,13 +2,10 @@ extends AnimatableBody2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
-
+var shadermaterial
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-	#rotation=randfn(0.0, 1.0)
-	"""if randi_range(0,1)==0:
-		sprite_2d.scale.x=-0.652"""
+	shadermaterial = load("res://shaders/bloodspike_shader_material.tres")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -25,6 +22,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func dmg()->void:
 	audio_stream_player_2d.play()
 	
-	sprite_2d.material.set_shader_parameter("hit_effect", 1)
+	
+	
+	sprite_2d.material = shadermaterial
+	
 	await get_tree().create_timer(1).timeout
-	sprite_2d.material.set_shader_parameter("hit_effect", 0)
+	
+	sprite_2d.material=null
+	#sprite_2d.material.set_shader_parameter("hit_effect", 0)

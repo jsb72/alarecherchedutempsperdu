@@ -1,17 +1,8 @@
 [gd_scene format=3 uid="uid://brpkpgdng6710"]
 
 [ext_resource type="Script" uid="uid://cqdp0ntlj73mt" path="res://src/platforms/spike_128.gd" id="1_dsnr2"]
-[ext_resource type="Shader" uid="uid://d1cnualeuqjos" path="res://shaders/damage_impact.gdshader" id="2_0ovom"]
 [ext_resource type="Texture2D" uid="uid://cxtn71l0epy6t" path="res://sprites/Remastered_Spikes_mid.png" id="3_dsnr2"]
 [ext_resource type="AudioStream" uid="uid://bexul6uu4wqt6" path="res://sounds/dragon-studio-violent-sword-slice-2-393841.mp3" id="4_ac8ns"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_an6px"]
-resource_local_to_scene = true
-shader = ExtResource("2_0ovom")
-shader_parameter/hit_effect = 0.0
-shader_parameter/shake_intensity = 10.0
-shader_parameter/flash_speed = 30.0
-shader_parameter/flash_color = Color(1, 0, 0, 1)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fcaif"]
 random_pitch = 1.0717734
@@ -24,7 +15,6 @@ collision_mask = 17
 script = ExtResource("1_dsnr2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=949922720]
-material = SubResource("ShaderMaterial_an6px")
 position = Vector2(9.868746, -22.29389)
 rotation = 0.25113767
 scale = Vector2(0.6523282, 0.55733484)
