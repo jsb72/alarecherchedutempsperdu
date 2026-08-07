@@ -113,14 +113,9 @@ var dead_ : bool = false
 
 
 func _ready() -> void:
-	global_position=Vector2(448.0,1216.0)
 	last_floor_pos=global_position
-	if is_multiplayer_authority():cam.follow_target=self
 
 	set_color_player()
-	
-func _enter_tree() -> void:
-	set_multiplayer_authority(name.to_int())
 	
 func _physics_process(_delta: float) -> void:
 	"""var there_is_wall = is_there_a_wall_here()
@@ -132,20 +127,16 @@ func _physics_process(_delta: float) -> void:
 	_on_wall = is_on_wall()
 
 func is_action_pressed_custom(action_name:String,just_pressed_option:bool=true) -> bool:
-	if is_multiplayer_authority():
-		if just_pressed_option:
-			if Input.is_action_just_pressed(action_name):
-				return true
-		else:
-			if Input.is_action_pressed(action_name):
-				return true
+	if just_pressed_option:
+		if Input.is_action_just_pressed(action_name):
+			return true
 	else:
-		"""if action_name=="jump":return true"""
+		if Input.is_action_pressed(action_name):
+			return true
 		
 	return false
 
 func get_input_vector() -> Vector2:
-	if !is_multiplayer_authority():return Vector2(0,0)
 	if dead_: 
 		return Vector2(0,0)
 	return Input.get_vector("left", "right", "up", "down")
@@ -509,107 +500,6 @@ func try_stop_sound_smooth(sound)->void:
 		tween.tween_property(sound, "volume_db", -80.0, 0.5)
 		await get_tree().create_timer(0.5).timeout
 		sound.stop()
-"""	
-var en_train_de_tomber = false
-var idle_number : int = 1
-var is_dashing:bool=false
-func sprite_animation() -> void:
-	if is_on_floor():is_sliding=false
-	
-	if !is_sliding:
-		if is_on_floor() :
-			if sprite.animation=="jumpground" and sprite.is_playing():
-				pass
-			else:
-				if velocity.x < 0 or velocity.x > 0 :
-					if is_on_floor_only():
-						try_play_new_anim("run")
-				else:
-					var choose_idle = randi_range(0, 25)
-					if choose_idle==0:
-						if idle_number == 1:
-							idle_number=2
-						elif idle_number == 2:
-							idle_number=1
-					
-					if idle_number == 1:
-						try_play_new_anim("idle")
-					elif idle_number == 2:
-						try_play_new_anim("idle2")
-					
-		if velocity.y > 0.0:
-			en_train_de_tomber = true
-		if velocity.y > 10.0:
-			try_play_new_anim("robe")
-			
-		if en_train_de_tomber and is_on_floor():
-			groundshaketimer.start()
-			try_play_new_anim("jumpground")
-			en_train_de_tomber = false
-		
-		if state_machine.active_state is DashState :
-			is_dashing=true
-		else:
-			is_dashing=false
-			
-		if is_dashing:
-			try_play_new_anim("dash")
-			
-func particle_animation() -> void:
-	if is_sliding:
-		if !dead_:slide_particle.emitting = true
-		if get_facing_dir() < 0 :
-			slide_particle.position.x = -13
-		if get_facing_dir() > 0 :
-			slide_particle.position.x = 13
-	else :
-		slide_particle.emitting = false
-	
-	run_particle.emitting = false
-	if is_on_floor() :
-		if sprite.animation=="jumpground" and sprite.is_playing():
-			pass
-		else:
-			if velocity.x < -150 or velocity.x > 150 :
-				run_particle.emitting = true
-				
-var saut_en_cours_for_sound = false
-var falling_started = false
-func sound_animation() -> void:
-	if is_on_floor() and velocity.x != 0.0:
-		if !run_sound.playing and !land_sound.playing : 
-			run_sound.play()
-	else :
-		run_sound.stop()
-		
-	if is_sliding:
-		if !slide_sound.playing and !dead_: slide_sound.play()
-	else :
-		slide_sound.stop()
-		
-		if velocity.y > 0 :
-			if !falling_sound.playing : 
-				if !falling_started:
-					var tween = get_tree().create_tween()
-					tween.tween_property(falling_sound, "volume_db", 8.0, 0.5)
-					falling_started=true
-				
-				falling_sound.play()
-		else :
-			falling_sound.stop()
-			var tween = get_tree().create_tween()
-			tween.tween_property(falling_sound, "volume_db", -80.0, 0.5)
-			falling_started=false
-			
-		
-	if velocity.y != 0.0 :
-		saut_en_cours_for_sound = true
-	if is_on_floor():
-		if saut_en_cours_for_sound :
-			saut_en_cours_for_sound = false
-			if !respawned :
-				land_sound.play()
-				ground_particle.restart()"""	
 	
 
 
@@ -617,7 +507,7 @@ func set_color_player()->void:
 	var color_dress:Color
 	color_dress.v=0.75
 	color_dress.s=1
-	color_dress.h=float("0."+str(name))
+	color_dress.h=randfn(0.0, 1.0)
 	var value:=0.5
 	color_dress = (color_dress.srgb_to_linear() * 2 ** value).linear_to_srgb()
 	var mygradient:GradientTexture2D=sprite.material.get_shader_parameter("pal0")
@@ -644,14 +534,11 @@ func animationWallJump()->void:
 	jump_particle.restart()
 	
 	
-"""@rpc("call_local")
-func animationDash()->void:
-	dash_sound.play()"""
 
 @export var state_str_for_anim:String
 var idle_number:int=1
 func animation_logic()->void:
-	if is_multiplayer_authority():state_str_for_anim = state_machine.active_state.name
+	state_str_for_anim = state_machine.active_state.name
 	
 	if state_str_for_anim=="IdleState":
 		var choose_idle = randi_range(0, 50)
@@ -677,9 +564,7 @@ func animation_logic()->void:
 		try_play_new_anim("dash")
 		try_play_sound(dash_sound)
 	if state_str_for_anim=="JumpState" or state_str_for_anim=="JumpState":
-		if !is_multiplayer_authority():
-			sprite.play("walljumpup")
-			sprite.frame=0
+		pass
 		
 		
 	if state_str_for_anim=="WallSlideState":
@@ -710,10 +595,11 @@ func _process(delta: float) -> void:
 			
 	animation_logic()
 	
-	if is_multiplayer_authority():camera_and_joystick_logic()
+	camera_and_joystick_logic()
 	
 	if is_action_pressed_custom("item"):
-		launch_bomb.rpc()
+		#launch_bomb()
+		pass
 		
 		
 		
@@ -741,7 +627,6 @@ func _process(delta: float) -> void:
 @onready var bomblist: Node2D = $"../bomblist"
 @onready var bombtimer: Timer = $skilltimers/bombtimer
 @onready var bombshaketimer: Timer = $shakecamtimers/bombshaketimer
-@rpc("call_local")
 func launch_bomb():
 	if bombtimer.is_stopped() and !dead_:
 		bombtimer.start()
@@ -756,8 +641,7 @@ func launch_bomb():
 		
 		bombspawed.linear_velocity=Vector2(1500*get_facing_dir(),0)
 		
-		if is_multiplayer_authority():
-			global_position.x+=-10*get_facing_dir()
+		global_position.x+=-10*get_facing_dir()
 		apply_stretch()
 		bombshaketimer.start()
 		
@@ -774,9 +658,9 @@ func respawn():
 	
 	dead_ = false
 	
-	if is_multiplayer_authority():
-		global_position = last_floor_pos
-		velocity = Vector2(0.0,0.0)
+	
+	global_position = last_floor_pos
+	velocity = Vector2(0.0,0.0)
 	
 	sprite.show()
 	deathspriteanim.hide()
@@ -790,7 +674,6 @@ func respawn():
 	respawned=false
 	
 @onready var deathspriteanim: Node2D = $deathspriteanim
-@rpc("call_local")
 func play_death_anim():
 	if !Global.godmode:
 	

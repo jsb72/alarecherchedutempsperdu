@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var timer: Timer = $Timer
-@onready var spiderlist: Node2D = $"../../spiderlist"
+@onready var spiderlist: Node2D = $"../spiderlist"
 
 var nb_spider : int = 0
 
@@ -16,7 +16,6 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	if multiplayer.is_server():return
 	if nb_spider < 50:
 		nb_spider+=1
 		

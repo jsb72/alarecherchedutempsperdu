@@ -18,7 +18,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		if !body.dead_:
 			dmg()
-			if body.is_multiplayer_authority():body.play_death_anim.rpc()
+			body.play_death_anim()
 			if !Global.godmode:body.dmgshaketimer.start()
 
 

@@ -26,23 +26,21 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	#(global_position.x<init_pos.x-40 or global_position.x>init_pos.x+40 or global_position.y<init_pos.y-80 or global_position.y>init_pos.y+80)
-	if body is Player and !is_disapearing and 1:
+	if body is Player and !is_disapearing:
 		audio_stream_player_2d.play()
 		animation_player.play("new_animation")
+	
+		body.dmgshaketimer.start()
+		body.animationdistorsion.stop()
+		body.animationdistorsion.play("new_animation")
+		var dir_ = body.global_position-global_position
 		
-		if body.is_multiplayer_authority():
-			body.dmgshaketimer.start()
-			body.animationdistorsion.stop()
-			body.animationdistorsion.play("new_animation")
-			var dir_ = body.global_position-global_position
-			
-			if dir_.y > 0 :
-				dir_.y = dir_.y * -1
-			
-			var normal_dir = dir_.normalized()
-			
-			body.velocity=normal_dir*1500
+		if dir_.y > 0 :
+			dir_.y = dir_.y * -1
+		
+		var normal_dir = dir_.normalized()
+		
+		body.velocity=normal_dir*1500
 			
 		delete_me_plz()
 		

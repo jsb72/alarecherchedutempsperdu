@@ -587,17 +587,6 @@ random_pitch = 1.5
 streams_count = 1
 stream_0/stream = ExtResource("18_a4vah")
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_j2873"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-properties/1/path = NodePath(".:flip_h")
-properties/1/spawn = true
-properties/1/replication_mode = 2
-properties/2/path = NodePath(".:state_str_for_anim")
-properties/2/spawn = true
-properties/2/replication_mode = 1
-
 [node name="Player" type="CharacterBody2D" unique_id=2070335124]
 collision_layer = 16
 collision_mask = 3
@@ -747,6 +736,7 @@ position = Vector2(0, 31.574997)
 
 [node name="PointLight2D" type="PointLight2D" parent="lights" unique_id=479851347]
 position = Vector2(0, -17)
+energy = 0.5
 texture = SubResource("GradientTexture2D_hja65")
 texture_scale = 6.0
 
@@ -899,9 +889,6 @@ one_shot = true
 [node name="bombtimer" type="Timer" parent="skilltimers" unique_id=90914381]
 wait_time = 0.5
 one_shot = true
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=337335966]
-replication_config = SubResource("SceneReplicationConfig_j2873")
 
 [connection signal="wall_entered" from="." to="." method="_on_wall_entered"]
 [connection signal="wall_exited" from="." to="." method="_on_wall_exited"]
