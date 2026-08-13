@@ -880,7 +880,7 @@ one_shot = true
 [node name="dmgshaketimer" type="Timer" parent="shakecamtimers" unique_id=1271170076]
 one_shot = true
 
-[node name="bombshaketimer" type="Timer" parent="shakecamtimers" unique_id=1567619397]
+[node name="shootshaketimer" type="Timer" parent="shakecamtimers" unique_id=1567619397]
 wait_time = 0.2
 one_shot = true
 

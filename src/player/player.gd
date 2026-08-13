@@ -113,6 +113,11 @@ var dead_ : bool = false
 
 
 func _ready() -> void:
+	global_position=(Global.list_door[Global["next_door_id"]])["pos"]
+	flip_h=(Global.list_door[Global["next_door_id"]])["flip_h"]
+	
+	cam.position=global_position
+	
 	last_floor_pos=global_position
 
 	set_color_player()
@@ -389,6 +394,7 @@ func update_shape_scale(delta: float) -> void:
 	shape.scale = shape.scale.lerp(target, frame_weight)
 	sprite.scale = sprite.scale.lerp(target2, frame_weight)
 
+var first_landing:bool=true
 func apply_squash() -> void:
 	var max_fall_speed: float = calculate_gravity_limit()
 	var vertical_speed: float = get_position_delta().y / get_physics_process_delta_time()
@@ -398,10 +404,12 @@ func apply_squash() -> void:
 	sprite.scale.x *= remap(vertical_speed, 0.0, max_fall_speed, squash_width_scale_at_rest, squash_width_scale_at_max_fall)
 	sprite.scale.y *= remap(vertical_speed, 0.0, max_fall_speed, squash_height_scale_at_max_fall, squash_height_scale_at_rest)
 	
-	groundshaketimer.start()
-	try_play_new_anim("jumpground")
-	try_play_sound(land_sound)
-	ground_particle.restart()
+	if !first_landing:
+		groundshaketimer.start()
+		try_play_new_anim("jumpground")
+		try_play_sound(land_sound)
+		ground_particle.restart()
+	first_landing=false
 
 func apply_stretch() -> void:
 	shape.scale *= Vector2(stretch_width_scale, stretch_height_scale)
@@ -474,7 +482,7 @@ func camera_and_joystick_logic()->void:
 		cam.noise.frequency=2
 		cam.noise.positional_noise= true
 		Input.start_joy_vibration(0,0.5,0.5)
-	if!bombshaketimer.is_stopped():
+	if!shootshaketimer.is_stopped():
 		cam.noise.amplitude=20.0
 		cam.noise.frequency=1
 		cam.noise.positional_noise= true
@@ -507,7 +515,7 @@ func set_color_player()->void:
 	var color_dress:Color
 	color_dress.v=0.75
 	color_dress.s=1
-	color_dress.h=randfn(0.0, 1.0)
+	color_dress.h=Global["color_h_init"]
 	var value:=0.5
 	color_dress = (color_dress.srgb_to_linear() * 2 ** value).linear_to_srgb()
 	var mygradient:GradientTexture2D=sprite.material.get_shader_parameter("pal0")
@@ -626,7 +634,7 @@ func _process(delta: float) -> void:
 
 @onready var bomblist: Node2D = $"../bomblist"
 @onready var bombtimer: Timer = $skilltimers/bombtimer
-@onready var bombshaketimer: Timer = $shakecamtimers/bombshaketimer
+@onready var shootshaketimer: Timer = $shakecamtimers/shootshaketimer
 func launch_bomb():
 	if bombtimer.is_stopped() and !dead_:
 		bombtimer.start()
@@ -643,7 +651,7 @@ func launch_bomb():
 		
 		global_position.x+=-10*get_facing_dir()
 		apply_stretch()
-		bombshaketimer.start()
+		shootshaketimer.start()
 		
 	
 var last_floor_pos : Vector2

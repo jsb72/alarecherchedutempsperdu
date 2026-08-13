@@ -7,13 +7,13 @@ extends RigidBody2D
 var is_disapearing:bool=false
 @onready var disapeartimer: Timer = $disapeartimer
 
-var init_pos:Vector2
+
+@export var should_stay:bool=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	rotation=randfn(-0.3, 0.3)
 	
-	init_pos=global_position
 	
 	sprite_2d.scale=Vector2(0.089,0.089)
 	var tween22 = get_tree().create_tween()
@@ -42,7 +42,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		
 		body.velocity=normal_dir*1500
 			
-		delete_me_plz()
+		#delete_me_plz()
 		
 
 
@@ -51,12 +51,16 @@ func _on_disapeartimer_timeout() -> void:
 
 
 func delete_me_plz()->void:
+	if should_stay:return
+	
+	var tween2 = get_tree().create_tween()
+	tween2.tween_property(self, "modulate:a", 0.0, 1)
+	
+	await get_tree().create_timer(1).timeout
+	
 	is_disapearing=true
 	set_collision_mask_value(5, false)
 	
-	await get_tree().create_timer(1).timeout
-	var tween2 = get_tree().create_tween()
-	tween2.tween_property(self, "modulate:a", 0.0, 1)
 	
 	await get_tree().create_timer(2).timeout
 	hide()

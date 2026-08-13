@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://r7khr26ll1co"]
+
+[ext_resource type="Script" uid="uid://c7f55vcxr3oqs" path="res://src/elements/gen_bomb_shot.gd" id="1_myne8"]
+[ext_resource type="Texture2D" uid="uid://dk7ol2p6uu72r" path="res://sprites/canon.png" id="2_eoer3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqhvv"]
+size = Vector2(97, 40)
+
+[node name="genBombShot" type="Node2D" unique_id=282430981]
+z_index = 1
+script = ExtResource("1_myne8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1647153080]
+position = Vector2(51.000004, 15.000001)
+rotation = -3.0560715
+scale = Vector2(0.5438566, 0.5438566)
+texture = ExtResource("2_eoer3")
+
+[node name="Timer" type="Timer" parent="." unique_id=1789884870]
+wait_time = 1.5
+autostart = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=354450682]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1626300758]
+position = Vector2(48.5, 14)
+shape = SubResource("RectangleShape2D_oqhvv")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

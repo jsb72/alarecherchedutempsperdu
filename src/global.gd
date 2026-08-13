@@ -11,6 +11,15 @@ var walljump_unlock:bool=true
 
 var godmode:bool=false
 
+var next_door_id:int
+var list_door=[
+	{ "door_id": 0, "opened": true, "lvl_name":"start", "pos": Vector2(-1952,1312), "flip_h": true, "door_id_target": "1" },
+	{ "door_id": 1, "opened": true, "lvl_name":"26", "pos": Vector2(-3264,1312), "flip_h": false, "door_id_target": "0" },
+	{ "door_id": 2, "opened": false, "lvl_name":"26", "pos": Vector2(-3264,2272), "flip_h": false, "door_id_target": "3" },
+	{ "door_id": 3, "opened": true, "lvl_name":"27", "pos": Vector2(-1952,1312), "flip_h": true, "door_id_target": "2" },
+]
+
+var color_h_init:float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,6 +33,8 @@ func _ready() -> void:
 		TranslationServer.set_locale(preferred_language)
 	else:
 		TranslationServer.set_locale(language)
+		
+	color_h_init=randfn(0.0, 1.0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

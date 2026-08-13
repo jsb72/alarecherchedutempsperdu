@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://chpajwyvmyrrn" path="res://src/elements/bomb.gd" id="1_q7g1g"]
 [ext_resource type="AudioStream" uid="uid://brqn65oxrnljo" path="res://sounds/11325622-big-cine-boom-sound-effect-245851.mp3" id="2_gsh55"]
 [ext_resource type="Texture2D" uid="uid://cfyjl0ueipwkg" path="res://sprites/nuclearbomb.png" id="3_5lftc"]
-[ext_resource type="AudioStream" uid="uid://b7thh8grtao4y" path="res://sounds/floraphonic-fireball-whoosh-1-179125.mp3" id="4_fu7yh"]
+[ext_resource type="AudioStream" uid="uid://u3lfxwf860dp" path="res://sounds/FART.mp3" id="4_fu7yh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5lftc"]
 radius = 32.0
@@ -93,6 +93,7 @@ autostart = true
 
 [node name="shootaudio" type="AudioStreamPlayer2D" parent="." unique_id=1396363997]
 stream = SubResource("AudioStreamRandomizer_oqhvv")
+pitch_scale = 2.92
 autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

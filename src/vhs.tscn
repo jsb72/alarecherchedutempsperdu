@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dxih6l1o6qkiu"]
 
 [ext_resource type="Script" uid="uid://bcjgjvth0nf5f" path="res://src/vhs.gd" id="1_78vs0"]
-[ext_resource type="PackedScene" uid="uid://c5sxmvs6uu3cv" path="res://src/network/scenes/example.tscn" id="2_78vs0"]
+[ext_resource type="PackedScene" uid="uid://c5sxmvs6uu3cv" path="res://src/network/scenes/start.tscn" id="2_78vs0"]
 [ext_resource type="Shader" uid="uid://c22exyahuh2n4" path="res://shaders/vhs.gdshader" id="2_estqd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_78vs0"]
