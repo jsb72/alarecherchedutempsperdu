@@ -114,16 +114,21 @@ var dead_ : bool = false
 
 func _ready() -> void:
 	if Global["next_door_id"]==-1:
-		global_position=Vector2(-3200,1120)
+		global_position=Vector2(-3200,1312)
 	else:
 		global_position=(Global.list_door[Global["next_door_id"]])["pos"]
 	flip_h=(Global.list_door[Global["next_door_id"]])["flip_h"]
 	
-	#cam.global_position=global_position
 	
 	last_floor_pos=global_position
 
 	set_color_player()
+	
+	
+	cam.follow_damping=false
+	cam.position=global_position
+	await get_tree().create_timer(0.5).timeout
+	cam.follow_damping=true
 	
 func _physics_process(_delta: float) -> void:
 	"""var there_is_wall = is_there_a_wall_here()
