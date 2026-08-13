@@ -11,7 +11,7 @@ var walljump_unlock:bool=true
 
 var godmode:bool=false
 
-var next_door_id:int
+var next_door_id:int=-1
 var list_door=[
 	{ "door_id": 0, "opened": true, "lvl_name":"start", "pos": Vector2(-1952,1312), "flip_h": true, "door_id_target": "1" },
 	{ "door_id": 1, "opened": true, "lvl_name":"26", "pos": Vector2(-3264,1312), "flip_h": false, "door_id_target": "0" },

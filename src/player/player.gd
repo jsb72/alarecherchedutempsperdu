@@ -113,10 +113,13 @@ var dead_ : bool = false
 
 
 func _ready() -> void:
-	global_position=(Global.list_door[Global["next_door_id"]])["pos"]
+	if Global["next_door_id"]==-1:
+		global_position=Vector2(-3200,1120)
+	else:
+		global_position=(Global.list_door[Global["next_door_id"]])["pos"]
 	flip_h=(Global.list_door[Global["next_door_id"]])["flip_h"]
 	
-	cam.position=global_position
+	#cam.global_position=global_position
 	
 	last_floor_pos=global_position
 

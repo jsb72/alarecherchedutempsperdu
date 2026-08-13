@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://chpajwyvmyrrn" path="res://src/elements/bomb.gd" id="1_q7g1g"]
 [ext_resource type="AudioStream" uid="uid://brqn65oxrnljo" path="res://sounds/11325622-big-cine-boom-sound-effect-245851.mp3" id="2_gsh55"]
 [ext_resource type="Texture2D" uid="uid://cfyjl0ueipwkg" path="res://sprites/nuclearbomb.png" id="3_5lftc"]
-[ext_resource type="AudioStream" uid="uid://u3lfxwf860dp" path="res://sounds/FART.mp3" id="4_fu7yh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5lftc"]
 radius = 32.0
@@ -55,8 +54,6 @@ radius = 21.023796
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_oqhvv"]
 random_pitch = 1.122462
-streams_count = 1
-stream_0/stream = ExtResource("4_fu7yh")
 
 [node name="bomb" type="RigidBody2D" unique_id=324640493]
 collision_layer = 4
