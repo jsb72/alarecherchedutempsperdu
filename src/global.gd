@@ -38,6 +38,7 @@ func _ready() -> void:
 	
 	
 	get_tree().change_scene_to_file("res://src/network/scenes/27.tscn")
+	next_door_id=3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
