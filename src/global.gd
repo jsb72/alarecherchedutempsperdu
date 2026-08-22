@@ -11,7 +11,7 @@ var walljump_unlock:bool=true
 
 var godmode:bool=false
 
-var next_door_id:int=-1
+var next_door_id:int=3#-1
 var list_door=[
 	{ "door_id": 0, "opened": true, "lvl_name":"start", "pos": Vector2(-1952,1216), "flip_h": true, "door_id_target": "1" },
 	{ "door_id": 1, "opened": true, "lvl_name":"26", "pos": Vector2(-768.0,1216), "flip_h": false, "door_id_target": "0" },
@@ -36,9 +36,8 @@ func _ready() -> void:
 		
 	color_h_init=randfn(0.0, 1.0)
 	
-	
-	get_tree().change_scene_to_file("res://src/network/scenes/27.tscn")
-	next_door_id=3
+	if next_door_id!=-1:
+		get_tree().change_scene_to_file("res://src/network/scenes/"+(list_door[next_door_id])["lvl_name"]+".tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
