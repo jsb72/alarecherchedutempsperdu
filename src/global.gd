@@ -35,6 +35,9 @@ func _ready() -> void:
 		TranslationServer.set_locale(language)
 		
 	color_h_init=randfn(0.0, 1.0)
+	
+	
+	get_tree().change_scene_to_file("res://src/network/scenes/27.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
