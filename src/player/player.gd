@@ -117,7 +117,8 @@ func _ready() -> void:
 		global_position=Vector2(-3200,1312)
 	else:
 		global_position=(Global.list_door[Global["next_door_id"]])["pos"]
-	flip_h=(Global.list_door[Global["next_door_id"]])["flip_h"]
+		global_position.y+=96
+		flip_h=(Global.list_door[Global["next_door_id"]])["flip_h"]
 	
 	
 	last_floor_pos=global_position

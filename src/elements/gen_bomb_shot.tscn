@@ -52,7 +52,6 @@ z_index = 1
 script = ExtResource("1_myne8")
 
 [node name="Timer" type="Timer" parent="." unique_id=1789884870]
-wait_time = 3.0
 autostart = true
 
 [node name="Node2D" type="Node2D" parent="." unique_id=2120219537]
@@ -61,9 +60,12 @@ scale = Vector2(0.24, 0.24)
 
 [node name="back" type="Sprite2D" parent="Node2D" unique_id=84382978]
 z_index = -10
+position = Vector2(-204.16667, -4.166667)
+scale = Vector2(0.4125, 1)
 texture = ExtResource("2_ptai2")
 
 [node name="front" type="Sprite2D" parent="Node2D" unique_id=1170215909]
+z_index = 101
 texture = ExtResource("3_quirt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D" unique_id=398642165]

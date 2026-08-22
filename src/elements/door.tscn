@@ -24,10 +24,12 @@ scale = Vector2(0.256, 0.25599998)
 texture = ExtResource("1_kjjeb")
 
 [node name="door2" type="Sprite2D" parent="." unique_id=1517509569]
-z_index = 100
+z_index = 101
 position = Vector2(16, -3.8146973e-06)
 scale = Vector2(0.256, 0.25599998)
 texture = ExtResource("3_r4pbu")
+region_enabled = true
+region_rect = Rect2(0, 0, 1064, 1100)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1045578761]
 
