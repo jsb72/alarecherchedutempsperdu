@@ -471,7 +471,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"walljumpup",
-"speed": 9.0
+"speed": 10.0
 }]
 
 [sub_resource type="Gradient" id="Gradient_j2873"]

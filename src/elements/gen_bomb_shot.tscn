@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://drmharftpw3qp" path="res://sprites/canon_back.png" id="2_ptai2"]
 [ext_resource type="Texture2D" uid="uid://dvamtcdypfbju" path="res://sprites/canon_front.png" id="3_quirt"]
 [ext_resource type="AudioStream" uid="uid://q54nc1ytq848" path="res://sounds/canontryshot.mp3" id="4_quirt"]
+[ext_resource type="Texture2D" uid="uid://c65t31odbian0" path="res://sprites/smoke_03_a.png" id="5_yfcjp"]
 
 [sub_resource type="Animation" id="Animation_ptai2"]
 length = 0.001
@@ -47,6 +48,15 @@ random_pitch = 1.4142135
 streams_count = 1
 stream_0/stream = ExtResource("4_quirt")
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oqhvv"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector3(0, 0, 0)
+gravity = Vector3(10, 0, 0)
+scale_min = 0.099999994
+scale_max = 0.29999998
+
 [node name="genBombShot" type="Node2D" unique_id=282430981]
 z_index = 1
 script = ExtResource("1_myne8")
@@ -73,5 +83,16 @@ speed_scale = 15.0
 
 [node name="shootaudio" type="AudioStreamPlayer2D" parent="." unique_id=828169245]
 stream = SubResource("AudioStreamRandomizer_yfcjp")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1401833871]
+modulate = Color(0.36, 0.36, 0.36, 0.73333335)
+position = Vector2(-126, 0)
+emitting = false
+amount = 4
+texture = ExtResource("5_yfcjp")
+lifetime = 4.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_oqhvv")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -3,6 +3,7 @@ extends Node2D
 
 @onready var animation_player: AnimationPlayer = $Node2D/AnimationPlayer
 @onready var shootaudio: AudioStreamPlayer2D = $shootaudio
+@onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,6 +22,7 @@ func shoot():
 	shootaudio.play()
 	await get_tree().create_timer(0.05).timeout
 	
+	gpu_particles_2d.restart()
 	
 	var bombspawedpacked = load("res://src/elements/bomb.tscn")
 	var bombspawed = bombspawedpacked.instantiate()

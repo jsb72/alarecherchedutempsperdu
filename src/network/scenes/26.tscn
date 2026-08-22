@@ -1920,7 +1920,7 @@ offset_left = 768.0
 offset_top = 1472.0
 offset_right = 1312.0
 offset_bottom = 1920.0
-text = "La sécurité est au coeur des préoccupations du centre d'enrichissement. Toutefois, les sphères ultra-énergétiques peuvent provoquer des lésions irréversibles."
+text = "La sécurité est au coeur des préoccupations du centre. Toutefois, les sphères ultra-renforcées peuvent provoquer des lésions irréversibles."
 
 [node name="postprocess" type="Node" parent="." unique_id=866095280]
 

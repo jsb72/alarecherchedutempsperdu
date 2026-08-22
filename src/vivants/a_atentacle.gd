@@ -83,8 +83,8 @@ var _segment_lengths: Array[float] = []
 var _wave_time: float = 0.0
 #endregion
 
-var random_pos : Vector2
-
+var random_pos_init : Vector2
+@onready var default_target: Node2D = $default_target
 ## Runs on scene load and sets up segments.
 ## Separate from _initialize_segments() so setters can rebuild segments during editing.
 func _ready() -> void:
@@ -94,8 +94,15 @@ func _ready() -> void:
 	line_width*=size_multiple
 	_initialize_segments()
 	
-	var random = RandomNumberGenerator.new()
-	random_pos = global_position+Vector2(randi_range(-200, 200),randi_range(0, 200))
+	var vector_tmp = Vector2(randi_range(50*size_multiple, 100*size_multiple),0)
+	print(vector_tmp)
+	var angle_tmp = randi_range(0, 360)
+	vector_tmp=vector_tmp.rotated(deg_to_rad(angle_tmp))
+	print(vector_tmp)
+	
+	random_pos_init=global_position+vector_tmp
+	
+	default_target.global_position=random_pos_init
 	
 ## Runs each physics frame applying IK, constraints, wave motion, then constraints again.
 func _physics_process(delta: float) -> void:
@@ -105,14 +112,24 @@ func _physics_process(delta: float) -> void:
 		"""var decalage = global_position-target.global_position+((Vector2(512,512)/2)*scale)
 		var decalage_reverse = decalage*Vector2(-1,-1)/scale
 		target_pos = decalage_reverse+Vector2(256,256)"""
-		target_pos = target.global_position
+		if (target.global_position - global_position).length() < 120*size_multiple:
+			var tween = get_tree().create_tween()
+			tween.tween_property(default_target, "global_position", target.global_position, 0.5)
+		else:
+			var tween = get_tree().create_tween()
+			tween.tween_property(default_target, "global_position", random_pos_init, 0.5)
+			
+
+			
+		target_pos = default_target.global_position	
+			
 	else :
 		"""var decalage = global_position-$"../../../../Player".global_position+((Vector2(512,512)/2)*scale)
 		var decalage_reverse = decalage*Vector2(-1,-1)/scale
 		target_pos = decalage_reverse+Vector2(256,256)"""
 		#target_pos = get_global_mouse_position()
 		
-		target_pos = random_pos
+		target_pos = default_target.global_position
 	
 	solve_ik(target_pos)
 
