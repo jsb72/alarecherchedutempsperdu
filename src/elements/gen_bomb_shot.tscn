@@ -43,7 +43,7 @@ _data = {
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_yfcjp"]
-random_pitch = 1.122462
+random_pitch = 1.4142135
 streams_count = 1
 stream_0/stream = ExtResource("4_quirt")
 
@@ -68,7 +68,7 @@ texture = ExtResource("3_quirt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D" unique_id=398642165]
 libraries/ = SubResource("AnimationLibrary_yfcjp")
-speed_scale = 10.0
+speed_scale = 15.0
 
 [node name="shootaudio" type="AudioStreamPlayer2D" parent="." unique_id=828169245]
 stream = SubResource("AudioStreamRandomizer_yfcjp")

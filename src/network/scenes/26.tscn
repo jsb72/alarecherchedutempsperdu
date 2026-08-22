@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://ducp7rsjpf40n" path="res://src/player/player.tscn" id="11_gxru2"]
 [ext_resource type="PackedScene" uid="uid://bmwyobu5l8pyt" path="res://src/elements/bomb.tscn" id="12_tsgkd"]
 [ext_resource type="PackedScene" uid="uid://r7khr26ll1co" path="res://src/elements/gen_bomb_shot.tscn" id="13_8bi81"]
+[ext_resource type="Shader" uid="uid://dnc0olck3agla" path="res://shaders/fog.gdshader" id="14_kjs0q"]
+[ext_resource type="Shader" uid="uid://c22exyahuh2n4" path="res://shaders/vhs.gdshader" id="15_sdedy"]
 
 [sub_resource type="Resource" id="Resource_7fau1"]
 script = ExtResource("3_kjs0q")
@@ -751,6 +753,97 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "walkable"
 terrain_set_0/terrain_0/color = Color(0.7052548, 0, 0.35776773, 1)
 sources/0 = SubResource("TileSetAtlasSource_aqm40")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qlu4r"]
+noise_type = 0
+frequency = 0.005
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kjs0q"]
+width = 1024
+height = 1024
+noise = SubResource("FastNoiseLite_qlu4r")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bxy2u"]
+shader = ExtResource("14_kjs0q")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_kjs0q")
+shader_parameter/density = 0.25
+shader_parameter/speed = Vector2(0.01, 0.01)
+
+[sub_resource type="Gradient" id="Gradient_sdedy"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_68s3b"]
+gradient = SubResource("Gradient_sdedy")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_535r4"]
+offsets = PackedFloat32Array(0, 0.3, 0.7, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qlu4r"]
+gradient = SubResource("Gradient_535r4")
+
+[sub_resource type="Curve" id="Curve_b0lhc"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1590909, 1), 0.0, 0.0, 0, 0, Vector2(0.8484848, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_bxy2u"]
+curve = SubResource("Curve_b0lhc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_phsij"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(3000, 3000, 1)
+spread = 180.0
+initial_velocity_min = 4.0
+initial_velocity_max = 8.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.0
+scale_max = 0.099999994
+scale_curve = SubResource("CurveTexture_bxy2u")
+color_ramp = SubResource("GradientTexture1D_qlu4r")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gxru2"]
+shader = ExtResource("15_sdedy")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(1280, 720)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.02000000095
+shader_parameter/aberration = 0.00200004759499994
+shader_parameter/brightness = 1.0
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.2
+shader_parameter/vignette_opacity = 0.50000002375
+
+[sub_resource type="Environment" id="Environment_tsgkd"]
+background_mode = 3
+tonemap_white = 16.0
+glow_enabled = true
+glow_intensity = 1.3
+glow_bloom = 0.3
+fog_light_color = Color(0.5176471, 0.5529412, 0.60784316, 1)
+fog_light_energy = 6.77
+fog_sun_scatter = 0.59
+fog_density = 0.3614
+fog_height = 1024.0
+fog_height_density = 10.6667
 
 [node name="26" type="Node2D" unique_id=1938062818]
 
@@ -1908,4 +2001,90 @@ offset_top = 992.0
 offset_right = -1114.0
 offset_bottom = 1015.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "\"La sécurité est au coeur des préoccupations du centre d'enrichissement. Toutefois, les sphères ultra-énergétiques d'Aperture Science, à droite de la salle, peuvent provoquer des lésions irréversibles.\""
+text = "La sécurité est au coeur des préoccupations du centre d'enrichissement. Toutefois, les sphères ultra-énergétiques peuvent provoquer des lésions irréversibles."
+
+[node name="postprocess" type="Node" parent="." unique_id=1365946172]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="postprocess" unique_id=926995873]
+color = Color(1, 0.94, 0.941, 1)
+
+[node name="bg" type="ColorRect" parent="postprocess" unique_id=1005371777]
+z_index = -200
+offset_left = -4352.0
+offset_top = -4064.0
+offset_right = 4000.0
+offset_bottom = 2944.0
+color = Color(0.65834004, 0.6583399, 0.6583399, 1)
+
+[node name="color_rect_fog" type="ColorRect" parent="postprocess" unique_id=1329272634]
+z_index = 90
+material = SubResource("ShaderMaterial_bxy2u")
+offset_left = -3456.0
+offset_top = -3584.0
+offset_right = 2544.0
+offset_bottom = 2416.0
+
+[node name="particles" type="Node" parent="postprocess" unique_id=1543817080]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="postprocess/particles" unique_id=1450271622]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.9
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="postprocess/particles/CanvasLayer" unique_id=79427544]
+z_index = 11
+position = Vector2(-448, -960)
+amount = 1000
+texture = SubResource("GradientTexture2D_68s3b")
+lifetime = 5.0
+visibility_rect = Rect2(-3000, -3000, 6000, 6000)
+process_material = SubResource("ParticleProcessMaterial_phsij")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="postprocess/particles" unique_id=515755418]
+follow_viewport_enabled = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="postprocess/particles/CanvasLayer2" unique_id=779759311]
+z_index = 11
+position = Vector2(-448, -960)
+amount = 1000
+texture = SubResource("GradientTexture2D_68s3b")
+lifetime = 5.0
+visibility_rect = Rect2(-3000, -3000, 6000, 6000)
+process_material = SubResource("ParticleProcessMaterial_phsij")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="postprocess/particles" unique_id=870254203]
+follow_viewport_enabled = true
+follow_viewport_scale = 1.1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="postprocess/particles/CanvasLayer3" unique_id=996562521]
+z_index = 11
+position = Vector2(-448, -960)
+amount = 1000
+texture = SubResource("GradientTexture2D_68s3b")
+lifetime = 5.0
+visibility_rect = Rect2(-3000, -3000, 6000, 6000)
+process_material = SubResource("ParticleProcessMaterial_phsij")
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="postprocess/particles" unique_id=1555418327]
+follow_viewport_enabled = true
+follow_viewport_scale = 1.2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="postprocess/particles/CanvasLayer4" unique_id=1885956139]
+z_index = 11
+position = Vector2(-448, -960)
+amount = 1000
+texture = SubResource("GradientTexture2D_68s3b")
+lifetime = 5.0
+visibility_rect = Rect2(-3000, -3000, 6000, 6000)
+process_material = SubResource("ParticleProcessMaterial_phsij")
+
+[node name="vhs" type="CanvasLayer" parent="postprocess" unique_id=1713120462]
+layer = 1000
+
+[node name="vhsshader" type="ColorRect" parent="postprocess/vhs" unique_id=428550400]
+material = SubResource("ShaderMaterial_gxru2")
+offset_right = 1280.0
+offset_bottom = 720.0
+metadata/_edit_use_anchors_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="postprocess" unique_id=647970167]
+environment = SubResource("Environment_tsgkd")
