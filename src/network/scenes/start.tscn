@@ -817,4 +817,12 @@ offset_top = 1408.0
 offset_right = -2693.0
 offset_bottom = 1431.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Pour des raisons de sécurité, nous vous avons"
+text = "\"Bonjour et bienvenue au centre d'enrichissement assisté par ordinateur d'Aperture Science.\""
+
+[node name="bg" type="ColorRect" parent="." unique_id=1093975786]
+z_index = -200
+offset_left = -4352.0
+offset_top = -4064.0
+offset_right = 4000.0
+offset_bottom = 2944.0
+color = Color(0.65834004, 0.6583399, 0.6583399, 1)

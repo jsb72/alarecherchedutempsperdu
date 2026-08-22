@@ -1,29 +1,76 @@
 [gd_scene format=3 uid="uid://r7khr26ll1co"]
 
 [ext_resource type="Script" uid="uid://c7f55vcxr3oqs" path="res://src/elements/gen_bomb_shot.gd" id="1_myne8"]
-[ext_resource type="Texture2D" uid="uid://dk7ol2p6uu72r" path="res://sprites/canon.png" id="2_eoer3"]
+[ext_resource type="Texture2D" uid="uid://drmharftpw3qp" path="res://sprites/canon_back.png" id="2_ptai2"]
+[ext_resource type="Texture2D" uid="uid://dvamtcdypfbju" path="res://sprites/canon_front.png" id="3_quirt"]
+[ext_resource type="AudioStream" uid="uid://q54nc1ytq848" path="res://sounds/canontryshot.mp3" id="4_quirt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqhvv"]
-size = Vector2(97, 40)
+[sub_resource type="Animation" id="Animation_ptai2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.24, 0.24)]
+}
+
+[sub_resource type="Animation" id="Animation_quirt"]
+resource_name = "new_animation"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.24, 0.24), Vector2(0.2, 0.24), Vector2(0.24, 0.24)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yfcjp"]
+_data = {
+&"RESET": SubResource("Animation_ptai2"),
+&"new_animation": SubResource("Animation_quirt")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_yfcjp"]
+random_pitch = 1.122462
+streams_count = 1
+stream_0/stream = ExtResource("4_quirt")
 
 [node name="genBombShot" type="Node2D" unique_id=282430981]
 z_index = 1
 script = ExtResource("1_myne8")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1647153080]
-position = Vector2(51.000004, 15.000001)
-rotation = -3.0560715
-scale = Vector2(0.5438566, 0.5438566)
-texture = ExtResource("2_eoer3")
-
 [node name="Timer" type="Timer" parent="." unique_id=1789884870]
-wait_time = 1.5
+wait_time = 3.0
 autostart = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=354450682]
+[node name="Node2D" type="Node2D" parent="." unique_id=2120219537]
+position = Vector2(-37.999992, -9)
+scale = Vector2(0.24, 0.24)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1626300758]
-position = Vector2(48.5, 14)
-shape = SubResource("RectangleShape2D_oqhvv")
+[node name="back" type="Sprite2D" parent="Node2D" unique_id=84382978]
+z_index = -10
+texture = ExtResource("2_ptai2")
+
+[node name="front" type="Sprite2D" parent="Node2D" unique_id=1170215909]
+texture = ExtResource("3_quirt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D" unique_id=398642165]
+libraries/ = SubResource("AnimationLibrary_yfcjp")
+speed_scale = 10.0
+
+[node name="shootaudio" type="AudioStreamPlayer2D" parent="." unique_id=828169245]
+stream = SubResource("AudioStreamRandomizer_yfcjp")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

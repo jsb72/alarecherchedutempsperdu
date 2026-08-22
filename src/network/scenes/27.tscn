@@ -808,7 +808,7 @@ offset_top = 1120.0
 offset_right = -2740.0
 offset_bottom = 1143.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "MISE A L'EPREUVE NUMERO 1"
+text = "\"La sécurité est au coeur des préoccupations du centre d'enrichissement. Toutefois, les sphères ultra-énergétiques d'Aperture Science, à gauche de la salle, peuvent provoquer des lésions irréversibles.\""
 
 [node name="Player" parent="." unique_id=2070335124 instance=ExtResource("6_g5oq1")]
 position = Vector2(-1952, 1312)

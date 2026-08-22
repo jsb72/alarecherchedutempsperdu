@@ -15,9 +15,9 @@ func _ready() -> void:
 	rotation=randfn(-0.3, 0.3)
 	
 	
-	sprite_2d.scale=Vector2(0.089,0.089)
+	"""sprite_2d.scale=Vector2(0.089,0.089)
 	var tween22 = get_tree().create_tween()
-	tween22.tween_property(sprite_2d, "scale", Vector2(0.089,0.089), 0.1)
+	tween22.tween_property(sprite_2d, "scale", Vector2(0.089,0.089), 0.1)"""
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

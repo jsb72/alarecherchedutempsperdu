@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cfyjl0ueipwkg" path="res://sprites/nuclearbomb.png" id="3_5lftc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5lftc"]
-radius = 32.0
+radius = 37.01351
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5lftc"]
 random_pitch = 1.0656005
@@ -24,7 +24,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.089, 0.089)]
+"values": [Vector2(0.101, 0.105)]
 }
 
 [sub_resource type="Animation" id="Animation_fu7yh"]
@@ -40,7 +40,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0.089, 0.089), Vector2(1, 1), Vector2(0.089, 0.089)]
+"values": [Vector2(0.101, 0.105), Vector2(1, 1), Vector2(0.101, 0.105)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d063i"]
@@ -50,10 +50,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lop08"]
-radius = 21.023796
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_oqhvv"]
-random_pitch = 1.122462
+radius = 32.0
 
 [node name="bomb" type="RigidBody2D" unique_id=324640493]
 collision_layer = 4
@@ -71,9 +68,8 @@ stream = SubResource("AudioStreamRandomizer_5lftc")
 volume_db = -5.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1244969072]
-position = Vector2(0, -9.536743e-07)
-rotation = 0.25953484
-scale = Vector2(0.089, 0.089)
+position = Vector2(0, 1.9073486e-06)
+scale = Vector2(0.101, 0.105)
 texture = ExtResource("3_5lftc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1335504737]
@@ -87,11 +83,6 @@ shape = SubResource("CircleShape2D_lop08")
 wait_time = 4.0
 one_shot = true
 autostart = true
-
-[node name="shootaudio" type="AudioStreamPlayer2D" parent="." unique_id=1396363997]
-stream = SubResource("AudioStreamRandomizer_oqhvv")
-pitch_scale = 2.92
-autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="disapeartimer" to="." method="_on_disapeartimer_timeout"]
