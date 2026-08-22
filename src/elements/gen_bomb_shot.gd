@@ -1,4 +1,5 @@
 extends Node2D
+@onready var timer: Timer = $Timer
 
 @onready var animation_player: AnimationPlayer = $Node2D/AnimationPlayer
 @onready var shootaudio: AudioStreamPlayer2D = $shootaudio
@@ -18,7 +19,7 @@ func shoot():
 	
 	animation_player.play("new_animation")
 	shootaudio.play()
-	#await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.05).timeout
 	
 	
 	var bombspawedpacked = load("res://src/elements/bomb.tscn")
@@ -35,4 +36,5 @@ func shoot():
 
 
 func _on_timer_timeout() -> void:
+	timer.wait_time=randfn(0.1, 1.0)
 	shoot()

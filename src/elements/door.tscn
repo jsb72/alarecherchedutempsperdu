@@ -14,6 +14,9 @@ size = Vector2(100, 384)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6b2jm"]
 size = Vector2(261, 256)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11mpi"]
+size = Vector2(1344, 256)
+
 [node name="door" type="Node2D" unique_id=1623015435]
 z_index = -1
 script = ExtResource("1_hq4rk")
@@ -56,5 +59,14 @@ collision_mask = 16
 position = Vector2(162.5, 0)
 shape = SubResource("RectangleShape2D_6b2jm")
 
+[node name="limit_cam_zone" type="Area2D" parent="." unique_id=2115673350]
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limit_cam_zone" unique_id=142549262]
+position = Vector2(-352, 0)
+shape = SubResource("RectangleShape2D_11mpi")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="triggernextlvl" to="." method="_on_triggernextlvl_body_entered"]
+[connection signal="body_entered" from="limit_cam_zone" to="." method="_on_limit_cam_zone_body_entered"]
+[connection signal="body_exited" from="limit_cam_zone" to="." method="_on_limit_cam_zone_body_exited"]

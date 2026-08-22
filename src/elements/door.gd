@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var static_body_2d: StaticBody2D = $StaticBody2D
+@onready var cam: PhantomCamera2D = $"../cam"
 
 @export var door_id:int
 
@@ -33,3 +34,15 @@ func _on_triggernextlvl_body_entered(body: Node2D) -> void:
 	Global["next_door_id"]=(Global.list_door[door_id])["door_id_target"]
 	var next_lvl_name = (Global.list_door[Global["next_door_id"]])["lvl_name"]
 	get_tree().change_scene_to_file("res://src/network/scenes/"+next_lvl_name+".tscn")
+
+
+func _on_limit_cam_zone_body_entered(body: Node2D) -> void:
+	if (Global.list_door[door_id])["flip_h"]:
+		cam.set_limit_right((Global.list_door[door_id])["pos"].x+128)
+	else:
+		cam.set_limit_left((Global.list_door[door_id])["pos"].x-128)
+
+
+func _on_limit_cam_zone_body_exited(body: Node2D) -> void:
+	cam.set_limit_left(-10000)
+	cam.set_limit_right(10000)
