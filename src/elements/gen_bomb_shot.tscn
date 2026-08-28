@@ -85,6 +85,7 @@ speed_scale = 15.0
 stream = SubResource("AudioStreamRandomizer_yfcjp")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1401833871]
+visible = false
 modulate = Color(0.46786723, 0.46786723, 0.46786723, 0.49411765)
 position = Vector2(-126, 0)
 emitting = false
