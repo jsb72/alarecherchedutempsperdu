@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://begg72r81lcwm"]
+
+[ext_resource type="PackedScene" uid="uid://ufnf3lc7ewin" path="res://src/vivants/a_atentacle.tscn" id="1_qcqdm"]
+
+[node name="multiple_tentacles" type="Node2D" unique_id=1636735578]
+
+[node name="AAtentacle" parent="." unique_id=1566691538 instance=ExtResource("1_qcqdm")]
+position = Vector2(640, 384)
+
+[node name="AAtentacle2" parent="." unique_id=1054692771 instance=ExtResource("1_qcqdm")]
+position = Vector2(640, 320)
+
+[node name="AAtentacle3" parent="." unique_id=1926658854 instance=ExtResource("1_qcqdm")]
+position = Vector2(576, 384)

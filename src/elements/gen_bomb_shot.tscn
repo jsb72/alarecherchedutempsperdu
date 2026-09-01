@@ -62,7 +62,9 @@ z_index = 1
 script = ExtResource("1_myne8")
 
 [node name="Timer" type="Timer" parent="." unique_id=1789884870]
+one_shot = true
 autostart = true
+ignore_time_scale = true
 
 [node name="Node2D" type="Node2D" parent="." unique_id=2120219537]
 position = Vector2(-37.999992, -9)

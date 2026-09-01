@@ -95,10 +95,8 @@ func _ready() -> void:
 	_initialize_segments()
 	
 	var vector_tmp = Vector2(randi_range(50*size_multiple, 100*size_multiple),0)
-	print(vector_tmp)
 	var angle_tmp = randi_range(0, 360)
 	vector_tmp=vector_tmp.rotated(deg_to_rad(angle_tmp))
-	print(vector_tmp)
 	
 	random_pos_init=global_position+vector_tmp
 	

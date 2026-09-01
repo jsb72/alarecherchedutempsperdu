@@ -38,5 +38,10 @@ func shoot():
 
 
 func _on_timer_timeout() -> void:
-	timer.wait_time=randfn(0.1, 1.0)
 	shoot()
+	
+	var new_time = snapped(randfn(0.1, 1.0),0.1)
+	#print(timer.wait_time)
+	timer.wait_time=new_time
+	
+	timer.start()

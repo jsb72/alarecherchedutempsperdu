@@ -178,8 +178,14 @@ func update_flip_h() -> void:
 	if h_input_dir:
 		flip_h = h_input_dir != 1.0
 
+@onready var save_max_speed=max_speed
 func apply_movement(delta: float, acc_time: float, dec_time: float) -> void:
-	var speed_dir: float = max_speed * get_input_vector().x
+	if is_action_pressed_custom("dash",false) and Global.sprint_unlock:
+		max_speed=save_max_speed*1.4
+	else:
+		max_speed=save_max_speed
+		
+	var speed_dir: float = max_speed * get_input_vector().x 
 	var h_velocity_dir: float = signf(velocity.x)
 	var apply_acc: bool = (
 			h_velocity_dir == 0.0
@@ -393,7 +399,10 @@ func apply_move_anim() -> void:
 	var max_move_skew_rad: float = deg_to_rad(max_move_skew)
 	
 	shape.skew = remap(velocity.x, -max_speed, max_speed, -max_move_skew_rad, max_move_skew_rad)
-	#sprite.skew = remap(velocity.x, -max_speed, max_speed, -max_move_skew_rad, max_move_skew_rad)
+	
+	if abs(velocity.x) > 0 and state_str_for_anim!="DashState":sprite.skew = remap(velocity.x, max_speed, -max_speed, -max_move_skew_rad, max_move_skew_rad)
+	else:sprite.skew=0
+	#print(abs(velocity.x))
 
 func update_shape_scale(delta: float) -> void:
 	var target: Vector2 = _default_shape_scale * shape.scale.sign()
@@ -609,6 +618,8 @@ func _process(delta: float) -> void:
 	Engine.time_scale = 1
 	if is_action_pressed_custom("skill",false):
 			Engine.time_scale = 0.1
+	"""if state_str_for_anim=="DashState":
+			Engine.time_scale = 0.5"""
 			
 	animation_logic()
 	

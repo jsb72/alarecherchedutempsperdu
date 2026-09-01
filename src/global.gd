@@ -6,9 +6,8 @@ extends Node
 var godmode:bool=false
 
 var dash_unlock:bool = true
-var doublejump_unlock:bool = false
+var doublejump_unlock:bool = true
 var walljump_unlock:bool=true
-
 var sprint_unlock:bool = true
 
 
@@ -19,7 +18,7 @@ var list_door=[
 	{ "door_id": 2, "opened": false, "lvl_name":"26", "pos": Vector2(1792.0,1856), "flip_h": true, "door_id_target": "3" },
 	{ "door_id": 3, "opened": true, "lvl_name":"27", "pos": Vector2(-3200,1216.0), "flip_h": false, "door_id_target": "2" },
 	{ "door_id": 4, "opened": true, "lvl_name":"27", "pos": Vector2(-128.0,3776.0), "flip_h": false, "door_id_target": "5" },
-	{ "door_id": 5, "opened": true, "lvl_name":"27", "pos": Vector2(2496.0,1152.0), "flip_h": true, "door_id_target": "4" },
+	{ "door_id": 5, "opened": true, "lvl_name":"27", "pos": Vector2(1920.0,1152.0), "flip_h": true, "door_id_target": "4" },
 ]
 
 var color_h_init:float

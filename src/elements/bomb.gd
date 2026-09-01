@@ -53,10 +53,12 @@ func _on_disapeartimer_timeout() -> void:
 func delete_me_plz()->void:
 	if should_stay:return
 	
-	var tween2 = get_tree().create_tween()
-	tween2.tween_property(self, "modulate:a", 0.0, 1)
 	
-	await get_tree().create_timer(1).timeout
+	
+	var tween2 = get_tree().create_tween()
+	tween2.tween_property(self, "modulate:a", 0.0, 0.5)
+	
+	await get_tree().create_timer(0.5).timeout
 	
 	is_disapearing=true
 	set_collision_mask_value(5, false)

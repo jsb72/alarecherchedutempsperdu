@@ -412,7 +412,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"run",
-"speed": 14.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -622,10 +622,10 @@ wall_jumping_acc_time = 0.221
 wall_jumping_dec_time = 0.234
 wall_jumping_towards_wall_dec_time = 0.289
 dash_speed = 1200.0
-dash_distance = 125.0
+dash_distance = 200.0
 after_dash_speed = 300.0
 after_dash_gravity_ratio = 0.2
-max_move_skew = -6.0
+max_move_skew = -3.0
 shape_rescale_weight = 0.2
 squash_width_scale_at_rest = 1.1
 squash_width_scale_at_max_fall = 1.4
@@ -727,7 +727,7 @@ material = SubResource("ShaderMaterial_e7e1q")
 position = Vector2(0, -4.425003)
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_j2873")
-animation = &"walljumpup"
+animation = &"run"
 autoplay = "idle"
 script = ExtResource("14_5efpn")
 
