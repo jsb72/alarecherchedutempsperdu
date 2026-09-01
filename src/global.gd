@@ -11,7 +11,7 @@ var walljump_unlock:bool=true
 var sprint_unlock:bool = true
 
 
-var next_door_id:int=3#-1
+var next_door_id:int=-1#-1
 var list_door=[
 	{ "door_id": 0, "opened": false, "lvl_name":"start", "pos": Vector2(-1344.0,1216), "flip_h": true, "door_id_target": "1" },
 	{ "door_id": 1, "opened": true, "lvl_name":"26", "pos": Vector2(-768.0,1216), "flip_h": false, "door_id_target": "0" },
