@@ -17,7 +17,7 @@ var list_door=[
 	{ "door_id": 1, "opened": true, "lvl_name":"26", "pos": Vector2(-768.0,1216), "flip_h": false, "door_id_target": "0" },
 	{ "door_id": 2, "opened": false, "lvl_name":"26", "pos": Vector2(1792.0,1856), "flip_h": true, "door_id_target": "3" },
 	{ "door_id": 3, "opened": true, "lvl_name":"27", "pos": Vector2(-3200,1216.0), "flip_h": false, "door_id_target": "2" },
-	{ "door_id": 4, "opened": true, "lvl_name":"27", "pos": Vector2(-3968.0,4032.0), "flip_h": false, "door_id_target": "5" },
+	{ "door_id": 4, "opened": true, "lvl_name":"27", "pos": Vector2(-4800.0,5120.0), "flip_h": false, "door_id_target": "5" },
 	{ "door_id": 5, "opened": true, "lvl_name":"27", "pos": Vector2(1920.0,1152.0), "flip_h": true, "door_id_target": "4" },
 ]
 
