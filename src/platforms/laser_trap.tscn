@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c0irw7svbnas1" path="res://src/platforms/laser_trap.gd" id="1_58m3p"]
 [ext_resource type="Shader" uid="uid://r5ttx5k57uqv" path="res://shaders/laser.gdshader" id="1_x0xp4"]
-[ext_resource type="Texture2D" uid="uid://dlm5ckn5uidyv" path="res://sprites/ball.png" id="2_lodqg"]
 [ext_resource type="AudioStream" uid="uid://v8884qf4a4xu" path="res://sounds/laser_sound.mp3" id="4_4fd10"]
 [ext_resource type="AudioStream" uid="uid://dbcqyprc6sowj" path="res://sounds/freesound_community-laser-beam-76426.mp3" id="5_nt2fc"]
+[ext_resource type="Texture2D" uid="uid://dg07kwlijqrib" path="res://sprites/laser_base.png" id="5_qf0kb"]
 
 [sub_resource type="Animation" id="Animation_x0xp4"]
 length = 0.001
@@ -68,16 +68,16 @@ shader_parameter/energy = 6.0
 shader_parameter/roughness = 5
 shader_parameter/frequency = 10
 shader_parameter/speed = 0.5
-shader_parameter/thickness = 0.00800000038
-shader_parameter/outline_thickness = 0.0370000017575
+shader_parameter/thickness = 0.0090000004275
+shader_parameter/outline_thickness = 0.0
 shader_parameter/beam_difference = 0.0
-shader_parameter/glow = 3.0
+shader_parameter/glow = 0.3970000188575
 shader_parameter/outline_glow = 0.0
-shader_parameter/color = Color(1, 0, 0, 1)
-shader_parameter/outline_color = Color(1, 0, 0, 1)
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/progress = 1.0
-shader_parameter/y_offset = 0.0
-shader_parameter/fixed_edge_size = 0.10800000513
+shader_parameter/y_offset = 2.3749999966682367e-08
+shader_parameter/fixed_edge_size = 0.0
 shader_parameter/noise_scale = Vector2(1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lodqg"]
@@ -100,6 +100,7 @@ clip_0/stream = SubResource("AudioStreamRandomizer_qf0kb")
 clip_0/auto_advance = 0
 
 [node name="laser_trap" type="Node2D" unique_id=853668133]
+z_index = -1
 rotation = -6.2831855
 script = ExtResource("1_58m3p")
 
@@ -107,23 +108,8 @@ script = ExtResource("1_58m3p")
 libraries/ = SubResource("AnimationLibrary_fakmx")
 speed_scale = 0.3
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=684181563]
-position = Vector2(-335.99997, -6.0000534)
-scale = Vector2(0.13167538, 0.13167538)
-texture = ExtResource("2_lodqg")
-
-[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=265689847]
-position = Vector2(332, -5.9999366)
-scale = Vector2(0.13167538, 0.13167538)
-texture = ExtResource("2_lodqg")
-
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=258369829]
-visible = false
-position = Vector2(331, -6.9999423)
-scale = Vector2(0.3010627, 0.3010627)
-texture = ExtResource("2_lodqg")
-
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1589157746]
+visible = false
 offset_left = -360.0
 offset_top = -30.000065
 offset_right = -296.0
@@ -132,6 +118,7 @@ scale = Vector2(0.8, 0.8)
 texture = SubResource("GradientTexture2D_nt2fc")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1006446140]
+visible = false
 offset_left = 307.99994
 offset_top = -29.999949
 offset_right = 371.99994
@@ -141,10 +128,10 @@ texture = SubResource("GradientTexture2D_nt2fc")
 
 [node name="ColorRectLASER" type="ColorRect" parent="." unique_id=85802366]
 material = SubResource("ShaderMaterial_lodqg")
-offset_left = -334.99994
-offset_top = -253.00006
-offset_right = 332.29376
-offset_bottom = 239.86246
+offset_left = -351.99997
+offset_top = -96.00006
+offset_right = 351.35684
+offset_bottom = 97.33838
 
 [node name="Area2D" type="Area2D" parent="." unique_id=190020138]
 position = Vector2(-153, 2.0000954)
@@ -176,6 +163,12 @@ stream = SubResource("AudioStreamInteractive_ku6cw")
 volume_db = -7.0
 autoplay = true
 max_distance = 1000.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=410907883]
+position = Vector2(347, 6.0671402e-05)
+rotation = -1.5707964
+scale = Vector2(0.11227994, 0.11227994)
+texture = ExtResource("5_qf0kb")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

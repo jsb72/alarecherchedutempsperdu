@@ -36,7 +36,7 @@ func _ready() -> void:
 	else:
 		TranslationServer.set_locale(language)
 		
-	color_h_init=randfn(0.0, 1.0-0.2)
+	color_h_init=randfn(0.0, 1.0)
 	
 	if next_door_id!=-1:
 		get_tree().change_scene_to_file("res://src/network/scenes/"+(list_door[next_door_id])["lvl_name"]+".tscn")

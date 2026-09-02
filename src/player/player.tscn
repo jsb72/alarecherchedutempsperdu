@@ -87,6 +87,7 @@ size = Vector2(32, 61)
 [sub_resource type="Gradient" id="Gradient_p6grl"]
 resource_local_to_scene = true
 colors = PackedColorArray(0, 0, 0, 1, 0, 0.6454514, 0.23877141, 1)
+metadata/_snap_enabled = true
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_e7e1q"]
 resource_local_to_scene = true
@@ -125,10 +126,6 @@ region = Rect2(532, 931, 133, 133)
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ayw0"]
 atlas = ExtResource("14_4uy46")
 region = Rect2(665, 931, 133, 133)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fpqwn"]
-atlas = ExtResource("14_4uy46")
-region = Rect2(0, 0, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4bkl8"]
 atlas = ExtResource("14_4uy46")
@@ -308,9 +305,6 @@ animations = [{
 "speed": 9.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fpqwn")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4bkl8")
 }, {
@@ -730,7 +724,7 @@ material = SubResource("ShaderMaterial_e7e1q")
 position = Vector2(0, -4.425003)
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_j2873")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
 script = ExtResource("14_5efpn")
 
