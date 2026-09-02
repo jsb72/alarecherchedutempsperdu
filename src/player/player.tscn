@@ -704,7 +704,10 @@ emitting = false
 
 [node name="run_particle" parent="particles" unique_id=247846387 instance=ExtResource("15_j2873")]
 position = Vector2(0, -5)
-emitting = false
+amount = 20
+explosiveness = 0.43
+randomness = 0.38
+emission_sphere_radius = 5.66
 
 [node name="blood_particle" parent="particles" unique_id=1148518955 instance=ExtResource("16_dpt0q")]
 modulate = Color(0.4392157, 0, 0, 1)

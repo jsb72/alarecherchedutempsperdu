@@ -400,7 +400,7 @@ func apply_move_anim() -> void:
 	
 	shape.skew = remap(velocity.x, -max_speed, max_speed, -max_move_skew_rad, max_move_skew_rad)
 	
-	if abs(velocity.x) > 0 and state_str_for_anim!="DashState":sprite.skew = remap(velocity.x, max_speed, -max_speed, -max_move_skew_rad, max_move_skew_rad)
+	if abs(velocity.x) > 0 :sprite.skew = remap(velocity.x, max_speed, -max_speed, -max_move_skew_rad, max_move_skew_rad)#and state_str_for_anim!="DashState"
 	else:sprite.skew=0
 	#print(abs(velocity.x))
 
@@ -534,10 +534,14 @@ func set_color_player()->void:
 	color_dress.v=0.75
 	color_dress.s=1
 	color_dress.h=Global["color_h_init"]
+	
 	var value:=0.5
 	color_dress = (color_dress.srgb_to_linear() * 2 ** value).linear_to_srgb()
+	
 	var mygradient:GradientTexture2D=sprite.material.get_shader_parameter("pal0")
 	mygradient.gradient.set_color(1,color_dress)
+	"""color_dress.h+=0.2
+	mygradient.gradient.set_color(2,color_dress)"""
 	sprite.material.set_shader_parameter("pal0", mygradient)
 	
 func animationJump()->void:
