@@ -322,6 +322,7 @@ stream = SubResource("AudioStreamRandomizer_36xei")
 [node name="blood_particle" parent="." unique_id=1148518955 instance=ExtResource("5_45pos")]
 modulate = Color(0.4392157, 0, 0, 1)
 position = Vector2(0, -18)
+amount = 20
 texture = SubResource("GradientTexture2D_45pos")
 lifetime = 1.0
 explosiveness = 0.5

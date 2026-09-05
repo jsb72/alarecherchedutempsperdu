@@ -5,9 +5,13 @@ extends Node2D
 @onready var shootaudio: AudioStreamPlayer2D = $shootaudio
 @onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
 
+@export var timing:float=1.0
+@export var randomizing:bool=true
+@export var speed:int=1800
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	timer.wait_time=timing
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,7 +36,10 @@ func shoot():
 	
 	bomblist.add_child(bombspawed)
 	
-	bombspawed.linear_velocity=Vector2(-1800,0)
+	var tir_vector = Vector2(-speed,0)
+	tir_vector=tir_vector.rotated(self.rotation)
+	bombspawed.linear_velocity = tir_vector
+
 	
 		
 
@@ -40,8 +47,9 @@ func shoot():
 func _on_timer_timeout() -> void:
 	shoot()
 	
-	var new_time = snapped(randfn(0.1, 1.0),0.1)
-	#print(timer.wait_time)
-	timer.wait_time=new_time
+	if randomizing:
+		var new_time = snapped(randfn(0.1, 1.0),0.1)
+		#print(timer.wait_time)
+		timer.wait_time=new_time
 	
 	timer.start()

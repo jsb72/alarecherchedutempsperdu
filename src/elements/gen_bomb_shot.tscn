@@ -61,13 +61,6 @@ scale_max = 0.29999998
 z_index = 1
 script = ExtResource("1_myne8")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=121110750]
-offset_left = -16.0
-offset_top = -96.0
-offset_right = 16.0
-offset_bottom = 2.0
-color = Color(0, 0, 0, 1)
-
 [node name="Timer" type="Timer" parent="." unique_id=1789884870]
 one_shot = true
 autostart = true

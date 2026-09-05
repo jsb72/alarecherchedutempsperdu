@@ -1096,19 +1096,6 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_rq3c8")
 
-[sub_resource type="Environment" id="Environment_eanh4"]
-background_mode = 3
-tonemap_white = 16.0
-glow_enabled = true
-glow_intensity = 2.0
-glow_bloom = 0.3
-fog_light_color = Color(0.5176471, 0.5529412, 0.60784316, 1)
-fog_light_energy = 6.77
-fog_sun_scatter = 0.59
-fog_density = 0.3614
-fog_height = 1024.0
-fog_height_density = 10.6667
-
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_iypca"]
 noise_type = 0
 frequency = 0.005
@@ -1125,11 +1112,11 @@ shader_parameter/noise_texture = SubResource("NoiseTexture2D_qgxte")
 shader_parameter/density = 0.25
 shader_parameter/speed = Vector2(0.01, 0.01)
 
-[sub_resource type="Gradient" id="Gradient_kjs0q"]
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+[sub_resource type="Gradient" id="Gradient_h2ecm"]
+colors = PackedColorArray(1, 0, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_rq3c8"]
-gradient = SubResource("Gradient_kjs0q")
+gradient = SubResource("Gradient_h2ecm")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
@@ -1137,17 +1124,17 @@ metadata/_snap_enabled = true
 
 [sub_resource type="Gradient" id="Gradient_iypca"]
 offsets = PackedFloat32Array(0, 0.3, 0.7, 1)
-colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+colors = PackedColorArray(0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0)
 metadata/_snap_enabled = true
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_sdedy"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rq3c8"]
 gradient = SubResource("Gradient_iypca")
 
 [sub_resource type="Curve" id="Curve_lq7pt"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1590909, 1), 0.0, 0.0, 0, 0, Vector2(0.8484848, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="CurveTexture" id="CurveTexture_qlu4r"]
+[sub_resource type="CurveTexture" id="CurveTexture_iypca"]
 curve = SubResource("Curve_lq7pt")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a4ax8"]
@@ -1160,8 +1147,23 @@ initial_velocity_max = 8.0
 gravity = Vector3(0, 0, 0)
 scale_min = 0.0
 scale_max = 0.099999994
-scale_curve = SubResource("CurveTexture_qlu4r")
-color_ramp = SubResource("GradientTexture1D_sdedy")
+scale_curve = SubResource("CurveTexture_iypca")
+color_ramp = SubResource("GradientTexture1D_rq3c8")
+
+[sub_resource type="Environment" id="Environment_h2ecm"]
+background_mode = 3
+tonemap_mode = 4
+tonemap_white = 16.0
+tonemap_agx_contrast = 2.0
+glow_enabled = true
+glow_intensity = 2.0
+glow_bloom = 0.3
+fog_light_color = Color(0.5176471, 0.5529412, 0.60784316, 1)
+fog_light_energy = 6.77
+fog_sun_scatter = 0.59
+fog_density = 0.3614
+fog_height = 1024.0
+fog_height_density = 10.6667
 
 [node name="27" type="Node2D" unique_id=1938062818]
 
@@ -1253,69 +1255,44 @@ offset_right = 4224.0
 offset_bottom = 7008.0
 color = Color(0.65834004, 0.6583399, 0.6583399, 1)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="postprocess" unique_id=583433264]
-environment = SubResource("Environment_eanh4")
-
 [node name="color_rect_fog" type="ColorRect" parent="postprocess" unique_id=1817747130]
 z_index = 90
 material = SubResource("ShaderMaterial_lq7pt")
-offset_left = -3456.0
-offset_top = -3584.0
-offset_right = 2544.0
-offset_bottom = 2416.0
+offset_left = -5024.0
+offset_right = 2176.0
+offset_bottom = 6000.0
 
 [node name="particles" type="Node" parent="postprocess" unique_id=1643105656]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="postprocess/particles" unique_id=1247787866]
-follow_viewport_enabled = true
-follow_viewport_scale = 0.9
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="postprocess/particles/CanvasLayer" unique_id=1893569992]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="postprocess/particles" unique_id=887633990]
 z_index = 11
-position = Vector2(-448, -960)
+position = Vector2(-1920, 3104)
 amount = 1000
 texture = SubResource("GradientTexture2D_rq3c8")
 lifetime = 5.0
 visibility_rect = Rect2(-3000, -3000, 6000, 6000)
 process_material = SubResource("ParticleProcessMaterial_a4ax8")
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="postprocess/particles" unique_id=638517061]
-follow_viewport_enabled = true
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="postprocess/particles/CanvasLayer2" unique_id=887633990]
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="postprocess/particles" unique_id=1546750314]
 z_index = 11
-position = Vector2(-448, -960)
+position = Vector2(-1792, 3168)
 amount = 1000
 texture = SubResource("GradientTexture2D_rq3c8")
 lifetime = 5.0
 visibility_rect = Rect2(-3000, -3000, 6000, 6000)
 process_material = SubResource("ParticleProcessMaterial_a4ax8")
 
-[node name="CanvasLayer3" type="CanvasLayer" parent="postprocess/particles" unique_id=249369395]
-follow_viewport_enabled = true
-follow_viewport_scale = 1.1
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="postprocess/particles/CanvasLayer3" unique_id=1546750314]
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="postprocess/particles" unique_id=1941281303]
 z_index = 11
-position = Vector2(-448, -960)
+position = Vector2(-1888, 3296)
 amount = 1000
 texture = SubResource("GradientTexture2D_rq3c8")
 lifetime = 5.0
 visibility_rect = Rect2(-3000, -3000, 6000, 6000)
 process_material = SubResource("ParticleProcessMaterial_a4ax8")
 
-[node name="CanvasLayer4" type="CanvasLayer" parent="postprocess/particles" unique_id=1476573698]
-follow_viewport_enabled = true
-follow_viewport_scale = 1.2
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="postprocess/particles/CanvasLayer4" unique_id=1941281303]
-z_index = 11
-position = Vector2(-448, -960)
-amount = 1000
-texture = SubResource("GradientTexture2D_rq3c8")
-lifetime = 5.0
-visibility_rect = Rect2(-3000, -3000, 6000, 6000)
-process_material = SubResource("ParticleProcessMaterial_a4ax8")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="postprocess" unique_id=1803978667]
+environment = SubResource("Environment_h2ecm")
 
 [node name="AAtentacle" parent="." unique_id=1566691538 node_paths=PackedStringArray("target") instance=ExtResource("11_eb1yr")]
 position = Vector2(-2112, 1408)
@@ -1618,3 +1595,11 @@ position = Vector2(-2880, 4128)
 
 [node name="spherejump3" parent="." unique_id=1803173739 instance=ExtResource("14_rq3c8")]
 position = Vector2(-3584, 5216)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1265698945]
+z_index = 1000
+offset_left = 256.0
+offset_top = 2240.0
+offset_right = 800.0
+offset_bottom = 2688.0
+text = "Laissez-moi exprimer les choses d'une façon que votre cerveau pourra comprendre : vous allez mourir ici ! Dans cette prison !"

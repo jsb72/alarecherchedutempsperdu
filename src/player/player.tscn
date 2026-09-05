@@ -465,7 +465,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"walljumpup",
-"speed": 10.0
+"speed": 8.0
 }]
 
 [sub_resource type="Gradient" id="Gradient_j2873"]
@@ -724,7 +724,7 @@ material = SubResource("ShaderMaterial_e7e1q")
 position = Vector2(0, -4.425003)
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_j2873")
-animation = &"idle"
+animation = &"walljumpup"
 autoplay = "idle"
 script = ExtResource("14_5efpn")
 

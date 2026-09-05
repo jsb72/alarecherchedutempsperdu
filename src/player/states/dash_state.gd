@@ -34,3 +34,6 @@ func _physics_update(_delta: float) -> void:
 		
 func _apply_dash() -> void:
 	player.velocity = Vector2(player.dash_speed * dash_dir, 0.0)
+	#player.velocity = player.get_input_vector()*player.dash_speed 
+	Vector2(player.dash_speed * dash_dir, 0.0)
+	

@@ -11,7 +11,7 @@ extends Node2D
 
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-var speed_move:float = 0.4
+var speed_move:float = 0.6
 var dead:bool=false
 
 var angle:int=0
@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 			if turnangleexttimer.is_stopped():
 				turnangleexttimer.start()
 				
-				var fixe_longueur:int=9
+				var fixe_longueur:int=18*self.scale.x#9 à ajuster selon self.scale.x (1 =>18)
 				var new_pos:Vector2=global_position
 				
 				if spiderrendu.scale.x==1:
