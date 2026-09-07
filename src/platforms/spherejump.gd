@@ -30,10 +30,12 @@ func _on_body_entered(body: Node2D) -> void:
 		body.velocity.y = -750
 		#body.velocity.y = -1200
 		
-		body.apply_stretch()
+		body.animationJump()
+		
+		"""body.apply_stretch()
 		body.try_play_new_anim("jumpup")
 		body.groundshaketimer.start()
-		body.jump_particle.restart()
+		body.jump_particle.restart()"""
 		
 		
 		animation_player.play("new_animation")

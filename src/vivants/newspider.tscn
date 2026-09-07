@@ -264,7 +264,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tf23j"]
-size = Vector2(64, 78)
+size = Vector2(49, 43)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_36xei"]
 random_pitch = 1.0717734
@@ -301,7 +301,7 @@ autoplay = "idle"
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spiderrendu/Area2D" unique_id=10350516]
-position = Vector2(0, -12)
+position = Vector2(-0.5, 5.5)
 shape = SubResource("RectangleShape2D_tf23j")
 
 [node name="rays" type="Node2D" parent="." unique_id=704307447]

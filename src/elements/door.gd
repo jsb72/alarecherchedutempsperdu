@@ -19,6 +19,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if !(Global.list_door[door_id])["opened"]:
 		(Global.list_door[door_id])["opened"]=true
 		
+		
+		
 		body.unlock_door()
 		
 		await get_tree().create_timer(0.5).timeout

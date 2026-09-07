@@ -114,7 +114,8 @@ var dead_ : bool = false
 
 func _ready() -> void:
 	if Global["next_door_id"]==-1:
-		global_position=Vector2(-3200,1312)
+		#global_position=Vector2(-4384,1584)
+		pass
 	else:
 		global_position=(Global.list_door[Global["next_door_id"]])["pos"]
 		global_position.y+=96
@@ -681,6 +682,7 @@ func launch_bomb():
 var last_floor_pos : Vector2
 var respawned : bool = false
 func respawn():
+	
 	var tween22 = get_tree().create_tween()
 	tween22.tween_property(point_light_2d, "energy", 0.5, 1.0)
 	var tween2 = get_tree().create_tween()

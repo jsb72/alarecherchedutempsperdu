@@ -4,9 +4,11 @@ extends RigidBody2D
 
 @onready var sprite_2d_2: Sprite2D = $Sprite2D2
 
+@export var key_id:int=-1
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	if (Global.list_key[key_id])["used"]:self.queue_free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,6 +22,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	pin_joint_2d.node_b=body.get_path()
 
 func unlock_door()->void:
+	(Global.list_key[key_id])["used"]=true
+	
 	var tween3 = get_tree().create_tween()
 	tween3.tween_property(sprite_2d_2, "modulate:a", 0.0, 2.0)
 	
