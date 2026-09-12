@@ -113,6 +113,7 @@ var dead_ : bool = false
 
 
 func _ready() -> void:
+	print(Global["color_h_init"])#-1.69924135297119
 	if Global["next_door_id"]==-1:
 		#global_position=Vector2(-4384,1584)
 		pass
@@ -133,6 +134,7 @@ func _ready() -> void:
 	cam.follow_damping=true
 	
 func _physics_process(_delta: float) -> void:
+	
 	"""var there_is_wall = is_there_a_wall_here()
 	if there_is_wall!=0:
 		_on_wall = true

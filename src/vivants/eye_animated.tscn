@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bdq2tka24rogs"]
+
+[ext_resource type="Texture2D" uid="uid://quhbjgu50rcm" path="res://sprites/eye.png" id="1_vckgi"]
+
+[sub_resource type="Animation" id="Animation_8jhti"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ppddv"]
+resource_name = "new_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5eatn"]
+_data = {
+&"RESET": SubResource("Animation_8jhti"),
+&"new_animation": SubResource("Animation_ppddv")
+}
+
+[node name="eye_animated" type="Node2D" unique_id=1070846927]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=376801018]
+texture = ExtResource("1_vckgi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=187148402]
+libraries/ = SubResource("AnimationLibrary_5eatn")
+autoplay = &"new_animation"
+speed_scale = 0.01

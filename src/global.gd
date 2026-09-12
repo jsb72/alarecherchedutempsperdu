@@ -19,10 +19,12 @@ var list_door=[
 	{ "door_id": 3, "opened": true, "lvl_name":"27", "pos": Vector2(-3200,1024.0), "flip_h": false, "door_id_target": "2" },
 	{ "door_id": 4, "opened": true, "lvl_name":"27", "pos": Vector2(-5248.0,5120.0), "flip_h": false, "door_id_target": "5" },
 	{ "door_id": 5, "opened": true, "lvl_name":"27", "pos": Vector2(1920.0,1152.0), "flip_h": true, "door_id_target": "4" },
+	{ "door_id": 6, "opened": false, "lvl_name":"27", "pos": Vector2(-1920.0,4032.0), "flip_h": true, "door_id_target": "3" },
 ]
 var list_key=[
 	{"key_id": 0, "used": false},
-	{"key_id": 1, "used": false}
+	{"key_id": 1, "used": false},
+	{"key_id": 2, "used": false},
 ]
 
 var color_h_init:float

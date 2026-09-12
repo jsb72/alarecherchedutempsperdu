@@ -15,7 +15,7 @@ size = Vector2(100, 384)
 size = Vector2(261, 256)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11mpi"]
-size = Vector2(1344, 256)
+size = Vector2(1024, 256)
 
 [node name="door" type="Node2D" unique_id=1623015435]
 z_index = -1
@@ -63,7 +63,7 @@ shape = SubResource("RectangleShape2D_6b2jm")
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="limit_cam_zone" unique_id=142549262]
-position = Vector2(-352, 0)
+position = Vector2(-192, 0)
 shape = SubResource("RectangleShape2D_11mpi")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

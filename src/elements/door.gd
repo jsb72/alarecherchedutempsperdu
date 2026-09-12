@@ -40,7 +40,7 @@ func _on_triggernextlvl_body_entered(body: Node2D) -> void:
 	var next_lvl_name = (Global.list_door[Global["next_door_id"]])["lvl_name"]
 	
 	
-	get_tree().change_scene_to_file("res://src/network/scenes/"+next_lvl_name+".tscn")
+	get_tree().change_scene_to_file("res://src/game/scenes/"+next_lvl_name+".tscn")
 
 #WARNINGG : NE PAS POSITIONNER LE PERSO SUR UNE ZONE PORTE CAM LIM DANS LEDITEUR ! sinon il entre dans cette zone en premier avant de changer de zone porte
 func _on_limit_cam_zone_body_entered(body: Node2D) -> void:

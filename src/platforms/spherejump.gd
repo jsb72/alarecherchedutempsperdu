@@ -26,8 +26,13 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.is_bouncing=true
 		
-		body.global_position.y=global_position.y-20
+		#body.global_position.y=global_position.y-20
 		body.velocity.y = -750
+		
+		var new_vel_vector=body.velocity
+		new_vel_vector=new_vel_vector.rotated(self.rotation)
+		body.velocity=new_vel_vector
+		
 		#body.velocity.y = -1200
 		
 		body.animationJump()
