@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dtjo00tckkqf1"]
 
 [ext_resource type="PackedScene" uid="uid://jl6aa6rrsfq3" path="res://src/platforms/spherejump.tscn" id="1_7mr6u"]
+[ext_resource type="Script" uid="uid://dtwn72p8auhbi" path="res://src/platforms/move_spherejump.gd" id="1_wiklp"]
 
-[sub_resource type="Animation" id="Animation_wiklp"]
+[sub_resource type="Animation" id="Animation_bd3v3"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -17,7 +18,7 @@ tracks/0/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_bd3v3"]
+[sub_resource type="Animation" id="Animation_48ski"]
 resource_name = "new_animation"
 loop_mode = 2
 tracks/0/type = "value"
@@ -30,20 +31,28 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(704, 0)]
+"values": [Vector2(0, 0), Vector2(448, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_48ski"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q4rao"]
 _data = {
-&"RESET": SubResource("Animation_wiklp"),
-&"new_animation": SubResource("Animation_bd3v3")
+&"RESET": SubResource("Animation_bd3v3"),
+&"new_animation": SubResource("Animation_48ski")
 }
 
 [node name="move_spherejump" type="Node2D" unique_id=1365158900]
+script = ExtResource("1_wiklp")
 
-[node name="spherejump" parent="." unique_id=1840644324 instance=ExtResource("1_7mr6u")]
+[node name="Node2D" type="Node2D" parent="." unique_id=141390104]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="spherejump" unique_id=2113686144]
-libraries/ = SubResource("AnimationLibrary_48ski")
-autoplay = &"new_animation"
-speed_scale = 0.2
+[node name="spherejump" parent="Node2D" unique_id=1840644324 instance=ExtResource("1_7mr6u")]
+
+[node name="TileMapLayer" parent="Node2D/spherejump" index="0" unique_id=930952480]
+scale = Vector2(0.5, 0.22)
+collision_enabled = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=472997658]
+root_node = NodePath("../Node2D")
+libraries/ = SubResource("AnimationLibrary_q4rao")
+
+[editable path="Node2D/spherejump"]

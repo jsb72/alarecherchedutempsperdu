@@ -21,7 +21,7 @@ script = ExtResource("1_d7a5p")
 shape = SubResource("RectangleShape2D_oqhvv")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=1026723915]
-softness = 1.0
+softness = 5.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1401876493]
 collision_mask = 16

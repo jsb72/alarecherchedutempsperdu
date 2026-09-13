@@ -392,8 +392,8 @@ terrain_set_0/terrain_0/name = "walkable"
 terrain_set_0/terrain_0/color = Color(0.7052548, 0, 0.35776773, 1)
 sources/0 = SubResource("TileSetAtlasSource_15gt2")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_olkul"]
-size = Vector2(144, 144)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqhvv"]
+size = Vector2(150, 148)
 
 [node name="tile_disapear" type="TileMapLayer" unique_id=1304038811]
 z_index = 100
@@ -402,11 +402,11 @@ tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 3, 0, 0, 0)
 tile_set = SubResource("TileSet_74e01")
 script = ExtResource("2_k0076")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=888001527]
+[node name="Area2D" type="Area2D" parent="." unique_id=662691489]
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1716666242]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1996078650]
 position = Vector2(64, 64)
-shape = SubResource("RectangleShape2D_olkul")
+shape = SubResource("RectangleShape2D_oqhvv")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered" flags=18]

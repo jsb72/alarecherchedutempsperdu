@@ -24,7 +24,11 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
+		body.dash_allowed=true
 		body.is_bouncing=true
+		if body.state_str_for_anim=="DashState":
+			body.state_machine.activate_state_by_name("AirEntryState")
+			#body.state_machine.switch_to("AirEntryState")
 		
 		#body.global_position.y=global_position.y-20
 		body.velocity.y = -750
