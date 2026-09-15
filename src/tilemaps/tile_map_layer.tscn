@@ -1,11 +1,9 @@
-[gd_scene format=3 uid="uid://dnuk4woaxm5ay"]
+[gd_scene format=3 uid="uid://djp0aljqprvsp"]
 
-[ext_resource type="Texture2D" uid="uid://8yyfiqwd3u2a" path="res://sprites/Tilemap_AutoTile_128.png" id="1_pwhvy"]
-[ext_resource type="Script" uid="uid://bqm54msaouwt4" path="res://src/tilemaps/tile_disapear.gd" id="2_k0076"]
-[ext_resource type="PackedScene" uid="uid://djp0aljqprvsp" path="res://src/tilemaps/tile_map_layer.tscn" id="3_0m75l"]
+[ext_resource type="Texture2D" uid="uid://8yyfiqwd3u2a" path="res://sprites/Tilemap_AutoTile_128.png" id="1_ajgde"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15gt2"]
-texture = ExtResource("1_pwhvy")
+texture = ExtResource("1_ajgde")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -391,30 +389,11 @@ physics_layer_0/collision_mask = 17
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "walkable"
 terrain_set_0/terrain_0/color = Color(0.7052548, 0, 0.35776773, 1)
+custom_data_layer_0/name = "col_for_disapear"
+custom_data_layer_0/type = 4
 sources/0 = SubResource("TileSetAtlasSource_15gt2")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqhvv"]
-size = Vector2(150, 148)
-
-[node name="tile_disapear" type="TileMapLayer" unique_id=1304038811]
+[node name="TileMapLayer" type="TileMapLayer" unique_id=382531074]
 z_index = 100
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 3, 0, 0, 0)
 tile_set = SubResource("TileSet_74e01")
-script = ExtResource("2_k0076")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=662691489]
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1996078650]
-position = Vector2(64, 64)
-shape = SubResource("RectangleShape2D_oqhvv")
-
-[node name="TileMapLayerBack" parent="." unique_id=382531074 instance=ExtResource("3_0m75l")]
-scale = Vector2(1, 1)
-
-[node name="TileMapLayerTMP" parent="." unique_id=1419374449 instance=ExtResource("3_0m75l")]
-self_modulate = Color(1, 1, 1, 0)
-scale = Vector2(1, 1)
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered" flags=18]

@@ -84,6 +84,12 @@ size = Vector3(16, 16, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnmj6"]
 size = Vector2(32, 56.574997)
 
+[sub_resource type="Gradient" id="Gradient_h0enb"]
+
+[sub_resource type="Gradient" id="Gradient_wcxbk"]
+
+[sub_resource type="Gradient" id="Gradient_e7e1q"]
+
 [sub_resource type="Gradient" id="Gradient_p6grl"]
 resource_local_to_scene = true
 colors = PackedColorArray(0, 0, 0, 1, 0, 0.6454514, 0.23877141, 1)
@@ -691,17 +697,20 @@ position = Vector2(0, 31.574997)
 [node name="slide_particle" parent="particles" unique_id=993295293 instance=ExtResource("21_hja65")]
 position = Vector2(-13, -12)
 emitting = false
+color_initial_ramp = SubResource("Gradient_h0enb")
 
 [node name="jump_particle" parent="particles" unique_id=842905782 instance=ExtResource("19_vwi60")]
+color_initial_ramp = SubResource("Gradient_wcxbk")
 
 [node name="ground_particle" parent="particles" unique_id=1979884965 instance=ExtResource("20_o04tx")]
 
 [node name="run_particle" parent="particles" unique_id=247846387 instance=ExtResource("15_j2873")]
-position = Vector2(0, -5)
+position = Vector2(0, -1.574997)
 amount = 20
 explosiveness = 0.43
 randomness = 0.38
-emission_sphere_radius = 5.66
+emission_sphere_radius = 8.0
+color_initial_ramp = SubResource("Gradient_e7e1q")
 
 [node name="blood_particle" parent="particles" unique_id=1148518955 instance=ExtResource("16_dpt0q")]
 modulate = Color(0.4392157, 0, 0, 1)
