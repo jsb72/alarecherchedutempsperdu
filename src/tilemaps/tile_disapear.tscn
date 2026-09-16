@@ -410,11 +410,7 @@ collision_mask = 16
 position = Vector2(64, 64)
 shape = SubResource("RectangleShape2D_oqhvv")
 
-[node name="TileMapLayerBack" parent="." unique_id=382531074 instance=ExtResource("3_0m75l")]
-scale = Vector2(1, 1)
-
-[node name="TileMapLayerTMP" parent="." unique_id=1419374449 instance=ExtResource("3_0m75l")]
-self_modulate = Color(1, 1, 1, 0)
+[node name="TileMapPermanent" parent="." unique_id=1419374449 instance=ExtResource("3_0m75l")]
 scale = Vector2(1, 1)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered" flags=18]

@@ -6,6 +6,7 @@ extends RigidBody2D
 
 @export var key_id:int=-1
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if (Global.list_key[key_id])["used"]:self.queue_free()
