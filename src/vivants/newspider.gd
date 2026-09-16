@@ -21,6 +21,9 @@ func _ready() -> void:
 	if randi_range(0, 1)==0:
 		spiderrendu.scale.x=-1
 		rays.scale.x=-1
+		
+	speed_move=speed_move*self.scale.x
+	animated_sprite_2d.speed_scale=animated_sprite_2d.speed_scale/self.scale.x
 
 func _process(delta: float) -> void:
 	pass

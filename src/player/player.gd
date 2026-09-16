@@ -110,7 +110,13 @@ var dead_ : bool = false
 @onready var wall_ray_right: RayCast2D = $rays/WallRayRight
 @onready var wall_ray_left: RayCast2D = $rays/WallRayLeft
 
-
+func load_key_if_held(pos : Vector2)->void:
+	if Global.key_held:
+		var keypckg = load("res://src/elements/lovekey.tscn")
+		var key = keypckg.instantiate()
+		
+		key.global_position=pos
+		get_tree().current_scene.add_child(key)
 
 func _ready() -> void:
 	print(Global["color_h_init"])#-1.69924135297119
@@ -132,6 +138,8 @@ func _ready() -> void:
 	cam.position=global_position
 	await get_tree().create_timer(0.5).timeout
 	cam.follow_damping=true
+	
+	load_key_if_held(global_position)
 	
 func _physics_process(_delta: float) -> void:
 	

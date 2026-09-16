@@ -1338,8 +1338,7 @@ speed = 3000
 
 [node name="door" parent="." unique_id=1452625771 instance=ExtResource("7_h2ecm")]
 position = Vector2(-3200, 1024)
-rotation = 3.1415927
-scale = Vector2(1, -1)
+scale = Vector2(-1, 1)
 door_id = 3
 
 [node name="door2" parent="." unique_id=383825064 instance=ExtResource("7_h2ecm")]

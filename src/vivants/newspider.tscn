@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cvsfd3471pa4e" path="res://src/particles/blood_particle.tscn" id="5_45pos"]
 
 [sub_resource type="Gradient" id="Gradient_lvyff"]
+offsets = PackedFloat32Array(0.6802974, 0.929368, 1)
+colors = PackedColorArray(0, 0.93333316, 1, 1, 0.24155988, 0.021600002, 0.36, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bjwor"]
 gradient = SubResource("Gradient_lvyff")
@@ -282,6 +284,18 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.8, 0.2)
 metadata/_snap_enabled = true
 
+[sub_resource type="Gradient" id="Gradient_j2873"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_36xei"]
+gradient = SubResource("Gradient_j2873")
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8181819, 0.18181819)
+metadata/_snap_enabled = true
+metadata/_snap_count = 31
+
 [node name="newspider" type="Node2D" unique_id=485356090]
 z_index = -20
 script = ExtResource("1_tf23j")
@@ -294,7 +308,7 @@ material = SubResource("ShaderMaterial_36xei")
 position = Vector2(10.464499, -12.753623)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_45pos")
-animation = &"death"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="spiderrendu" unique_id=1767895151]
@@ -343,5 +357,11 @@ autostart = true
 
 [node name="rotateanimtimer" type="Timer" parent="." unique_id=321619928]
 one_shot = true
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=40211590]
+position = Vector2(0, -17)
+energy = 0.5
+texture = SubResource("GradientTexture2D_36xei")
+texture_scale = 6.0
 
 [connection signal="body_entered" from="spiderrendu/Area2D" to="." method="_on_area_2d_body_entered"]
