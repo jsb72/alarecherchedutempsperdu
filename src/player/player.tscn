@@ -665,6 +665,7 @@ position = Vector2(-5, -44)
 mesh = SubResource("BoxMesh_4anbu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1656249480]
+visible = false
 z_index = 5
 position = Vector2(0, 1.2874985)
 shape = SubResource("RectangleShape2D_qnmj6")
@@ -700,9 +701,11 @@ emitting = false
 color_initial_ramp = SubResource("Gradient_h0enb")
 
 [node name="jump_particle" parent="particles" unique_id=842905782 instance=ExtResource("19_vwi60")]
+amount = 16
 color_initial_ramp = SubResource("Gradient_wcxbk")
 
 [node name="ground_particle" parent="particles" unique_id=1979884965 instance=ExtResource("20_o04tx")]
+position = Vector2(0, -4.574997)
 
 [node name="run_particle" parent="particles" unique_id=247846387 instance=ExtResource("15_j2873")]
 position = Vector2(0, -1.574997)

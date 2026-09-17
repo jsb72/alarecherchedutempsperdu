@@ -6,6 +6,9 @@ extends Node2D
 
 @export var door_id:int
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if (Global.list_door[door_id])["opened"]:static_body_2d.global_position.y+=-300
@@ -23,13 +26,14 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		(Global.list_door[door_id])["opened"]=true
 		
 		
-		
 		body.unlock_door()
 		
 		await get_tree().create_timer(0.5).timeout
 		
 		var tween = get_tree().create_tween()
 		tween.tween_property(static_body_2d, "global_position:y", static_body_2d.global_position.y-300, 5)
+		
+		audio_stream_player_2d.play()
 
 func _on_triggernextlvl_body_entered(body: Node2D) -> void:
 	

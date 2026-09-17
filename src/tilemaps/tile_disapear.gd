@@ -3,6 +3,7 @@ extends TileMapLayer
 
 @onready var tile_map_permanent: TileMapLayer = $TileMapPermanent
 
+@export var speed_disapear:float=2.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -42,9 +43,9 @@ func _on_area_2d_body_entered(body: Node2D, source: Area2D) -> void:
 	
 	
 	var tween3 = get_tree().create_tween()
-	tween3.tween_property(tilemap_new_a_dissoudre, "self_modulate:a", 0.0, 2)
+	tween3.tween_property(tilemap_new_a_dissoudre, "self_modulate:a", 0.0, speed_disapear)
 	
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(speed_disapear).timeout
 	#tilemap_new_a_dissoudre.erase_cell(coord)
 	tilemap_new_a_dissoudre.queue_free()
 	#set_deferred("process_mode",tilemap_new_a_dissoudre.PROCESS_MODE_DISABLED)

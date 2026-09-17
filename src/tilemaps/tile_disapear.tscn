@@ -411,6 +411,7 @@ position = Vector2(64, 64)
 shape = SubResource("RectangleShape2D_oqhvv")
 
 [node name="TileMapPermanent" parent="." unique_id=1419374449 instance=ExtResource("3_0m75l")]
+self_modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
 scale = Vector2(1, 1)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered" flags=18]

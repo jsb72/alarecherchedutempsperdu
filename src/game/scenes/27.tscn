@@ -1336,20 +1336,20 @@ timing = 0.5
 randomizing = false
 speed = 3000
 
-[node name="door" parent="." unique_id=1452625771 instance=ExtResource("7_h2ecm")]
+[node name="gauchedoor" parent="." unique_id=1452625771 instance=ExtResource("7_h2ecm")]
 position = Vector2(-3200, 1024)
 scale = Vector2(-1, 1)
 door_id = 3
 
-[node name="door2" parent="." unique_id=383825064 instance=ExtResource("7_h2ecm")]
+[node name="loopdoor" parent="." unique_id=383825064 instance=ExtResource("7_h2ecm")]
 position = Vector2(-2752, 5120)
 door_id = 4
 
-[node name="door3" parent="." unique_id=2128884044 instance=ExtResource("7_h2ecm")]
+[node name="droitedoor" parent="." unique_id=2128884044 instance=ExtResource("7_h2ecm")]
 position = Vector2(1536, 1152)
 door_id = 5
 
-[node name="door4" parent="." unique_id=1623015435 instance=ExtResource("7_h2ecm")]
+[node name="keydoor" parent="." unique_id=1623015435 instance=ExtResource("7_h2ecm")]
 position = Vector2(-4352, 4032)
 scale = Vector2(-1, 1)
 door_id = 6
@@ -2068,6 +2068,7 @@ position = Vector2(-1216, -992)
 key_id = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1593623609]
+visible = false
 offset_left = -3040.0
 offset_top = 2432.0
 offset_right = -2720.0

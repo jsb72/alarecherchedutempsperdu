@@ -4,16 +4,19 @@
 [ext_resource type="PackedScene" uid="uid://c5sxmvs6uu3cv" path="res://src/game/scenes/start.tscn" id="3_lmywa"]
 [ext_resource type="PackedScene" uid="uid://ci54gscnlmoq6" path="res://src/game/scenes/prebombtrick.tscn" id="4_038iu"]
 [ext_resource type="PackedScene" uid="uid://df6qkhg8ecbtw" path="res://src/game/scenes/27.tscn" id="4_c6hty"]
+[ext_resource type="PackedScene" uid="uid://cmdrch1t6upeo" path="res://src/game/scenes/first.tscn" id="5_lmywa"]
 
 [node name="map" type="Node2D" unique_id=1818772855]
 script = ExtResource("1_6gk7l")
 
-[node name="start" parent="." unique_id=660168402 instance=ExtResource("3_lmywa")]
-position = Vector2(-8000, -6816)
-
 [node name="27" parent="." unique_id=335150160 instance=ExtResource("4_c6hty")]
-position = Vector2(-576, 1216)
+position = Vector2(-1632, 768)
 
 [node name="prebombtrick" parent="." unique_id=1455466606 instance=ExtResource("4_038iu")]
-position = Vector2(10976, 3232)
-scale = Vector2(-1, 1)
+position = Vector2(9312, -256)
+
+[node name="first" parent="." unique_id=2081935302 instance=ExtResource("5_lmywa")]
+position = Vector2(4096, 1280)
+
+[node name="start" parent="." unique_id=660168402 instance=ExtResource("3_lmywa")]
+position = Vector2(1920, -3712)
