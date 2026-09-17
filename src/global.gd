@@ -5,10 +5,10 @@ extends Node
 
 var godmode:bool=false
 
-var dash_unlock:bool = false
-var doublejump_unlock:bool = false
-var walljump_unlock:bool=false
-var sprint_unlock:bool = false
+var dash_unlock:bool = true
+var doublejump_unlock:bool = true
+var walljump_unlock:bool=true
+var sprint_unlock:bool = true
 
 
 var next_door_id:int=-1#-1
