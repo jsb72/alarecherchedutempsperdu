@@ -32,7 +32,7 @@ func _on_body_entered(body: Node2D) -> void:
 			#body.state_machine.switch_to("AirEntryState")
 		
 		#body.global_position.y=global_position.y-20
-		body.velocity.y = -750
+		body.velocity.y = -800
 		
 		var new_vel_vector=body.velocity
 		new_vel_vector=new_vel_vector.rotated(self.rotation)

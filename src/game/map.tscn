@@ -12,11 +12,12 @@ script = ExtResource("1_6gk7l")
 [node name="27" parent="." unique_id=335150160 instance=ExtResource("4_c6hty")]
 position = Vector2(-1632, 768)
 
+[node name="start" parent="." unique_id=660168402 instance=ExtResource("3_lmywa")]
+modulate = Color(1, 1, 1, 0.6392157)
+position = Vector2(1984, -3264)
+
 [node name="prebombtrick" parent="." unique_id=1455466606 instance=ExtResource("4_038iu")]
 position = Vector2(9312, -256)
 
 [node name="first" parent="." unique_id=2081935302 instance=ExtResource("5_lmywa")]
 position = Vector2(4096, 1280)
-
-[node name="start" parent="." unique_id=660168402 instance=ExtResource("3_lmywa")]
-position = Vector2(1920, -3712)

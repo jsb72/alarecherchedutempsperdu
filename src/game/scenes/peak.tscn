@@ -882,6 +882,7 @@ metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=918634985]
 physics_interpolation_mode = 1
+top_level = true
 position = Vector2(-6414, 1216)
 zoom = Vector2(0.8, 0.8)
 process_callback = 0

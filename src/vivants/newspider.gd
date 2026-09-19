@@ -151,8 +151,8 @@ func getCollisionSurface(rcast:RayCast2D):
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		if !dead:
-			if body.state_machine.active_state is FallState or body.state_machine.active_state is JumpState or body.state_machine.active_state is WallJumpState:
-				dead=true
-				animated_sprite_2d.play("death")
-				audio_stream_player_2d.play()
-				blood_particle.restart()
+			#if body.state_machine.active_state is FallState or body.state_machine.active_state is JumpState or body.state_machine.active_state is WallJumpState:
+			dead=true
+			animated_sprite_2d.play("death")
+			audio_stream_player_2d.play()
+			blood_particle.restart()

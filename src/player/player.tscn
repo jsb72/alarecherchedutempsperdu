@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://wok5htmqtlc8" path="res://src/particles/slide_particle.tscn" id="21_hja65"]
 [ext_resource type="Script" uid="uid://b6rm5gkxphdna" path="res://src/player/spritetrail.gd" id="22_5shm8"]
 [ext_resource type="AudioStream" uid="uid://bd2ytox8or26g" path="res://sounds/hero_falling.wav" id="29_p6grl"]
+[ext_resource type="Texture2D" uid="uid://bfldl26u2xtej" path="res://sprites/512x512 textures (61).png" id="30_dpt0q"]
 [ext_resource type="Shader" uid="uid://chet47u8v3pes" path="res://shaders/distorsion.gdshader" id="34_xmpm3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h0enb"]
@@ -605,7 +606,7 @@ jump_not_held_gravity_ratio = 1.6
 down_held_gravity_ratio = 2.0
 gravity_limit = 800.0
 down_held_gravity_limit_ratio = 1.2
-jump_height = 135.0
+jump_height = 142.0
 jump_time_to_peak = 0.4
 jump_time_to_land = 0.3
 max_up_velocity_ratio = 3.0
@@ -898,6 +899,11 @@ one_shot = true
 [node name="bombtimer" type="Timer" parent="skilltimers" unique_id=90914381]
 wait_time = 0.5
 one_shot = true
+
+[node name="light_texture" type="Sprite2D" parent="." unique_id=593430639]
+modulate = Color(1, 1, 1, 0.5)
+z_index = -1
+texture = ExtResource("30_dpt0q")
 
 [connection signal="wall_entered" from="." to="." method="_on_wall_entered"]
 [connection signal="wall_exited" from="." to="." method="_on_wall_exited"]
